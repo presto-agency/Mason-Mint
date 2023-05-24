@@ -1,0 +1,18 @@
+.becomeDistributor{
+  padding: 8px 16px;
+  color: var(--white);
+  font: var(--font-button-m);
+  background-color: var(--primary-color);
+  transition: all .2s ease;
+
+  &:hover, &:active {
+    background-color: var(--black);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    color: var(--gray-700);
+    background-color: var(--gray-400);
+    cursor: default;
+  }
+}

@@ -1,0 +1,37 @@
+.white {
+  color: var(--black);
+  background-color: var(--white);
+  border: 1px solid var(--black);
+}
+
+.outlined {
+  color: var(--black);
+  background: transparent;
+  border: 1px solid var(--black);
+}
+
+.white, .outlined {
+  .arrow {
+    stroke: var(--black);
+  }
+}
+
+
+.blue {
+  color: var(--white);
+  background-color: var(--primary-color);
+
+  .arrow {
+    stroke: var(--white);
+  }
+}
+
+.mini {
+  gap: 16px;
+  color: var(--primary-color);
+
+  .arrow {
+    stroke: var(--primary-color);
+  }
+}
+

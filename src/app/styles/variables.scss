@@ -1,0 +1,41 @@
+:root {
+  --font-family-primary: gambetta;
+
+  /* ====================================== TEXT STYLES =========================================== */
+
+  // HEADINGS
+  --font-h1: 300 5.5rem / 96% var(--font-family-primary);
+  --font-h2: 500 3.625rem / 104% var(--font-family-primary);
+  --font-h3: 500 2.5rem / 114% var(--font-family-primary);
+  --font-h4: 500 1.5rem / 115% var(--font-family-primary);
+  --font-h5: 500 1.188rem / 115% var(--font-family-primary);
+  --font-h6: 500 1rem / 96% var(--font-family-primary);
+
+  // BODY
+  --font-l: 400 1rem / 155% var(--font-family-primary);
+  --font-s: 400 0.75rem / 155% var(--font-family-primary);
+
+  // OTHER
+  --font-button-l: 500 1rem var(--font-family-primary);
+  --font-button-m: 500 0.938rem var(--font-family-primary);
+  --font-link: 500 0.75rem var(--font-family-primary);
+
+  /* ====================================== COLORS =========================================== */
+
+  --primary-color: #266ef9;
+  --white: #fff;
+  --gray-300: #ecedf2;
+  --gray-400: #e5e9eb;
+  --gray-500: #d4dadd;
+  --gray-600: #c2cacf;
+  --gray-700: #9aa6af;
+  --gray-800: #6d7378;
+  --black: #24282c;
+  --error: #ff5c5c;
+  --success: #21d184;
+  --link: #3870ff;
+
+  /* ====================================== SIZINGS =========================================== */
+
+  --header-height: 100px;
+}

@@ -1,0 +1,63 @@
+.Header {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 32px 64px;
+  background: transparent;
+  transition: padding .3s ease-out;
+
+  a {
+    white-space: nowrap;
+  } 
+
+  .navigation{
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.dark {
+  color: var(--white);
+
+  a {
+    color: var(--white);
+  }
+
+  .logo {
+    fill: var(--white);
+  }
+  
+}
+
+.light {
+  color: var(--black);
+
+  a{
+    color: var(--black);
+  }
+
+  .logo {
+    fill: var(--black);
+  }
+}
+
+
+.scrolled {
+  height: auto;
+  padding: 12px 64px;
+  color: var(--black);
+  background-color: var(--white);
+
+  a{ 
+    color: var(--black)
+  }
+
+  .logo {
+    fill: var(--black);
+  }
+}
+
