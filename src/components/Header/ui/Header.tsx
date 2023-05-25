@@ -1,50 +1,82 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 import { Logo } from '@/ui/Logo'
 import { DesktopLayout } from './DesktopLayout/DesktopLayout'
+import { MobileLayout } from './MobileLayout/MobileLayout'
 
 import styles from './Header.module.scss'
 
 type HeaderProps = {
-  className?: string
   theme: 'dark' | 'light'
 }
 
-export const Header: FC<HeaderProps> = ({ className, theme }) => {
+export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpened, setMenuOpened] = useState(false)
+  const [headerTheme, setHeaderTheme] = useState(initialTheme)
+  const { width } = useWindowDimensions()
 
   const mods = {
     [styles.scrolled]: scrolled,
-    [styles[theme]]: true,
+    [styles[headerTheme]]: true,
   }
 
-  const handleScroll = () => {
+  const toggleMenu = () => {
+    setMenuOpened((prev) => !prev)
+  }
+
+  const handleScroll = useCallback(() => {
+    if (menuOpened) {
+      return
+    }
     if (window.scrollY > 10) {
       setScrolled(true)
     } else {
       setScrolled(false)
     }
-  }
+  }, [menuOpened])
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.addEventListener('scroll', handleScroll)
-    }
+    window.addEventListener('scroll', handleScroll)
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [handleScroll])
+
+  useEffect(() => {
+    if (menuOpened) {
+      setScrolled(false)
+      setHeaderTheme('dark')
+    }
+
+    if (!menuOpened && window.scrollY > 10) {
+      setScrolled(true)
+    }
+
+    if (!menuOpened) {
+      setHeaderTheme(initialTheme)
+    }
+  }, [menuOpened, initialTheme])
+
+  useEffect(() => {
+    if (width > 1250) setMenuOpened(false)
+  }, [width])
 
   return (
-    <header
-      className={classNames(styles.Header, styles[theme], mods, className)}
-    >
+    <header className={classNames(styles.Header, mods)}>
       <Link href={'/'}>
         <Logo className={styles.logo} />
       </Link>
       <DesktopLayout />
+      <MobileLayout
+        scrolled={scrolled}
+        theme={headerTheme}
+        menuOpened={menuOpened}
+        toggleMenu={toggleMenu}
+      />
     </header>
   )
 }

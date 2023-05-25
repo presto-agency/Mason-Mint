@@ -5,7 +5,7 @@ import styles from '../Header.module.scss'
 
 export const DesktopLayout: FC = () => {
   return (
-    <>
+    <div className={styles.desktopLayout}>
       <nav className={styles.navigation}>
         <Link href={'/about'}>ABOUT US</Link>
         <Link href={'/'}>CUSTOM MINTING</Link>
@@ -14,6 +14,6 @@ export const DesktopLayout: FC = () => {
         <Link href={'/'}>CONTACT US</Link>
       </nav>
       <ButtonBecomeDistriburor />
-    </>
+    </div>
   )
 }

@@ -38,9 +38,39 @@ h5 {
 }
 
 h6 {
-  font: var(--font-h5);
+  font: var(--font-h6);
 }
 
 p {
   font: var(--font-l);
+}
+
+@media (width <= 500px) {
+  html {
+    font-size: 8px;
+  }
+ 
+  h1 {
+    font: var(--font-h1-mob);
+  }
+  
+  h2 {
+    font: var(--font-h2-mob);
+  }
+  
+  h3 {
+    font: var(--font-h3-mob);
+  }
+  
+  h4 {
+    font: var(--font-h4-mob);
+  }
+  
+  h5 {
+    font: var(--font-h5-mob);
+  }
+  
+  h6 {
+    font: var(--font-h6-mob);
+  }
 }

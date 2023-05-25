@@ -11,7 +11,7 @@
       "}",
       "",
       "export const ${1:${3:${TM_DIRECTORY/.*\\/(.*)$/$1/g}}}: FC<${1:${3:${TM_DIRECTORY/.*\\/(.*)$/$1/g}}}Props> = ({ className }) => {",
-      "\treturn <div className={classNames(styles.${1:${3:${TM_DIRECTORY/.*\\/(.*)$/$1/g}}}, {}, [className])}></div>",
+      "\treturn <div className={classNames(styles.${1:${3:${TM_DIRECTORY/.*\\/(.*)$/$1/g}}}, className)}></div>",
       "}",
       ""
     ]

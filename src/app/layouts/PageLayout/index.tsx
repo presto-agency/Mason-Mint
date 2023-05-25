@@ -5,7 +5,6 @@ import { FC, ReactNode } from 'react'
 type PageLayoutProps = {
   children: ReactNode
   headerTheme?: 'light' | 'dark'
-  className?: string
 }
 
 export const PageLayout: FC<PageLayoutProps> = ({

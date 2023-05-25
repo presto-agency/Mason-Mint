@@ -1,4 +1,9 @@
 .Logo {
   width: 200px;
   fill: var(--black);
+
+  @media (width <= 500px) {
+    width: 125px;
+  }
 }
+

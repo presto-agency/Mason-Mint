@@ -2,13 +2,9 @@ import { FC } from 'react'
 import classNames from 'classnames'
 import styles from './HomeContent.module.scss'
 
-type HomeContentProps = {
-  className?: string
-}
-
-export const HomeContent: FC<HomeContentProps> = ({ className }) => {
+export const HomeContent: FC = () => {
   return (
-    <main className={classNames(styles.HomeContent, {}, [className])}>
+    <main className={classNames(styles.HomeContent)}>
       <section id={styles.intro}>
         <h1>
           <span>Excelence</span>
