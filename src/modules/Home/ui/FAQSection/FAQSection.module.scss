@@ -1,0 +1,45 @@
+.FAQSection{
+  display: flex;
+  padding: 10.25rem 4rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  p {
+    padding-top: 1.5rem;
+    color: var(--gray-800);
+  }
+}
+
+.photoContainer {
+  align-self: center;
+  min-width: 192px;
+  min-height: 219px;
+  margin-top: 10.25rem;
+
+
+  &::after {
+    position: absolute;
+    top: -0.5rem;
+    right: -5rem;
+    display: block;
+    color: var(--gray-700);
+    font: var(--font-h6);
+    transform: rotate(90deg);
+    transform-origin: left;
+    content: 'support';
+  }
+}
+
+@media (width <= 768px) {
+  .left {
+    width: 100%;
+
+    .photoContainer{ 
+      display: none;
+    }
+  }
+}

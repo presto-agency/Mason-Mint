@@ -87,3 +87,10 @@
     display: block;
   }
 }
+
+@media (width <= 768px) {
+  .Header {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}

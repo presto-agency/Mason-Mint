@@ -1,0 +1,39 @@
+.FeaturedDesignsSection{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  height: 700px;
+  padding: 0 4rem;
+
+  h6 {
+    color: var(--gray-700);
+  }
+}
+
+.slider{ 
+  width: 100%;
+  height: 300px;
+  background-color: var(--gray-300);
+}
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0 4rem;
+}
+
+@media (width <= 768px) {
+  .FeaturedDesignsSection{
+    padding: 0 3rem;
+  }
+
+  .title {
+    flex-direction: column;
+    gap: 3rem;
+
+    button {
+      width: 100%;
+    }
+  }
+}

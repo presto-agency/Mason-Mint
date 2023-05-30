@@ -28,12 +28,19 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
 
   return (
     <button
-      className={classNames(defaultStyles.Button, mods, className)}
+      className={classNames(
+        defaultStyles.Button,
+        styles.ButtonPrimary,
+        mods,
+        className
+      )}
       disabled={disabled}
       {...buttonProps}
     >
-      {children}
-      <Arrow className={styles.arrow} />
+      <div className={styles.buttonContent}>
+        <span>{children}</span>
+        <Arrow className={styles.arrow} />
+      </div>
     </button>
   )
 }

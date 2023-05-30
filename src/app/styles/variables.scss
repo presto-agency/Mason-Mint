@@ -1,7 +1,7 @@
 :root {
-  --font-family-primary: gambetta;
-
   /* ====================================== TEXT STYLES =========================================== */
+  --font-family-primary: gambetta;
+  --font-family-secondary: suisseintl;
 
   // HEADINGS
   --font-h1: 300 5.5rem / 96% var(--font-family-primary);
@@ -12,33 +12,13 @@
   --font-h6: 500 1rem / 96% var(--font-family-primary);
 
   // BODY
-  --font-l: 400 1rem / 155% var(--font-family-primary);
-  --font-s: 400 0.75rem / 155% var(--font-family-primary);
+  --font-l: 400 1rem / 155% var(--font-family-secondary);
+  --font-s: 400 0.75rem / 155% var(--font-family-secondary);
 
   // OTHER
   --font-button-l: 500 1rem var(--font-family-primary);
   --font-button-m: 500 0.938rem var(--font-family-primary);
   --font-link: 500 0.75rem var(--font-family-primary);
-
-  /* ========== MOBILE ========== */
-
-  // HEADINGS
-  --font-h1-mob: 300 6.875rem / 96% var(--font-family-primary);
-  --font-h2-mob: 500 4.75rem / 115% var(--font-family-primary);
-  --font-h3-mob: 500 3.25rem / 114% var(--font-family-primary);
-  --font-h4-mob: 500 2.5rem / 120% var(--font-family-primary);
-  --font-h5-mob: 500 2rem / 120% var(--font-family-primary);
-  --font-h6-mob: 500 1.75rem / 96% var(--font-family-primary);
-
-  // BODY
-  --font-l-mob: 400 1.75rem / 155% var(--font-family-primary);
-  --font-s-mob: 400 1.5rem / 155% var(--font-family-primary);
-
-  // OTHER
-  --font-button-l-mob: 500 1.75rem var(--font-family-primary);
-  --font-button-m-mob: 500 1.625rem var(--font-family-primary);
-  --font-link-mob: 500 1.625rem var(--font-family-primary);
-
 
   /* ====================================== COLORS =========================================== */
 
@@ -58,4 +38,25 @@
   /* ====================================== SIZINGS =========================================== */
 
   --header-height: 100px;
+}
+
+
+@media (width <= 768px)  {
+  :root {
+    --font-h1: 300 6.875rem / 96% var(--font-family-primary);
+    --font-h2: 500 4.75rem / 115% var(--font-family-primary);
+    --font-h3: 500 3.25rem / 114% var(--font-family-primary);
+    --font-h4: 500 2.5rem / 120% var(--font-family-primary);
+    --font-h5: 500 2rem / 120% var(--font-family-primary);
+    --font-h6: 500 1.75rem / 96% var(--font-family-primary);
+  
+    // BODY
+    --font-l: 400 1.75rem / 155% var(--font-family-secondary);
+    --font-s: 400 1.5rem / 155% var(--font-family-secondary);
+  
+    // OTHER
+    --font-button-l: 500 1.75rem var(--font-family-primary);
+    --font-button-m: 500 1.625rem var(--font-family-primary);
+    --font-link: 500 1.625rem var(--font-family-primary);
+  }
 }

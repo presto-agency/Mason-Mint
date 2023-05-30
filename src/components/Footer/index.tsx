@@ -70,7 +70,7 @@ const NavigationBlock = () => {
 
 export const Footer: FC = () => {
   return (
-    <footer className={classNames(styles.Footer)}>
+    <footer className={styles.Footer}>
       <div className={styles.top}>
         <LogoBlock />
         <InfoBlock />

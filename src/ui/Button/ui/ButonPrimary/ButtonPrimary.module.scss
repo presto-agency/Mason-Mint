@@ -1,3 +1,14 @@
+.ButtonPrimary {
+  padding: 12px 24px 12px 32px;
+}
+
+.buttonContent {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
 .white {
   color: var(--black);
   background-color: var(--white);
@@ -28,7 +39,9 @@
 
 .mini {
   gap: 16px;
+  padding: 0;
   color: var(--primary-color);
+  background: none;
 
   .arrow {
     stroke: var(--primary-color);
