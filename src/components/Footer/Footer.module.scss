@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  padding: 0 3rem;
+  padding: 0 4.8rem;
   background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 32%) 93.75%);
   background-color: var(--black);
 }
@@ -15,7 +15,7 @@
     "info nav"; 
   grid-template-rows: 1fr 1fr; 
   grid-template-columns: 1fr 1fr; 
-  gap: 2.5rem;
+  gap: 3.6rem;
   width: 100%; 
   padding: 5rem 0;
 }
@@ -36,13 +36,13 @@
   display: flex;
   flex-direction: column;
   grid-area: info;
-  gap: 1.5rem; 
+  gap: 2.4rem; 
   color: var(--gray-700); 
   font: var(--font-h4);
 
   .infoField {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.4rem;
     align-items: center;
   }
 }
@@ -50,19 +50,19 @@
 .navBlock { 
   display: flex; 
   grid-area: nav;
-  gap: 6.5rem; 
+  gap: 10.4rem; 
   justify-content: flex-end; 
 }
 
 .navBlockLeft{
   display: flex;
-  gap: 6.5rem;
+  gap: 10.4rem;
 }
 
 .navList {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2.4rem;
 }
 
 .navTitle {
@@ -73,7 +73,7 @@
 .navItems{
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3.2rem;
 
   a {
     color: var(--white);
@@ -87,7 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 3.2rem 0;
   color: var(--gray-800);
   font: var(--font-s);
   border-top: 1px solid var(--gray-800);
@@ -98,7 +98,7 @@
   }
 
   .presto {
-    margin: 0 1rem;
+    margin: 0 1.6rem;
   }
 
   h6 {
@@ -120,9 +120,9 @@
 
   .navBlock {
     flex-direction: column;
-    gap: 3rem;
+    gap: 4.8rem;
     justify-content: flex-start;
-    padding: 2.5rem 0 4rem;
+    padding: 3.6rem 0 6.4rem;
   } 
 
   .navBlockLeft {
@@ -133,29 +133,41 @@
   .socials{
     display: flex;
     flex-direction: row;
-    gap: 6.5rem;
+    gap: 10.4rem;
   }
 }
 
 @media (width <= 768px) {
+  .Footer {
+    padding: 0 2.4rem;
+  }
+
   .navBlock {
-    gap: 6rem;
-    padding: 5rem 0 8rem;
+    gap: 4.8rem;
+    padding: 4rem 0 6.4rem;
+  }
+
+  .navBlockLeft {
+    gap: 5.2rem;
   }
 
   .navList {
-    gap: 3rem;
+    gap: 2.4rem;
   }
 
   .navItems {
-    gap: 4rem;
+    gap: 3.2rem;
+  }
+
+  .socials {
+    gap: 5.2rem;
   }
 
 
   .bottom {
     flex-direction: column;
-    gap: 3rem;
-    padding: 3rem 0;
+    gap: 2.4rem;
+    padding: 2.4rem 0;
     text-align: center;
   }
 }

@@ -6,30 +6,58 @@ export default function Document() {
       <Head>
         <link
           rel="preload"
-          href="/fonts/Gambetta-Light.ttf"
+          href="/fonts/Gambetta-Light.woff"
           as="font"
-          type="font/ttf"
+          type="font/woff"
           crossOrigin=""
         />
         <link
           rel="preload"
-          href="/fonts/Gambetta-Regular.ttf"
+          href="/fonts/Gambetta-Regular.woff"
           as="font"
-          type="font/ttf"
+          type="font/woff"
           crossOrigin=""
         />
         <link
           rel="preload"
-          href="/fonts/Gambetta-Medium.ttf"
+          href="/fonts/Gambetta-Medium.woff"
           as="font"
-          type="font/ttf"
+          type="font/woff"
           crossOrigin=""
         />
         <link
           rel="preload"
-          href="/fonts/SuisseIntl-Regular.ttf"
+          href="/fonts/SuisseIntl-Regular.woff"
           as="font"
-          type="font/ttf"
+          type="font/woff"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Gambetta-Light.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Gambetta-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/Gambetta-Medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin=""
+        />
+        <link
+          rel="preload"
+          href="/fonts/SuisseIntl-Regular.woff2"
+          as="font"
+          type="font/woff2"
           crossOrigin=""
         />
       </Head>

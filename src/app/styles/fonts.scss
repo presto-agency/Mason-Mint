@@ -1,27 +1,5 @@
-@font-face {
-  font-weight: 300;
-  font-family: Gambetta;
-  font-display: swap;
-  src: url("/fonts/Gambetta-Light.ttf");
-}
+@include font("Gambetta", "Gambetta-Light", "300", "normal");
+@include font("Gambetta", "Gambetta-Regular", "400", "normal");
+@include font("Gambetta", "Gambetta-Medium", "500", "normal");
+@include font("SuisseIntl", "SuisseIntl-Regular", "400", "normal");
 
-@font-face {
-  font-weight: 400;
-  font-family: Gambetta;
-  font-display: swap;
-  src: url("/fonts/Gambetta-Regular.ttf");
-}
-
-@font-face {
-  font-weight: 500;
-  font-family: Gambetta;
-  font-display: swap;
-  src: url("/fonts/Gambetta-Medium.ttf");
-}
-
-@font-face {
-  font-weight: 400;
-  font-family: SuisseIntl;
-  font-display: swap;
-  src: url("/fonts/SuisseIntl-Regular.ttf");
-}
