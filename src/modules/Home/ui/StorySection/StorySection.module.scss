@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10.25rem 4rem;
+  padding: 16.4rem 6.4rem;
 
   p {
     color: var(--gray-800);
@@ -11,20 +11,20 @@
   .left {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.4rem;
     width: 50%;
 
     .photoContainer {
       // position: relative;
       align-self: flex-end;
       width: 80%;
-      margin-top: 10.25rem;
+      margin-top: 16.4rem;
       aspect-ratio: 18/23;
 
       &::before {
         position: absolute;
         top: -0.5rem;
-        left: -1.5rem;
+        left: -2.4rem;
         z-index: 1;
         display: block;
         color: var(--gray-700);
@@ -43,8 +43,8 @@
     .text {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      padding: 2rem 0 2.5rem;
+      gap: 1.6rem;
+      padding: 3.2rem 0 4rem;
     }
 
     .photoContainer {
@@ -56,10 +56,11 @@
 @media (width <= 768px) {
   #story {
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.2rem;
+    padding: 8rem 2.4rem;
 
     .left {
-      gap: 2rem;
+      gap: 1.6rem;
       width: 100%;
 
       .photoContainer {
@@ -72,8 +73,8 @@
       width: 100%;
       
       .text {
-        gap: 2rem;
-        padding: 2rem 0 4rem;
+        gap: 1.6rem;
+        padding: 1.6rem 0 3.2rem;
       }
 
       button {

@@ -1,10 +1,10 @@
 .FeaturedDesignsSection{
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.6rem;
   justify-content: center;
   height: 700px;
-  padding: 0 4rem;
+  padding: 0 6.4rem;
 
   h6 {
     color: var(--gray-700);
@@ -20,17 +20,17 @@
 .title{
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 0 4rem;
+  padding: 2.4rem 0 6.4rem;
 }
 
 @media (width <= 768px) {
   .FeaturedDesignsSection{
-    padding: 0 3rem;
+    padding: 0 2.4rem;
   }
 
   .title {
     flex-direction: column;
-    gap: 3rem;
+    gap: 2.4rem;
 
     button {
       width: 100%;

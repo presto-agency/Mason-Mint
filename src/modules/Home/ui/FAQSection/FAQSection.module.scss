@@ -1,6 +1,6 @@
 .FAQSection{
   display: flex;
-  padding: 10.25rem 4rem;
+  padding: 16.4em 6.4rem;
 }
 
 .left {
@@ -9,7 +9,7 @@
   width: 50%;
 
   p {
-    padding-top: 1.5rem;
+    padding-top: 2.4rem;
     color: var(--gray-800);
   }
 }
@@ -35,6 +35,10 @@
 }
 
 @media (width <= 768px) {
+  .FAQSection{
+    padding: 8rem 2.4rem;
+  }
+
   .left {
     width: 100%;
 

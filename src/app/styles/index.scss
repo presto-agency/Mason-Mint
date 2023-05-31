@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   height: 100%;
   font-family: var(--font-family-primary);
@@ -44,10 +48,4 @@ h6 {
 
 p {
   font: var(--font-l);
-}
-
-@media (width <= 768px) {
-  html {
-    font-size: 8px;
-  }
 }
