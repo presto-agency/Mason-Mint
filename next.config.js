@@ -16,7 +16,7 @@ const hashOnlyIdent = (context, _, exportName) =>
       ),
       "md4",
       "base64",
-      6
+      8
     )
     .replace(/[^a-zA-Z0-9-_]/g, "_")
     .replace(/^(-?\d|--)/, "_$1");
@@ -30,20 +30,22 @@ const nextConfig = {
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
     })
-    const rules = config.module.rules
-      .find((rule) => typeof rule.oneOf === "object")
-      .oneOf.filter((rule) => Array.isArray(rule.use));
 
-    if (!dev)
-      rules.forEach((rule) => {
-        rule.use.forEach((moduleLoader) => {
-          if (
-            moduleLoader.loader?.includes("css-loader") &&
-            !moduleLoader.loader?.includes("postcss-loader")
-          )
-            moduleLoader.options.modules.getLocalIdent = hashOnlyIdent;
-        });
-      });
+    //TO DO HASHING FOR PROD
+    // const rules = config.module.rules
+    //   .find((rule) => typeof rule.oneOf === "object")
+    //   .oneOf.filter((rule) => Array.isArray(rule.use));
+
+    // if (!dev)
+    //   rules.forEach((rule) => {
+    //     rule.use.forEach((moduleLoader) => {
+    //       if (
+    //         moduleLoader.loader?.includes("css-loader") &&
+    //         !moduleLoader.loader?.includes("postcss-loader")
+    //       )
+    //         moduleLoader.options.modules.getLocalIdent = hashOnlyIdent;
+    //     });
+    //   });
     config.plugins.push(new DuplicatePackageCheckerPlugin())
     return config
   },
