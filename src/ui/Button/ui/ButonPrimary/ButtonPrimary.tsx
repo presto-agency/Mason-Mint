@@ -2,7 +2,6 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react'
 import classNames from 'classnames'
 import Arrow from '../../../../../public/icons/arrow.svg'
 
-import defaultStyles from '../Button.module.scss'
 import styles from './ButtonPrimary.module.scss'
 
 type ButtonPrimaryVariants = 'white' | 'outlined' | 'blue' | 'mini'
@@ -28,12 +27,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
 
   return (
     <button
-      className={classNames(
-        defaultStyles.Button,
-        styles.ButtonPrimary,
-        mods,
-        className
-      )}
+      className={classNames(styles.ButtonPrimary, mods, className)}
       disabled={disabled}
       {...buttonProps}
     >

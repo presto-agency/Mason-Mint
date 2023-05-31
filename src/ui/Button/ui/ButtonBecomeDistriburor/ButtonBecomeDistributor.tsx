@@ -1,7 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react'
 import classNames from 'classnames'
 
-import defaultStyles from '../Button.module.scss'
 import styles from './ButtonBecomDistributor.module.scss'
 
 type ButtonBecomeDistriburorProps = {
@@ -18,11 +17,7 @@ export const ButtonBecomeDistriburor: FC<ButtonBecomeDistriburorProps> = ({
 }) => {
   return (
     <button
-      className={classNames(
-        defaultStyles.Button,
-        styles.becomeDistributor,
-        className
-      )}
+      className={classNames(styles.becomeDistributor, className)}
       disabled={disabled}
       {...buttonProps}
     >

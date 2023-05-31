@@ -13,6 +13,20 @@ a {
   text-decoration: none;
 }
 
+button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 12px 24px;
+  font: var(--font-button-l);
+  white-space: nowrap;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+}
+
 html {
   font-size: 10px;
 }
