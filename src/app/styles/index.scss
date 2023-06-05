@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+.root{
+  padding: 0 0 132px;
+}
+
 button {
   display: flex;
   gap: 12px;
@@ -29,12 +33,17 @@ button {
 }
 
 html {
-  font-size: 10px;
+  font-size: calc(100vw / 1440 * 10);
+
+  @media (width <= 767px) {
+    font-size: calc(100vw / 360 * 10);
+  }
 }
 
 body {
   height: 100%;
   font-family: var(--font-family-primary);
+  background-color: var(--black);
 }
 
 h1 {

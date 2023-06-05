@@ -63,7 +63,6 @@
   }
 }
 
-
 .scrolled {
   height: auto;
   padding: 1.2rem 6.4rem;
@@ -79,7 +78,7 @@
   }
 }
 
-@media (width <= 1250px) {
+@media (width <= 1024px) {
   .desktopLayout {
     display: none;
   }

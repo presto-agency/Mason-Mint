@@ -4,7 +4,8 @@ import { HomeContent } from '@/modules/Home'
 export default function Home() {
   return (
     <PageLayout headerTheme="dark">
-      <HomeContent />
+      {/*<HomeContent />*/}
+      <div className="root"></div>
     </PageLayout>
   )
 }
