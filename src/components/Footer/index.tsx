@@ -71,16 +71,22 @@ const NavigationBlock = () => {
 export const Footer: FC = () => {
   return (
     <footer className={styles.Footer}>
-      <div className={styles.top}>
-        <LogoBlock />
-        <InfoBlock />
-        <NavigationBlock />
-      </div>
-      <div className={styles.bottom}>
-        <div className={styles.madeBy}>
-          Made by <PrestoLogo className={styles.presto} /> Studiopresto
+      <div className="base-container">
+        <div className={styles.Footer__content}>
+          <div className={styles.top}>
+            <LogoBlock />
+            <InfoBlock />
+            <NavigationBlock />
+          </div>
+          <div className={styles.bottom}>
+            <div className={styles.madeBy}>
+              Made by <PrestoLogo className={styles.presto} /> Studiopresto
+            </div>
+            <div>
+              2023 Mason Mint excellence in minting. All rights reserved.
+            </div>
+          </div>
         </div>
-        <div>2023 Mason Mint excellence in minting. All rights reserved.</div>
       </div>
     </footer>
   )

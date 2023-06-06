@@ -1,12 +1,8 @@
 .Header {
   position: fixed;
   z-index: 2;
-  display: flex;
-  gap: 3.6rem;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  padding: 3.2rem 6.4rem;
+  padding: 3.2rem 0;
   background: transparent;
   transition: padding .3s ease-out;
 
@@ -16,6 +12,13 @@
 
   .logo {
     fill: var(--white);
+  }
+
+  &__content{
+    display: flex;
+    gap: 3.6rem;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -85,12 +88,5 @@
 
   .mobileLayout {
     display: block;
-  }
-}
-
-@media (width <= 768px) {
-  .Header {
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
   }
 }

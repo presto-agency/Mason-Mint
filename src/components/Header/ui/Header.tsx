@@ -67,16 +67,20 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <header className={classNames(styles.Header, mods)}>
-      <Link href={'/'}>
-        <Logo className={styles.logo} />
-      </Link>
-      <DesktopLayout />
-      <MobileLayout
-        scrolled={scrolled}
-        theme={headerTheme}
-        menuOpened={menuOpened}
-        toggleMenu={toggleMenu}
-      />
+      <div className="base-container">
+        <div className={styles.Header__content}>
+          <Link href={'/'}>
+            <Logo className={styles.logo} />
+          </Link>
+          <DesktopLayout />
+          <MobileLayout
+            scrolled={scrolled}
+            theme={headerTheme}
+            menuOpened={menuOpened}
+            toggleMenu={toggleMenu}
+          />
+        </div>
+      </div>
     </header>
   )
 }

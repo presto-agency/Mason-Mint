@@ -1,11 +1,13 @@
 .Footer{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: 100%;
-  padding: 0 4.8rem;
   background-color: var(--black);
   background-image: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 32%) 93.75%);
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .top {
@@ -108,10 +110,6 @@
 
 
 @media (width <= 768px) {
-  .Footer {
-    padding: 0 2.4rem;
-  }
-
   .top {
     grid-template-areas:
       "logo"
@@ -152,7 +150,6 @@
   .bottom {
     flex-direction: column;
     gap: 2.4rem;
-    padding: 2.4rem 0;
     text-align: center;
   }
 }

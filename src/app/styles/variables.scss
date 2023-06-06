@@ -1,4 +1,9 @@
 :root {
+  /* ====================================== BREAKPOINTS=========================================== */
+  --breakpoint-mob: 767px;
+  --breakpoint-tablet: 1023px;
+  --breakpoint-desktop: 1199px;
+
   /* ====================================== TEXT STYLES =========================================== */
   --font-family-primary: gambetta;
   --font-family-secondary: suisseintl;
@@ -41,7 +46,7 @@
 }
 
 
-@media (width <= 768px)  {
+@media (width <= var(--breakpoint-mob))  {
   :root {
     --font-h1: 300 5.2rem / 96% var(--font-family-primary);
     --font-h2: 500 3.8rem / 115% var(--font-family-primary);
