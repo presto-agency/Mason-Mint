@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { ButtonBecomeDistriburor } from '@/ui/Button'
+import { ButtonBecomeDistributor } from '@/ui/Button'
 import styles from '../Header.module.scss'
 
 export const DesktopLayout: FC = () => {
@@ -23,7 +23,7 @@ export const DesktopLayout: FC = () => {
           CONTACT US
         </Link>
       </nav>
-      <ButtonBecomeDistriburor />
+      <ButtonBecomeDistributor />
     </div>
   )
 }

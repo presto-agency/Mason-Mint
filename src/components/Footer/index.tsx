@@ -7,7 +7,7 @@ import Arrow from '../../../public/icons/arrow.svg'
 import PrestoLogo from '../../../public/icons/presto-logo.svg'
 
 import styles from './Footer.module.scss'
-import { Container } from '@/app/layouts/Container'
+import Container from '@/app/layouts/Container'
 
 const LogoBlock = () => {
   return (

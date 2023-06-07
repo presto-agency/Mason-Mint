@@ -1,11 +1,10 @@
-@import "./src/app/styles/variables";
+@import "@/app/styles/variables";
 
 .header {
   position: fixed;
   z-index: 2;
   width: 100%;
   padding: 32rem 0;
-  background: transparent;
   transition: padding .3s ease-out;
 
   &.dark {

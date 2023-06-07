@@ -2,13 +2,12 @@ import { FC, useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
-
 import { Logo } from '@/ui/Logo'
 import { DesktopLayout } from './DesktopLayout/DesktopLayout'
 import { MobileLayout } from './MobileLayout/MobileLayout'
+import Container from '@/app/layouts/Container'
 
 import styles from './Header.module.scss'
-import { Container } from '@/app/layouts/Container'
 
 type HeaderProps = {
   theme: 'dark' | 'light'

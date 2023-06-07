@@ -3,14 +3,14 @@ import classNames from 'classnames'
 
 import styles from './ButtonBecomDistributor.module.scss'
 
-type ButtonBecomeDistriburorProps = {
+type ButtonBecomeDistributorProps = {
   className?: string
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >
 
-export const ButtonBecomeDistriburor: FC<ButtonBecomeDistriburorProps> = ({
+export const ButtonBecomeDistributor: FC<ButtonBecomeDistributorProps> = ({
   className,
   disabled,
   ...buttonProps
