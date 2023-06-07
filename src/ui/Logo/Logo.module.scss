@@ -1,9 +1,11 @@
-.Logo {
-  width: 200px;
-  fill: var(--black);
+@import "./src/app/styles/variables";
 
-  @media (width <= 500px) {
-    width: 125px;
+.Logo {
+  width: 20rem;
+  fill: $black;
+
+  @media (width <= $breakpoint-mob) {
+    width: 12.5rem;
   }
 }
 

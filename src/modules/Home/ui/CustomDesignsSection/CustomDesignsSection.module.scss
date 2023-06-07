@@ -1,7 +1,9 @@
+@import "./src/app/styles/variables";
+
 .CustomDesignsSection {
   position: relative;
   height: 700px;
-  color: var(--white);
+  color: $white;
 }
 
 .backgroundPhoto{
@@ -27,7 +29,7 @@
   padding-left: 14.4rem;
 
   h6 {
-    color: var(--gray-700);
+    color: $gray-700;
   }
 
   h2 {
@@ -35,7 +37,7 @@
   }
 
   p{
-    color: var(--gray-400);
+    color: $gray-400;
   }
 
   button {
@@ -43,7 +45,7 @@
   }
 }
 
-@media (width <= 768px) {
+@media (width <= $breakpoint-mob) {
   .CustomDesignsSection {
     padding-top: 1.6rem;
   }

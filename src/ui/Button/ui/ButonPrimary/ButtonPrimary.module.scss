@@ -1,50 +1,51 @@
+@import "./src/app/styles/variables";
+
 .ButtonPrimary {
-  padding: 12px 24px 12px 32px;
+  padding: 1.2rem 2.4rem 1.2rem 3.2rem;
 }
 
 .buttonContent {
   display: flex;
-  gap: 12px;
+  gap: 1.2rem;
   align-items: center;
   justify-content: center;
 }
 
 .white {
-  color: var(--black);
-  background-color: var(--white);
-  border: 1px solid var(--black);
+  color: $black;
+  background-color: $white;
+  border: 1px solid $black;
 }
 
 .outlined {
-  color: var(--black);
+  color: $black;
   background: transparent;
-  border: 1px solid var(--black);
+  border: 1px solid $black;
 }
 
 .white, .outlined {
   .arrow {
-    stroke: var(--black);
+    stroke: $black;
   }
 }
 
-
 .blue {
-  color: var(--white);
-  background-color: var(--primary-color);
+  color: $white;
+  background-color: $primary-color;
 
   .arrow {
-    stroke: var(--white);
+    stroke: $white;
   }
 }
 
 .mini {
-  gap: 16px;
+  gap: 1.6rem;
   padding: 0;
-  color: var(--primary-color);
+  color: $primary-color;
   background: none;
 
   .arrow {
-    stroke: var(--primary-color);
+    stroke: $primary-color;
   }
 }
 

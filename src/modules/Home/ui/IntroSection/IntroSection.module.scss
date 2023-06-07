@@ -1,3 +1,5 @@
+@import "./src/app/styles/variables";
+
 #intro {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
   width: 100%;
   min-height: 100vh;
   padding: 150px 6.4rem 4.8rem;
-  background-color: var(--black);
+  background-color: $black;
 
   .top {
     position: relative;
@@ -22,8 +24,8 @@
       right: 0;
       bottom: 0;
       margin-bottom: 9.6rem;
-      color: var(--gray-700);
-      font: var(--font-h6);
+      color: $gray-700;
+      font: $font-h6;
       transform: rotate(90deg);
       content: 'welcome';
     }
@@ -39,20 +41,20 @@
 
     p {
       width: 40%;
-      color: var(--gray-500);
-      font: var(--font-l);
+      color: $gray-500;
+      font: $font-l;
     }
   }
 
   h1 {
     width: fit-content;
     max-width: 500px;
-    color: var(--white);
+    color: $white;
   }
 }
 
 
-@media (width <= 768px) {
+@media (width <= $breakpoint-mob) {
   #intro {
     padding: 150px 2.4rem 2.4rem;
 

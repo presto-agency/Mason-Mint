@@ -1,67 +1,64 @@
-:root {
   /* ====================================== BREAKPOINTS=========================================== */
-  --breakpoint-mob: 767px;
-  --breakpoint-tablet: 1023px;
-  --breakpoint-desktop: 1199px;
+  $breakpoint-mob: 767px;
+  $breakpoint-tablet: 1023px;
+  $breakpoint-desktop: 1199px;
 
   /* ====================================== TEXT STYLES =========================================== */
-  --font-family-primary: gambetta;
-  --font-family-secondary: suisseintl;
+
+  $font-family-primary: gambetta;
+  $font-family-secondary: suisseintl;
 
   // HEADINGS
-  --font-h1: 300 8.8rem / 96% var(--font-family-primary);
-  --font-h2: 500 5.8rem / 104% var(--font-family-primary);
-  --font-h3: 500 4rem / 114% var(--font-family-primary);
-  --font-h4: 500 2.4rem / 115% var(--font-family-primary);
-  --font-h5: 500 1.9rem / 115% var(--font-family-primary);
-  --font-h6: 500 1.6rem / 96% var(--font-family-primary);
+  $font-h1: 300 8.8rem / 96% $font-family-primary;
+  $font-h2: 500 5.8rem / 104% $font-family-primary;
+  $font-h3: 500 4rem / 114% $font-family-primary;
+  $font-h4: 500 2.4rem / 115% $font-family-primary;
+  $font-h5: 500 1.9rem / 115% $font-family-primary;
+  $font-h6: 500 1.6rem / 96% $font-family-primary;
 
   // BODY
-  --font-l: 400 1.6rem / 155% var(--font-family-secondary);
-  --font-s: 400 1.2rem / 155% var(--font-family-secondary);
+  $font-l: 400 1.6rem / 155% $font-family-secondary;
+  $font-s: 400 1.2rem / 155% $font-family-secondary;
 
   // OTHER
-  --font-button-l: 500 1.6rem var(--font-family-primary);
-  --font-button-m: 500 1.5rem var(--font-family-primary);
-  --font-link: 500 1.2rem var(--font-family-primary);
+  $font-button-l: 500 1.6rem $font-family-primary;
+  $font-button-m: 500 1.5rem $font-family-primary;
+  $font-link: 500 1.2rem $font-family-primary;
 
   /* ====================================== COLORS =========================================== */
 
-  --primary-color: #266ef9;
-  --white: #fff;
-  --gray-300: #ecedf2;
-  --gray-400: #e5e9eb;
-  --gray-500: #d4dadd;
-  --gray-600: #c2cacf;
-  --gray-700: #9aa6af;
-  --gray-800: #6d7378;
-  --black: #24282c;
-  --error: #ff5c5c;
-  --success: #21d184;
-  --link: #3870ff;
+  $primary-color: #266ef9;
+  $white: #fff;
+  $gray-300: #ecedf2;
+  $gray-400: #e5e9eb;
+  $gray-500: #d4dadd;
+  $gray-600: #c2cacf;
+  $gray-700: #9aa6af;
+  $gray-800: #6d7378;
+  $black: #24282c;
+  $error: #ff5c5c;
+  $success: #21d184;
+  $link: #3870ff;
 
   /* ====================================== SIZINGS =========================================== */
 
-  --header-height: 100px;
-}
+  $header-height: 100px;
 
 
-@media (width <= var(--breakpoint-mob))  {
-  :root {
-    --font-h1: 300 5.2rem / 96% var(--font-family-primary);
-    --font-h2: 500 3.8rem / 115% var(--font-family-primary);
-    --font-h3: 500 2.6rem / 114% var(--font-family-primary);
-    --font-h4: 500 2rem / 120% var(--font-family-primary);
-    --font-h5: 500 1.6rem / 120% var(--font-family-primary);
-    --font-h6: 500 1.4rem / 96% var(--font-family-primary);
+@media (width <= $breakpoint-mob)  {
+    $font-h1: 300 5.2rem / 96% $font-family-primary;
+    $font-h2: 500 3.8rem / 115% $font-family-primary;
+    $font-h3: 500 2.6rem / 114% $font-family-primary;
+    $font-h4: 500 2rem / 120% $font-family-primary;
+    $font-h5: 500 1.6rem / 120% $font-family-primary;
+    $font-h6: 500 1.4rem / 96% $font-family-primary;
   
     // BODY
-    --font-l: 400 1.4rem / 155% var(--font-family-secondary);
-    --font-s: 400 1.2rem / 155% var(--font-family-secondary);
+    $font-l: 400 1.4rem / 155% $font-family-secondary;
+    $font-s: 400 1.2rem / 155% $font-family-secondary;
   
     // OTHER
-    --font-button-l: 500 1.4rem var(--font-family-primary);
-    --font-button-m: 500 1.3rem var(--font-family-primary);
-    --font-link: 500 1.3rem var(--font-family-primary);
+    $font-button-l: 500 1.4rem $font-family-primary;
+    $font-button-m: 500 1.3rem $font-family-primary;
+    $font-link: 500 1.3rem $font-family-primary;
   }
-}

@@ -1,6 +1,8 @@
+@import "./src/app/styles/variables";
+
 .BackgroundImageContainer {
   position: relative;
-  background-color: var(--gray-400);
+  background-color: $gray-400;
 
   img {
     position: absolute;

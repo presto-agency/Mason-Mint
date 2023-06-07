@@ -1,3 +1,5 @@
+@import "variables";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,48 +12,44 @@ html {
   @media (width <= 767px) {
     font-size: calc(100vw / 360 * 10);
   }
-
-  @media (width >= 1440px) {
-    font-size: 10px;
-  }
 }
 
 body {
   height: 100%;
-  font-family: var(--font-family-primary);
-  background-color: var(--black);
+  font-family: $font-family-primary;
+  background-color: $black;
 }
 
 h1 {
-  font: var(--font-h1);
+  font: $font-h1;
 }
 
 h2 {
-  font: var(--font-h2);
+  font: $font-h2;
 }
 
 h3 {
-  font: var(--font-h3);
+  font: $font-h3;
 }
 
 h4 {
-  font: var(--font-h4);
+  font: $font-h4;
 }
 
 h5 {
-  font: var(--font-h5);
+  font: $font-h5;
 }
 
 h6 {
-  font: var(--font-h6);
+  font: $font-h6;
 }
 
 p {
-  font: var(--font-l);
+  font: $font-l;
 }
 
 a {
-  color: var(--black);
+  color: $black;
   text-decoration: none;
 }
 
@@ -67,7 +65,7 @@ button {
   width: fit-content;
   height: fit-content;
   padding: 12px 24px;
-  font: var(--font-button-l);
+  font: $font-button-l;
   white-space: nowrap;
   text-transform: uppercase;
   border: none;
@@ -79,7 +77,7 @@ button {
   margin: 0 auto;
   padding: 0 6.4rem;
 
-  @media (width <= 767px) {
+  @media (width <= $breakpoint-mob) {
     padding: 0 2.4rem;
   }
 }

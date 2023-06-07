@@ -6,16 +6,6 @@ module.exports = {
   ],
   theme: {
     extend: {},
-    container: {
-      // screens: {
-      //   xl: '144rem',
-      // },
-      center: true,
-      padding: {
-        DEFAULT: '2.4rem',
-        md: '6.4rem',
-      },
-    },
   },
   plugins: [],
 }

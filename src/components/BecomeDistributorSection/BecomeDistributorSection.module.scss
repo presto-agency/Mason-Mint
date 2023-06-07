@@ -1,3 +1,5 @@
+@import "./src/app/styles/variables";
+
 .BecomeDistributorSection{
   display: flex;
   flex-direction: column;
@@ -6,18 +8,18 @@
   height: 545px;
   margin: 0 3.6rem;
   padding: 0 3.2rem;
-  color: var(--white);
+  color: $white;
   text-align: center;
   background-color:#637392;
 
   p {
     max-width: 60%;
     padding: 2.4rem 0 4rem;
-    color: var(--gray-300);
+    color: $gray-300;
   }
 }
 
-@media (width <= 768px) {
+@media (width <= $breakpoint-mob) {
   .BecomeDistributorSection{
     margin: 0 0.8rem;
 
