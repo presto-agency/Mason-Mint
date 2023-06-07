@@ -3,14 +3,14 @@
 .Burger {
   display: flex;
   flex-direction: column;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 25rem;
+  height: 25rem;
   cursor: pointer;
 
   span {
     display: block;
-    height: 0.3rem;
-    margin-top: 0.5rem;
+    height: 3rem;
+    margin-top: 5rem;
     background: $white;
     border-radius: 100px;
     transition: 0.2s ease;

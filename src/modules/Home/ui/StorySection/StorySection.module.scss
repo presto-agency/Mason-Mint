@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16.4rem 6.4rem;
+  padding: 164rem 64rem;
 
   p {
     color: $gray-800;
@@ -13,19 +13,19 @@
   .left {
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 24rem;
     width: 50%;
 
     .photoContainer {
       align-self: flex-end;
       width: 80%;
-      margin-top: 16.4rem;
+      margin-top: 164rem;
       aspect-ratio: 18/23;
 
       &::before {
         position: absolute;
-        top: -0.5rem;
-        left: -2.4rem;
+        top: -5rem;
+        left: -24rem;
         z-index: 1;
         display: block;
         color: $gray-700;
@@ -44,8 +44,8 @@
     .text {
       display: flex;
       flex-direction: column;
-      gap: 1.6rem;
-      padding: 3.2rem 0 4rem;
+      gap: 16rem;
+      padding: 32rem 0 40rem;
     }
 
     .photoContainer {
@@ -57,11 +57,11 @@
 @media (width <= $breakpoint-mob) {
   #story {
     flex-direction: column;
-    gap: 3.2rem;
-    padding: 8rem 2.4rem;
+    gap: 32rem;
+    padding: 8rem 24rem;
 
     .left {
-      gap: 1.6rem;
+      gap: 16rem;
       width: 100%;
 
       .photoContainer {
@@ -74,8 +74,8 @@
       width: 100%;
       
       .text {
-        gap: 1.6rem;
-        padding: 1.6rem 0 3.2rem;
+        gap: 16rem;
+        padding: 16rem 0 32rem;
       }
 
       button {

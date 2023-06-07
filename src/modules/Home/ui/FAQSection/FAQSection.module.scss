@@ -2,7 +2,7 @@
 
 .FAQSection{
   display: flex;
-  padding: 16.4em 6.4rem;
+  padding: 164em 64rem;
 }
 
 .left {
@@ -11,7 +11,7 @@
   width: 50%;
 
   p {
-    padding-top: 2.4rem;
+    padding-top: 24rem;
     color: $gray-800;
   }
 }
@@ -20,13 +20,13 @@
   align-self: center;
   min-width: 192px;
   min-height: 219px;
-  margin-top: 10.25rem;
+  margin-top: 102.5rem;
 
 
   &::after {
     position: absolute;
-    top: -0.5rem;
-    right: -8rem;
+    top: -5rem;
+    right: -80rem;
     display: block;
     color: $gray-700;
     font: $font-h6;
@@ -38,7 +38,7 @@
 
 @media (width <= $breakpoint-mob) {
   .FAQSection{
-    padding: 8rem 2.4rem;
+    padding: 80rem 24rem;
   }
 
   .left {

@@ -1,12 +1,12 @@
 @import "./src/app/styles/variables";
 
 .ButtonPrimary {
-  padding: 1.2rem 2.4rem 1.2rem 3.2rem;
+  padding: 12rem 24rem 12rem 32rem;
 }
 
 .buttonContent {
   display: flex;
-  gap: 1.2rem;
+  gap: 12rem;
   align-items: center;
   justify-content: center;
 }
@@ -39,7 +39,7 @@
 }
 
 .mini {
-  gap: 1.6rem;
+  gap: 16rem;
   padding: 0;
   color: $primary-color;
   background: none;
