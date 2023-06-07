@@ -73,7 +73,7 @@ export const Footer: FC = () => {
   return (
     <footer className={styles.Footer}>
       <Container>
-        <div className={styles.Footer__content}>
+        <div className={styles.FooterContent}>
           <div className={styles.top}>
             <LogoBlock />
             <InfoBlock />
