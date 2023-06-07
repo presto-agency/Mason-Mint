@@ -1,11 +1,15 @@
+@import "./src/app/styles/variables";
+
 .Footer{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   width: 100%;
-  padding: 0 4.8rem;
-  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 32%) 93.75%);
-  background-color: var(--black);
+  background-color: $black;
+  background-image: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 32%) 93.75%);
+
+  &Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 .top {
@@ -21,14 +25,14 @@
 }
 
 .arrow {
-  stroke: var(--primary-color);
+  stroke: $primary-color;
 }
 
 .logoBlock { 
   grid-area: logo;
 
   .logo {
-    fill: var(--white); 
+    fill: $white;
   }
 }
 
@@ -37,8 +41,8 @@
   flex-direction: column;
   grid-area: info;
   gap: 2.4rem; 
-  color: var(--gray-700); 
-  font: var(--font-h4);
+  color: $gray-700;
+  font: $font-h4;
 
   .infoField {
     display: flex;
@@ -66,8 +70,8 @@
 }
 
 .navTitle {
-  color: var(--gray-700);
-  font: var(--font-h6);
+  color: $gray-700;
+  font: $font-h6;
 }
 
 .navItems{
@@ -76,8 +80,8 @@
   gap: 3.2rem;
 
   a {
-    color: var(--white);
-    font: var(--font-button-m);
+    color: $white;
+    font: $font-button-m;
     white-space: nowrap;
   }
 }
@@ -88,9 +92,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 3.2rem 0;
-  color: var(--gray-800);
-  font: var(--font-s);
-  border-top: 1px solid var(--gray-800);
+  color: $gray-800;
+  font: $font-s;
+  border-top: 1px solid $gray-800;
 
   .madeBy{ 
     display: flex;
@@ -102,14 +106,14 @@
   }
 
   h6 {
-    color: var(--gray-700);
+    color: $gray-700;
   }
 }
 
 
-@media (width <= 1100px) { 
-  .top { 
-    grid-template-areas: 
+@media (width <= $breakpoint-mob) {
+  .top {
+    grid-template-areas:
       "logo"
       "nav"
       "info";
@@ -122,32 +126,18 @@
     flex-direction: column;
     gap: 4.8rem;
     justify-content: flex-start;
-    padding: 3.6rem 0 6.4rem;
-  } 
+    padding: 4rem 0 6.4rem;
+  }
 
   .navBlockLeft {
     flex-direction: row-reverse;
+    gap: 5.2rem;
     justify-content: flex-end;
   }
 
   .socials{
     display: flex;
     flex-direction: row;
-    gap: 10.4rem;
-  }
-}
-
-@media (width <= 768px) {
-  .Footer {
-    padding: 0 2.4rem;
-  }
-
-  .navBlock {
-    gap: 4.8rem;
-    padding: 4rem 0 6.4rem;
-  }
-
-  .navBlockLeft {
     gap: 5.2rem;
   }
 
@@ -159,15 +149,9 @@
     gap: 3.2rem;
   }
 
-  .socials {
-    gap: 5.2rem;
-  }
-
-
   .bottom {
     flex-direction: column;
     gap: 2.4rem;
-    padding: 2.4rem 0;
     text-align: center;
   }
 }

@@ -1,12 +1,10 @@
+@import "./src/app/styles/variables";
+
 .Header {
   position: fixed;
   z-index: 2;
-  display: flex;
-  gap: 3.6rem;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  padding: 3.2rem 6.4rem;
+  padding: 3.2rem 0;
   background: transparent;
   transition: padding .3s ease-out;
 
@@ -15,7 +13,14 @@
   } 
 
   .logo {
-    fill: var(--white);
+    fill: $white;
+  }
+
+  &__content{
+    display: flex;
+    gap: 3.6rem;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -35,63 +40,55 @@
 .navigation{
   display: flex;
   gap: 3.6rem;
-  font: var(--font-button-m);
+  font: $font-button-m;
 }
 
 .dark {
-  color: var(--white);
+  color: $white;
 
   a {
-    color: var(--white);
+    color: $white;
   }
 
   .logo {
-    fill: var(--white);
+    fill: $white;
   }
   
 }
 
 .light {
-  color: var(--black);
+  color: $black;
 
   a{
-    color: var(--black);
+    color: $black;
   }
 
   .logo {
-    fill: var(--black);
+    fill: $black;
   }
 }
-
 
 .scrolled {
   height: auto;
-  padding: 1.2rem 6.4rem;
-  color: var(--black);
-  background-color: var(--white);
+  padding: 1.2rem 0;
+  color: $black;
+  background-color: $white;
 
   a{ 
-    color: var(--black)
+    color: $black;
   }
 
   .logo {
-    fill: var(--black);
+    fill: $black;
   }
 }
 
-@media (width <= 1250px) {
+@media (width <= $breakpoint-tablet) {
   .desktopLayout {
     display: none;
   }
 
   .mobileLayout {
     display: block;
-  }
-}
-
-@media (width <= 768px) {
-  .Header {
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
   }
 }

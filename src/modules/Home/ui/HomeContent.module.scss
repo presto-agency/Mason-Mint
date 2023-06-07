@@ -1,9 +1,11 @@
+@import "./src/app/styles/variables";
+
 .HomeContent {
   display: block;
   padding-bottom: 16.4rem;
 }
 
-@media (width<=768px) {
+@media (width<=$breakpoint-mob) {
   .HomeContent {
     padding-bottom: 8rem;
   }

@@ -7,6 +7,7 @@ import Arrow from '../../../public/icons/arrow.svg'
 import PrestoLogo from '../../../public/icons/presto-logo.svg'
 
 import styles from './Footer.module.scss'
+import { Container } from '@/app/layouts/Container'
 
 const LogoBlock = () => {
   return (
@@ -71,17 +72,23 @@ const NavigationBlock = () => {
 export const Footer: FC = () => {
   return (
     <footer className={styles.Footer}>
-      <div className={styles.top}>
-        <LogoBlock />
-        <InfoBlock />
-        <NavigationBlock />
-      </div>
-      <div className={styles.bottom}>
-        <div className={styles.madeBy}>
-          Made by <PrestoLogo className={styles.presto} /> Studiopresto
+      <Container>
+        <div className={styles.FooterContent}>
+          <div className={styles.top}>
+            <LogoBlock />
+            <InfoBlock />
+            <NavigationBlock />
+          </div>
+          <div className={styles.bottom}>
+            <div className={styles.madeBy}>
+              Made by <PrestoLogo className={styles.presto} /> Studiopresto
+            </div>
+            <div>
+              2023 Mason Mint excellence in minting. All rights reserved.
+            </div>
+          </div>
         </div>
-        <div>2023 Mason Mint excellence in minting. All rights reserved.</div>
-      </div>
+      </Container>
     </footer>
   )
 }

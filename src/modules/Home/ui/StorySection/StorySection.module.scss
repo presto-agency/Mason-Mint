@@ -1,3 +1,5 @@
+@import "./src/app/styles/variables";
+
 #story{
   display: flex;
   align-items: center;
@@ -5,7 +7,7 @@
   padding: 16.4rem 6.4rem;
 
   p {
-    color: var(--gray-800);
+    color: $gray-800;
   }
 
   .left {
@@ -15,7 +17,6 @@
     width: 50%;
 
     .photoContainer {
-      // position: relative;
       align-self: flex-end;
       width: 80%;
       margin-top: 16.4rem;
@@ -27,8 +28,8 @@
         left: -2.4rem;
         z-index: 1;
         display: block;
-        color: var(--gray-700);
-        font: var(--font-h6);
+        color: $gray-700;
+        font: $font-h6;
         transform: rotate(90deg);
         transform-origin: left;
         content: 'welcome to masonmint';
@@ -53,7 +54,7 @@
   }
 }
 
-@media (width <= 768px) {
+@media (width <= $breakpoint-mob) {
   #story {
     flex-direction: column;
     gap: 3.2rem;
