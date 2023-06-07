@@ -8,6 +8,7 @@ import { DesktopLayout } from './DesktopLayout/DesktopLayout'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 
 import styles from './Header.module.scss'
+import { Container } from '@/app/layouts/Container'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -67,7 +68,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <header className={classNames(styles.Header, mods)}>
-      <div className="base-container">
+      <Container>
         <div className={styles.Header__content}>
           <Link href={'/'}>
             <Logo className={styles.logo} />
@@ -80,7 +81,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
             toggleMenu={toggleMenu}
           />
         </div>
-      </div>
+      </Container>
     </header>
   )
 }

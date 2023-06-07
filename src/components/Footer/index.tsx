@@ -7,6 +7,7 @@ import Arrow from '../../../public/icons/arrow.svg'
 import PrestoLogo from '../../../public/icons/presto-logo.svg'
 
 import styles from './Footer.module.scss'
+import { Container } from '@/app/layouts/Container'
 
 const LogoBlock = () => {
   return (
@@ -71,7 +72,7 @@ const NavigationBlock = () => {
 export const Footer: FC = () => {
   return (
     <footer className={styles.Footer}>
-      <div className="base-container">
+      <Container>
         <div className={styles.Footer__content}>
           <div className={styles.top}>
             <LogoBlock />
@@ -87,7 +88,7 @@ export const Footer: FC = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }
