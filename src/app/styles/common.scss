@@ -16,8 +16,8 @@ html {
 
 body {
   height: 100%;
+  font-size: 1.6rem;
   font-family: $font-family-primary;
-  background-color: $black;
 }
 
 h1 {
@@ -70,6 +70,10 @@ button {
   text-transform: uppercase;
   border: none;
   border-radius: 100px;
+}
+
+input{
+  font-size: inherit;
 }
 
 .base-container{

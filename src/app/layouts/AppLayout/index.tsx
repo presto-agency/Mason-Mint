@@ -1,11 +1,12 @@
-import Head from 'next/head'
 import { FC, ReactNode } from 'react'
+import Head from 'next/head'
+import { withModal } from '@/context/modal'
 
 type AppLayoutProps = {
   children: ReactNode
 }
 
-export const AppLayout: FC<AppLayoutProps> = ({ children }) => {
+const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   return (
     <>
       <Head>
@@ -17,3 +18,5 @@ export const AppLayout: FC<AppLayoutProps> = ({ children }) => {
     </>
   )
 }
+
+export default withModal(AppLayout)

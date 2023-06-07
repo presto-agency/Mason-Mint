@@ -1,4 +1,4 @@
 import { ButtonPrimary } from './ui/ButonPrimary/ButtonPrimary'
-import { ButtonBecomeDistriburor } from './ui/ButtonBecomeDistriburor/ButtonBecomeDistributor'
+import { ButtonBecomeDistributor } from './ui/ButtonBecomeDistriburor/ButtonBecomeDistributor'
 
-export { ButtonPrimary, ButtonBecomeDistriburor }
+export { ButtonPrimary, ButtonBecomeDistributor }
