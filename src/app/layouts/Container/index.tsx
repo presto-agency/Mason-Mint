@@ -4,10 +4,8 @@ type PageLayoutProps = {
   children: ReactNode
 }
 
-export const Container: FC<PageLayoutProps> = ({ children }) => {
-  return (
-    <>
-      <div className="base-container">{children}</div>
-    </>
-  )
+const Container: FC<PageLayoutProps> = ({ children }) => {
+  return <div className="base-container">{children}</div>
 }
+
+export default Container

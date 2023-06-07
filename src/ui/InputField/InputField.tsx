@@ -1,5 +1,5 @@
-import classNames from 'classnames'
 import { ChangeEvent, ForwardedRef, forwardRef } from 'react'
+import classNames from 'classnames'
 
 import styles from './InputField.module.scss'
 
@@ -25,7 +25,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       <label className={classNames(styles['inputField'], className)}>
         {label && <p>Label</p>}
         <input
-          className={styles.inputFieldItem}
+          className={styles['inputField__item']}
           type="text"
           name={name}
           onChange={handleChange}

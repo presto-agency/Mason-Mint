@@ -1,7 +1,9 @@
 import { useCallback } from 'react'
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form'
 import InputField from '@/ui/InputField/InputField'
-import { Container } from '@/app/layouts/Container'
+import Container from '@/app/layouts/Container'
+
+import styles from './ContactForm.module.scss'
 
 type FormValues = {
   fullName: string
@@ -65,7 +67,7 @@ const ContactForm = () => {
           <h3>Fill in the short contact form</h3>
         </div>
         <div className="col-md-7 offset-md-1">
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
             <InputField
               name="fullName"
               onChange={(value) => handleChange('fullName', value)}
