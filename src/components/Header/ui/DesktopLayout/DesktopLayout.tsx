@@ -5,13 +5,23 @@ import styles from '../Header.module.scss'
 
 export const DesktopLayout: FC = () => {
   return (
-    <div className={styles.desktopLayout}>
+    <div className={styles.header__content_desktop}>
       <nav className={styles.navigation}>
-        <Link href={'/about'}>ABOUT US</Link>
-        <Link href={'/'}>CUSTOM MINTING</Link>
-        <Link href={'/'}>DESIGNS</Link>
-        <Link href={'/'}>PACKAGING</Link>
-        <Link href={'/'}>CONTACT US</Link>
+        <Link className={styles.navigation__link} href={'/about'}>
+          ABOUT US
+        </Link>
+        <Link className={styles.navigation__link} href={'/'}>
+          CUSTOM MINTING
+        </Link>
+        <Link className={styles.navigation__link} href={'/'}>
+          DESIGNS
+        </Link>
+        <Link className={styles.navigation__link} href={'/'}>
+          PACKAGING
+        </Link>
+        <Link className={styles.navigation__link} href={'/'}>
+          CONTACT US
+        </Link>
       </nav>
       <ButtonBecomeDistriburor />
     </div>

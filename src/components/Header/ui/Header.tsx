@@ -67,10 +67,10 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [width])
 
   return (
-    <header className={classNames(styles.Header, mods)}>
+    <header className={classNames(styles.header, mods)}>
       <Container>
-        <div className={styles.Header__content}>
-          <Link href={'/'}>
+        <div className={styles.header__content}>
+          <Link className={styles.header__content_link} href={'/'}>
             <Logo className={styles.logo} />
           </Link>
           <DesktopLayout />

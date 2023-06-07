@@ -10,7 +10,7 @@ type MobileMenuProps = {
 const MobileMenu: FC<MobileMenuProps> = ({ className }) => {
   return (
     <Portal>
-      <div className={classNames(styles.MobileMenu, [className])}></div>
+      <div className={classNames(styles.menu, [className])}></div>
     </Portal>
   )
 }
