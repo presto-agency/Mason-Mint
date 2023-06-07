@@ -12,7 +12,7 @@ import { Container } from '@/app/layouts/Container'
 const LogoBlock = () => {
   return (
     <div className={styles.logoBlock}>
-      <Logo className={styles.logo} />
+      <Logo className={styles.logoBlock__logo_mod} />
     </div>
   )
 }

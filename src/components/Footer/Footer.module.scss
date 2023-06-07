@@ -31,8 +31,12 @@
 .logoBlock { 
   grid-area: logo;
 
-  .logo {
+  &__logo {
     fill: $white;
+
+    &_mod{
+      color: red;
+    }
   }
 }
 
