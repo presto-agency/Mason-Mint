@@ -7,10 +7,10 @@
 }
 
 html {
-  font-size: calc(100vw / 1440 * 10);
+  font-size: calc(100vw / 1440);
 
-  @media (width <= 767px) {
-    font-size: calc(100vw / 360 * 10);
+  @media (width <= $breakpoint-mob) {
+    font-size: calc(100vw / 360);
   }
 }
 
@@ -54,17 +54,17 @@ a {
 }
 
 .root{
-  padding: 0 0 132px;
+  padding: 0 0 132rem;
 }
 
 button {
   display: flex;
-  gap: 12px;
+  gap: 12rem;
   align-items: center;
   justify-content: center;
   width: fit-content;
   height: fit-content;
-  padding: 12px 24px;
+  padding: 12rem 24rem;
   font: $font-button-l;
   white-space: nowrap;
   text-transform: uppercase;
@@ -73,11 +73,11 @@ button {
 }
 
 .base-container{
-  max-width: 144rem;
+  max-width: 1440rem;
   margin: 0 auto;
-  padding: 0 6.4rem;
+  padding: 0 64rem;
 
   @media (width <= $breakpoint-mob) {
-    padding: 0 2.4rem;
+    padding: 0 24rem;
   }
 }

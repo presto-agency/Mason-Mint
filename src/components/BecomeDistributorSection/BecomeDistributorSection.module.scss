@@ -6,26 +6,26 @@
   align-items: center;
   justify-content: center;
   height: 545px;
-  margin: 0 3.6rem;
-  padding: 0 3.2rem;
+  margin: 0 36rem;
+  padding: 0 32rem;
   color: $white;
   text-align: center;
   background-color:#637392;
 
   p {
     max-width: 60%;
-    padding: 2.4rem 0 4rem;
+    padding: 24rem 0 40rem;
     color: $gray-300;
   }
 }
 
 @media (width <= $breakpoint-mob) {
   .BecomeDistributorSection{
-    margin: 0 0.8rem;
+    margin: 0 8rem;
 
     p {
       max-width: 100%;
-      padding: 1.6rem 0 2.4rem;
+      padding: 16rem 0 24rem;
     }
 
     button {

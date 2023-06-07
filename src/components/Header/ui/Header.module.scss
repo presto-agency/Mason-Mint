@@ -4,7 +4,7 @@
   position: fixed;
   z-index: 2;
   width: 100%;
-  padding: 3.2rem 0;
+  padding: 32rem 0;
   background: transparent;
   transition: padding .3s ease-out;
 
@@ -18,7 +18,7 @@
 
   &__content{
     display: flex;
-    gap: 3.6rem;
+    gap: 36rem;
     align-items: center;
     justify-content: space-between;
   }
@@ -27,7 +27,7 @@
 .desktopLayout {
   display: flex;
   flex-grow: 0.5;
-  gap: 3.6rem;
+  gap: 36rem;
   align-items: center;
   justify-content: space-between;
 }
@@ -39,7 +39,7 @@
 
 .navigation{
   display: flex;
-  gap: 3.6rem;
+  gap: 36rem;
   font: $font-button-m;
 }
 
@@ -70,7 +70,7 @@
 
 .scrolled {
   height: auto;
-  padding: 1.2rem 0;
+  padding: 12rem 0;
   color: $black;
   background-color: $white;
 

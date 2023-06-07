@@ -6,7 +6,7 @@
   justify-content: space-between;
   width: 100%;
   min-height: 100vh;
-  padding: 150px 6.4rem 4.8rem;
+  padding: 150px 64rem 48rem;
   background-color: $black;
 
   .top {
@@ -17,13 +17,13 @@
     justify-content: flex-end;
     width: 100%;
     height: 100%;
-    padding: 0 0 3.2rem;
+    padding: 0 0 32rem;
 
     &::after {
       position: absolute;
       right: 0;
       bottom: 0;
-      margin-bottom: 9.6rem;
+      margin-bottom: 96rem;
       color: $gray-700;
       font: $font-h6;
       transform: rotate(90deg);
@@ -36,7 +36,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 3.2rem 0;
+    padding: 32rem 0;
     border-top: 1px solid rgb(255 255 255 / 10%);
 
     p {
@@ -56,7 +56,7 @@
 
 @media (width <= $breakpoint-mob) {
   #intro {
-    padding: 150px 2.4rem 2.4rem;
+    padding: 150px 24rem 24rem;
 
     .top {
       justify-content: start;
@@ -64,8 +64,8 @@
 
     .bottom {
       flex-direction: column-reverse;
-      gap: 2.4rem;
-      padding: 2.4rem 0;
+      gap: 24rem;
+      padding: 24rem 0;
 
       p {
         width: 100%;

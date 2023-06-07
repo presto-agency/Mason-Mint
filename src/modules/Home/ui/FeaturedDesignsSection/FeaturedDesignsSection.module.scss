@@ -3,10 +3,10 @@
 .FeaturedDesignsSection{
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 16rem;
   justify-content: center;
   height: 700px;
-  padding: 0 6.4rem;
+  padding: 0 64rem;
 
   h6 {
     color: $gray-700;
@@ -22,17 +22,17 @@
 .title{
   display: flex;
   justify-content: space-between;
-  padding: 2.4rem 0 6.4rem;
+  padding: 24rem 0 64rem;
 }
 
 @media (width <= $breakpoint-mob) {
   .FeaturedDesignsSection{
-    padding: 0 2.4rem;
+    padding: 0 24rem;
   }
 
   .title {
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 24rem;
 
     button {
       width: 100%;

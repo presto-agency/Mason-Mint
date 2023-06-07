@@ -9,21 +9,21 @@
   $font-family-secondary: suisseintl;
 
   // HEADINGS
-  $font-h1: 300 8.8rem / 96% $font-family-primary;
-  $font-h2: 500 5.8rem / 104% $font-family-primary;
+  $font-h1: 300 88rem / 96% $font-family-primary;
+  $font-h2: 500 58rem / 104% $font-family-primary;
   $font-h3: 500 4rem / 114% $font-family-primary;
-  $font-h4: 500 2.4rem / 115% $font-family-primary;
-  $font-h5: 500 1.9rem / 115% $font-family-primary;
-  $font-h6: 500 1.6rem / 96% $font-family-primary;
+  $font-h4: 500 24rem / 115% $font-family-primary;
+  $font-h5: 500 19rem / 115% $font-family-primary;
+  $font-h6: 500 16rem / 96% $font-family-primary;
 
   // BODY
-  $font-l: 400 1.6rem / 155% $font-family-secondary;
-  $font-s: 400 1.2rem / 155% $font-family-secondary;
+  $font-l: 400 16rem / 155% $font-family-secondary;
+  $font-s: 400 12rem / 155% $font-family-secondary;
 
   // OTHER
-  $font-button-l: 500 1.6rem $font-family-primary;
-  $font-button-m: 500 1.5rem $font-family-primary;
-  $font-link: 500 1.2rem $font-family-primary;
+  $font-button-l: 500 16rem $font-family-primary;
+  $font-button-m: 500 15rem $font-family-primary;
+  $font-link: 500 12rem $font-family-primary;
 
   /* ====================================== COLORS =========================================== */
 
@@ -40,25 +40,20 @@
   $success: #21d184;
   $link: #3870ff;
 
-  /* ====================================== SIZINGS =========================================== */
-
-  $header-height: 100px;
-
-
 @media (width <= $breakpoint-mob)  {
-    $font-h1: 300 5.2rem / 96% $font-family-primary;
-    $font-h2: 500 3.8rem / 115% $font-family-primary;
-    $font-h3: 500 2.6rem / 114% $font-family-primary;
+    $font-h1: 300 52rem / 96% $font-family-primary;
+    $font-h2: 500 38rem / 115% $font-family-primary;
+    $font-h3: 500 26rem / 114% $font-family-primary;
     $font-h4: 500 2rem / 120% $font-family-primary;
-    $font-h5: 500 1.6rem / 120% $font-family-primary;
-    $font-h6: 500 1.4rem / 96% $font-family-primary;
+    $font-h5: 500 16rem / 120% $font-family-primary;
+    $font-h6: 500 14rem / 96% $font-family-primary;
   
     // BODY
-    $font-l: 400 1.4rem / 155% $font-family-secondary;
-    $font-s: 400 1.2rem / 155% $font-family-secondary;
+    $font-l: 400 14rem / 155% $font-family-secondary;
+    $font-s: 400 12rem / 155% $font-family-secondary;
   
     // OTHER
-    $font-button-l: 500 1.4rem $font-family-primary;
-    $font-button-m: 500 1.3rem $font-family-primary;
-    $font-link: 500 1.3rem $font-family-primary;
+    $font-button-l: 500 14rem $font-family-primary;
+    $font-button-m: 500 13rem $font-family-primary;
+    $font-link: 500 13rem $font-family-primary;
   }

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   height: 700px;
-  padding: 0 14.4rem;
+  padding: 0 144rem;
   background-color: $gray-300;
 
   .left {
@@ -16,8 +16,8 @@
   .text {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
-    padding: 4rem 0 3.2rem;
+    gap: 16rem;
+    padding: 40rem 0 32rem;
   }
 
   p {
@@ -27,7 +27,7 @@
 
 @media (width <= $breakpoint-mob) {
   .ExploreDesignsSection {
-    padding: 0 2.4rem;
+    padding: 0 24rem;
 
     .left {
       width: 100%;
