@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BecomeDistributorSection/BecomeDistributorSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BecomeDistributorSection/BecomeDistributorSection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Burger/Burger.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Burger/Burger.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FeaturedDesignsSection/FeaturedDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FeaturedDesignsSection/FeaturedDesignsSection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButtonBecomeDistriburor/ButtonBecomDistributor.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/ui/ButtonBecomeDistriburor/ButtonBecomDistributor.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Logo/Logo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Logo/Logo.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +62,7 @@
       <workItem from="1685516466254" duration="3191000" />
       <workItem from="1685606921027" duration="27485000" />
       <workItem from="1686037332230" duration="553000" />
-      <workItem from="1686061951930" duration="4588000" />
+      <workItem from="1686061951930" duration="4784000" />
     </task>
     <servers />
   </component>
