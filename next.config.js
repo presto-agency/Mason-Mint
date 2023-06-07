@@ -30,6 +30,11 @@ const nextConfig = {
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
     })
+    
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      ['react-is']: path.resolve(__dirname, 'node_modules/react-is')
+    }
 
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === "object")

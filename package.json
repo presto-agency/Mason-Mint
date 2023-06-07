@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.3",
-    "@studio-freight/react-lenis": "^0.0.20",
     "@svgr/webpack": "^8.0.1",
     "@types/node": "20.2.0",
     "@types/react": "18.2.6",
@@ -42,9 +41,11 @@
     "typescript": "5.0.4"
   },
   "dependencies": {
+    "@studio-freight/react-lenis": "^0.0.20",
     "next": "13.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.44.3"
+    "react-hook-form": "^7.44.3",
+    "react-is": "^18.2.0"
   }
 }

@@ -40,7 +40,6 @@ const ContactForm = () => {
     handleSubmit,
     setValue,
     formState: { errors },
-    getValues,
   } = useForm<FormValues>({
     values: defaultValues,
     resolver,
@@ -56,9 +55,6 @@ const ContactForm = () => {
     },
     [setValue]
   )
-
-  console.log('errors ', errors)
-  console.log('values ', getValues())
 
   return (
     <Container>
