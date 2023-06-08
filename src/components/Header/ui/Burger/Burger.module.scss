@@ -1,52 +1,54 @@
 @import "../../../../app/styles/variables";
 
 .burger {
-  display: flex;
-  flex-direction: column;
-  width: 25rem;
-  height: 25rem;
-  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  width: 32rem;
+  height: 32rem;
 
   span {
-    display: block;
+    position: absolute;
+    right: 3rem;
+    width: calc(100% - 6rem);
     height: 3rem;
-    margin-top: 5rem;
-    background: $white;
-    border-radius: 100px;
-    transition: 0.2s ease;
-  }
+    background-color: $white;
+    border-radius: 7px;
+    transition: 500ms;
 
-  span:nth-of-type(1) {
-    width: 100%;
-  }
+    &:nth-child(1) {
+      top: 8rem;
+    }
 
-  span:nth-of-type(2) {
-    width: 100%;
-  }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-  span:nth-of-type(3) {
-    align-self: end;
-    width: 75%;
-    background: $primary-color;
+    &:nth-child(3) {
+      bottom: 8rem;
+      width: 60%;
+      background-color: $primary-color;
+    }
   }
 
   &.opened {
-    span:nth-of-type(1) {
-      width: 50%;
-      transform: rotateZ(45deg) translate(15%);
-      transform-origin: bottom;
-    }
+    span{
+      &:nth-child(1) {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
+      }
 
-    span:nth-of-type(2) {
-      transform: rotateZ(-45deg);
-      transform-origin: top;
-    }
+      &:nth-child(3) {
+        left: -10px;
+        opacity: 0;
+      }
 
-    span:nth-of-type(3) {
-      width: 50%;
-      background: $white;
-      transform: rotateZ(45deg) translate(-15%, -100%);
-      transform-origin: top;
+      &:nth-child(2) {
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotateZ(-45deg);
+      }
     }
   }
 }

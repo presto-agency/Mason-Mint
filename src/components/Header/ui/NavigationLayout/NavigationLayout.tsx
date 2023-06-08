@@ -2,25 +2,30 @@ import { FC } from 'react'
 import Link from 'next/link'
 import { ButtonBecomeDistributor } from '@/ui/Button'
 import styles from '../Header.module.scss'
+import classNames from 'classnames'
 
-export const DesktopLayout: FC = () => {
+type MobileMenuProps = {
+  className?: string
+}
+
+export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
   return (
-    <div className={styles.header__content_desktop}>
+    <div className={classNames(styles.header__content_desktop, [className])}>
       <nav className={styles.navigation}>
         <Link className={styles.navigation__link} href={'/about'}>
-          ABOUT US
+          About Us
         </Link>
         <Link className={styles.navigation__link} href={'/'}>
-          CUSTOM MINTING
+          Custom Minting
         </Link>
         <Link className={styles.navigation__link} href={'/'}>
-          DESIGNS
+          Designs
         </Link>
         <Link className={styles.navigation__link} href={'/'}>
-          PACKAGING
+          Packaging
         </Link>
         <Link className={styles.navigation__link} href={'/'}>
-          CONTACT US
+          Contact Us
         </Link>
       </nav>
       <ButtonBecomeDistributor />

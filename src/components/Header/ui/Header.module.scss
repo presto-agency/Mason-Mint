@@ -53,6 +53,10 @@
     }
   }
 
+  &.active{
+    background-color: $black;
+  }
+
   &__content {
     display: flex;
     gap: 36rem;
@@ -70,6 +74,32 @@
         display: flex;
         gap: 36rem;
         font: $font-button-m;
+
+        &__link{
+          text-transform: uppercase;
+        }
+      }
+
+      &.mobile{
+        display: block;
+        flex-grow: initial;
+        width: 100%;
+        height: 100%;
+        padding: 120rem 56rem;
+        overflow-y: auto;
+
+        .navigation{
+          flex-direction: column;
+          gap: 32rem;
+          align-items: center;
+          margin: 0 0 64rem;
+
+          &__link{
+            color: $white;
+            font: $font-h4;
+            text-transform: initial;
+          }
+        }
       }
     }
 
