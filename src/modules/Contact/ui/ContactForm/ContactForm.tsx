@@ -2,9 +2,9 @@ import { useCallback } from 'react'
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form'
 import InputField from '@/ui/InputField/InputField'
 import Container from '@/app/layouts/Container'
+import { BlueDot } from '@/ui/BlueDot'
 
 import styles from './ContactForm.module.scss'
-import { BlueDot } from '@/ui/BlueDot'
 
 type FormValues = {
   fullName: string
