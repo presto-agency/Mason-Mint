@@ -98,8 +98,8 @@ export const Footer: FC = () => {
             <NavigationBlock />
           </div>
           <div className={styles.footer__content_bottom}>
-            <div className={styles.presto}>
-              Made by <PrestoLogo className={styles.presto__logo} />{' '}
+            <div className={styles.creators}>
+              Made by <PrestoLogo className={styles.creators__logo} />{' '}
               Studiopresto
             </div>
             <div>
