@@ -24,58 +24,6 @@ body {
   text-rendering: geometricprecision;
 }
 
-h1, .h1 {
-  font: $font-h1;
-}
-
-h2, .h2 {
-  font: $font-h2;
-}
-
-h3, .h3 {
-  font: $font-h3;
-}
-
-h4, .h4 {
-  font: $font-h4;
-}
-
-h5, .h5 {
-  font: $font-h5;
-}
-
-h6, .h6 {
-  font: $font-h6;
-}
-
-p {
-  font: $font-l;
-}
-
-a {
-  color: $black;
-  text-decoration: none;
-}
-
 .root{
   padding: 0 0 132rem;
-}
-
-button {
-  display: flex;
-  gap: 12rem;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
-  padding: 12rem 24rem;
-  font: $font-button-l;
-  white-space: nowrap;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 100px;
-}
-
-input {
-  font-size: inherit;
 }

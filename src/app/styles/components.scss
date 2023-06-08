@@ -1,0 +1,20 @@
+@import "variables";
+
+button {
+  display: flex;
+  gap: 12rem;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 12rem 24rem;
+  font: $font-button-l;
+  white-space: nowrap;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+}
+
+input {
+  font-size: inherit;
+}
