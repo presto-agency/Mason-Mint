@@ -1,42 +1,62 @@
-@import "./src/app/styles/variables";
+@import "../../app/styles/variables";
 
-.Footer{
+.footer {
   width: 100%;
   background-color: $black;
   background-image: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 32%) 93.75%);
 
-  &Content{
+  &__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-}
 
-.top {
-  display: grid; 
-  grid-template-areas: 
+    &_top {
+      display: grid;
+      grid-template-areas:
     "logo nav"
-    "info nav"; 
-  grid-template-rows: 1fr 1fr; 
-  grid-template-columns: 1fr 1fr; 
-  gap: 36rem;
-  width: 100%; 
-  padding: 50rem 0;
+    "info nav";
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 36rem;
+      width: 100%;
+      padding: 50rem 0;
+    }
+
+    &_bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32rem 0;
+      color: $gray-800;
+      font: $font-s;
+      border-top: 1px solid $gray-800;
+
+      .creators {
+        display: flex;
+        align-items: center;
+
+        &__logo {
+          margin: 0 16rem;
+        }
+      }
+    }
+
+  }
 }
 
 .arrow {
   stroke: $primary-color;
 }
 
-.logoBlock { 
+.logo {
   grid-area: logo;
 
-  .logo {
+  &__item {
     fill: $white;
   }
 }
 
-.infoBlock {
+.info {
   display: flex;
   flex-direction: column;
   grid-area: info;
@@ -44,114 +64,97 @@
   color: $gray-700;
   font: $font-h4;
 
-  .infoField {
+  &__field {
     display: flex;
     gap: 24rem;
     align-items: center;
   }
 }
 
-.navBlock { 
-  display: flex; 
+.navigation {
+  display: flex;
   grid-area: nav;
   gap: 104rem;
-  justify-content: flex-end; 
+  justify-content: flex-end;
+
+  &__left {
+    display: flex;
+    gap: 104rem;
+
+    &_list {
+      display: flex;
+      flex-direction: column;
+      gap: 24rem;
+    }
+  }
 }
 
-.navBlockLeft{
-  display: flex;
-  gap: 104rem;
-}
-
-.navList {
-  display: flex;
-  flex-direction: column;
-  gap: 24rem;
-}
-
-.navTitle {
+.title {
   color: $gray-700;
   font: $font-h6;
-}
 
-.navItems{
-  display: flex;
-  flex-direction: column;
-  gap: 32rem;
-
-  a {
-    color: $white;
-    font: $font-button-m;
-    white-space: nowrap;
-  }
-}
-
-
-.bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 32rem 0;
-  color: $gray-800;
-  font: $font-s;
-  border-top: 1px solid $gray-800;
-
-  .madeBy{ 
+  &__items {
     display: flex;
-    align-items: center;
-  }
+    flex-direction: column;
+    gap: 32rem;
 
-  .presto {
-    margin: 0 16rem;
-  }
-
-  h6 {
-    color: $gray-700;
+    &_link {
+      color: $white;
+      font: $font-button-m;
+      white-space: nowrap;
+    }
   }
 }
 
 
 @media (width <= $breakpoint-mob) {
-  .top {
-    grid-template-areas:
+  .footer {
+    &__content {
+      &_top {
+        grid-template-areas:
       "logo"
       "nav"
       "info";
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    gap: 0;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      &_bottom {
+        flex-direction: column;
+        gap: 24rem;
+        text-align: center;
+      }
+    }
   }
 
-  .navBlock {
+  .navigation {
     flex-direction: column;
     gap: 48rem;
     justify-content: flex-start;
     padding: 40rem 0 64rem;
+
+    &__left {
+      flex-direction: row-reverse;
+      gap: 52rem;
+      justify-content: flex-end;
+
+      &_list {
+        gap: 24rem;
+      }
+    }
   }
 
-  .navBlockLeft {
-    flex-direction: row-reverse;
-    gap: 52rem;
-    justify-content: flex-end;
-  }
 
-  .socials{
+  .socials {
     display: flex;
     flex-direction: row;
     gap: 52rem;
   }
 
-  .navList {
-    gap: 24rem;
-  }
-
-  .navItems {
-    gap: 32rem;
-  }
-
-  .bottom {
-    flex-direction: column;
-    gap: 24rem;
-    text-align: center;
+  .title {
+    &__items {
+      gap: 32rem;
+    }
   }
 }

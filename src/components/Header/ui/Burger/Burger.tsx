@@ -22,7 +22,7 @@ export const Burger: FC<BurgerProps> = ({
   return (
     <div
       className={classNames(
-        styles.Burger,
+        styles.burger,
         mods,
         opened ? styles.opened : undefined
       )}

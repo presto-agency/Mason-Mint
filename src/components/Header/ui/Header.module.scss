@@ -1,93 +1,101 @@
 @import "@/app/styles/variables";
 
-.Header {
+.header {
   position: fixed;
   z-index: 2;
   width: 100%;
   padding: 32rem 0;
   transition: padding .3s ease-out;
 
-  a{
-    white-space: nowrap;
-  } 
+  &.dark {
+    color: $white;
 
-  .logo {
-    fill: $white;
+    .navigation {
+      &__link {
+        color: $white;
+      }
+    }
+
+    .logo {
+      fill: $white;
+    }
+
   }
 
-  &__content{
+  &.light {
+    color: $black;
+
+    .navigation {
+      &__link {
+        color: $black;
+      }
+    }
+
+    .logo {
+      fill: $black;
+    }
+  }
+
+  &.scrolled {
+    height: auto;
+    padding: 12rem 0;
+    color: $black;
+    background-color: $white;
+
+    .navigation {
+      &__link {
+        color: $black;
+      }
+    }
+
+    .logo {
+      fill: $black;
+    }
+  }
+
+  &__content {
     display: flex;
     gap: 36rem;
     align-items: center;
     justify-content: space-between;
-  }
-}
 
-.desktopLayout {
-  display: flex;
-  flex-grow: 0.5;
-  gap: 36rem;
-  align-items: center;
-  justify-content: space-between;
-}
+    &_desktop {
+      display: flex;
+      flex-grow: 0.5;
+      gap: 36rem;
+      align-items: center;
+      justify-content: space-between;
 
-.mobileLayout {
-  position: relative;
-  display: none;
-}
+      .navigation {
+        display: flex;
+        gap: 36rem;
+        font: $font-button-m;
+      }
+    }
 
-.navigation{
-  display: flex;
-  gap: 36rem;
-  font: $font-button-m;
-}
+    &_mobile {
+      position: relative;
+      display: none;
+    }
 
-.dark {
-  color: $white;
-
-  a {
-    color: $white;
-  }
-
-  .logo {
-    fill: $white;
-  }
-  
-}
-
-.light {
-  color: $black;
-
-  a{
-    color: $black;
-  }
-
-  .logo {
-    fill: $black;
-  }
-}
-
-.scrolled {
-  height: auto;
-  padding: 12rem 0;
-  color: $black;
-  background-color: $white;
-
-  a{ 
-    color: $black;
-  }
-
-  .logo {
-    fill: $black;
+    &_link {
+      .logo {
+        fill: $white;
+      }
+    }
   }
 }
 
 @media (width <= $breakpoint-tablet) {
-  .desktopLayout {
-    display: none;
-  }
+  .header {
+    &__content {
+      &_desktop {
+        display: none;
+      }
 
-  .mobileLayout {
-    display: block;
+      &_mobile {
+        display: block;
+      }
+    }
   }
 }
