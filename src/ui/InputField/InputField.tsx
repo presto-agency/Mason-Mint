@@ -23,14 +23,16 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
 
     return (
       <label className={classNames(styles['inputField'], className)}>
-        {label && <p>Label</p>}
+        {label && <p className={styles['inputField__label']}>Label</p>}
         <input
           className={styles['inputField__item']}
           type="text"
           name={name}
           onChange={handleChange}
           placeholder={placeholder}
+          ref={ref}
         />
+        <div className={styles['inputField__border']} />
         {error && <p>{error}</p>}
       </label>
     )

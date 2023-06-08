@@ -1,8 +1,7 @@
 import React from 'react'
 
+import styles from './BlueDot.module.scss'
+
 export const BlueDot = () => {
-  const styles = {
-    color: 'var(--primary-color)',
-  }
-  return <span style={styles}>.</span>
+  return <span className={styles['dot']}>.</span>
 }

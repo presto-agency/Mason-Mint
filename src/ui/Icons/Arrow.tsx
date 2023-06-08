@@ -5,7 +5,11 @@ import styles from './Icons.module.scss'
 
 const Arrow: FC<{ className?: string }> = ({ className }) => {
   return (
-    <svg viewBox="0 0 21 16" className={classNames(styles['icon'], className)}>
+    <svg
+      viewBox="0 0 21 16"
+      fill="none"
+      className={classNames(styles['icon'], className)}
+    >
       <path
         d="M1 8L20 8"
         stroke="currentColor"

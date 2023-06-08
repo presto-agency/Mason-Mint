@@ -2,6 +2,7 @@ import { useCallback } from 'react'
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form'
 import InputField from '@/ui/InputField/InputField'
 import Container from '@/app/layouts/Container'
+import { BlueDot } from '@/ui/BlueDot'
 
 import styles from './ContactForm.module.scss'
 
@@ -60,9 +61,13 @@ const ContactForm = () => {
     <Container>
       <div className="row">
         <div className="col-md-4">
-          <h3>Fill in the short contact form</h3>
+          <h1>
+            {`Let's talk`}
+            <BlueDot />
+          </h1>
         </div>
         <div className="col-md-7 offset-md-1">
+          <h3>Fill in the short contact form</h3>
           <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
             <InputField
               name="fullName"

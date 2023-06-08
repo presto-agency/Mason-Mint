@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react'
 import Head from 'next/head'
 import { withModal } from '@/context/modal'
-import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis'
+import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
 
 type AppLayoutProps = {
   children: ReactNode
