@@ -9,15 +9,19 @@
 html {
   font-size: calc(100vw / 1440);
 
-  @media (width <= $breakpoint-mob) {
-    font-size: calc(100vw / 360);
-  }
+    @media (width <= $breakpoint-mob) {
+      font-size: calc(100vw / 360);
+    }
 }
 
 body {
   height: 100%;
   font-size: 16rem;
   font-family: $font-family-primary;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  text-rendering: geometricprecision;
 }
 
 h1 {
@@ -72,16 +76,6 @@ button {
   border-radius: 100px;
 }
 
-input{
+input {
   font-size: inherit;
-}
-
-.base-container{
-  max-width: 1440rem;
-  margin: 0 auto;
-  padding: 0 64rem;
-
-  @media (width <= $breakpoint-mob) {
-    padding: 0 24rem;
-  }
 }
