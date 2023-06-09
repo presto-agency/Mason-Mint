@@ -16,8 +16,9 @@ const topLineVariants = {
     top: '50%',
     translateY: '-50%',
     transition: {
-      top: { duration: 0.2 },
-      rotate: { delay: 0.5, duration: 0.2 },
+      top: { duration: 0.1 },
+      translateY: { duration: 0.1 },
+      rotate: { delay: 0.5, duration: 0.1 },
     },
   },
   closed: {
@@ -25,8 +26,9 @@ const topLineVariants = {
     top: '0%',
     translateY: '0%',
     transition: {
-      top: { delay: 0.5, duration: 0.2 },
-      rotate: { duration: 0.2 },
+      top: { delay: 0.5, duration: 0.1 },
+      translateY: { duration: 0.1 },
+      rotate: { duration: 0.1 },
     },
   },
 }
@@ -35,14 +37,15 @@ const middleLineVariants = {
   open: {
     rotate: -45,
     transition: {
-      rotate: { delay: 0.5, duration: 0.2 },
+      rotate: { delay: 0.5, duration: 0.1 },
     },
   },
   closed: {
     rotate: 0,
     translateY: '-50%',
     transition: {
-      rotate: { duration: 0.2 },
+      rotate: { duration: 0.1 },
+      translateY: { duration: 0.1 },
     },
   },
 }
@@ -53,8 +56,9 @@ const bottomLineVariants = {
     bottom: '50%',
     translateY: '50%',
     transition: {
-      bottom: { duration: 0.3 },
-      opacity: { delay: 0.5, duration: 0.2 },
+      bottom: { duration: 0.1 },
+      translateY: { duration: 0.1 },
+      opacity: { delay: 0.5, duration: 0.1 },
     },
   },
   closed: {
@@ -63,8 +67,8 @@ const bottomLineVariants = {
     translateY: '0%',
     transition: {
       opacity: { delay: 0.5 },
-      bottom: { delay: 0.5, duration: 0.2 },
-      translateY: { delay: 0.5, duration: 0.2 },
+      bottom: { delay: 0.5, duration: 0.1 },
+      translateY: { delay: 0.5, duration: 0.1 },
     },
   },
 }
@@ -86,9 +90,18 @@ export const Burger: FC<BurgerProps> = ({
       initial={false}
       animate={opened ? 'open' : 'closed'}
     >
-      <motion.span variants={topLineVariants}></motion.span>
-      <motion.span variants={middleLineVariants}></motion.span>
-      <motion.span variants={bottomLineVariants}></motion.span>
+      <motion.span
+        className={styles.burger__line}
+        variants={topLineVariants}
+      ></motion.span>
+      <motion.span
+        className={styles.burger__line}
+        variants={middleLineVariants}
+      ></motion.span>
+      <motion.span
+        className={styles.burger__line}
+        variants={bottomLineVariants}
+      ></motion.span>
     </motion.div>
   )
 }

@@ -5,12 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Burger/Burger.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Burger/Burger.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Burger/Burger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Burger/Burger.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/DesktopLayout/DesktopLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/NavigationLayout/NavigationLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButtonBecomeDistriburor/ButtonBecomDistributor.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/ui/ButtonBecomeDistriburor/ButtonBecomDistributor.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,4 +1,4 @@
-@import "../../../../app/styles/variables";
+@import "@/app/styles/variables";
 
 .burger {
   position: relative;
@@ -6,7 +6,11 @@
   width: 32rem;
   height: 16rem;
 
-  span {
+  &:hover{
+    cursor: pointer;
+  }
+
+  &__line {
     position: absolute;
     right: 3rem;
     width: calc(100% - 6rem);
@@ -30,27 +34,6 @@
       bottom: 0;
       width: 60%;
       background-color: $primary-color;
-    }
-  }
-
-  &.opened {
-    span{
-      &:nth-child(1) {
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
-      }
-
-      &:nth-child(3) {
-        left: -10px;
-        opacity: 0;
-      }
-
-      &:nth-child(2) {
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%) rotateZ(-45deg);
-      }
     }
   }
 }
