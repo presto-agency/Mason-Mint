@@ -2,6 +2,7 @@ import { FC, memo } from 'react'
 import dynamic from 'next/dynamic'
 import styles from '../Header.module.scss'
 import { Burger } from '../Burger/Burger'
+import { AnimatePresence } from 'framer-motion'
 
 const MobileMenu = dynamic(() => import('../MobileMenu/MobileMenu'))
 
@@ -22,7 +23,9 @@ export const MobileLayout: FC<MobileLayoutProps> = memo(
           opened={menuOpened}
           toggleMenu={toggleMenu}
         />
-        {menuOpened && <MobileMenu />}
+        <AnimatePresence>
+          {menuOpened && <MobileMenu opened={menuOpened} />}
+        </AnimatePresence>
       </div>
     )
   }
