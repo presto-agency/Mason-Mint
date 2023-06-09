@@ -64,6 +64,7 @@
     justify-content: space-between;
 
     &_desktop {
+      position: relative;
       display: flex;
       flex-grow: 0.5;
       gap: 36rem;
@@ -83,15 +84,16 @@
       &.mobile{
         display: block;
         flex-grow: initial;
+        align-self: flex-start;
         width: 100%;
-        height: 100%;
-        padding: 120rem 56rem;
+        max-height: 100%;
+        padding: 140rem 56rem;
         overflow-y: auto;
+        background-color: $black;
 
         .navigation{
           flex-direction: column;
           gap: 32rem;
-          align-items: center;
           margin: 0 0 64rem;
 
           &__link{
@@ -125,6 +127,22 @@
 
       &_mobile {
         display: block;
+      }
+    }
+  }
+}
+
+@media (width <= $breakpoint-mob) {
+  .header {
+    &__content {
+      &_desktop {
+        &.mobile{
+          padding: 120rem 56rem;
+
+          .navigation{
+            align-items: center;
+          }
+        }
       }
     }
   }
