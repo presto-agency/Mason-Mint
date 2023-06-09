@@ -3,18 +3,45 @@ import classNames from 'classnames'
 import styles from './MobileMenu.module.scss'
 import headerStyles from '../Header.module.scss'
 import { Portal } from '@/ui/Portal/Portal'
+import { motion } from 'framer-motion'
 import { NavigationLayout } from '@/components/Header/ui/NavigationLayout/NavigationLayout'
 
 type MobileMenuProps = {
+  opened: boolean
   className?: string
 }
 
-const MobileMenu: FC<MobileMenuProps> = ({ className }) => {
+const variants = {
+  open: {
+    height: '100%',
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.5,
+      delay: 0.5,
+    },
+  },
+  closed: {
+    height: '0%',
+    transition: {
+      ease: 'easeInOut',
+      duration: 0.5,
+      delay: 0.5,
+    },
+  },
+}
+
+const MobileMenu: FC<MobileMenuProps> = ({ opened, className }) => {
   return (
     <Portal>
-      <div className={classNames(styles.menu, [className])}>
+      <motion.div
+        className={classNames(styles.menu, [className])}
+        variants={variants}
+        animate={'open'}
+        initial="closed"
+        exit="closed"
+      >
         <NavigationLayout className={headerStyles.mobile} />
-      </div>
+      </motion.div>
     </Portal>
   )
 }

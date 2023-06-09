@@ -11,8 +11,10 @@
     color: $white;
 
     .navigation {
-      &__link {
-        color: $white;
+      &__content{
+        &__link {
+          color: $white;
+        }
       }
     }
 
@@ -26,8 +28,10 @@
     color: $black;
 
     .navigation {
-      &__link {
-        color: $black;
+      &__content{
+        &_link {
+          color: $black;
+        }
       }
     }
 
@@ -43,8 +47,10 @@
     background-color: $white;
 
     .navigation {
-      &__link {
-        color: $black;
+      &__content{
+        &_link {
+          color: $black;
+        }
       }
     }
 
@@ -64,6 +70,7 @@
     justify-content: space-between;
 
     &_desktop {
+      position: relative;
       display: flex;
       flex-grow: 0.5;
       gap: 36rem;
@@ -71,33 +78,39 @@
       justify-content: space-between;
 
       .navigation {
-        display: flex;
-        gap: 36rem;
-        font: $font-button-m;
+        &__content{
+          display: flex;
+          gap: 36rem;
+          font: $font-button-m;
 
-        &__link{
-          text-transform: uppercase;
+          &_link{
+            text-transform: uppercase;
+          }
         }
       }
 
       &.mobile{
         display: block;
         flex-grow: initial;
+        align-self: flex-start;
         width: 100%;
-        height: 100%;
-        padding: 120rem 56rem;
+        max-height: 100%;
         overflow-y: auto;
+        background-color: $black;
 
         .navigation{
-          flex-direction: column;
-          gap: 32rem;
-          align-items: center;
-          margin: 0 0 64rem;
+          padding: 140rem 56rem;
 
-          &__link{
-            color: $white;
-            font: $font-h4;
-            text-transform: initial;
+          &__content{
+            flex-direction: column;
+            gap: 32rem;
+            margin: 0 0 64rem;
+
+            &_link{
+              color: $white;
+              font: $font-h4;
+              text-transform: initial;
+            }
           }
         }
       }
@@ -125,6 +138,25 @@
 
       &_mobile {
         display: block;
+      }
+    }
+  }
+}
+
+@media (width <= $breakpoint-mob) {
+  .header {
+    &__content {
+      &_desktop {
+        &.mobile{
+          .navigation{
+            padding: 120rem 56rem;
+
+            &__content{
+              align-items: center;
+
+            }
+          }
+        }
       }
     }
   }
