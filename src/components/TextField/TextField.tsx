@@ -11,7 +11,7 @@ type TextFieldProps = {
   error?: string
   className?: string
   type?: string | 'text' | 'email' | 'tel'
-  onChange: (value: string) => void
+  onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
   element?: string | 'input' | 'textarea'
 }
 
@@ -34,7 +34,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     const handleChange = (
       e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
-      onChange && onChange(e.target.value)
+      onChange && onChange(e)
       if (textAreaRef.current) {
         textAreaRef.current.style.height = 'auto'
         textAreaRef.current.style.height =

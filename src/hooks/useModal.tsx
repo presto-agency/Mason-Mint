@@ -1,17 +1,13 @@
 import { useContext, FC } from 'react'
 import { ModalContext, ModalContextType } from '@/context/modal'
-
-type ModalComponentProps = {
-  onClose: () => void
-  size?: string
-}
+import { ModalWindowProps } from '@/components/ModalWindow/ModalWindow'
 
 type Options = {
   size?: string
 }
 
 export const useModal = (
-  ModalComponent: FC<ModalComponentProps>,
+  ModalComponent: FC<ModalWindowProps>,
   options: Options = {}
 ) => {
   const { size = 'md', ...modalProps } = options

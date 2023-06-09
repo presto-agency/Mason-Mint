@@ -58,6 +58,7 @@ const ContactForm = () => {
               control={control}
               name="fullName"
               render={({ field }) => {
+                console.log('field ', field)
                 return (
                   <TextField
                     {...field}
