@@ -18,3 +18,11 @@
     cursor: default;
   }
 }
+
+@media (max-width: $breakpoint-mob) {
+  .becomeDistributor{
+    width: 100%;
+    font-size: 13rem;
+    line-height: 17rem;
+  }
+}

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
-import { DesktopLayout } from './DesktopLayout/DesktopLayout'
+import { NavigationLayout } from './NavigationLayout/NavigationLayout'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
 
@@ -65,14 +65,22 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     if (width > 1250) setMenuOpened(false)
   }, [width])
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpened ? 'hidden' : 'auto'
+  }, [menuOpened])
+
   return (
-    <header className={classNames(styles.header, mods)}>
+    <header
+      className={`${classNames(styles.header, mods)} ${
+        menuOpened ? styles.active : ''
+      }`}
+    >
       <Container>
         <div className={styles.header__content}>
           <Link className={styles.header__content_link} href={'/'}>
             <Logo className={styles.logo} />
           </Link>
-          <DesktopLayout />
+          <NavigationLayout />
           <MobileLayout
             scrolled={scrolled}
             theme={headerTheme}
