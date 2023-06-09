@@ -6,9 +6,10 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { validationSchema } from '@/modules/Contact/ui/ContactForm/validationSchema'
 import { ButtonPrimary } from '@/ui/Button'
 import { useModal } from '@/hooks/useModal'
-import ThanksModal from '@/modals/Thanks/Thanks'
+const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'))
 
 import styles from './ContactForm.module.scss'
+import dynamic from 'next/dynamic'
 
 type FormValues = {
   fullName: string
@@ -58,7 +59,6 @@ const ContactForm = () => {
               control={control}
               name="fullName"
               render={({ field }) => {
-                console.log('field ', field)
                 return (
                   <TextField
                     {...field}

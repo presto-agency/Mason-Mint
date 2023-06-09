@@ -1,4 +1,4 @@
-import { useContext, FC } from 'react'
+import { useContext, FC, ComponentType } from 'react'
 import { ModalContext, ModalContextType } from '@/context/modal'
 import { ModalWindowProps } from '@/components/ModalWindow/ModalWindow'
 
@@ -7,7 +7,7 @@ type Options = {
 }
 
 export const useModal = (
-  ModalComponent: FC<ModalWindowProps>,
+  ModalComponent: FC<ModalWindowProps> | ComponentType<ModalWindowProps>,
   options: Options = {}
 ) => {
   const { size = 'md', ...modalProps } = options
