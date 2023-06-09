@@ -40,7 +40,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ opened, className }) => {
         initial="closed"
         exit="closed"
       >
-        <NavigationLayout opened={opened} className={headerStyles.mobile} />
+        <NavigationLayout className={headerStyles.mobile} />
       </motion.div>
     </Portal>
   )

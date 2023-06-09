@@ -16,7 +16,7 @@ const topLineVariants = {
     top: '50%',
     translateY: '-50%',
     transition: {
-      top: { duration: 0.1, ease: 'easeIn' },
+      top: { duration: 0.1 },
       translateY: { duration: 0.1 },
       rotate: { delay: 0.5, duration: 0.1 },
     },

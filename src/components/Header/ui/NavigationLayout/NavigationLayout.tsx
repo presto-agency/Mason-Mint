@@ -6,20 +6,18 @@ import classNames from 'classnames'
 import { motion } from 'framer-motion'
 
 type MobileMenuProps = {
-  opened: boolean
   className?: string
 }
 
-export const NavigationLayout: FC<MobileMenuProps> = ({
-  opened,
-  className,
-}) => {
-  const divRef = useRef(null)
+export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
+  const divRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(0)
 
   useEffect(() => {
-    const heightOfDiv = divRef.current.offsetHeight
-    setHeight(heightOfDiv)
+    if (divRef.current) {
+      const heightOfDiv = divRef.current.offsetHeight
+      setHeight(heightOfDiv)
+    }
   }, [])
 
   return (
