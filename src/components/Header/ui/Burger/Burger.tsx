@@ -58,7 +58,7 @@ const bottomLineVariants = {
     transition: {
       bottom: { duration: 0.1 },
       translateY: { duration: 0.1 },
-      opacity: { delay: 0.5, duration: 0.1 },
+      opacity: { delay: 0.5, duration: 0 },
     },
   },
   closed: {
@@ -66,7 +66,7 @@ const bottomLineVariants = {
     bottom: '0%',
     translateY: '0%',
     transition: {
-      opacity: { delay: 0.5, duration: 0.1 },
+      opacity: { delay: 0.5, duration: 0 },
       bottom: { delay: 0.5, duration: 0.1 },
       translateY: { delay: 0.5, duration: 0.1 },
     },
