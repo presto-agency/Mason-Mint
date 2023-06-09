@@ -1,4 +1,4 @@
-import { useContext, ComponentType } from 'react'
+import { useContext, FC } from 'react'
 import { ModalContext, ModalContextType } from '@/context/modal'
 
 type ModalComponentProps = {
@@ -11,12 +11,11 @@ type Options = {
 }
 
 export const useModal = (
-  ModalComponent: ComponentType<ModalComponentProps>,
+  ModalComponent: FC<ModalComponentProps>,
   options: Options = {}
 ) => {
   const { size = 'md', ...modalProps } = options
   const [openModal, closeModal] = useContext(ModalContext) as ModalContextType
-
   return (onCancel?: () => void) => {
     const handleCancel = () => {
       closeModal()

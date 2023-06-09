@@ -1,14 +1,67 @@
-@import "../../../../app/styles/variables";
+@import "@/app/styles/variables";
 
-.ButtonPrimary {
-  padding: 12rem 24rem 12rem 32rem;
-}
+.buttonPrimary {
+  height: 48rem;
+  padding: 0 32rem;
+  white-space: nowrap;
+  border: 1px transparent solid;
+  
+    &__content{
+      position: relative;
+      display: flex;
+      gap: 12rem;
+      align-items: center;
+      justify-content: center;
+      padding-right: 32rem;
+      transition: padding $move-duration $ease;
+        
+        & &_icon{
+          position: absolute;
+          top: 50%;
+          width: 19rem;
+          height: 14rem;
+          transform: translateY(-50%);
+          transition: opacity $hover-duration $ease, transform $move-duration $ease;
+          transition-delay: .03s;
+          
+            &.__1{
+              left: 0;
+              transform: translate(-32rem,-50%);
+              opacity: 0;
+            }
 
-.buttonContent {
-  display: flex;
-  gap: 12rem;
-  align-items: center;
-  justify-content: center;
+            &.__2{
+              right: 0;
+            }
+        }
+    }
+  
+    &:hover{
+      cursor: pointer;
+
+        .buttonPrimary{
+            &__content{
+              padding-right: 0;
+              padding-left: 32rem;
+              
+                &_icon{
+                    &.__1{
+                      transform: translate(0,-50%);
+                      opacity: 1;
+                    }
+                    
+                    &.__2{
+                      transform: translate(32rem,-50%);
+                      opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+  
+    &.fullWidth{
+      width: 100%;
+    }
 }
 
 .white {
@@ -24,18 +77,12 @@
 }
 
 .white, .outlined {
-  .arrow {
-    stroke: $black;
-  }
+  color: $black;
 }
 
 .blue {
   color: $white;
   background-color: $primary-color;
-
-  .arrow {
-    stroke: $white;
-  }
 }
 
 .mini {
@@ -43,9 +90,5 @@
   padding: 0;
   color: $primary-color;
   background: none;
-
-  .arrow {
-    stroke: $primary-color;
-  }
 }
 

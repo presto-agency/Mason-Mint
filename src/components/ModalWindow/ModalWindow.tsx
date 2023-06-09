@@ -1,11 +1,12 @@
 import { ReactNode } from 'react'
 import classNames from 'classnames'
+
 import styles from './ModalWindow.module.scss'
 
 export type ModalWindowProps = {
   onClose: () => void
   size: string
-  children: ReactNode
+  children?: ReactNode
 }
 const ModalWindow = ({ onClose, size, children }: ModalWindowProps) => {
   return (

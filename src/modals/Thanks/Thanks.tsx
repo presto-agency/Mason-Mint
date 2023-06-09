@@ -1,10 +1,14 @@
-import { FC, PropsWithChildren } from 'react'
+import { FC } from 'react'
 import ModalWindow, {
   ModalWindowProps,
 } from '@/components/ModalWindow/ModalWindow'
 
-const ThanksModal: FC<PropsWithChildren<ModalWindowProps>> = (props) => {
-  return <ModalWindow {...props}>Thanks modal template</ModalWindow>
+const ThanksModal: FC<ModalWindowProps> = (props) => {
+  return (
+    <ModalWindow {...props}>
+      <h3>Thanks modal template</h3>
+    </ModalWindow>
+  )
 }
 
 export default ThanksModal
