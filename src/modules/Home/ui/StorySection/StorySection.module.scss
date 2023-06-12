@@ -1,4 +1,4 @@
-@import "../../../../app/styles/variables";
+@import '@/app/styles/variables/breackpoints';
 
 #story{
   display: flex;
@@ -7,7 +7,7 @@
   padding: 164rem 64rem;
 
   p {
-    color: $gray-800;
+    color: var(--gray-800);
   }
 
   .left {
@@ -28,8 +28,8 @@
         left: -24rem;
         z-index: 1;
         display: block;
-        color: $gray-700;
-        font: $font-h6;
+        color: var(--gray-700);
+        font: var(--font-h6);
         transform: rotate(90deg);
         transform-origin: left;
         content: 'welcome to masonmint';

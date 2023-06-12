@@ -1,20 +1,20 @@
-@import "../../../../app/styles/variables";
+@import '@/app/styles/variables/breackpoints';
 
 .becomeDistributor{
   padding: 8rem 16rem;
-  color: $white;
-  font: $font-button-m;
-  background-color: $primary-color;
+  color: var(--white);
+  font: var(--font-button-m);
+  background-color: var(--primary-color);
   transition: all .2s ease;
 
   &:hover, &:active {
-    background-color: $black;
+    background-color: var(--black);
     cursor: pointer;
   }
 
   &:disabled {
-    color: $gray-700;
-    background-color: $gray-400;
+    color: var(--gray-700);
+    background-color: var(--gray-400);
     cursor: default;
   }
 }

@@ -1,5 +1,3 @@
-@import "../../../../app/styles/variables";
-
 .ButtonPrimary {
   padding: 12rem 24rem 12rem 32rem;
 }
@@ -12,40 +10,40 @@
 }
 
 .white {
-  color: $black;
-  background-color: $white;
-  border: 1px solid $black;
+  color: var(--black);
+  background-color: var(--white);
+  border: 1px solid var(--black);
 }
 
 .outlined {
-  color: $black;
+  color: var(--black);
   background: transparent;
-  border: 1px solid $black;
+  border: 1px solid var(--black);
 }
 
 .white, .outlined {
   .arrow {
-    stroke: $black;
+    stroke: var(--black);
   }
 }
 
 .blue {
-  color: $white;
-  background-color: $primary-color;
+  color: var(--white);
+  background-color: var(--primary-color);
 
   .arrow {
-    stroke: $white;
+    stroke: var(--white);
   }
 }
 
 .mini {
   gap: 16rem;
   padding: 0;
-  color: $primary-color;
+  color: var(--primary-color);
   background: none;
 
   .arrow {
-    stroke: $primary-color;
+    stroke: var(--primary-color);
   }
 }
 

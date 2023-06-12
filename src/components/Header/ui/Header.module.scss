@@ -1,4 +1,4 @@
-@import "@/app/styles/variables";
+@import '@/app/styles/variables/breackpoints';
 
 .header {
   position: fixed;
@@ -8,59 +8,59 @@
   transition: padding .3s ease-out;
 
   &.dark {
-    color: $white;
+    color: var(--white);
 
     .navigation {
       &__content{
         &__link {
-          color: $white;
+          color: var(--white);
         }
       }
     }
 
     .logo {
-      fill: $white;
+      fill: var(--white);
     }
 
   }
 
   &.light {
-    color: $black;
+    color: var(--black);
 
     .navigation {
       &__content{
         &_link {
-          color: $black;
+          color: var(--black);
         }
       }
     }
 
     .logo {
-      fill: $black;
+      fill: var(--black);
     }
   }
 
   &.scrolled {
     height: auto;
     padding: 12rem 0;
-    color: $black;
-    background-color: $white;
+    color: var(--black);
+    background-color: var(--white);
 
     .navigation {
       &__content{
         &_link {
-          color: $black;
+          color: var(--black);
         }
       }
     }
 
     .logo {
-      fill: $black;
+      fill: var(--black);
     }
   }
 
   &.active{
-    background-color: $black;
+    background-color: var(--black);
   }
 
   &__content {
@@ -81,7 +81,7 @@
         &__content{
           display: flex;
           gap: 36rem;
-          font: $font-button-m;
+          font: var(--font-button-m);
 
           &_link{
             text-transform: uppercase;
@@ -96,7 +96,7 @@
         width: 100%;
         max-height: 100%;
         overflow-y: auto;
-        background-color: $black;
+        background-color: var(--black);
 
         .navigation{
           padding: 140rem 56rem;
@@ -107,8 +107,8 @@
             margin: 0 0 64rem;
 
             &_link{
-              color: $white;
-              font: $font-h4;
+              color: var(--white);
+              font: var(--font-h4);
               text-transform: initial;
             }
           }
@@ -123,7 +123,7 @@
 
     &_link {
       .logo {
-        fill: $white;
+        fill: var(--white);
       }
     }
   }

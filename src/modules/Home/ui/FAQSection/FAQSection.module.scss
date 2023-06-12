@@ -1,4 +1,4 @@
-@import "../../../../app/styles/variables";
+@import '@/app/styles/variables/breackpoints';
 
 .FAQSection{
   display: flex;
@@ -12,7 +12,7 @@
 
   p {
     padding-top: 24rem;
-    color: $gray-800;
+    color: var(--gray-800);
   }
 }
 
@@ -28,8 +28,8 @@
     top: -5rem;
     right: -80rem;
     display: block;
-    color: $gray-700;
-    font: $font-h6;
+    color: var(--gray-700);
+    font: var(--font-h6);
     transform: rotate(90deg);
     transform-origin: left;
     content: 'support';
