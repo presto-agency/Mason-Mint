@@ -70,14 +70,14 @@
     justify-content: space-between;
 
     &_desktop {
-      position: relative;
-      display: flex;
-      flex-grow: 0.5;
-      gap: 36rem;
-      align-items: center;
-      justify-content: space-between;
-
       .navigation {
+        position: relative;
+        display: flex;
+        flex-grow: 0.5;
+        gap: 36rem;
+        align-items: center;
+        justify-content: space-between;
+
         &__content{
           display: flex;
           gap: 36rem;
@@ -99,7 +99,10 @@
         background-color: var(--black);
 
         .navigation{
+          flex-direction: column;
+          align-items: initial;
           padding: 140rem 56rem;
+          
 
           &__content{
             flex-direction: column;

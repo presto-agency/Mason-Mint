@@ -20,12 +20,16 @@ export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
     }
   }, [])
 
+  const motionProps = {
+    initial: { height: 0 },
+    animate: { height: height },
+    transition: { delay: 0.5, duration: 0.5 },
+  }
+
   return (
     <motion.div
       className={classNames(styles.header__content_desktop, [className])}
-      initial={{ height: 0 }}
-      animate={{ height: height }}
-      transition={{ delay: 0.5, duration: 0.5 }}
+      {...motionProps}
     >
       <div className={styles.navigation} ref={divRef}>
         <nav className={styles.navigation__content}>
