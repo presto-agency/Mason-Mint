@@ -41,6 +41,7 @@ const AnimatedTextCharacter: FC<CharacterProps> = ({ text }) => {
       variants={container}
       initial="hidden"
       animate="visible"
+      exit="hidden"
     >
       {letters.map((letter, index) => (
         <motion.span variants={child} key={index}>

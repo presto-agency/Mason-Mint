@@ -58,7 +58,7 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
             <AnimatedTextCharacter text="Contact Us" />
           </Link>
         </nav>
-        <ButtonBecomeDistributor />
+        <ButtonBecomeDistributor buttonMotionAnimation={true} />
       </div>
     </motion.div>
   )
