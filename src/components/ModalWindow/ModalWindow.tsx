@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import classNames from 'classnames'
+import Close from '@/ui/Icons/Close'
 
 import styles from './ModalWindow.module.scss'
 
@@ -11,13 +12,13 @@ export type ModalWindowProps = {
 const ModalWindow = ({ onClose, size, children }: ModalWindowProps) => {
   return (
     <div className={styles['modal']}>
-      <div className={styles['modal-bg']} />
-      <div className={styles['modal-close']} onClick={() => onClose()} />
-      <div className={classNames(styles['modal-body'], styles[size])}>
-        <div className={styles['modal-body-close']} onClick={() => onClose()}>
-          close
+      <div className={styles['modal__bg']} />
+      <div className={styles['modal__close']} onClick={() => onClose()} />
+      <div className={classNames(styles['modal__body'], styles[size])}>
+        <div className={styles['modal__body_close']} onClick={() => onClose()}>
+          <Close className={styles['modal__body_close_icon']} />
         </div>
-        <div className={styles['modal-body-content']}>{children}</div>
+        <div className={styles['modal__body_content']}>{children}</div>
       </div>
     </div>
   )

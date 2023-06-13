@@ -56,21 +56,6 @@
   }
 }
 
-.info {
-  display: flex;
-  flex-direction: column;
-  grid-area: info;
-  gap: 24rem;
-  color: $gray-700;
-  font: $font-h4;
-
-  &__field {
-    display: flex;
-    gap: 24rem;
-    align-items: center;
-  }
-}
-
 .navigation {
   display: flex;
   grid-area: nav;

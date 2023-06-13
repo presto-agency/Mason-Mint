@@ -1,33 +1,17 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
-
+import Container from '@/app/layouts/Container'
+import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 import { Logo } from '@/ui/Logo'
-import Arrow from '../../../public/icons/arrow.svg'
 import PrestoLogo from '../../../public/icons/presto-logo.svg'
 
 import styles from './Footer.module.scss'
-import Container from '@/app/layouts/Container'
 
 const LogoBlock = () => {
   return (
     <div className={styles.logo}>
       <Logo className={styles.logo__item} />
-    </div>
-  )
-}
-
-const InfoBlock = () => {
-  return (
-    <div className={styles.info}>
-      <div className={styles.info__field}>
-        <Arrow className={styles.arrow} />
-        <span>Sales@MasonMint.com</span>
-      </div>
-      <div className={styles.info__field}>
-        <Arrow className={styles.arrow} />
-        <span>904 326 8600</span>
-      </div>
     </div>
   )
 }
@@ -94,7 +78,7 @@ export const Footer: FC = () => {
         <div className={styles.footer__content}>
           <div className={styles.footer__content_top}>
             <LogoBlock />
-            <InfoBlock />
+            <ContactInfo />
             <NavigationBlock />
           </div>
           <div className={styles.footer__content_bottom}>
