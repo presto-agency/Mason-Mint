@@ -19,6 +19,7 @@
     }
 
     .logo {
+      transition: fill 0.3s ease-in-out 0.5s;
       fill: var(--white);
     }
 
@@ -36,6 +37,7 @@
     }
 
     .logo {
+      transition: fill 0.3s ease-in-out 0.5s;
       fill: var(--black);
     }
   }
