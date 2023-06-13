@@ -1,20 +1,19 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { motion } from 'framer-motion'
 
-const AnimatedTextCharacter = ({ text }) => {
-  // splitting text into letters
+type CharacterProps = {
+  text: string
+}
+
+const AnimatedTextCharacter: FC<CharacterProps> = ({ text }) => {
   const letters = Array.from(text)
 
-  // Variants for Container
   const container = {
-    hidden: { opacity: 0 },
     visible: (i = 1) => ({
-      opacity: 1,
       transition: { staggerChildren: 0.01, delayChildren: 0.01 * i + 1 },
     }),
   }
 
-  // Variants for each letter
   const child = {
     visible: {
       opacity: 1,
@@ -27,7 +26,7 @@ const AnimatedTextCharacter = ({ text }) => {
     },
     hidden: {
       opacity: 0,
-      y: 5,
+      y: 3,
       transition: {
         type: 'spring',
         damping: 12,

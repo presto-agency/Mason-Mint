@@ -6,11 +6,22 @@ import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import AnimatedTextCharacter from '@/components/Header/ui/NavigationLayout/AnimatedTextCharacter'
 
+type MotionProps = {
+  animate: { height: string }
+  initial: { height: string }
+  exit: { height: string }
+  transition: { ease: string; duration: number; delay: number }
+}
+
 type MobileMenuProps = {
+  motionProps: MotionProps
   className?: string
 }
 
-export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
+export const NavigationLayout: FC<MobileMenuProps> = ({
+  motionProps,
+  className,
+}) => {
   const divRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(0)
 
@@ -21,16 +32,13 @@ export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
     }
   }, [])
 
-  const motionProps = {
-    initial: { height: 0 },
-    animate: { height: height },
-    transition: { delay: 0.5, duration: 0.5 },
-  }
-
   return (
     <motion.div
       className={classNames(styles.header__content_desktop, [className])}
-      {...motionProps}
+      animate={{ height: height }}
+      initial={motionProps.initial}
+      exit={motionProps.exit}
+      transition={motionProps.transition}
     >
       <div className={styles.navigation} ref={divRef}>
         <nav className={styles.navigation__content}>
