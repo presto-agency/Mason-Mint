@@ -28,3 +28,9 @@ body {
 .root{
   padding: 0 0 132rem;
 }
+
+main{
+  position: relative;
+  z-index: 1;
+  background-color: $white;
+}

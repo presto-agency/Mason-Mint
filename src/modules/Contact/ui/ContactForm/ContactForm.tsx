@@ -10,6 +10,7 @@ import { browserSendEmail } from '@/utils/email/browserSendEmail'
 const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'))
 
 import styles from './ContactForm.module.scss'
+import classNames from 'classnames'
 
 type FormValues = {
   fullName: string
@@ -27,7 +28,7 @@ const defaultValues = {
   message: '',
 }
 
-const ContactForm: FC<{ className?: string }> = () => {
+const ContactForm: FC<{ className?: string }> = ({ className }) => {
   const {
     handleSubmit,
     formState: { errors },
@@ -45,16 +46,18 @@ const ContactForm: FC<{ className?: string }> = () => {
       data,
     })
       .then((response) => response.json())
-      .then((status) => {
-        if (status) {
+      .then(({ success = false }) => {
+        // @TODO process all answers - success, response, error
+        if (success) {
           openThanksModal()
         }
       })
       .catch((error) => console.error(`Error on send email ${error}`))
+    // @TODO display error on page
   }
 
   return (
-    <>
+    <div className={className}>
       <h4 className="h4">Fill in the short contact form</h4>
       <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
         <Controller
@@ -137,7 +140,7 @@ const ContactForm: FC<{ className?: string }> = () => {
           Submit
         </ButtonPrimary>
       </form>
-    </>
+    </div>
   )
 }
 

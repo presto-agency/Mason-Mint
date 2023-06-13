@@ -8,8 +8,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     subject,
     htmlMessage,
   })
-
-  res.status(200).json({ success: true })
+    .then((response) => {
+      res.status(200).json({ success: true, response, error: null })
+    })
+    .catch((error) => {
+      res.status(500).json({ success: false, response: null, error })
+    })
 }
 
 export default handler

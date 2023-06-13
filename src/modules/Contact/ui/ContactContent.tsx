@@ -9,11 +9,11 @@ export const ContactContent = () => {
     <main className={styles['contactContent']}>
       <Container>
         <div className="row">
-          <div className="col-md-4">
-            <ContactBody className={styles['contactContent__body']} />
-          </div>
-          <div className="col-md-6 offset-md-1">
+          <div className="col-md-6 offset-md-1 order-md-2">
             <ContactForm className={styles['contactContent__form']} />
+          </div>
+          <div className="col-md-4 order-md-1">
+            <ContactBody className={styles['contactContent__body']} />
           </div>
         </div>
       </Container>
