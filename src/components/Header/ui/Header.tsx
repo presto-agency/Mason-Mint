@@ -3,12 +3,10 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
-import { NavigationLayout } from './NavigationLayout/NavigationLayout'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
 
 import styles from './Header.module.scss'
-import { motion } from 'framer-motion'
 import { ButtonBecomeDistributor } from '@/ui/Button'
 
 type HeaderProps = {

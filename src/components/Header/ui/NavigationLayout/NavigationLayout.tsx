@@ -4,6 +4,7 @@ import { ButtonBecomeDistributor } from '@/ui/Button'
 import styles from '../Header.module.scss'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
+import AnimatedTextCharacter from '@/components/Header/ui/NavigationLayout/AnimatedTextCharacter'
 
 type MobileMenuProps = {
   className?: string
@@ -33,20 +34,20 @@ export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
     >
       <div className={styles.navigation} ref={divRef}>
         <nav className={styles.navigation__content}>
-          <Link className={styles.navigation__content_link} href={'/about'}>
-            About Us
+          <Link className={styles.navigation__content_link} href={'/'}>
+            <AnimatedTextCharacter text="About Us" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Custom Minting
+            <AnimatedTextCharacter text="Custom Minting" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Designs
+            <AnimatedTextCharacter text="Designs" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Packaging
+            <AnimatedTextCharacter text="Packaging" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Contact Us
+            <AnimatedTextCharacter text="Contact Us" />
           </Link>
         </nav>
         <ButtonBecomeDistributor />
