@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ButtonBecomeDistributor } from '@/ui/Button'
+import { ButtonBecomeDistributorAnimated } from '@/ui/Button'
 import styles from '../Header.module.scss'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
@@ -58,7 +58,7 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
             <AnimatedTextCharacter text="Contact Us" />
           </Link>
         </nav>
-        <ButtonBecomeDistributor buttonMotionAnimation={true} />
+        <ButtonBecomeDistributorAnimated />
       </div>
     </motion.div>
   )
