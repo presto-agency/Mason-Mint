@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import classNames from 'classnames'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
 import dynamic from 'next/dynamic'
 import TextField from '@/components/TextField/TextField'
@@ -7,10 +8,11 @@ import { validationSchema } from '@/modules/Contact/ui/ContactForm/validationSch
 import { ButtonPrimary } from '@/ui/Button'
 import { useModal } from '@/hooks/useModal'
 import { browserSendEmail } from '@/utils/email/browserSendEmail'
+import { BlueDot } from '@/ui/BlueDot'
+import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'))
 
 import styles from './ContactForm.module.scss'
-import classNames from 'classnames'
 
 type FormValues = {
   fullName: string
@@ -58,6 +60,14 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
 
   return (
     <div className={className}>
+      <div className="d-md-none">
+        <p className={classNames('h1', styles['form__title'])}>
+          {`Let's talk`}
+          <BlueDot />
+        </p>
+        <p className={styles['form__subtitle']}>Stay in touch with us:</p>
+        <ContactInfo className={styles['form__contacts']} />
+      </div>
       <h4 className="h4">Fill in the short contact form</h4>
       <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
         <Controller

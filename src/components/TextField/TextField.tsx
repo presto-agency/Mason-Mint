@@ -1,6 +1,7 @@
 import { ChangeEvent, ForwardedRef, forwardRef, RefObject, useRef } from 'react'
 import classNames from 'classnames'
 import Attention from '@/ui/Icons/Attention'
+import Resize from '@/ui/Icons/Resize'
 
 import styles from './TextField.module.scss'
 
@@ -45,13 +46,16 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     return (
       <label className={classNames(styles['inputField'], className)}>
         {element === 'textarea' ? (
-          <textarea
-            className={styles['inputField__item']}
-            name={name}
-            placeholder={placeholder}
-            onChange={handleChange}
-            ref={textAreaRef}
-          />
+          <>
+            <textarea
+              className={styles['inputField__item']}
+              name={name}
+              placeholder={placeholder}
+              onChange={handleChange}
+              ref={textAreaRef}
+            />
+            <Resize className={styles['inputField__item_resize']} />
+          </>
         ) : (
           <input
             className={styles['inputField__item']}

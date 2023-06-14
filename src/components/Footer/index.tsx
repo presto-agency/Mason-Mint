@@ -1,9 +1,10 @@
-import { FC } from 'react'
+import { FC, useRef } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import Container from '@/app/layouts/Container'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 import { Logo } from '@/ui/Logo'
+import { useScroll, useTransform, motion } from 'framer-motion'
 import PrestoLogo from '../../../public/icons/presto-logo.svg'
 
 import styles from './Footer.module.scss'
@@ -72,26 +73,34 @@ const NavigationBlock = () => {
 }
 
 export const Footer: FC = () => {
+  const footerRef = useRef<HTMLDivElement | null>(null)
+  const { scrollYProgress } = useScroll({
+    target: footerRef,
+    offset: ['start end', 'end start'],
+  })
+  const y = useTransform(scrollYProgress, [0, 0.3], [-400, 0])
   return (
-    <footer className={styles.footer}>
-      <Container>
-        <div className={styles.footer__content}>
-          <div className={styles.footer__content_top}>
-            <LogoBlock />
-            <ContactInfo />
-            <NavigationBlock />
-          </div>
-          <div className={styles.footer__content_bottom}>
-            <div className={styles.creators}>
-              Made by <PrestoLogo className={styles.creators__logo} />{' '}
-              Studiopresto
+    <div ref={footerRef}>
+      <motion.footer className={styles.footer} style={{ y }}>
+        <Container>
+          <div className={styles.footer__content}>
+            <div className={styles.footer__content_top}>
+              <LogoBlock />
+              <ContactInfo />
+              <NavigationBlock />
             </div>
-            <div>
-              2023 Mason Mint excellence in minting. All rights reserved.
+            <div className={styles.footer__content_bottom}>
+              <div className={styles.creators}>
+                Made by <PrestoLogo className={styles.creators__logo} />{' '}
+                Studiopresto
+              </div>
+              <div>
+                2023 Mason Mint excellence in minting. All rights reserved.
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
-    </footer>
+        </Container>
+      </motion.footer>
+    </div>
   )
 }

@@ -14,7 +14,7 @@
 			color: var(--gray-700);
 			transition: color var(--hover-duration) var(--ease), padding var(--move-duration) var(--ease);
 			
-				&_arrow{
+				& &_arrow{
 					position: absolute;
 					top: 50%;
 					width: 22rem;
