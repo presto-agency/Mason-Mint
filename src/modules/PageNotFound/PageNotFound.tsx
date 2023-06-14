@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import routes from '@/utils/routes'
 import Image from 'next/image'
 import { ButtonPrimary } from '@/ui/Button'
+import { motion } from 'framer-motion'
 import BrokenCoinFirstPart from './assets/images/broken_coin_part_1.png'
 import BrokenCoinSecondPart from './assets/images/broken_coin_part_2.png'
 
@@ -14,9 +15,28 @@ const PageNotFound = () => {
       <div className={styles['empty__box']}>
         <p className={styles['empty__label']}>oops...</p>
         <div className={styles['empty__core']}>
-          4
+          <motion.span
+            initial={{ x: 3 }}
+            animate={{ x: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+              delay: 0.5,
+            }}
+          >
+            4
+          </motion.span>
           <div className={styles['empty__core_thumb']}>
-            <div
+            <motion.div
+              initial={{ rotate: 0 }}
+              animate={{ rotate: -8 }}
+              transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 20,
+                delay: 0.5,
+              }}
               className={classNames(styles['empty__coin'], styles['firstPart'])}
             >
               <Image
@@ -25,8 +45,16 @@ const PageNotFound = () => {
                 fill
                 className={styles['empty__coin_item']}
               />
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              initial={{ rotate: 0 }}
+              animate={{ rotate: 3 }}
+              transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 20,
+                delay: 0.5,
+              }}
               className={classNames(
                 styles['empty__coin'],
                 styles['secondPart']
@@ -38,9 +66,20 @@ const PageNotFound = () => {
                 fill
                 className={styles['empty__coin_item']}
               />
-            </div>
+            </motion.div>
           </div>
-          4
+          <motion.span
+            initial={{ x: -3 }}
+            animate={{ x: 0 }}
+            transition={{
+              type: 'spring',
+              stiffness: 260,
+              damping: 20,
+              delay: 0.5,
+            }}
+          >
+            4
+          </motion.span>
         </div>
         <p className={styles['empty__description']}>
           Page not found. Don&apos;t lose your head, you can always
