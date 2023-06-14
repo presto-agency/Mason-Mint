@@ -1,15 +1,27 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ButtonBecomeDistributor } from '@/ui/Button'
+import { ButtonBecomeDistributorAnimated } from '@/ui/Button'
 import styles from '../Header.module.scss'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
+import AnimatedTextCharacter from '@/components/Header/ui/NavigationLayout/AnimatedTextCharacter'
+
+type MotionProps = {
+  animate: { height: string }
+  initial: { height: string }
+  exit: { height: string }
+  transition: { ease: string; duration: number; delay: number }
+}
 
 type MobileMenuProps = {
+  motionProps: MotionProps
   className?: string
 }
 
-export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
+export const NavigationLayout: FC<MobileMenuProps> = ({
+  motionProps,
+  className,
+}) => {
   const divRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(0)
 
@@ -23,29 +35,30 @@ export const NavigationLayout: FC<MobileMenuProps> = ({ className }) => {
   return (
     <motion.div
       className={classNames(styles.header__content_desktop, [className])}
-      initial={{ height: 0 }}
       animate={{ height: height }}
-      transition={{ delay: 0.5, duration: 0.5 }}
+      initial={motionProps.initial}
+      exit={motionProps.exit}
+      transition={motionProps.transition}
     >
       <div className={styles.navigation} ref={divRef}>
         <nav className={styles.navigation__content}>
-          <Link className={styles.navigation__content_link} href={'/about'}>
-            About Us
+          <Link className={styles.navigation__content_link} href={'/'}>
+            <AnimatedTextCharacter text="About Us" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Custom Minting
+            <AnimatedTextCharacter text="Custom Minting" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Designs
+            <AnimatedTextCharacter text="Designs" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Packaging
+            <AnimatedTextCharacter text="Packaging" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
-            Contact Us
+            <AnimatedTextCharacter text="Contact Us" />
           </Link>
         </nav>
-        <ButtonBecomeDistributor />
+        <ButtonBecomeDistributorAnimated />
       </div>
     </motion.div>
   )

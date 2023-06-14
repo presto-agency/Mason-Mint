@@ -1,29 +1,27 @@
-@import "@/app/styles/variables";
-
 .list{
 	display: flex;
 	flex-direction: column;
 	grid-area: info;
 	gap: 24rem;
 	align-items: flex-start;
-	font: $font-h4;
+	font: var(--font-h4);
 
 		&__item{
 			position: relative;
 			display: inline-flex;
 			align-items: center;
 			padding-left: 40rem;
-			color: $gray-700;
-			transition: color $hover-duration $ease, padding $move-duration $ease;
+			color: var(--gray-700);
+			transition: color var(--hover-duration) var(--ease), padding var(--move-duration) var(--ease);
 			
 				&_arrow{
 					position: absolute;
 					top: 50%;
 					width: 22rem;
 					height: 17rem;
-					color: $primary-color;
+					color: var(--primary-color);
 					transform: translateY(-50%);
-					transition: transform $move-duration $ease, opacity $hover-duration $ease;
+					transition: transform var(--move-duration) var(--ease), opacity var(--hover-duration) var(--ease);
 					transition-delay: .03s;
 					
 						&.__1{
@@ -44,7 +42,7 @@
 				&:hover{
 					padding-right: 40rem;
 					padding-left: 0;
-					color: $primary-color;
+					color: var(--primary-color);
 					
 						.list__item_arrow{
 								&.__1{

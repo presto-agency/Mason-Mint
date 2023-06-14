@@ -11,22 +11,14 @@ type MobileMenuProps = {
   className?: string
 }
 
-const variants = {
-  open: {
-    height: '100%',
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.5,
-      delay: 0.5,
-    },
-  },
-  closed: {
-    height: '0%',
-    transition: {
-      ease: 'easeInOut',
-      duration: 0.5,
-      delay: 0.5,
-    },
+const motionProps = {
+  animate: { height: '100%' },
+  initial: { height: '0%' },
+  exit: { height: '0%' },
+  transition: {
+    ease: 'easeInOut',
+    duration: 0.5,
+    delay: 0.5,
   },
 }
 
@@ -35,12 +27,12 @@ const MobileMenu: FC<MobileMenuProps> = ({ opened, className }) => {
     <Portal>
       <motion.div
         className={classNames(styles.menu, [className])}
-        variants={variants}
-        animate={'open'}
-        initial="closed"
-        exit="closed"
+        {...motionProps}
       >
-        <NavigationLayout className={headerStyles.mobile} />
+        <NavigationLayout
+          motionProps={motionProps}
+          className={headerStyles.mobile}
+        />
       </motion.div>
     </Portal>
   )

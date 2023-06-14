@@ -1,4 +1,4 @@
-@import "@/app/styles/variables";
+@import '@/app/styles/variables/breackpoints';
 
 .modal{
 	position: fixed;
@@ -14,7 +14,7 @@
 		&__bg{
 			position: fixed;
 			inset: 0;
-			background-color: $black;
+			background-color: var(--black);
 			opacity: .5;
 		}
 		
@@ -29,7 +29,7 @@
 			height: auto;
 			margin: auto;
 			padding: 40rem 32rem;
-			background-color: $white;
+			background-color: var(--white);
 			
 				@media (width <= $breakpoint-mob)  {
 					padding: 32rem;

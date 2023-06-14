@@ -1,4 +1,4 @@
-@import "../../../../app/styles/variables";
+@import '@/app/styles/variables/breackpoints';
 
 #intro {
   display: flex;
@@ -7,7 +7,7 @@
   width: 100%;
   min-height: 100vh;
   padding: 150px 64rem 48rem;
-  background-color: $black;
+  background-color: var(--black);
 
   .top {
     position: relative;
@@ -24,8 +24,8 @@
       right: 0;
       bottom: 0;
       margin-bottom: 96rem;
-      color: $gray-700;
-      font: $font-h6;
+      color: var(--gray-700);
+      font: var(--font-h6);
       transform: rotate(90deg);
       content: 'welcome';
     }
@@ -41,15 +41,15 @@
 
     p {
       width: 40%;
-      color: $gray-500;
-      font: $font-l;
+      color: var(--gray-500);
+      font: var(--font-l);
     }
   }
 
   h1 {
     width: fit-content;
     max-width: 500px;
-    color: $white;
+    color: var(--white);
   }
 }
 

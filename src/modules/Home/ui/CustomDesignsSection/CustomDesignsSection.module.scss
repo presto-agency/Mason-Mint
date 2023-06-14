@@ -1,9 +1,9 @@
-@import "../../../../app/styles/variables";
+@import '@/app/styles/variables/breackpoints';
 
 .CustomDesignsSection {
   position: relative;
   height: 700px;
-  color: $white;
+  color: var(--white);
 }
 
 .backgroundPhoto{
@@ -29,7 +29,7 @@
   padding-left: 144rem;
 
   h6 {
-    color: $gray-700;
+    color: var(--gray-700);
   }
 
   h2 {
@@ -37,7 +37,7 @@
   }
 
   p{
-    color: $gray-400;
+    color: var(--gray-400);
   }
 
   button {
