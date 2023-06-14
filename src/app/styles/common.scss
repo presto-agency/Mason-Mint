@@ -14,6 +14,7 @@ html {
 
 body {
   height: 100%;
+  color: $black;
   font-size: 16rem;
   font-family: var(--font-family-primary);
   backface-visibility: hidden;
@@ -24,4 +25,10 @@ body {
 
 .root{
   padding: 0 0 132rem;
+}
+
+main{
+  position: relative;
+  z-index: 1;
+  background-color: $white;
 }

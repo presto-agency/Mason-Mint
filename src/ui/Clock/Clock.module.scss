@@ -1,0 +1,61 @@
+@import "@/app/styles/variables";
+
+.clock{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 110rem;
+	min-width: 110rem;
+	height: 110rem;
+	border-radius: 50%;
+
+		&__hor,
+		&__min,
+		&__sec{
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transform-style: preserve-3d;
+			backface-visibility: hidden;
+			will-change: transform;
+
+				&_item{
+					position: absolute;
+					bottom: 0;
+					width: 1.5px;
+					background-color: $black;
+					border-radius: 2px;
+				}
+		}
+	
+		&__hor{
+				&_item{
+					height: 16rem;
+				}
+		}
+	
+		&__min{
+				&_item{
+					height: 27rem;
+				}
+		}
+	
+		&__sec{
+				&_item{
+					height: 45rem;
+					background-color: $primary-color;
+				}
+		}
+	
+		&__border{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			color: $gray-700;
+		}
+}

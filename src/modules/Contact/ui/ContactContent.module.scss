@@ -1,4 +1,13 @@
 .contactContent{
 	position: relative;
-	padding-top: 135rem;
+	padding-top: 214rem;
+	padding-bottom: 100rem;
+	
+		&__body{
+			padding-bottom: 64rem;
+		}
+	
+		&__form{
+			padding-bottom: 64rem;
+		}
 }

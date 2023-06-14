@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react'
 import classNames from 'classnames'
-import Arrow from '../../../../../public/icons/arrow.svg'
+import Arrow from '@/ui/Icons/Arrow'
 
 import styles from './ButtonPrimary.module.scss'
 
@@ -9,6 +9,7 @@ type ButtonPrimaryVariants = 'white' | 'outlined' | 'blue' | 'mini'
 type ButtonPrimaryProps = {
   className?: string
   variant?: ButtonPrimaryVariants
+  fullWidth?: boolean
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
@@ -19,6 +20,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
   children,
   variant = 'white',
   disabled,
+  fullWidth = false,
   ...buttonProps
 }) => {
   const mods = {
@@ -27,13 +29,29 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
 
   return (
     <button
-      className={classNames(styles.ButtonPrimary, mods, className)}
+      className={classNames(
+        styles['buttonPrimary'],
+        mods,
+        fullWidth ? styles['fullWidth'] : '',
+        className
+      )}
       disabled={disabled}
       {...buttonProps}
     >
-      <div className={styles.buttonContent}>
+      <div className={styles['buttonPrimary__content']}>
+        <Arrow
+          className={classNames(
+            styles['buttonPrimary__content_icon'],
+            styles['__1']
+          )}
+        />
         <span>{children}</span>
-        <Arrow className={styles.arrow} />
+        <Arrow
+          className={classNames(
+            styles['buttonPrimary__content_icon'],
+            styles['__2']
+          )}
+        />
       </div>
     </button>
   )
