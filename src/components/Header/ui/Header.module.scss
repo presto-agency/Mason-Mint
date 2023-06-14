@@ -23,6 +23,15 @@
       fill: var(--white);
     }
 
+    &_opened{
+      background-color: var(--black);
+      transition: background-color 0.3s ease-in-out 1s;
+
+      &._scrolled{
+        padding: 12rem 0;
+      }
+    }
+
   }
 
   &.light {
@@ -59,11 +68,6 @@
     .logo {
       fill: var(--black);
     }
-  }
-
-  &.active{
-    background-color: var(--black);
-    transition: background-color 0.3s ease-in-out 1s;
   }
 
   &__content {

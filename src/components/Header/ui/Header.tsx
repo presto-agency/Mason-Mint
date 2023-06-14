@@ -15,6 +15,7 @@ type HeaderProps = {
 
 export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
+  const [scrolledAndOpened, setScrolledAndOpened] = useState(false)
   const [menuOpened, setMenuOpened] = useState(false)
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
   const { width } = useWindowDimensions()
@@ -22,6 +23,8 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const mods = {
     [styles.scrolled]: scrolled,
     [styles[headerTheme]]: true,
+    [styles.dark_opened]: menuOpened,
+    [styles._scrolled]: scrolledAndOpened,
   }
 
   const toggleMenu = () => {
@@ -54,15 +57,24 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
     if (!menuOpened && window.scrollY > 10) {
       setScrolled(true)
+      setScrolledAndOpened(false)
     }
 
     if (!menuOpened) {
       setHeaderTheme(initialTheme)
     }
+
+    if (menuOpened && window.scrollY > 10) {
+      setScrolledAndOpened(true)
+    }
+
+    if (menuOpened && window.scrollY < 10) {
+      setScrolledAndOpened(false)
+    }
   }, [menuOpened, initialTheme])
 
   useEffect(() => {
-    if (width > 1250) setMenuOpened(false)
+    if (width > 1023) setMenuOpened(false)
   }, [width])
 
   useEffect(() => {
@@ -70,11 +82,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [menuOpened])
 
   return (
-    <header
-      className={`${classNames(styles.header, mods)} ${
-        menuOpened ? styles.active : ''
-      }`}
-    >
+    <header className={classNames(styles.header, mods)}>
       <Container>
         <div className={styles.header__content}>
           <Link className={styles.header__content_link} href={'/'}>
