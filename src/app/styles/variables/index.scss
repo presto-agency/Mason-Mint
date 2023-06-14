@@ -35,6 +35,12 @@
     --success: #21d184;
     --link: #3870ff;
 
+  /* ====================================== COLORS =========================================== */
+
+    --ease: ease;
+    --move-duration: .5s;
+    --hover-duration: .3s;
+
 }
 
 @media (width <= $breakpoint-mob)  {
