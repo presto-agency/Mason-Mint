@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
@@ -15,10 +15,13 @@ type HeaderProps = {
 
 export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
+  const [scrolledSubstrate, setScrolledSubstrate] = useState(false)
+  const [substrateHeight, setSubstrateHeight] = useState(0)
   const [scrolledAndOpened, setScrolledAndOpened] = useState(false)
   const [menuOpened, setMenuOpened] = useState(false)
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
   const { width } = useWindowDimensions()
+  const headerRef = useRef<HTMLDivElement>(null)
 
   const mods = {
     [styles.scrolled]: scrolled,
@@ -27,18 +30,26 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     [styles._scrolled]: scrolledAndOpened,
   }
 
+  const modsSubstrate = {
+    [styles.scrolled]: scrolledSubstrate,
+  }
+
   const toggleMenu = () => {
     setMenuOpened((prev) => !prev)
   }
 
   const handleScroll = useCallback(() => {
+    const heightOfHeader = headerRef.current.offsetHeight
+    setSubstrateHeight(heightOfHeader)
     if (menuOpened) {
       return
     }
     if (window.scrollY > 10) {
       setScrolled(true)
+      setScrolledSubstrate(true)
     } else {
       setScrolled(false)
+      setScrolledSubstrate(false)
     }
   }, [menuOpened])
 
@@ -78,49 +89,60 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [width])
 
   useEffect(() => {
+    const heightOfHeader = headerRef.current.offsetHeight
+    setSubstrateHeight(heightOfHeader)
+  }, [width])
+
+  useEffect(() => {
     document.body.style.overflow = menuOpened ? 'hidden' : 'auto'
   }, [menuOpened])
 
   return (
-    <header className={classNames(styles.header, mods)}>
-      <Container>
-        <div className={styles.header__content}>
-          <Link className={styles.header__content_link} href={'/'}>
-            <Logo className={styles.logo} />
-          </Link>
-          <div className={styles.header__content_desktop}>
-            <div className={styles.navigation}>
-              <nav className={styles.navigation__content}>
-                <Link
-                  className={styles.navigation__content_link}
-                  href={'/about'}
-                >
-                  About Us
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Custom Minting
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Designs
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Packaging
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Contact Us
-                </Link>
-              </nav>
-              <ButtonBecomeDistributor />
+    <>
+      <header ref={headerRef} className={classNames(styles.header, mods)}>
+        <Container>
+          <div className={styles.header__content}>
+            <Link className={styles.header__content_link} href={'/'}>
+              <Logo className={styles.logo} />
+            </Link>
+            <div className={styles.header__content_desktop}>
+              <div className={styles.navigation}>
+                <nav className={styles.navigation__content}>
+                  <Link
+                    className={styles.navigation__content_link}
+                    href={'/about'}
+                  >
+                    About Us
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Custom Minting
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Designs
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Packaging
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Contact Us
+                  </Link>
+                </nav>
+                <ButtonBecomeDistributor />
+              </div>
             </div>
+            <MobileLayout
+              scrolled={scrolled}
+              theme={headerTheme}
+              menuOpened={menuOpened}
+              toggleMenu={toggleMenu}
+            />
           </div>
-          <MobileLayout
-            scrolled={scrolled}
-            theme={headerTheme}
-            menuOpened={menuOpened}
-            toggleMenu={toggleMenu}
-          />
-        </div>
-      </Container>
-    </header>
+        </Container>
+      </header>
+      <div
+        style={{ height: substrateHeight }}
+        className={classNames(styles.substrate, modsSubstrate)}
+      ></div>
+    </>
   )
 }

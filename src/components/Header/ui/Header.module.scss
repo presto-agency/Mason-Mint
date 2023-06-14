@@ -2,7 +2,7 @@
 
 .header {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   padding: 32rem 0;
   transition: padding .3s ease-out;
@@ -55,7 +55,6 @@
     height: auto;
     padding: 12rem 0;
     color: var(--black);
-    background-color: var(--white);
 
     .navigation {
       &__content{
@@ -136,6 +135,18 @@
         fill: var(--white);
       }
     }
+  }
+}
+
+.substrate{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+
+  &.scrolled{
+    background-color: var(--white);
   }
 }
 
