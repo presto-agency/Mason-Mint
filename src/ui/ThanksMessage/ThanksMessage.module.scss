@@ -1,20 +1,18 @@
-@import "@/app/styles/variables";
-
 .thanks{
 	position: relative;
 	
 		&__title{
 			margin-bottom: 6rem;
-			font: $font-h3;
+			font: var(--font-h3);
 		}
 	
 		&__subtitle{
-			color: $gray-800;
+			color: var(--gray-800);
 		}
 	
 		&__detail{
 			margin-top: 33rem;
-			color: $gray-700;
+			color: var(--gray-700);
 			font-size: 12rem;
 		}
 }

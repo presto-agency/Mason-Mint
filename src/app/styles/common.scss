@@ -14,7 +14,7 @@ html {
 
 body {
   height: 100%;
-  color: $black;
+  color: var(--black);
   font-size: 16rem;
   font-family: var(--font-family-primary);
   backface-visibility: hidden;
@@ -30,5 +30,5 @@ body {
 main{
   position: relative;
   z-index: 1;
-  background-color: $white;
+  background-color: var(--white);
 }
