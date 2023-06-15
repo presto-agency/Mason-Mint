@@ -1,8 +1,10 @@
 .burger {
   position: relative;
   z-index: 2;
+  box-sizing: content-box;
   width: 32rem;
   height: 16rem;
+  margin: 12rem;
 
   &:hover{
     cursor: pointer;

@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
@@ -15,13 +15,23 @@ type HeaderProps = {
 
 export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
+  const [scrolledSubstrate, setScrolledSubstrate] = useState(false)
+  const [substrateHeight, setSubstrateHeight] = useState(0)
+  const [scrolledAndOpened, setScrolledAndOpened] = useState(false)
   const [menuOpened, setMenuOpened] = useState(false)
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
   const { width } = useWindowDimensions()
+  const headerRef = useRef<HTMLDivElement>(null)
 
   const mods = {
     [styles.scrolled]: scrolled,
     [styles[headerTheme]]: true,
+    [styles.dark_opened]: menuOpened,
+    [styles._scrolled]: scrolledAndOpened,
+  }
+
+  const modsSubstrate = {
+    [styles.scrolled]: scrolledSubstrate,
   }
 
   const toggleMenu = () => {
@@ -29,13 +39,20 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }
 
   const handleScroll = useCallback(() => {
+    if (headerRef.current) {
+      const heightOfHeader = headerRef.current.offsetHeight
+      setSubstrateHeight(heightOfHeader)
+    }
+
     if (menuOpened) {
       return
     }
     if (window.scrollY > 10) {
       setScrolled(true)
+      setScrolledSubstrate(true)
     } else {
       setScrolled(false)
+      setScrolledSubstrate(false)
     }
   }, [menuOpened])
 
@@ -54,15 +71,31 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
     if (!menuOpened && window.scrollY > 10) {
       setScrolled(true)
+      setScrolledAndOpened(false)
     }
 
     if (!menuOpened) {
       setHeaderTheme(initialTheme)
     }
+
+    if (menuOpened && window.scrollY > 10) {
+      setScrolledAndOpened(true)
+    }
+
+    if (menuOpened && window.scrollY < 10) {
+      setScrolledAndOpened(false)
+    }
   }, [menuOpened, initialTheme])
 
   useEffect(() => {
-    if (width > 1250) setMenuOpened(false)
+    if (width > 1023) setMenuOpened(false)
+  }, [width])
+
+  useEffect(() => {
+    if (headerRef.current) {
+      const heightOfHeader = headerRef.current.offsetHeight
+      setSubstrateHeight(heightOfHeader)
+    }
   }, [width])
 
   useEffect(() => {
@@ -70,49 +103,51 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [menuOpened])
 
   return (
-    <header
-      className={`${classNames(styles.header, mods)} ${
-        menuOpened ? styles.active : ''
-      }`}
-    >
-      <Container>
-        <div className={styles.header__content}>
-          <Link className={styles.header__content_link} href={'/'}>
-            <Logo className={styles.logo} />
-          </Link>
-          <div className={styles.header__content_desktop}>
-            <div className={styles.navigation}>
-              <nav className={styles.navigation__content}>
-                <Link
-                  className={styles.navigation__content_link}
-                  href={'/about'}
-                >
-                  About Us
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Custom Minting
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Designs
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Packaging
-                </Link>
-                <Link className={styles.navigation__content_link} href={'/'}>
-                  Contact Us
-                </Link>
-              </nav>
-              <ButtonBecomeDistributor />
+    <>
+      <header ref={headerRef} className={classNames(styles.header, mods)}>
+        <Container>
+          <div className={styles.header__content}>
+            <Link className={styles.header__content_link} href={'/'}>
+              <Logo className={styles.logo} />
+            </Link>
+            <div className={styles.header__content_desktop}>
+              <div className={styles.navigation}>
+                <nav className={styles.navigation__content}>
+                  <Link
+                    className={styles.navigation__content_link}
+                    href={'/about'}
+                  >
+                    About Us
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Custom Minting
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Designs
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Packaging
+                  </Link>
+                  <Link className={styles.navigation__content_link} href={'/'}>
+                    Contact Us
+                  </Link>
+                </nav>
+                <ButtonBecomeDistributor />
+              </div>
             </div>
+            <MobileLayout
+              scrolled={scrolled}
+              theme={headerTheme}
+              menuOpened={menuOpened}
+              toggleMenu={toggleMenu}
+            />
           </div>
-          <MobileLayout
-            scrolled={scrolled}
-            theme={headerTheme}
-            menuOpened={menuOpened}
-            toggleMenu={toggleMenu}
-          />
-        </div>
-      </Container>
-    </header>
+        </Container>
+      </header>
+      <div
+        style={{ height: substrateHeight }}
+        className={classNames(styles.substrate, modsSubstrate)}
+      ></div>
+    </>
   )
 }

@@ -2,7 +2,7 @@
 
 .header {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   padding: 32rem 0;
   transition: padding .3s ease-out;
@@ -21,6 +21,15 @@
     .logo {
       transition: fill 0.3s ease-in-out 0.5s;
       fill: var(--white);
+    }
+
+    &_opened{
+      background-color: var(--black);
+      transition: background-color 0.3s ease-in-out 1s;
+
+      &._scrolled{
+        padding: 12rem 0;
+      }
     }
 
   }
@@ -46,7 +55,6 @@
     height: auto;
     padding: 12rem 0;
     color: var(--black);
-    background-color: var(--white);
 
     .navigation {
       &__content{
@@ -59,11 +67,6 @@
     .logo {
       fill: var(--black);
     }
-  }
-
-  &.active{
-    background-color: var(--black);
-    transition: background-color 0.3s ease-in-out 1s;
   }
 
   &__content {
@@ -132,6 +135,18 @@
         fill: var(--white);
       }
     }
+  }
+}
+
+.substrate{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+
+  &.scrolled{
+    background-color: var(--white);
   }
 }
 
