@@ -39,8 +39,11 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }
 
   const handleScroll = useCallback(() => {
-    const heightOfHeader = headerRef.current.offsetHeight
-    setSubstrateHeight(heightOfHeader)
+    if (headerRef.current) {
+      const heightOfHeader = headerRef.current.offsetHeight
+      setSubstrateHeight(heightOfHeader)
+    }
+
     if (menuOpened) {
       return
     }
@@ -89,8 +92,10 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [width])
 
   useEffect(() => {
-    const heightOfHeader = headerRef.current.offsetHeight
-    setSubstrateHeight(heightOfHeader)
+    if (headerRef.current) {
+      const heightOfHeader = headerRef.current.offsetHeight
+      setSubstrateHeight(heightOfHeader)
+    }
   }, [width])
 
   useEffect(() => {
