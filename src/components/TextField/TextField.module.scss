@@ -1,8 +1,15 @@
+@import "@/app/styles/variables/breackpoints";
+
 .inputField{
 	position: relative;
 	display: block;
 	padding-top: 18rem;
 	padding-bottom: 30rem;
+	
+		@media (width <= $breakpoint-mob) {
+			padding-top: 16rem;
+			padding-bottom: 28rem;
+		}
 	
 		&__item{
 			position: relative;
@@ -14,7 +21,11 @@
 			font-size: 15rem;
 			font-family: var(--font-family-primary);
 			border: none;
-				
+			
+				@media (width <= $breakpoint-mob) {
+					font-size: 13rem;
+				}
+			
 				&_resize{
 					position: absolute;
 					right: 1rem;

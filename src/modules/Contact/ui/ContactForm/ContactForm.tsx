@@ -60,13 +60,13 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="d-md-none">
+      <div className={classNames(styles['form__contacts'], 'd-md-none')}>
         <p className={classNames('h1', styles['form__title'])}>
           {`Let's talk`}
           <BlueDot />
         </p>
         <p className={styles['form__subtitle']}>Stay in touch with us:</p>
-        <ContactInfo className={styles['form__contacts']} />
+        <ContactInfo className={styles['form__contacts_box']} />
       </div>
       <h4 className="h4">Fill in the short contact form</h4>
       <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>

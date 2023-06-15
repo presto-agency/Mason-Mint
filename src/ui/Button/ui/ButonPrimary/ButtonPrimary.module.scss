@@ -5,7 +5,11 @@
   padding: 0 32rem;
   white-space: nowrap;
   border: 1px transparent solid;
-
+  
+    @media (width <= $breakpoint-mob) {
+      height: 44rem;
+    }
+  
     &__content{
       position: relative;
       display: flex;
