@@ -1,0 +1,53 @@
+@import "@/app/styles/variables/breackpoints";
+
+.hero{
+	padding: 208rem 0 80rem;
+	
+		@media (width <= $breakpoint-mob) {
+			padding: 150rem 0 65rem;
+		}
+	
+		&__title{
+			margin-top: 18rem;
+			
+				@media (width <= $breakpoint-mob) {
+					margin-top: 20rem;
+				}
+			
+				&:empty{
+					display: none;
+				}
+		}
+		
+		&__subtitle{
+			color: var(--gray-700);
+			font-weight: 500;
+			font-family: var(--font-family-primary);
+			letter-spacing: -0.01em;
+			
+				&:empty{
+					display: none;
+				}
+		}
+	
+		&__description{
+			margin-top: 38rem;
+			color: var(--gray-800);
+			
+				@media (width <= $breakpoint-mob) {
+					margin-top: 17rem;
+				}
+			
+				&:empty{
+					display: none;
+				}
+		}
+	
+		&.white{
+		
+		}
+	
+		&.gray{
+			background-color: var(--gray-300);
+		}
+}
