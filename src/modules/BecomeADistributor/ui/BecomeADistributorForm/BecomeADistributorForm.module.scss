@@ -1,0 +1,10 @@
+.form {
+  &__group {
+    margin: 32rem 0 64rem;
+
+    &:last-of-type {
+      margin: 32rem 0 0;
+
+    }
+  }
+}
