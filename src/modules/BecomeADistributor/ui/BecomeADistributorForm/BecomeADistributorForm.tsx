@@ -8,6 +8,7 @@ import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import { useModal } from '@/hooks/useModal'
 import ThanksModal from '@/modals/Thanks/Thanks'
 import { ButtonPrimary } from '@/ui/Button'
+import dynamic from 'next/dynamic'
 
 type FormValues = {
   fullName: string
@@ -20,6 +21,7 @@ type FormValues = {
   companyAddress: string
   postalCode: string
   country: string
+  select: string
 }
 
 const defaultValues = {
@@ -33,7 +35,12 @@ const defaultValues = {
   companyAddress: '',
   postalCode: '',
   country: '',
+  select: '',
 }
+
+const CustomSelect = dynamic(() => import('@/ui/Select/SelectOption'), {
+  ssr: false,
+})
 
 const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
   const {
@@ -176,7 +183,22 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
                 }}
               />
             </div>
-            <div className="col-md-6"></div>
+            <div className="col-md-6">
+              <Controller
+                control={control}
+                name="select"
+                render={({ field }) => {
+                  return (
+                    <CustomSelect
+                      {...field}
+                      placeholder="Select State"
+                      label="Select State*"
+                      error={errors['select']?.message}
+                    />
+                  )
+                }}
+              />
+            </div>
             <div className="col-md-6">
               <Controller
                 control={control}

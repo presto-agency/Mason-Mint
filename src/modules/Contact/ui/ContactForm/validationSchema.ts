@@ -15,6 +15,7 @@ export const validationSchema = Yup.object().shape({
   city: Yup.string().required('City is required'),
   country: Yup.string().required('Country is required'),
   postalCode: Yup.string().required('Postal code is required'),
+  select: Yup.string().required('Please select an option'),
   website: Yup.string()
     .required('Website is required')
     .matches(/\..+/, 'Website address is not correct'),
