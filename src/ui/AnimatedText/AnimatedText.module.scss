@@ -1,0 +1,15 @@
+.split{
+	position: relative;
+	display: inline-block;
+	
+		&__word{
+			display: inline-block;
+			transform-origin: bottom left;
+			perspective: 800px;
+			will-change: transform;
+		}
+}
+
+.title{
+	overflow: hidden;
+}
