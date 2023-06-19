@@ -4,6 +4,7 @@
 	grid-area: info;
 	gap: 24rem;
 	align-items: flex-start;
+	color: var(--gray-700);
 	font: var(--font-h4);
 
 		&__item{
@@ -11,7 +12,7 @@
 			display: inline-flex;
 			align-items: center;
 			padding-left: 40rem;
-			color: var(--gray-700);
+			color: inherit;
 			transition: color var(--hover-duration) var(--ease), padding var(--move-duration) var(--ease);
 			
 				& &_arrow{

@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import classNames from 'classnames'
 import Arrow from '@/ui/Icons/Arrow'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
 import styles from './ContactInfo.module.scss'
-import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
 const ContactInfo: FC<{ className?: string }> = ({ className }) => {
   return (
