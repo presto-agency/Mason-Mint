@@ -8,7 +8,6 @@ import { validationSchema } from '@/modules/Contact/ui/ContactForm/validationSch
 import { ButtonPrimary } from '@/ui/Button'
 import { useModal } from '@/hooks/useModal'
 import { browserSendEmail } from '@/utils/email/browserSendEmail'
-import { BlueDot } from '@/ui/BlueDot'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'))
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
