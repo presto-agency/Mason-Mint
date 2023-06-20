@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/SelectField/SelectField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SelectField/SelectField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -42,9 +45,11 @@
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.stylelint&quot;: &quot;/Users/anton_kamarhin/Desktop/Projects/Mason-Mint/node_modules/stylelint&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/anton_kamarhin/Desktop/Projects/Mason-Mint/node_modules/prettier&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.stylesheets.stylelint&quot;,
@@ -54,6 +59,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/modules/BecomeADistributor/ui" />
       <recent name="$PROJECT_DIR$/src/app/styles" />
       <recent name="$PROJECT_DIR$/src/app/styles/variables" />
       <recent name="$PROJECT_DIR$/src/app/layouts" />
@@ -73,7 +79,9 @@
       <workItem from="1686037332230" duration="553000" />
       <workItem from="1686061951930" duration="5673000" />
       <workItem from="1686131048717" duration="11521000" />
-      <workItem from="1686810377641" duration="1075000" />
+      <workItem from="1686810377641" duration="3515000" />
+      <workItem from="1686818897751" duration="45609000" />
+      <workItem from="1687160941274" duration="20822000" />
     </task>
     <servers />
   </component>

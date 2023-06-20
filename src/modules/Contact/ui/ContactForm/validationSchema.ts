@@ -10,4 +10,13 @@ export const validationSchema = Yup.object().shape({
     .max(12, 'Phone number must not exceed 12 characters'),
   location: Yup.string().required('Location is required'),
   message: Yup.string().required('Message is required'),
+  companyName: Yup.string().required('Company name is required'),
+  companyAddress: Yup.string().required('Company address is required'),
+  city: Yup.string().required('City is required'),
+  country: Yup.string().required('Country is required'),
+  postalCode: Yup.string().required('Postal code is required'),
+  state: Yup.string().required('Please select an option'),
+  website: Yup.string()
+    .required('Website is required')
+    .matches(/\..+/, 'Website address is not correct'),
 })

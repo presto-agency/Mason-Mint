@@ -51,6 +51,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.3",
     "react-is": "^18.2.0",
+    "react-select": "^5.7.3",
     "striptags": "^3.2.0"
   }
 }
