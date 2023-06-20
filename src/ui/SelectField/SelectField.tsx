@@ -25,7 +25,7 @@ const options: Option[] = [
   { value: 'vanilla', label: 'Vanilla' },
 ]
 
-const defaultValue = options[0]
+const defaultValue = options[0] || false
 
 const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
   (
