@@ -6,6 +6,7 @@ export const browserSendEmail = async ({
   data,
 }: sendEmailProps) => {
   if (data) {
+    htmlMessage += '<br/>'
     for (const key in data) {
       if (Object.prototype.hasOwnProperty.call(data, key)) {
         const words = key.split(/(?=[A-Z])/)
@@ -13,7 +14,7 @@ export const browserSendEmail = async ({
           (word) => word.charAt(0).toUpperCase() + word.slice(1)
         )
         const formattedKey = capitalizedWords.join(' ')
-        htmlMessage += `\n <b>${formattedKey}</b>: ${data[key]}; \n`
+        htmlMessage += `<br/> <b>${formattedKey}</b>: ${data[key]}; <br/>`
       }
     }
   }

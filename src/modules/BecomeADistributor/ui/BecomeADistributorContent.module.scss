@@ -1,7 +1,8 @@
 @import "@/app/styles/variables/breackpoints";
 
 .becomeADistributorContent {
-  padding-top: 100rem;
+	position: relative;
+	padding-top: 100rem;
 
   &__content {
     padding: 164rem 0;
@@ -17,11 +18,11 @@
 }
 
 @media (max-width: $breakpoint-mob) {
-  .becomeADistributorContent {
-    padding-top: 154rem;
+	.becomeADistributorContent {
+		padding-top: 154rem;
 
-    &__content {
-      padding: 80rem 0;
-    }
-  }
+		&__content {
+			padding: 80rem 0;
+		}
+	}
 }

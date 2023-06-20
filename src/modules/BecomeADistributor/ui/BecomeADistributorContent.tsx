@@ -1,5 +1,6 @@
 import Container from '@/app/layouts/Container'
 import BecomeADistributorForm from '@/modules/BecomeADistributor/ui/BecomeADistributorForm/BecomeADistributorForm'
+import HeroInner from '@/ui/HeroInner/HeroInner'
 
 import styles from './BecomeADistributorContent.module.scss'
 import BecomeADistributorBody from '@/modules/BecomeADistributor/ui/BecomeADistributorBody/BecomeADistributorBody'
@@ -7,23 +8,26 @@ import BecomeADistributorBody from '@/modules/BecomeADistributor/ui/BecomeADistr
 export const BecomeADistributorContent = () => {
   return (
     <main className={styles['becomeADistributorContent']}>
-      <div>Hero</div>
-      <div className={styles['becomeADistributorContent__content']}>
-        <Container>
-          <div className="row">
-            <div className="col-md-6 order-md-2">
-              <BecomeADistributorForm
-                className={styles['becomeADistributorContent__content_form']}
-              />
-            </div>
-            <div className="col-md-5 order-md-1">
-              <BecomeADistributorBody
-                className={styles['becomeADistributorContent__content_body']}
-              />
-            </div>
+      <HeroInner
+        title="Become an authorized distributor"
+        subtitle="wholesale & distribution"
+        description="Complete the application below & one of our customer service representatives will contact you with more information regarding our products."
+        theme="gray"
+      />
+      <Container>
+        <div className="row">
+          <div className="col-md-6 order-md-2">
+            <BecomeADistributorForm
+              className={styles['becomeADistributorContent__content_form']}
+            />
           </div>
-        </Container>
-      </div>
+          <div className="col-md-5 order-md-1">
+            <BecomeADistributorBody
+              className={styles['becomeADistributorContent__content_body']}
+            />
+          </div>
+        </div>
+      </Container>
     </main>
   )
 }

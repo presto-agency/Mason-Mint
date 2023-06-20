@@ -8,9 +8,9 @@ import { validationSchema } from '@/modules/Contact/ui/ContactForm/validationSch
 import { ButtonPrimary } from '@/ui/Button'
 import { useModal } from '@/hooks/useModal'
 import { browserSendEmail } from '@/utils/email/browserSendEmail'
-import { BlueDot } from '@/ui/BlueDot'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'))
+const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 
 import styles from './ContactForm.module.scss'
 
@@ -62,10 +62,11 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
     <div className={className}>
       <div className={classNames(styles['form__contacts'], 'd-md-none')}>
         <p className={classNames('h1', styles['form__title'])}>
-          {`Let's talk`}
-          <BlueDot />
+          <AnimatedText title withBlueDot>{`Let's talk`}</AnimatedText>
         </p>
-        <p className={styles['form__subtitle']}>Stay in touch with us:</p>
+        <p className={styles['form__subtitle']}>
+          <AnimatedText>Stay in touch with us:</AnimatedText>
+        </p>
         <ContactInfo className={styles['form__contacts_box']} />
       </div>
       <h4 className="h4">Fill in the short contact form</h4>
