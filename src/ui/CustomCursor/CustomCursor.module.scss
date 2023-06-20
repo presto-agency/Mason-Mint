@@ -1,0 +1,17 @@
+@import "@/app/styles/variables/breackpoints";
+
+.CustomCursor{
+  position: fixed;
+  top: 5rem;
+  left: 5rem;
+  z-index: 12;
+  display: inline-block;
+  background-color: var(--white);
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
