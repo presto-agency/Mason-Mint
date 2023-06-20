@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, useState } from 'react'
+import React, { ForwardedRef, forwardRef, useCallback, useState } from 'react'
 import Select, { StylesConfig } from 'react-select'
 import classNames from 'classnames'
 import Attention from '@/ui/Icons/Attention'
@@ -6,8 +6,8 @@ import Attention from '@/ui/Icons/Attention'
 import styles from './SelectField.module.scss'
 
 export interface OptionInterface {
-  value: string
-  label?: string
+  value: string | undefined
+  label: string
 }
 
 type SelectOptionProps = {
@@ -16,15 +16,10 @@ type SelectOptionProps = {
   label?: string
   error?: string
   className?: string
-  onChange: (value: object | null) => void
-  value?: OptionInterface
+  onChange: (option: OptionInterface | null) => void
+  selectedOption?: OptionInterface | null
+  options: OptionInterface[]
 }
-
-const options: OptionInterface[] = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-]
 
 const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
   (
@@ -35,7 +30,8 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       error,
       placeholder = 'State',
       onChange,
-      value,
+      selectedOption,
+      options,
     }: SelectOptionProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
@@ -106,9 +102,12 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       }),
     }
 
-    const handleChange = (option: OptionInterface | undefined) => {
-      option && onChange ? onChange(option) : null
-    }
+    const handleChange = useCallback(
+      (option: OptionInterface | null) => {
+        onChange && onChange(option)
+      },
+      [onChange]
+    )
 
     return (
       <div
@@ -119,6 +118,7 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
         <Select<OptionInterface, false>
           isSearchable={false}
           name={name}
+          value={selectedOption}
           options={options}
           styles={customStyles}
           classNamePrefix="select"
