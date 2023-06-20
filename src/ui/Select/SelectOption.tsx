@@ -45,11 +45,15 @@ const SelectOption = forwardRef<HTMLInputElement, SelectOptionProps>(
         padding: '0',
         display: 'flex',
         flex: 'initial',
+        marginTop: '2rem',
       }),
       placeholder: (base) => ({
         ...base,
         margin: '0',
         fontSize: '15rem',
+        '@media (max-width: 767px)': {
+          fontSize: '13rem',
+        },
         fontWeight: '500',
         color: '#24282c',
         textTransform: 'uppercase',

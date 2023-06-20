@@ -248,7 +248,12 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
             }}
           />
         </div>
-        <ButtonPrimary type="submit" variant="blue" fullWidth>
+        <ButtonPrimary
+          type="submit"
+          variant="blue"
+          fullWidth
+          className={styles['form__action']}
+        >
           Submit
         </ButtonPrimary>
       </form>

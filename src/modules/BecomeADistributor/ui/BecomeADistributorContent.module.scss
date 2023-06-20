@@ -1,18 +1,27 @@
-.becomeADistributorContent{
-	padding-top: 100rem;
+@import "@/app/styles/variables/breackpoints";
 
-	&__content{
-		padding: 164rem 0;
+.becomeADistributorContent {
+  padding-top: 100rem;
 
-		&__body{
+  &__content {
+    padding: 164rem 0;
 
-		}
+    &__body {
 
-		&__form{
+    }
 
-		}
-	}
+    &__form {
 
+    }
+  }
+}
 
+@media (max-width: $breakpoint-mob) {
+  .becomeADistributorContent {
+    padding-top: 154rem;
 
+    &__content {
+      padding: 80rem 0;
+    }
+  }
 }
