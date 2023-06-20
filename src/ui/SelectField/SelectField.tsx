@@ -25,6 +25,8 @@ const options: Option[] = [
   { value: 'vanilla', label: 'Vanilla' },
 ]
 
+const defaultValue = options[0]
+
 const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
   (
     {
@@ -113,7 +115,7 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
           isSearchable={false}
           name={name}
           options={options}
-          // defaultValue={options[0]}
+          defaultValue={defaultValue ? defaultValue : null}
           styles={customStyles}
           classNamePrefix="select"
           placeholder={placeholder}
