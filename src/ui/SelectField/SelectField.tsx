@@ -3,7 +3,7 @@ import Select, { StylesConfig } from 'react-select'
 import classNames from 'classnames'
 import Attention from '@/ui/Icons/Attention'
 
-import styles from './SelectOption.module.scss'
+import styles from './SelectField.module.scss'
 
 interface Option {
   value: string
@@ -25,7 +25,7 @@ const options: Option[] = [
   { value: 'vanilla', label: 'Vanilla' },
 ]
 
-const SelectOption = forwardRef<HTMLInputElement, SelectOptionProps>(
+const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
   (
     {
       name,
@@ -113,6 +113,7 @@ const SelectOption = forwardRef<HTMLInputElement, SelectOptionProps>(
           isSearchable={false}
           name={name}
           options={options}
+          // defaultValue={options[0]}
           styles={customStyles}
           classNamePrefix="select"
           placeholder={placeholder}
@@ -155,4 +156,4 @@ const SelectOption = forwardRef<HTMLInputElement, SelectOptionProps>(
   }
 )
 
-export default SelectOption
+export default SelectField

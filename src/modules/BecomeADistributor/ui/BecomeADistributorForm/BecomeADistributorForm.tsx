@@ -21,7 +21,7 @@ type FormValues = {
   companyAddress: string
   postalCode: string
   country: string
-  select: string
+  state: string
 }
 
 const defaultValues = {
@@ -35,10 +35,10 @@ const defaultValues = {
   companyAddress: '',
   postalCode: '',
   country: '',
-  select: '',
+  state: '',
 }
 
-const CustomSelect = dynamic(() => import('@/ui/Select/SelectOption'), {
+const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
   ssr: false,
 })
 
@@ -186,14 +186,14 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
             <div className="col-md-6">
               <Controller
                 control={control}
-                name="select"
+                name="state"
                 render={({ field }) => {
                   return (
                     <CustomSelect
                       {...field}
                       placeholder="Select State"
                       label="Select State*"
-                      error={errors['select']?.message}
+                      error={errors['state']?.message}
                     />
                   )
                 }}
