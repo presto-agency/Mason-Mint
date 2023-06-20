@@ -6,14 +6,9 @@ import classNames from 'classnames'
 const BecomeADistributorBody: FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={classNames(styles['distributorBody'], className)}>
-      <p className={styles['distributorBody__title']}>
-        To become a broker, fill out a form and be responsible and professional
-        for success in financial markets.
-      </p>
+      <p className={styles['distributorBody__title']}></p>
       <div className={styles['distributorBody__image']}>
-        <p className={styles['distributorBody__image_description']}>
-          Become A Distributor
-        </p>
+        <p className={styles['distributorBody__image_description']}></p>
       </div>
     </div>
   )

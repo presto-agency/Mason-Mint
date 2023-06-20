@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import { FC, useCallback } from 'react'
+import dynamic from 'next/dynamic'
 import styles from './BecomeADistributorForm.module.scss'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import TextField from '@/ui/TextField/TextField'
@@ -8,7 +9,7 @@ import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import { useModal } from '@/hooks/useModal'
 import ThanksModal from '@/modals/Thanks/Thanks'
 import { ButtonPrimary } from '@/ui/Button'
-import dynamic from 'next/dynamic'
+import { OptionInterface } from '@/ui/SelectField/SelectField'
 
 type FormValues = {
   fullName: string
@@ -47,6 +48,8 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
     handleSubmit,
     formState: { errors },
     control,
+    getValues,
+    setValue,
   } = useForm<FormValues>({
     values: defaultValues,
     resolver: yupResolver(validationSchema),
@@ -70,6 +73,10 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
       .catch((error) => console.error(`Error on send email ${error}`))
     // @TODO display error on page
   }
+
+  const handleStateChange = useCallback((option: OptionInterface) => {
+    setValue('state', option.label)
+  }, [])
 
   return (
     <div className={className}>
@@ -193,6 +200,9 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
                       {...field}
                       placeholder="Select State"
                       label="Select State*"
+                      onChange={(option) =>
+                        console.log('state change ', option)
+                      }
                       error={errors['state']?.message}
                     />
                   )

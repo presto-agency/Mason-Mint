@@ -42,7 +42,9 @@ const PageNotFound = () => {
           <div className={styles['empty__core_thumb']}>
             <motion.div
               initial={{ rotate: 0 }}
-              animate={loaded.first && loaded.second ? { rotate: -8 } : {}}
+              animate={
+                loaded.first && loaded.second ? { rotate: -8, y: 10 } : {}
+              }
               transition={{
                 type: 'spring',
                 stiffness: 260,

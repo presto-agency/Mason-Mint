@@ -1,7 +1,9 @@
 import { FC } from 'react'
+import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import Container from '@/app/layouts/Container'
 import { BlueDot } from '@/ui/BlueDot'
+const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 
 import styles from './HeroInner.module.scss'
 
@@ -27,14 +29,20 @@ const HeroInner: FC<HeroInnerProps> = ({
       <Container>
         <div className="row">
           <div className="col-md-10">
-            <p className={styles['hero__subtitle']}>{subtitle}</p>
+            <p className={styles['hero__subtitle']}>
+              <AnimatedText>{`${subtitle}`}</AnimatedText>
+            </p>
             <h1 className={styles['hero__title']}>
-              {title}
-              {withBlueDot && <BlueDot />}
+              <AnimatedText
+                withBlueDot={withBlueDot}
+                title
+              >{`${title}`}</AnimatedText>
             </h1>
           </div>
           <div className="col-md-6">
-            <p className={styles['hero__description']}>{description}</p>
+            <p className={styles['hero__description']}>
+              <AnimatedText>{`${description}`}</AnimatedText>
+            </p>
           </div>
         </div>
       </Container>
