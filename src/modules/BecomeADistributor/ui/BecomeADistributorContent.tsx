@@ -14,20 +14,18 @@ export const BecomeADistributorContent = () => {
         description="Complete the application below & one of our customer service representatives will contact you with more information regarding our products."
         theme="gray"
       />
-      <Container>
-        <div className="row">
-          <div className="col-md-6 order-md-2">
-            <BecomeADistributorForm
-              className={styles['becomeADistributorContent__content_form']}
-            />
+      <div className={styles['becomeADistributorContent__content']}>
+        <Container>
+          <div className="row">
+            <div className="col-md-6 order-md-2">
+              <BecomeADistributorForm />
+            </div>
+            <div className="col-md-5 order-md-1">
+              <BecomeADistributorBody />
+            </div>
           </div>
-          <div className="col-md-5 order-md-1">
-            <BecomeADistributorBody
-              className={styles['becomeADistributorContent__content_body']}
-            />
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </main>
   )
 }
