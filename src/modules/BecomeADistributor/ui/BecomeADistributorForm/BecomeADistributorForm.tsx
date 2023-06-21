@@ -220,9 +220,7 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
             />
           </motion.div>
         </div>
-        <h4 className="h4">
-          <AnimatedText>Company info</AnimatedText>
-        </h4>
+        <h4 className="h4">Company info</h4>
         <div className={styles['form__group']}>
           <motion.div variants={boxFrame}>
             <Controller
