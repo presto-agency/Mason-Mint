@@ -12,6 +12,7 @@ import { ButtonPrimary } from '@/ui/Button'
 import { OptionInterface } from '@/ui/SelectField/SelectField'
 import { countryCodes } from '@/utils/countries/countryCodes'
 import { countryStates } from '@/utils/countries/countryStates'
+import { toLowerCaseAndRemoveSpaces } from '@/utils/string/toLowerCaseAndRemoveSpaces'
 
 const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
   ssr: false,
@@ -51,7 +52,6 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
     formState: { errors },
     control,
     setValue,
-    getValues,
     clearErrors,
   } = useForm<FormValues>({
     values: defaultValues,
@@ -76,12 +76,9 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
 
   const stateOptions: OptionInterface[] = useMemo(() => {
     if (selectedCountry) {
-      const query = selectedCountry.label
-        .toLowerCase()
-        .trim()
-        .replace(/\s/g, '')
+      const query = toLowerCaseAndRemoveSpaces(selectedCountry.label)
       const queryStates = countryStates.filter(
-        (c) => c.country.toLowerCase().trim().replace(/\s/g, '') === query
+        (c) => toLowerCaseAndRemoveSpaces(c.country) === query
       )
       if (queryStates.length) {
         return queryStates[0].states.map((state) => {
@@ -277,22 +274,6 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
             <div className="col-md-6">
               <Controller
                 control={control}
-                name="postalCode"
-                render={({ field }) => {
-                  return (
-                    <TextField
-                      {...field}
-                      placeholder="Postal code"
-                      label="Postal code*"
-                      error={errors['postalCode']?.message}
-                    />
-                  )
-                }}
-              />
-            </div>
-            <div className="col-md-6">
-              <Controller
-                control={control}
                 name="city"
                 render={({ field }) => {
                   return (
@@ -301,6 +282,22 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
                       placeholder="City"
                       label="City*"
                       error={errors['city']?.message}
+                    />
+                  )
+                }}
+              />
+            </div>
+            <div className="col-md-6">
+              <Controller
+                control={control}
+                name="postalCode"
+                render={({ field }) => {
+                  return (
+                    <TextField
+                      {...field}
+                      placeholder="Postal code"
+                      label="Postal code*"
+                      error={errors['postalCode']?.message}
                     />
                   )
                 }}
