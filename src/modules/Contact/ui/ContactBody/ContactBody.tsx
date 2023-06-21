@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import dynamic from 'next/dynamic'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 import Clock from '@/ui/Clock/Clock'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 
 import styles from './ContactBody.module.scss'
@@ -19,7 +20,9 @@ const ContactBody: FC<{ className?: string }> = ({ className }) => {
         </p>
         <ContactInfo className={styles['contactBody__contacts']} />
       </div>
-      <Clock className={styles['contactBody__clock']} />
+      <AnimatedElement delay={0.2} className={styles['contactBody__clock_box']}>
+        <Clock className={styles['contactBody__clock']} />
+      </AnimatedElement>
       <p className={styles['contactBody__address_title']}>
         <AnimatedText>US Legal Address</AnimatedText>
       </p>

@@ -5,9 +5,10 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
+import { ButtonBecomeDistributor } from '@/ui/Button'
+import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
-import { ButtonBecomeDistributor } from '@/ui/Button'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -115,7 +116,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
                 <nav className={styles.navigation__content}>
                   <Link
                     className={styles.navigation__content_link}
-                    href={'/about'}
+                    href={routes.public.about}
                   >
                     About Us
                   </Link>
@@ -128,7 +129,10 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
                   <Link className={styles.navigation__content_link} href={'/'}>
                     Packaging
                   </Link>
-                  <Link className={styles.navigation__content_link} href={'/'}>
+                  <Link
+                    className={styles.navigation__content_link}
+                    href={routes.public.contactUs}
+                  >
                     Contact Us
                   </Link>
                 </nav>

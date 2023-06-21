@@ -38,11 +38,13 @@ const HeroInner: FC<HeroInnerProps> = ({
               >{`${title}`}</AnimatedText>
             </h1>
           </div>
-          <div className="col-md-6">
-            <p className={styles['hero__description']}>
-              <AnimatedText>{`${description}`}</AnimatedText>
-            </p>
-          </div>
+          {description && (
+            <div className="col-md-6">
+              <p className={styles['hero__description']}>
+                <AnimatedText>{`${description}`}</AnimatedText>
+              </p>
+            </div>
+          )}
         </div>
       </Container>
     </div>
