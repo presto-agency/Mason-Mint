@@ -50,6 +50,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
       .then((response) => response.json())
       .then(({ success = false }) => {
         // @TODO process all answers - success, response, error
+        // @TODO reset fields after success
         if (success) {
           openThanksModal()
         }

@@ -1,13 +1,27 @@
-import React, { ForwardedRef, forwardRef, useCallback, useState } from 'react'
-import Select, { StylesConfig } from 'react-select'
+import React, {
+  FC,
+  ForwardedRef,
+  forwardRef,
+  useCallback,
+  useState,
+} from 'react'
+import Select, {
+  StylesConfig,
+  components,
+  MenuListProps,
+  GroupBase,
+  DropdownIndicatorProps,
+} from 'react-select'
 import classNames from 'classnames'
 import Attention from '@/ui/Icons/Attention'
 
 import styles from './SelectField.module.scss'
+import ArrowSelect from '@/ui/Icons/ArrowSelect'
 
 export interface OptionInterface {
   value: string | undefined
   label: string
+  disabled?: boolean | undefined
 }
 
 type SelectOptionProps = {
@@ -19,6 +33,8 @@ type SelectOptionProps = {
   onChange: (option: OptionInterface | null) => void
   selectedOption?: OptionInterface | null
   options: OptionInterface[]
+  isSearchable?: boolean
+  isDisabled?: boolean
 }
 
 const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
@@ -32,6 +48,8 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       onChange,
       selectedOption,
       options,
+      isSearchable = false,
+      isDisabled = false,
     }: SelectOptionProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
@@ -45,6 +63,7 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
         display: 'flex',
         flex: 'initial',
         marginTop: '2rem',
+        width: '100%',
       }),
       placeholder: (base) => ({
         ...base,
@@ -54,7 +73,7 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
           fontSize: '13rem',
         },
         fontWeight: '500',
-        color: '#24282c',
+        color: 'var(--black)',
         textTransform: 'uppercase',
       }),
       control: (base) => ({
@@ -67,10 +86,8 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
         cursor: 'pointer',
         borderColor: 'transparent',
         boxShadow: 'initial',
-        backgroundRepeat: 'no-repeat',
-        backgroundImage: `url(./icons/selectArrow.svg)`,
-        backgroundPosition: 'center right',
         backgroundSize: '24rem',
+        backgroundColor: 'var(--white)',
         '&:hover': {
           borderColor: 'transparent',
         },
@@ -81,7 +98,26 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       }),
       indicatorsContainer: (base) => ({
         ...base,
+        position: 'absolute',
+        right: 0,
+        top: '9rem',
+        width: '24rem',
+        height: '24rem',
+      }),
+      indicatorSeparator: (provided) => ({
+        ...provided,
         display: 'none',
+      }),
+      dropdownIndicator: (provided, state) => ({
+        ...provided,
+        width: '100%',
+        height: '100%',
+        padding: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: state.isFocused ? 'var(--primary-color)' : 'var(--black)',
+        transform: isMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
       }),
       menu: (provided) => ({
         ...provided,
@@ -89,17 +125,59 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       }),
       menuList: (provided) => ({
         ...provided,
-        backgroundColor: '#FFFFFF',
-        borderColor: '#24282c',
+        backgroundColor: 'var(--white)',
+        borderColor: 'var(--black)',
         borderStyle: 'solid',
         borderWidth: 1,
         borderRadius: 16,
         padding: '16rem 0',
       }),
-      option: (provided) => ({
+      option: (provided, state) => ({
         ...provided,
-        cursor: 'pointer',
+        cursor: state.isFocused ? 'pointer' : 'auto',
+        padding: '8rem 16rem',
+        backgroundColor: state.isSelected
+          ? 'var(--primary-color)'
+          : 'var(--white)',
+        color: state.isSelected ? 'var(--white)' : 'var(--black)',
+        ':active': {
+          backgroundColor: 'var(--white)',
+        },
+        ':hover': {
+          color: !state.isSelected ? 'var(--primary-color)' : 'var(--white)',
+        },
+        transition:
+          'background-color var(--hover-duration) var(--ease), color var(--hover-duration) var(--ease)',
+        pointerEvents: state.isDisabled ? 'none' : 'auto',
       }),
+      singleValue: (provided) => ({
+        ...provided,
+        maxWidth: '90%',
+      }),
+    }
+
+    const CustomMenuList: FC<
+      MenuListProps<OptionInterface, false, GroupBase<OptionInterface>>
+    > = (props) => {
+      const { children } = props
+      return (
+        <components.MenuList {...props}>
+          <div data-lenis-prevent>{children}</div>
+        </components.MenuList>
+      )
+    }
+
+    const CustomDropdownIndicator: FC<
+      DropdownIndicatorProps<OptionInterface, false, GroupBase<OptionInterface>>
+    > = (props) => {
+      return (
+        <components.DropdownIndicator
+          {...props}
+          className={styles['selectField__dropdownIndicator']}
+        >
+          <ArrowSelect className={styles['selectField__arrow']} />
+        </components.DropdownIndicator>
+      )
     }
 
     const handleChange = useCallback(
@@ -111,12 +189,16 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
 
     return (
       <div
-        className={classNames(styles['selectOption'], className, {
+        className={classNames(styles['selectField'], className, {
           [styles['active']]: isFocused,
         })}
       >
         <Select<OptionInterface, false>
-          isSearchable={false}
+          components={{
+            MenuList: CustomMenuList,
+            DropdownIndicator: CustomDropdownIndicator,
+          }}
+          isSearchable={isSearchable}
           name={name}
           value={selectedOption}
           options={options}
@@ -126,21 +208,15 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
           onChange={handleChange}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
-          theme={(theme) => ({
-            ...theme,
-            colors: {
-              ...theme.colors,
-              primary25: '#e5e9eb',
-              primary: '#266ef9',
-            },
-          })}
           onMenuOpen={() => setIsMenuOpen(true)}
           onMenuClose={() => setIsMenuOpen(false)}
+          isDisabled={isDisabled}
+          isOptionDisabled={(option: OptionInterface) => !!option.disabled}
         />
         {label && (
           <p
             className={classNames(
-              styles['selectOption__label'],
+              styles['selectField__label'],
               error ? styles['__error'] : ''
             )}
           >
@@ -149,14 +225,14 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
         )}
         <div
           className={classNames(
-            styles['selectOption__border'],
+            styles['selectField__border'],
             error ? styles['__error'] : '',
             isMenuOpen ? styles['__hidden'] : ''
           )}
         ></div>
         {error && (
-          <p className={classNames(styles['selectOption__message'])}>
-            <Attention className={styles['selectOption__message_icon']} />
+          <p className={classNames(styles['selectField__message'])}>
+            <Attention className={styles['selectField__message_icon']} />
             {error}
           </p>
         )}

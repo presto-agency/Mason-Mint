@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react'
+import { FC, useCallback, useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styles from './BecomeADistributorForm.module.scss'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
@@ -10,6 +10,9 @@ import { useModal } from '@/hooks/useModal'
 import ThanksModal from '@/modals/Thanks/Thanks'
 import { ButtonPrimary } from '@/ui/Button'
 import { OptionInterface } from '@/ui/SelectField/SelectField'
+import { countryCodes } from '@/utils/countries/countryCodes'
+import { countryStates } from '@/utils/countries/countryStates'
+
 const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
   ssr: false,
 })
@@ -49,21 +52,49 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
     control,
     setValue,
     getValues,
+    clearErrors,
   } = useForm<FormValues>({
     values: defaultValues,
     resolver: yupResolver(validationSchema),
   })
 
   const openThanksModal = useModal(ThanksModal, { size: 'xs' })
+  const [selectedCountry, setSelectedCountry] =
+    useState<OptionInterface | null>(null)
   const [selectedState, setSelectedState] = useState<OptionInterface | null>(
     null
   )
 
-  const stateOptions: OptionInterface[] = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ]
+  const countriesOptions: OptionInterface[] = useMemo(() => {
+    return countryCodes.map((country) => {
+      return {
+        label: country.name,
+        value: country.code,
+      }
+    })
+  }, [])
+
+  const stateOptions: OptionInterface[] = useMemo(() => {
+    if (selectedCountry) {
+      const query = selectedCountry.label
+        .toLowerCase()
+        .trim()
+        .replace(/\s/g, '')
+      const queryStates = countryStates.filter(
+        (c) => c.country.toLowerCase().trim().replace(/\s/g, '') === query
+      )
+      if (queryStates.length) {
+        return queryStates[0].states.map((state) => {
+          return {
+            value: state,
+            label: state,
+          }
+        })
+      }
+    }
+
+    return [{ label: 'No states', value: 'disabled', disabled: true }]
+  }, [selectedCountry])
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     await browserSendEmail({
@@ -74,6 +105,7 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
       .then((response) => response.json())
       .then(({ success = false }) => {
         // @TODO process all answers - success, response, error
+        // @TODO reset fields after success
         if (success) {
           openThanksModal()
         }
@@ -87,11 +119,26 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
       if (option) {
         setSelectedState(option)
         setValue('state', option.label)
+        clearErrors('state')
       }
     },
-    [setSelectedState, setValue]
+    [setSelectedState, setValue, clearErrors]
   )
-  console.log('form values ', getValues())
+
+  const handleCountryChange = useCallback(
+    (option: OptionInterface | null) => {
+      if (option) {
+        setSelectedCountry(option)
+        setValue('country', option.label)
+        // reset state
+        setSelectedState(null)
+        setValue('state', '')
+        clearErrors('country')
+      }
+    },
+    [setSelectedCountry, setValue, setSelectedState, clearErrors]
+  )
+
   return (
     <div className={className}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
@@ -191,14 +238,18 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
             <div className="col-md-6">
               <Controller
                 control={control}
-                name="city"
+                name="country"
                 render={({ field }) => {
                   return (
-                    <TextField
+                    <CustomSelect
                       {...field}
-                      placeholder="City"
-                      label="City*"
-                      error={errors['city']?.message}
+                      placeholder="Country"
+                      label="Country*"
+                      selectedOption={selectedCountry}
+                      onChange={handleCountryChange}
+                      error={errors['country']?.message}
+                      options={countriesOptions}
+                      isSearchable
                     />
                   )
                 }}
@@ -242,14 +293,14 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
             <div className="col-md-6">
               <Controller
                 control={control}
-                name="country"
+                name="city"
                 render={({ field }) => {
                   return (
                     <TextField
                       {...field}
-                      placeholder="Country"
-                      label="Country*"
-                      error={errors['country']?.message}
+                      placeholder="City"
+                      label="City*"
+                      error={errors['city']?.message}
                     />
                   )
                 }}
