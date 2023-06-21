@@ -1,13 +1,13 @@
-import React, { ForwardedRef, forwardRef, useState } from 'react'
+import React, { ForwardedRef, forwardRef, useCallback, useState } from 'react'
 import Select, { StylesConfig } from 'react-select'
 import classNames from 'classnames'
 import Attention from '@/ui/Icons/Attention'
 
 import styles from './SelectField.module.scss'
 
-interface Option {
-  value: string
-  label?: string
+export interface OptionInterface {
+  value: string | undefined
+  label: string
 }
 
 type SelectOptionProps = {
@@ -16,16 +16,10 @@ type SelectOptionProps = {
   label?: string
   error?: string
   className?: string
-  onChange: (value: string | null) => void
+  onChange: (option: OptionInterface | null) => void
+  selectedOption?: OptionInterface | null
+  options: OptionInterface[]
 }
-
-const options: Option[] = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-]
-
-const defaultValue = options[0] || false
 
 const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
   (
@@ -36,12 +30,15 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       error,
       placeholder = 'State',
       onChange,
+      selectedOption,
+      options,
     }: SelectOptionProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
     const [isFocused, setIsFocused] = useState(false)
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const customStyles: StylesConfig<Option, false> = {
+    const customStyles: StylesConfig<OptionInterface, false> = {
       valueContainer: (base) => ({
         ...base,
         padding: '0',
@@ -86,24 +83,31 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
         ...base,
         display: 'none',
       }),
+      menu: (provided) => ({
+        ...provided,
+        borderRadius: 16,
+      }),
+      menuList: (provided) => ({
+        ...provided,
+        backgroundColor: '#FFFFFF',
+        borderColor: '#24282c',
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderRadius: 16,
+        padding: '16rem 0',
+      }),
+      option: (provided) => ({
+        ...provided,
+        cursor: 'pointer',
+      }),
     }
 
-    const handleChange = (option: Option | null) => {
-      if (option) {
-        const { value } = option
-        onChange(value)
-      } else {
-        onChange('')
-      }
-    }
-
-    const handleFocus = () => {
-      setIsFocused(true)
-    }
-
-    const handleBlur = () => {
-      setIsFocused(false)
-    }
+    const handleChange = useCallback(
+      (option: OptionInterface | null) => {
+        onChange && onChange(option)
+      },
+      [onChange]
+    )
 
     return (
       <div
@@ -111,17 +115,17 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
           [styles['active']]: isFocused,
         })}
       >
-        <Select<Option, false>
+        <Select<OptionInterface, false>
           isSearchable={false}
           name={name}
+          value={selectedOption}
           options={options}
-          defaultValue={defaultValue ? defaultValue : null}
           styles={customStyles}
           classNamePrefix="select"
           placeholder={placeholder}
           onChange={handleChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
+          onFocus={() => setIsFocused(true)}
+          onBlur={() => setIsFocused(false)}
           theme={(theme) => ({
             ...theme,
             colors: {
@@ -130,6 +134,8 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
               primary: '#266ef9',
             },
           })}
+          onMenuOpen={() => setIsMenuOpen(true)}
+          onMenuClose={() => setIsMenuOpen(false)}
         />
         {label && (
           <p
@@ -144,7 +150,8 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
         <div
           className={classNames(
             styles['selectOption__border'],
-            error ? styles['__error'] : ''
+            error ? styles['__error'] : '',
+            isMenuOpen ? styles['__hidden'] : ''
           )}
         ></div>
         {error && (

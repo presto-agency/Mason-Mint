@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import { FC, useCallback, useState } from 'react'
+import dynamic from 'next/dynamic'
 import styles from './BecomeADistributorForm.module.scss'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import TextField from '@/ui/TextField/TextField'
@@ -8,7 +9,10 @@ import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import { useModal } from '@/hooks/useModal'
 import ThanksModal from '@/modals/Thanks/Thanks'
 import { ButtonPrimary } from '@/ui/Button'
-import dynamic from 'next/dynamic'
+import { OptionInterface } from '@/ui/SelectField/SelectField'
+const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
+  ssr: false,
+})
 
 type FormValues = {
   fullName: string
@@ -38,21 +42,28 @@ const defaultValues = {
   state: '',
 }
 
-const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
-  ssr: false,
-})
-
 const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
   const {
     handleSubmit,
     formState: { errors },
     control,
+    setValue,
+    getValues,
   } = useForm<FormValues>({
     values: defaultValues,
     resolver: yupResolver(validationSchema),
   })
 
   const openThanksModal = useModal(ThanksModal, { size: 'xs' })
+  const [selectedState, setSelectedState] = useState<OptionInterface | null>(
+    null
+  )
+
+  const stateOptions: OptionInterface[] = [
+    { value: 'chocolate', label: 'Chocolate' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+  ]
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     await browserSendEmail({
@@ -71,6 +82,16 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
     // @TODO display error on page
   }
 
+  const handleStateChange = useCallback(
+    (option: OptionInterface | null) => {
+      if (option) {
+        setSelectedState(option)
+        setValue('state', option.label)
+      }
+    },
+    [setSelectedState, setValue]
+  )
+  console.log('form values ', getValues())
   return (
     <div className={className}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
@@ -193,7 +214,10 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
                       {...field}
                       placeholder="Select State"
                       label="Select State*"
+                      selectedOption={selectedState}
+                      onChange={handleStateChange}
                       error={errors['state']?.message}
+                      options={stateOptions}
                     />
                   )
                 }}

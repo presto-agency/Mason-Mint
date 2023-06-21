@@ -1,8 +1,8 @@
-import { FC, Fragment, useRef } from 'react'
+import { FC, Fragment, useMemo, useRef } from 'react'
+import classNames from 'classnames'
 import { useInView, motion } from 'framer-motion'
 
 import styles from './AnimatedText.module.scss'
-import classNames from 'classnames'
 
 type AnimatedTextProps = {
   children: string
@@ -18,6 +18,10 @@ const AnimatedText: FC<AnimatedTextProps> = ({
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
+  const stringArray = useMemo(() => {
+    return children.split(' ')
+  }, [children])
+
   const container = {
     visible: () => ({
       transition: { staggerChildren: 0.01, delayChildren: 0.2 },
@@ -31,15 +35,15 @@ const AnimatedText: FC<AnimatedTextProps> = ({
       rotate: 0,
       y: 0,
       transition: {
-        type: 'spring',
+        ease: 'anticipate',
         duration: 2,
       },
     },
     hidden: title
       ? {
           opacity: 0,
-          y: '120%',
-          rotate: 12,
+          y: '100%',
+          rotate: 5,
         }
       : {
           opacity: 0,
@@ -58,7 +62,7 @@ const AnimatedText: FC<AnimatedTextProps> = ({
       animate={isInView ? 'visible' : ''}
     >
       <>
-        {children.split(' ').map((word, index) => {
+        {stringArray.map((word, index) => {
           return (
             <Fragment key={index}>
               <motion.span
@@ -67,7 +71,7 @@ const AnimatedText: FC<AnimatedTextProps> = ({
               >
                 {word}
               </motion.span>
-              <span> </span>
+              {stringArray.length - 1 > index && <span> </span>}
             </Fragment>
           )
         })}

@@ -11,6 +11,7 @@ type AppLayoutProps = {
 const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const options = {
     duration: 2.5,
+    smoothWheel: true,
   }
 
   return (

@@ -1,23 +1,35 @@
+import { useState } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import classNames from 'classnames'
 import routes from '@/utils/routes'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ButtonPrimary } from '@/ui/Button'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import BrokenCoinFirstPart from './assets/images/broken_coin_part_1.png'
 import BrokenCoinSecondPart from './assets/images/broken_coin_part_2.png'
+const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 
 import styles from './PageNotFound.module.scss'
 
 const PageNotFound = () => {
+  const [loaded, setLoaded] = useState({ first: false, second: false })
+
   return (
     <div className={styles['empty']}>
-      <div className={styles['empty__box']}>
-        <p className={styles['empty__label']}>oops...</p>
+      <motion.div
+        className={styles['empty__box']}
+        initial={{ opacity: 0 }}
+        animate={loaded.first && loaded.second ? { opacity: 1 } : {}}
+      >
+        <p className={styles['empty__label']}>
+          <AnimatedText>oops...</AnimatedText>
+        </p>
         <div className={styles['empty__core']}>
           <motion.span
             initial={{ x: 3 }}
-            animate={{ x: 0 }}
+            animate={loaded.first && loaded.second ? { x: 0 } : {}}
             transition={{
               type: 'spring',
               stiffness: 260,
@@ -30,7 +42,9 @@ const PageNotFound = () => {
           <div className={styles['empty__core_thumb']}>
             <motion.div
               initial={{ rotate: 0 }}
-              animate={{ rotate: -8 }}
+              animate={
+                loaded.first && loaded.second ? { rotate: -8, y: 10 } : {}
+              }
               transition={{
                 type: 'spring',
                 stiffness: 260,
@@ -44,11 +58,19 @@ const PageNotFound = () => {
                 alt="Broken Coin"
                 fill
                 className={styles['empty__coin_item']}
+                onLoadingComplete={() =>
+                  setLoaded((prevState) => {
+                    return {
+                      ...prevState,
+                      first: true,
+                    }
+                  })
+                }
               />
             </motion.div>
             <motion.div
               initial={{ rotate: 0 }}
-              animate={{ rotate: 3 }}
+              animate={loaded.first && loaded.second ? { rotate: 3 } : {}}
               transition={{
                 type: 'spring',
                 stiffness: 260,
@@ -65,12 +87,20 @@ const PageNotFound = () => {
                 alt="Broken Coin"
                 fill
                 className={styles['empty__coin_item']}
+                onLoadingComplete={() =>
+                  setLoaded((prevState) => {
+                    return {
+                      ...prevState,
+                      second: true,
+                    }
+                  })
+                }
               />
             </motion.div>
           </div>
           <motion.span
             initial={{ x: -3 }}
-            animate={{ x: 0 }}
+            animate={loaded.first && loaded.second ? { x: 0 } : {}}
             transition={{
               type: 'spring',
               stiffness: 260,
@@ -82,14 +112,18 @@ const PageNotFound = () => {
           </motion.span>
         </div>
         <p className={styles['empty__description']}>
-          Page not found. Don&apos;t lose your head, you can always
+          <AnimatedText>
+            Page not found. Don&apos;t lose your head, you can always
+          </AnimatedText>
         </p>
-        <Link href={routes.public.index}>
-          <ButtonPrimary variant="blue" className={styles['empty__action']}>
-            Go back
-          </ButtonPrimary>
-        </Link>
-      </div>
+        <AnimatedElement>
+          <Link href={routes.public.index}>
+            <ButtonPrimary variant="blue" className={styles['empty__action']}>
+              Go back
+            </ButtonPrimary>
+          </Link>
+        </AnimatedElement>
+      </motion.div>
     </div>
   )
 }
