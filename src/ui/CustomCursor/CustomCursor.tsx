@@ -1,7 +1,12 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './CustomCursor.module.scss'
+import { useRouter } from 'next/router'
+import classNames from 'classnames'
+import { motion } from 'framer-motion'
 
 const CustomCursor = () => {
+  const [isOnSubject, setIsOnSubject] = useState(false)
+  const { route } = useRouter()
   const mainCursor = useRef<HTMLDivElement>(null)
   const positionRef = useRef({
     mouseX: 0,
@@ -12,6 +17,19 @@ const CustomCursor = () => {
     distanceY: 0,
     key: -1,
   })
+
+  const cursorVariant = {
+    default: {
+      width: '12rem',
+      height: '12rem',
+      opacity: 1,
+    },
+    onSubject: {
+      width: 0,
+      height: 0,
+      opacity: 0,
+    },
+  }
 
   useEffect(() => {
     document.addEventListener('mousemove', (event) => {
@@ -62,9 +80,39 @@ const CustomCursor = () => {
     }
     followMouse()
   }, [])
+
+  useEffect(() => {
+    const handleMouseEnter = () => {
+      setIsOnSubject((prevIsOnSubject) => !prevIsOnSubject)
+    }
+
+    if (typeof window !== 'undefined') {
+      const links = document.querySelectorAll('a, button, input, textarea')
+      links.forEach((link) => {
+        link.addEventListener('mouseenter', handleMouseEnter)
+        link.addEventListener('mouseleave', handleMouseEnter)
+      })
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        const links = document.querySelectorAll('a, button, input, textarea')
+        links.forEach((link) => {
+          link.removeEventListener('mouseenter', handleMouseEnter)
+          link.removeEventListener('mouseleave', handleMouseEnter)
+        })
+      }
+    }
+  }, [route])
+
   return (
     <>
-      <div className={styles['customCursor']} ref={mainCursor}></div>
+      <motion.div
+        className={classNames(styles['customCursor'])}
+        ref={mainCursor}
+        variants={cursorVariant}
+        animate={isOnSubject ? 'onSubject' : 'default'}
+      ></motion.div>
     </>
   )
 }
