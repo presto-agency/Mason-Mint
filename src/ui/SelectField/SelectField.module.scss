@@ -13,6 +13,8 @@
     }
 
   &.active {
+    z-index: 2;
+
     .selectField {
       &__label {
         color: var(--primary-color);
