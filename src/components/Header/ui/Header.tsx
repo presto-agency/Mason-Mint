@@ -89,7 +89,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [menuOpened, initialTheme])
 
   useEffect(() => {
-    if (width > 1023) setMenuOpened(false)
+    if (width > 991) setMenuOpened(false)
   }, [width])
 
   useEffect(() => {

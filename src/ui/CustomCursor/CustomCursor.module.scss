@@ -9,8 +9,4 @@
   border-radius: 50%;
   transform: translate3d(0, 0, 0);
   pointer-events: none;
-
-  @media (max-width: $breakpoint-tablet) {
-    display: none;
-  }
 }
