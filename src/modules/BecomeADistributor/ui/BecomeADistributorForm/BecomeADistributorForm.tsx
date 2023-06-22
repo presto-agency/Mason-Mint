@@ -79,8 +79,8 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
       opacity: 1,
       y: 0,
       transition: {
-        ease: 'anticipate',
-        duration: 2,
+        type: 'tween',
+        duration: 1,
       },
     },
     hidden: {
