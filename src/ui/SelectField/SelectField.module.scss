@@ -1,7 +1,8 @@
 @import "@/app/styles/variables/breackpoints";
 
-.selectOption {
+.selectField {
   position: relative;
+  z-index: 1;
   display: block;
   padding-top: 18rem;
   padding-bottom: 30rem;
@@ -12,7 +13,9 @@
     }
 
   &.active {
-    .selectOption {
+    z-index: 2;
+
+    .selectField {
       &__label {
         color: var(--primary-color);
 
@@ -110,4 +113,14 @@
       color: var(--error);
     }
   }
+  
+    & &__dropdownIndicator{
+      transition: color var(--hover-duration) var(--ease), transform var(--hover-duration) var(--ease);
+    }
+  
+    &__arrow{
+      width: 16rem;
+      height: 9rem;
+      transform-origin: center;
+    }
 }

@@ -21,6 +21,10 @@
 			user-select: none;
 			pointer-events: none;
 			
+				&_box{
+					display: block;
+				}
+			
 				@media (width <= $breakpoint-mob) {
 					margin: 34rem auto 23rem;
 				}

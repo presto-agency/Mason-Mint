@@ -1,5 +1,7 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react'
+import Link from 'next/link'
 import classNames from 'classnames'
+import routes from '@/utils/routes'
 
 import styles from './ButtonBecomDistributor.module.scss'
 
@@ -16,12 +18,14 @@ export const ButtonBecomeDistributor: FC<ButtonBecomeDistributorProps> = ({
   ...buttonProps
 }) => {
   return (
-    <button
-      className={classNames(styles.becomeDistributor, className)}
-      disabled={disabled}
-      {...buttonProps}
-    >
-      BECOME A DISTRIBUTOR
-    </button>
+    <Link href={routes.public.becomeDistributor}>
+      <button
+        className={classNames(styles.becomeDistributor, className)}
+        disabled={disabled}
+        {...buttonProps}
+      >
+        BECOME A DISTRIBUTOR
+      </button>
+    </Link>
   )
 }
