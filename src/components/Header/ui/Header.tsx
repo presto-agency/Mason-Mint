@@ -5,7 +5,7 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
-import { ButtonBecomeDistributor } from '@/ui/Button'
+import { ButtonBecomeDistributor, ButtonPrimary } from '@/ui/Button'
 import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
@@ -136,7 +136,13 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
                     Contact Us
                   </Link>
                 </nav>
-                <ButtonBecomeDistributor />
+                <ButtonPrimary
+                  variant="blue"
+                  isSmall={true}
+                  href={routes.public.becomeDistributor}
+                >
+                  Become A Distributor
+                </ButtonPrimary>
               </div>
             </div>
             <MobileLayout
