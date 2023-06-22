@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ButtonBecomeDistributor, ButtonPrimary } from '@/ui/Button'
+import { ButtonPrimary } from '@/ui/Button'
 import styles from '../Header.module.scss'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'

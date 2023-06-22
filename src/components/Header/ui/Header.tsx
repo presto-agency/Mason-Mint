@@ -5,7 +5,7 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
-import { ButtonBecomeDistributor, ButtonPrimary } from '@/ui/Button'
+import { ButtonPrimary } from '@/ui/Button'
 import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
