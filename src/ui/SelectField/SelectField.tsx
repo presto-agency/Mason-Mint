@@ -21,6 +21,9 @@ import ArrowSelect from '@/ui/Icons/ArrowSelect'
 export interface OptionInterface {
   value: string | undefined
   label: string
+  states?:
+    | { name: string; state_code: string }[]
+    | { name: string; state_code: null }[]
   disabled?: boolean | undefined
 }
 

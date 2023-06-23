@@ -1,9 +1,9 @@
 import Container from '@/app/layouts/Container'
 import BecomeADistributorForm from '@/modules/BecomeADistributor/ui/BecomeADistributorForm/BecomeADistributorForm'
+import BecomeADistributorBody from '@/modules/BecomeADistributor/ui/BecomeADistributorBody/BecomeADistributorBody'
 import HeroInner from '@/ui/HeroInner/HeroInner'
 
 import styles from './BecomeADistributorContent.module.scss'
-import BecomeADistributorBody from '@/modules/BecomeADistributor/ui/BecomeADistributorBody/BecomeADistributorBody'
 
 export const BecomeADistributorContent = () => {
   return (
