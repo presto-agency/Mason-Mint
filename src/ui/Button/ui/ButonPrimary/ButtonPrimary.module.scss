@@ -1,10 +1,18 @@
 @import '@/app/styles/variables/breackpoints';
 
 .buttonPrimary {
+  display: flex;
+  gap: 12rem;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
   height: 48rem;
   padding: 0 32rem;
+  font: var(--font-button-l);
   white-space: nowrap;
+  text-transform: uppercase;
   border: 1px transparent solid;
+  border-radius: 100px;
 
   @media (width <= $breakpoint-mob) {
     height: 44rem;
@@ -40,23 +48,26 @@
     }
   }
 
-  &:hover {
-    cursor: pointer;
 
-    .buttonPrimary {
-      &__content {
-        padding-right: 0;
-        padding-left: 32rem;
+  @media (min-width: $breakpoint-tablet) {
+    &:hover {
+      cursor: pointer;
 
-        &_icon {
-          &.__1 {
-            transform: translate(0, -50%);
-            opacity: 1;
-          }
+      .buttonPrimary {
+        &__content {
+          padding-right: 0;
+          padding-left: 32rem;
 
-          &.__2 {
-            transform: translate(32rem, -50%);
-            opacity: 0;
+          &_icon {
+            &.__1 {
+              transform: translate(0, -50%);
+              opacity: 1;
+            }
+
+            &.__2 {
+              transform: translate(32rem, -50%);
+              opacity: 0;
+            }
           }
         }
       }
@@ -100,16 +111,13 @@
   }
 }
 
-.small {
-  display: flex;
-  align-items: center;
-  width: fit-content;
+.noArrows {
   height: 36rem;
   padding: 0 16rem;
+  color: var(--white);
   font-weight: 500;
   font-size: 15rem;
-  text-transform: uppercase;
-  border-radius: 100px;
+  background-color: var(--primary-color);
   transition: background-color var(--move-duration) var(--ease);
 
   @media (max-width: $breakpoint-mob) {
@@ -119,6 +127,7 @@
     font-size: 13rem;
   }
 
+@media (min-width: $breakpoint-tablet) {
   &:hover {
     background-color: var(--black);
     cursor: pointer;
@@ -127,17 +136,25 @@
       &__content {
         padding-right: initial;
         padding-left: initial;
-
-        & &__icon {
-          display: none;
-        }
       }
     }
   }
+}
 
   .buttonPrimary {
     &__content {
-      padding-right: 0;
+      padding-right: initial;
+      padding-left: initial;
+
+      &_icon {
+        &.__1 {
+          display: none;
+        }
+
+        &.__2 {
+          display: none;
+        }
+      }
     }
   }
 

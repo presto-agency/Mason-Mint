@@ -5,13 +5,12 @@ import Arrow from '@/ui/Icons/Arrow'
 import styles from './ButtonPrimary.module.scss'
 import Link from 'next/link'
 
-type ButtonPrimaryVariants = 'white' | 'outlined' | 'blue' | 'mini'
+type ButtonPrimaryVariants = 'white' | 'outlined' | 'blue' | 'mini' | 'noArrows'
 
 type ButtonPrimaryProps = {
   className?: string
   variant?: ButtonPrimaryVariants
   fullWidth?: boolean
-  isSmall?: boolean
   href?: string
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
@@ -24,7 +23,6 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
   variant = 'white',
   disabled,
   fullWidth = false,
-  isSmall,
   href,
   ...buttonProps
 }) => {
@@ -40,7 +38,6 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
             styles['buttonPrimary'],
             mods,
             fullWidth ? styles['fullWidth'] : '',
-            isSmall ? styles['small'] : '',
             className
           )}
           disabled={disabled}
@@ -69,11 +66,24 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
               styles['buttonPrimary'],
               mods,
               fullWidth ? styles['fullWidth'] : '',
-              isSmall ? styles['small'] : '',
               className
             )}
           >
-            <div className={styles['buttonPrimary__content']}>{children}</div>
+            <div className={styles['buttonPrimary__content']}>
+              <Arrow
+                className={classNames(
+                  styles['buttonPrimary__content_icon'],
+                  styles['__1']
+                )}
+              />
+              <span>{children}</span>
+              <Arrow
+                className={classNames(
+                  styles['buttonPrimary__content_icon'],
+                  styles['__2']
+                )}
+              />
+            </div>
           </div>
         </Link>
       )}
