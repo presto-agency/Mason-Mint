@@ -88,8 +88,7 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
           exit="hidden"
         >
           <ButtonPrimary
-            variant="blue"
-            isSmall={true}
+            variant="noArrows"
             href={routes.public.becomeDistributor}
           >
             Become A Distributor
