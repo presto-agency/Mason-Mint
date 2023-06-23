@@ -62,6 +62,7 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
       initial={motionProps.initial}
       exit={motionProps.exit}
       transition={motionProps.transition}
+      data-lenis-prevent
     >
       <div className={styles.navigation} ref={divRef}>
         <nav className={styles.navigation__content}>
