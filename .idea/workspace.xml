@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/NavigationLayout/NavigationLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/NavigationLayout/NavigationLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButtonBecomeDistriburor/ButtonBecomDistributor.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButtonBecomeDistriburor/ButtonBecomeDistributor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButtonBecomeDistriburor/ButtonBecomeDistributorAnimated.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +89,7 @@
       <workItem from="1686810377641" duration="3515000" />
       <workItem from="1686818897751" duration="45609000" />
       <workItem from="1687160941274" duration="20822000" />
+      <workItem from="1687425445453" duration="14825000" />
     </task>
     <servers />
   </component>

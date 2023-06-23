@@ -1,10 +1,11 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ButtonBecomeDistributorAnimated } from '@/ui/Button'
+import { ButtonPrimary } from '@/ui/Button'
 import styles from '../Header.module.scss'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import AnimatedTextCharacter from '@/components/Header/ui/NavigationLayout/AnimatedTextCharacter'
+import routes from '@/utils/routes'
 
 type MotionProps = {
   animate: { height: string }
@@ -16,6 +17,28 @@ type MotionProps = {
 type MobileMenuProps = {
   motionProps: MotionProps
   className?: string
+}
+
+const buttonVariant = {
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 1,
+      type: 'spring',
+      damping: 12,
+      stiffness: 100,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    y: 3,
+    transition: {
+      type: 'spring',
+      damping: 12,
+      stiffness: 100,
+    },
+  },
 }
 
 export const NavigationLayout: FC<MobileMenuProps> = ({
@@ -58,7 +81,20 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
             <AnimatedTextCharacter text="Contact Us" />
           </Link>
         </nav>
-        <ButtonBecomeDistributorAnimated />
+        <motion.div
+          variants={buttonVariant}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+        >
+          <ButtonPrimary
+            variant="blue"
+            isSmall={true}
+            href={routes.public.becomeDistributor}
+          >
+            Become A Distributor
+          </ButtonPrimary>
+        </motion.div>
       </div>
     </motion.div>
   )
