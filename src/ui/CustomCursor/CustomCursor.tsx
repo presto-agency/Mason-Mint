@@ -83,14 +83,18 @@ const CustomCursor = () => {
 
   useEffect(() => {
     const handleMouseEnter = () => {
-      setIsOnSubject((prevIsOnSubject) => !prevIsOnSubject)
+      setIsOnSubject(true)
+    }
+
+    const handleMouseLeave = () => {
+      setIsOnSubject(false)
     }
 
     if (typeof window !== 'undefined') {
       const links = document.querySelectorAll('a, button, input, textarea')
       links.forEach((link) => {
         link.addEventListener('mouseenter', handleMouseEnter)
-        link.addEventListener('mouseleave', handleMouseEnter)
+        link.addEventListener('mouseleave', handleMouseLeave)
       })
     }
 
@@ -99,7 +103,7 @@ const CustomCursor = () => {
         const links = document.querySelectorAll('a, button, input, textarea')
         links.forEach((link) => {
           link.removeEventListener('mouseenter', handleMouseEnter)
-          link.removeEventListener('mouseleave', handleMouseEnter)
+          link.removeEventListener('mouseleave', handleMouseLeave)
         })
       }
     }
