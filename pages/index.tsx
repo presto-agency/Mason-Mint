@@ -3,7 +3,7 @@ import { HomeContent } from '@/modules/Home'
 
 export default function Home() {
   return (
-    <PageLayout headerTheme="light">
+    <PageLayout headerTheme="dark">
       <HomeContent />
       <div
         style={{

@@ -23,9 +23,7 @@ export const MobileLayout: FC<MobileLayoutProps> = memo(
           opened={menuOpened}
           toggleMenu={toggleMenu}
         />
-        <AnimatePresence>
-          {menuOpened && <MobileMenu opened={menuOpened} />}
-        </AnimatePresence>
+        <AnimatePresence>{menuOpened && <MobileMenu />}</AnimatePresence>
       </div>
     )
   }
