@@ -7,6 +7,7 @@ import { motion, MotionValue, useScroll, useTransform } from 'framer-motion'
 type BackgroundImageProps = {
   className?: string
   children?: ReactNode
+  animated?: boolean
 } & ImageProps
 
 export const BackgroundImage: FC<BackgroundImageProps> = ({
@@ -15,6 +16,7 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   quality = 75,
   className,
   children,
+  animated = false,
   ...props
 }) => {
   const useParallax = (value: MotionValue<number>) => {
@@ -30,20 +32,34 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   return (
     <div className={classNames(styles['BackgroundImage'], className)}>
       <div className={styles['BackgroundImage__container']}>
-        <motion.div
-          className={styles['BackgroundImage__container_animatedWrapper']}
-          style={{ y }}
-        >
-          <Image
-            src={src}
-            ref={refTarget}
-            alt={alt}
-            fill={true}
-            sizes="100%"
-            quality={quality}
-            {...props}
-          />
-        </motion.div>
+        {animated ? (
+          <motion.div
+            className={styles['BackgroundImage__container_animatedWrapper']}
+            style={{ y }}
+          >
+            <Image
+              src={src}
+              ref={refTarget}
+              alt={alt}
+              fill={true}
+              sizes="100%"
+              quality={quality}
+              {...props}
+            />
+          </motion.div>
+        ) : (
+          <div className={styles['BackgroundImage__container_animatedWrapper']}>
+            <Image
+              src={src}
+              ref={refTarget}
+              alt={alt}
+              fill={true}
+              sizes="100%"
+              quality={quality}
+              {...props}
+            />
+          </div>
+        )}
       </div>
       {children && <div className={styles.content}>{children}</div>}
     </div>

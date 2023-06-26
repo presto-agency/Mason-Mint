@@ -27,6 +27,7 @@ export const StorySection: FC = () => {
           src="/images/home/home_story_1.png"
           className={styles.photoContainer}
           alt="Coin photo"
+          animated={true}
         />
       </div>
       <motion.div style={{ y }} className={styles.right}>
