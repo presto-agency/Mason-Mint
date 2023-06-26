@@ -1,21 +1,49 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react'
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from 'react'
 import classNames from 'classnames'
 import Arrow from '@/ui/Icons/Arrow'
 
 import styles from './ButtonPrimary.module.scss'
 import Link from 'next/link'
 
-type ButtonPrimaryVariants = 'white' | 'outlined' | 'blue' | 'mini' | 'noArrows'
+type ButtonPrimaryVariants = 'white' | 'outlined' | 'blue' | 'mini'
 
 type ButtonPrimaryProps = {
   className?: string
   variant?: ButtonPrimaryVariants
   fullWidth?: boolean
   href?: string
+  arrows?: boolean
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
 >
+
+type ButtonInnerProps = {
+  children: ReactNode
+  arrows?: boolean
+}
+
+const ButtonInner: FC<ButtonInnerProps> = ({ children, arrows }) => (
+  <div className={styles['buttonPrimary__content']}>
+    {arrows && (
+      <Arrow
+        className={classNames(
+          styles['buttonPrimary__content_icon'],
+          styles['__1']
+        )}
+      />
+    )}
+    <span>{children}</span>
+    {arrows && (
+      <Arrow
+        className={classNames(
+          styles['buttonPrimary__content_icon'],
+          styles['__2']
+        )}
+      />
+    )}
+  </div>
+)
 
 export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
   className,
@@ -24,10 +52,12 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
   disabled,
   fullWidth = false,
   href,
+  arrows = true,
   ...buttonProps
 }) => {
   const mods = {
     [styles[variant]]: true,
+    [styles['noArrowsAnimation']]: !arrows,
   }
 
   return (
@@ -43,48 +73,19 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
           disabled={disabled}
           {...buttonProps}
         >
-          <div className={styles['buttonPrimary__content']}>
-            <Arrow
-              className={classNames(
-                styles['buttonPrimary__content_icon'],
-                styles['__1']
-              )}
-            />
-            <span>{children}</span>
-            <Arrow
-              className={classNames(
-                styles['buttonPrimary__content_icon'],
-                styles['__2']
-              )}
-            />
-          </div>
+          <ButtonInner arrows={arrows}>{children}</ButtonInner>
         </button>
       ) : (
-        <Link href={href}>
-          <div
-            className={classNames(
-              styles['buttonPrimary'],
-              mods,
-              fullWidth ? styles['fullWidth'] : '',
-              className
-            )}
-          >
-            <div className={styles['buttonPrimary__content']}>
-              <Arrow
-                className={classNames(
-                  styles['buttonPrimary__content_icon'],
-                  styles['__1']
-                )}
-              />
-              <span>{children}</span>
-              <Arrow
-                className={classNames(
-                  styles['buttonPrimary__content_icon'],
-                  styles['__2']
-                )}
-              />
-            </div>
-          </div>
+        <Link
+          href={href}
+          className={classNames(
+            styles['buttonPrimary'],
+            mods,
+            fullWidth ? styles['fullWidth'] : '',
+            className
+          )}
+        >
+          <ButtonInner arrows={arrows}>{children}</ButtonInner>
         </Link>
       )}
     </>

@@ -9,6 +9,7 @@ import { ButtonPrimary } from '@/ui/Button'
 import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
+import stylesButton from '@/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -137,7 +138,9 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
                   </Link>
                 </nav>
                 <ButtonPrimary
-                  variant="noArrows"
+                  variant="blue"
+                  arrows={false}
+                  className={stylesButton['small']}
                   href={routes.public.becomeDistributor}
                 >
                   Become A Distributor

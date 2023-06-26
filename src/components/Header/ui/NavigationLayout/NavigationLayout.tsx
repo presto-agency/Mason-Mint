@@ -1,11 +1,13 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ButtonPrimary } from '@/ui/Button'
-import styles from '../Header.module.scss'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import AnimatedTextCharacter from '@/components/Header/ui/NavigationLayout/AnimatedTextCharacter'
 import routes from '@/utils/routes'
+
+import styles from '../Header.module.scss'
+import stylesButton from '@/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss'
 
 type MotionProps = {
   animate: { height: string }
@@ -89,7 +91,9 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
           exit="hidden"
         >
           <ButtonPrimary
-            variant="noArrows"
+            variant="blue"
+            arrows={false}
+            className={stylesButton['small']}
             href={routes.public.becomeDistributor}
           >
             Become A Distributor

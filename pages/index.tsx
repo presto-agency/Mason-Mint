@@ -1,10 +1,10 @@
 import { PageLayout } from '@/app/layouts/PageLayout'
-import { HomeContent } from '@/modules/Home'
+// import { HomeContent } from '@/modules/Home'
 
 export default function Home() {
   return (
     <PageLayout headerTheme="light">
-      <HomeContent />
+      {/*<HomeContent />*/}
       <div
         style={{
           height: '100vh',
