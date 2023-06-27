@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useContext } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import styles from './CustomCursor.module.scss'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
@@ -38,12 +38,11 @@ const CustomCursor = () => {
     document.addEventListener('mousemove', (event) => {
       const { clientX, clientY } = event
 
-      const mouseX = clientX
-      const mouseY = clientY
       if (mainCursor.current) {
-        positionRef.current.mouseX = mouseX - mainCursor.current.clientWidth / 2
+        positionRef.current.mouseX =
+          clientX - mainCursor.current.clientWidth / 2
         positionRef.current.mouseY =
-          mouseY - mainCursor.current.clientHeight / 2
+          clientY - mainCursor.current.clientHeight / 2
       }
     })
   }, [])

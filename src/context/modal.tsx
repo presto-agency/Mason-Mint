@@ -34,7 +34,7 @@ export const withModal = <P extends object>(
       modalsRef.current = modalsRef.current.slice(0, -1)
       setModals([...modalsRef.current])
       store?.dispatch && store?.dispatch({ type: 'CLOSE_MODAL' })
-    }, [modalsRef, setModals])
+    }, [modalsRef, setModals, store])
 
     return (
       <ModalContext.Provider value={[addModal, closeModal]}>
