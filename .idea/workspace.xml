@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/components.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/NavigationLayout/NavigationLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/NavigationLayout/NavigationLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +81,38 @@
       <workItem from="1686810377641" duration="3515000" />
       <workItem from="1686818897751" duration="45609000" />
       <workItem from="1687160941274" duration="20822000" />
-      <workItem from="1687425445453" duration="19346000" />
+      <workItem from="1687425445453" duration="27770000" />
+      <workItem from="1687766042625" duration="23139000" />
     </task>
+    <task id="LOCAL-00001" summary="fix: buttonPrimary">
+      <created>1687511469937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687511469937</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: animation Backgroundimage">
+      <created>1687530270978</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687530270978</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: buttonPrimary">
+      <created>1687773141468</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687773141468</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: header some fixes">
+      <created>1687807072840</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687807072840</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +128,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: animation Backgroundimage" />
+    <MESSAGE value="fix: buttonPrimary" />
+    <MESSAGE value="fix: header some fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: header some fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

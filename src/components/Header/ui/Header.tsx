@@ -9,6 +9,7 @@ import { ButtonPrimary } from '@/ui/Button'
 import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
+import stylesButton from '@/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -16,23 +17,15 @@ type HeaderProps = {
 
 export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
-  const [scrolledSubstrate, setScrolledSubstrate] = useState(false)
   const [substrateHeight, setSubstrateHeight] = useState(0)
-  const [scrolledAndOpened, setScrolledAndOpened] = useState(false)
   const [menuOpened, setMenuOpened] = useState(false)
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
   const { width } = useWindowDimensions()
   const headerRef = useRef<HTMLDivElement>(null)
 
   const mods = {
-    [styles.scrolled]: scrolled,
     [styles[headerTheme]]: true,
-    [styles.dark_opened]: menuOpened,
-    [styles._scrolled]: scrolledAndOpened,
-  }
-
-  const modsSubstrate = {
-    [styles.scrolled]: scrolledSubstrate,
+    [styles.opened]: menuOpened,
   }
 
   const toggleMenu = () => {
@@ -48,14 +41,15 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     if (menuOpened) {
       return
     }
+
     if (window.scrollY > 10) {
       setScrolled(true)
-      setScrolledSubstrate(true)
+      setHeaderTheme('light')
     } else {
       setScrolled(false)
-      setScrolledSubstrate(false)
+      setHeaderTheme(initialTheme)
     }
-  }, [menuOpened])
+  }, [menuOpened, initialTheme])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -65,28 +59,22 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [handleScroll])
 
   useEffect(() => {
-    if (menuOpened) {
-      setScrolled(false)
+    if (menuOpened && !scrolled) {
       setHeaderTheme('dark')
     }
 
-    if (!menuOpened && window.scrollY > 10) {
-      setScrolled(true)
-      setScrolledAndOpened(false)
-    }
-
-    if (!menuOpened) {
+    if (!menuOpened && !scrolled) {
       setHeaderTheme(initialTheme)
     }
 
-    if (menuOpened && window.scrollY > 10) {
-      setScrolledAndOpened(true)
+    if (menuOpened && scrolled) {
+      setHeaderTheme('dark')
     }
 
-    if (menuOpened && window.scrollY < 10) {
-      setScrolledAndOpened(false)
+    if (!menuOpened && scrolled) {
+      setHeaderTheme('light')
     }
-  }, [menuOpened, initialTheme])
+  }, [menuOpened, initialTheme, scrolled])
 
   useEffect(() => {
     if (width > 991) setMenuOpened(false)
@@ -105,7 +93,11 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <header ref={headerRef} className={classNames(styles.header, mods)}>
+      <header
+        ref={headerRef}
+        className={classNames(styles.header, mods)}
+        style={{ padding: scrolled ? '12rem 0' : '' }}
+      >
         <Container>
           <div className={styles.header__content}>
             <Link className={styles.header__content_link} href={'/'}>
@@ -137,7 +129,9 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
                   </Link>
                 </nav>
                 <ButtonPrimary
-                  variant="noArrows"
+                  variant="blue"
+                  arrows={false}
+                  className={stylesButton['small']}
                   href={routes.public.becomeDistributor}
                 >
                   Become A Distributor
@@ -154,8 +148,11 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
         </Container>
       </header>
       <div
-        style={{ height: substrateHeight }}
-        className={classNames(styles.substrate, modsSubstrate)}
+        style={{
+          height: substrateHeight,
+          backgroundColor: scrolled ? 'var(--white)' : '',
+        }}
+        className={classNames(styles.substrate)}
       ></div>
     </>
   )

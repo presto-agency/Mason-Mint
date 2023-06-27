@@ -1,25 +1,13 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, useRef } from 'react'
 import classNames from 'classnames'
 import Image, { ImageProps } from 'next/image'
 import styles from './BackgroundImage.module.scss'
-import { useInView } from 'react-intersection-observer'
-import { motion } from 'framer-motion'
-
-const sectionVariants2 = {
-  hidden: {
-    scale: 1.1,
-  },
-  visible: {
-    scale: 1,
-    transition: {
-      duration: 2,
-    },
-  },
-}
+import { motion, MotionValue, useScroll, useTransform } from 'framer-motion'
 
 type BackgroundImageProps = {
   className?: string
   children?: ReactNode
+  animated?: boolean
 } & ImageProps
 
 export const BackgroundImage: FC<BackgroundImageProps> = ({
@@ -28,30 +16,52 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   quality = 75,
   className,
   children,
+  animated = false,
   ...props
 }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
+  const useParallax = (value: MotionValue<number>) => {
+    return useTransform(value, [0, 1], [-50, 50])
+  }
+  const refTarget = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: refTarget,
+    offset: ['start end', 'end start'],
   })
+  const y = useParallax(scrollYProgress)
+
   return (
-    <div style={{ overflow: 'hidden' }}>
-      <motion.div
-        className={classNames(styles.BackgroundImageContainer, className)}
-        ref={ref}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-        variants={sectionVariants2}
-      >
-        <Image
-          src={src}
-          alt={alt}
-          fill={true}
-          sizes="100%"
-          quality={quality}
-          {...props}
-        />
-        {children && <div className={styles.content}>{children}</div>}
-      </motion.div>
+    <div className={classNames(styles['BackgroundImage'], className)}>
+      <div className={styles['BackgroundImage__container']}>
+        {animated ? (
+          <motion.div
+            className={styles['BackgroundImage__container_animatedWrapper']}
+            style={{ y }}
+          >
+            <Image
+              src={src}
+              ref={refTarget}
+              alt={alt}
+              fill={true}
+              sizes="100%"
+              quality={quality}
+              {...props}
+            />
+          </motion.div>
+        ) : (
+          <div className={styles['BackgroundImage__container_animatedWrapper']}>
+            <Image
+              src={src}
+              ref={refTarget}
+              alt={alt}
+              fill={true}
+              sizes="100%"
+              quality={quality}
+              {...props}
+            />
+          </div>
+        )}
+      </div>
+      {children && <div className={styles.content}>{children}</div>}
     </div>
   )
 }

@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 import { NavigationLayout } from '@/components/Header/ui/NavigationLayout/NavigationLayout'
 
 type MobileMenuProps = {
-  opened: boolean
   className?: string
 }
 
@@ -22,7 +21,7 @@ const motionProps = {
   },
 }
 
-const MobileMenu: FC<MobileMenuProps> = ({ opened, className }) => {
+const MobileMenu: FC<MobileMenuProps> = ({ className }) => {
   return (
     <Portal>
       <motion.div

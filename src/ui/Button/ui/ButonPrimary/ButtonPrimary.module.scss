@@ -48,6 +48,11 @@
     }
   }
 
+  &:disabled {
+    color: var(--gray-700);
+    background-color: var(--gray-400);
+    cursor: default;
+  }
 
   @media (min-width: $breakpoint-tablet) {
     &:hover {
@@ -111,24 +116,63 @@
   }
 }
 
-.noArrows {
+.small{
   height: 36rem;
   padding: 0 16rem;
-  color: var(--white);
   font-weight: 500;
   font-size: 15rem;
-  background-color: var(--primary-color);
-  transition: background-color var(--move-duration) var(--ease);
+
+  .buttonPrimary {
+    &__content {
+      padding-right: 24rem;
+
+      &_icon {
+        width: 15rem;
+        height: 12rem;
+
+        &.__1 {
+          left: 5px;
+          transform: translate(-24rem, -50%);
+        }
+
+        &.__2 {
+          right: 5px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &:hover {
+      cursor: pointer;
+
+      .buttonPrimary {
+        &__content {
+          padding-left: 24rem;
+
+          &_icon {
+            &.__2 {
+              transform: translate(24rem, -50%);
+            }
+          }
+        }
+      }
+    }
+  }
 
   @media (max-width: $breakpoint-mob) {
-    justify-content: center;
     width: 100%;
     height: 38rem;
     font-size: 13rem;
   }
+}
+
+.noArrowsAnimation {
+  transition: var(--move-duration) var(--ease);
 
 @media (min-width: $breakpoint-tablet) {
   &:hover {
+    color: var(--white);
     background-color: var(--black);
     cursor: pointer;
 
@@ -145,23 +189,7 @@
     &__content {
       padding-right: initial;
       padding-left: initial;
-
-      &_icon {
-        &.__1 {
-          display: none;
-        }
-
-        &.__2 {
-          display: none;
-        }
-      }
     }
-  }
-
-  &:disabled {
-    color: var(--gray-700);
-    background-color: var(--gray-400);
-    cursor: default;
   }
 }
 
