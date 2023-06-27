@@ -1,6 +1,6 @@
 import { BlueDot } from '@/ui/BlueDot'
 import styles from './FeaturedDesignsSection.module.scss'
-import { ButtonPrimary } from '@/ui/Button'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 export const FeaturedDesignsSection = () => {
   return (
@@ -11,7 +11,7 @@ export const FeaturedDesignsSection = () => {
           Featured Designs
           <BlueDot />
         </h2>
-        <ButtonPrimary variant="outlined">VIEW ALL</ButtonPrimary>
+        <ButtonPrimary variant="transparent">VIEW ALL</ButtonPrimary>
       </div>
       <div className={styles.slider}></div>
     </section>

@@ -1,5 +1,5 @@
-import { ButtonPrimary } from '@/ui/Button'
 import styles from './BecomeDistributorSection.module.scss'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 export const BecomeDistributorSection = () => {
   return (

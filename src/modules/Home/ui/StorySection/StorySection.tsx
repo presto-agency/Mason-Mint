@@ -1,8 +1,8 @@
-import { BackgroundImage } from '@/ui/BackgroundImage'
-import { ButtonPrimary } from '@/ui/Button'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import styles from './StorySection.module.scss'
 import { MotionValue, motion, useTransform, useScroll } from 'framer-motion'
 import { FC } from 'react'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 export const StorySection: FC = () => {
   const useParallax = (value: MotionValue<number>) => {
@@ -27,7 +27,7 @@ export const StorySection: FC = () => {
           src="/images/home/home_story_1.png"
           className={styles.photoContainer}
           alt="Coin photo"
-          animated={true}
+          parallax={true}
         />
       </div>
       <motion.div style={{ y }} className={styles.right}>
@@ -50,7 +50,7 @@ export const StorySection: FC = () => {
             impress.
           </p>
         </div>
-        <ButtonPrimary variant="outlined">OUR STORY</ButtonPrimary>
+        <ButtonPrimary variant="transparent">OUR STORY</ButtonPrimary>
       </motion.div>
     </section>
   )

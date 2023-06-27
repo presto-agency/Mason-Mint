@@ -1,6 +1,6 @@
 import { BlueDot } from '@/ui/BlueDot'
 import styles from './FAQSection.module.scss'
-import { BackgroundImage } from '@/ui/BackgroundImage'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 
 export const FAQSection = () => {
   return (

@@ -7,7 +7,8 @@ import { motion, MotionValue, useScroll, useTransform } from 'framer-motion'
 type BackgroundImageProps = {
   className?: string
   children?: ReactNode
-  animated?: boolean
+  parallax?: boolean
+  transformValue?: number[]
 } & ImageProps
 
 export const BackgroundImage: FC<BackgroundImageProps> = ({
@@ -16,11 +17,12 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   quality = 75,
   className,
   children,
-  animated = false,
+  parallax = false,
+  transformValue = [-50, 50],
   ...props
 }) => {
   const useParallax = (value: MotionValue<number>) => {
-    return useTransform(value, [0, 1], [-50, 50])
+    return useTransform(value, [0, 1], transformValue)
   }
   const refTarget = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -29,35 +31,31 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   })
   const y = useParallax(scrollYProgress)
 
+  const ImageComponent = (
+    <Image
+      src={src}
+      ref={refTarget}
+      alt={alt}
+      fill={true}
+      sizes="100%"
+      quality={quality}
+      {...props}
+    />
+  )
+
   return (
     <div className={classNames(styles['BackgroundImage'], className)}>
       <div className={styles['BackgroundImage__container']}>
-        {animated ? (
+        {parallax ? (
           <motion.div
             className={styles['BackgroundImage__container_animatedWrapper']}
             style={{ y }}
           >
-            <Image
-              src={src}
-              ref={refTarget}
-              alt={alt}
-              fill={true}
-              sizes="100%"
-              quality={quality}
-              {...props}
-            />
+            {ImageComponent}
           </motion.div>
         ) : (
           <div className={styles['BackgroundImage__container_animatedWrapper']}>
-            <Image
-              src={src}
-              ref={refTarget}
-              alt={alt}
-              fill={true}
-              sizes="100%"
-              quality={quality}
-              {...props}
-            />
+            {ImageComponent}
           </div>
         )}
       </div>

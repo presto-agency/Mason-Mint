@@ -3,7 +3,7 @@ import { PageLayout } from '@/app/layouts/PageLayout'
 
 export default function Home() {
   return (
-    <PageLayout headerTheme="light">
+    <PageLayout headerTheme="dark">
       {/*<HomeContent />*/}
       <div
         style={{
@@ -11,11 +11,12 @@ export default function Home() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          backgroundColor: 'var(--black)',
+          color: 'var(--white)',
         }}
       >
         <h1>Coming soon</h1>
       </div>
-      <div className="root"></div>
     </PageLayout>
   )
 }

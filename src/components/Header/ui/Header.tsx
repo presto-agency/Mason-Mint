@@ -5,11 +5,10 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
-import { ButtonPrimary } from '@/ui/Button'
 import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
-import stylesButton from '@/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -131,7 +130,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
                 <ButtonPrimary
                   variant="blue"
                   arrows={false}
-                  className={stylesButton['small']}
+                  size={'small'}
                   href={routes.public.becomeDistributor}
                 >
                   Become A Distributor

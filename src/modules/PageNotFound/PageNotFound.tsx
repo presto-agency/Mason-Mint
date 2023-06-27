@@ -5,11 +5,11 @@ import classNames from 'classnames'
 import routes from '@/utils/routes'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ButtonPrimary } from '@/ui/Button'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import BrokenCoinFirstPart from './assets/images/broken_coin_part_1.png'
 import BrokenCoinSecondPart from './assets/images/broken_coin_part_2.png'
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 import styles from './PageNotFound.module.scss'
 
