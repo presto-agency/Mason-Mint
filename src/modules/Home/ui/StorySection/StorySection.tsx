@@ -50,7 +50,7 @@ export const StorySection: FC = () => {
             impress.
           </p>
         </div>
-        <ButtonPrimary variant="outlined">OUR STORY</ButtonPrimary>
+        <ButtonPrimary variant="transparent">OUR STORY</ButtonPrimary>
       </motion.div>
     </section>
   )

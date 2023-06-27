@@ -11,7 +11,7 @@ export const FeaturedDesignsSection = () => {
           Featured Designs
           <BlueDot />
         </h2>
-        <ButtonPrimary variant="outlined">VIEW ALL</ButtonPrimary>
+        <ButtonPrimary variant="transparent">VIEW ALL</ButtonPrimary>
       </div>
       <div className={styles.slider}></div>
     </section>
