@@ -1,7 +1,5 @@
 import { FC } from 'react'
-import ModalWindow, {
-  ModalWindowProps,
-} from '@/components/ModalWindow/ModalWindow'
+import ModalWindow, { ModalWindowProps } from '@/ui/ModalWindow/ModalWindow'
 import ThanksMessage from '@/ui/ThanksMessage/ThanksMessage'
 import ThumbSvg from '@/modals/Thanks/assets/images/thumb.svg'
 

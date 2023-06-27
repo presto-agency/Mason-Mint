@@ -1,9 +1,12 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { withModal } from '@/context/modal'
 import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
-import CustomCursor from '@/ui/CustomCursor/CustomCursor'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
+const CustomCursor = dynamic(() => import('@/ui/CustomCursor/CustomCursor'), {
+  ssr: false,
+})
 
 type AppLayoutProps = {
   children: ReactNode
@@ -18,7 +21,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   }
 
   useEffect(() => {
-    width <= 991 ? setIsTablet(true) : setIsTablet(false)
+    setIsTablet(width <= 991)
   }, [width])
 
   return (
