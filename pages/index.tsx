@@ -3,7 +3,7 @@ import { PageLayout } from '@/app/layouts/PageLayout'
 
 export default function Home() {
   return (
-    <PageLayout headerTheme="light">
+    <PageLayout headerTheme="dark">
       {/*<HomeContent />*/}
       <div
         style={{

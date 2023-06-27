@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BecomeDistributorSection/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BecomeDistributorSection/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/MobileMenu/MobileMenu.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/NavigationLayout/NavigationLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/NavigationLayout/NavigationLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/BecomeADistributor/ui/BecomeADistributorForm/BecomeADistributorForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/BecomeADistributor/ui/BecomeADistributorForm/BecomeADistributorForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Contact/ui/ContactForm/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Contact/ui/ContactForm/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FeaturedDesignsSection/FeaturedDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FeaturedDesignsSection/FeaturedDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/PageNotFound/PageNotFound.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/PageNotFound/PageNotFound.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Button/ui/ButonPrimary/ButtonPrimary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,10 +77,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ui/Button" />
+      <recent name="$PROJECT_DIR$/src/ui/Button/ui" />
       <recent name="$PROJECT_DIR$/src/modules/BecomeADistributor/ui" />
       <recent name="$PROJECT_DIR$/src/app/styles" />
       <recent name="$PROJECT_DIR$/src/app/styles/variables" />
-      <recent name="$PROJECT_DIR$/src/app/layouts" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -82,7 +102,7 @@
       <workItem from="1686818897751" duration="45609000" />
       <workItem from="1687160941274" duration="20822000" />
       <workItem from="1687425445453" duration="27770000" />
-      <workItem from="1687766042625" duration="23139000" />
+      <workItem from="1687766042625" duration="33550000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -112,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687807072840</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: commit after pull">
+      <created>1687846044042</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687846044042</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +160,8 @@
     <MESSAGE value="feat: animation Backgroundimage" />
     <MESSAGE value="fix: buttonPrimary" />
     <MESSAGE value="fix: header some fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: header some fixes" />
+    <MESSAGE value="fix: commit after pull" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: commit after pull" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

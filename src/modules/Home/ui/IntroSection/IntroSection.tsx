@@ -1,5 +1,5 @@
-import { ButtonPrimary } from '@/ui/Button'
 import { BlueDot } from '@/ui/BlueDot'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 import styles from './IntroSection.module.scss'
 

@@ -1,6 +1,6 @@
-import { ButtonPrimary } from '@/ui/Button'
 import styles from './ExploreDesignsSection.module.scss'
 import { BlueDot } from '@/ui/BlueDot'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 export const ExploreDesignsSection = () => {
   return (
@@ -17,7 +17,7 @@ export const ExploreDesignsSection = () => {
             market with superior products that are sure to impress.
           </p>
         </div>
-        <ButtonPrimary variant="mini">VIEW CATALOG</ButtonPrimary>
+        <ButtonPrimary variant="noStroked">VIEW CATALOG</ButtonPrimary>
       </div>
     </section>
   )

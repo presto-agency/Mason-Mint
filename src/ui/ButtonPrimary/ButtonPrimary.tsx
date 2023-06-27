@@ -5,11 +5,13 @@ import Arrow from '@/ui/Icons/Arrow'
 import styles from './ButtonPrimary.module.scss'
 import Link from 'next/link'
 
-type ButtonPrimaryVariants = 'white' | 'outlined' | 'blue' | 'mini'
+type ButtonPrimaryVariants = 'white' | 'transparent' | 'blue' | 'noStroked'
+type ButtonPrimarySizes = 'small' | 'large'
 
 type ButtonPrimaryProps = {
   className?: string
   variant?: ButtonPrimaryVariants
+  size?: ButtonPrimarySizes
   fullWidth?: boolean
   href?: string
   arrows?: boolean
@@ -49,6 +51,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
   className,
   children,
   variant = 'white',
+  size = 'large',
   disabled,
   fullWidth = false,
   href,
@@ -57,6 +60,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
 }) => {
   const mods = {
     [styles[variant]]: true,
+    [styles[size]]: true,
     [styles['noArrowsAnimation']]: !arrows,
   }
 
