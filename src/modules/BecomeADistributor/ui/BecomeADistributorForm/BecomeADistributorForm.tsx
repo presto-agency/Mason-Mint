@@ -10,11 +10,8 @@ import { useModal } from '@/hooks/useModal'
 import ThanksModal from '@/modals/Thanks/Thanks'
 import { ButtonPrimary } from '@/ui/Button'
 import { OptionInterface } from '@/ui/SelectField/SelectField'
-import { countryCodes } from '@/utils/countries/countryCodes'
-import { countryStates } from '@/utils/countries/countryStates'
-import { toLowerCaseAndRemoveSpaces } from '@/utils/string/toLowerCaseAndRemoveSpaces'
+import { countryList } from '@/utils/countries/countryList'
 import { useInView, motion } from 'framer-motion'
-const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
   ssr: false,
 })
@@ -47,7 +44,9 @@ const defaultValues = {
   state: '',
 }
 
-const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
+const BecomeADistributorForm: FC<{
+  className?: string
+}> = ({ className }) => {
   const {
     handleSubmit,
     formState: { errors },
@@ -90,25 +89,24 @@ const BecomeADistributorForm: FC<{ className?: string }> = ({ className }) => {
   }
 
   const countriesOptions: OptionInterface[] = useMemo(() => {
-    return countryCodes.map((country) => {
+    const data = countryList[0].data
+    return data.map((country) => {
       return {
         label: country.name,
-        value: country.code,
+        value: country.name,
+        states: country.states,
       }
     })
   }, [])
 
   const stateOptions: OptionInterface[] = useMemo(() => {
     if (selectedCountry) {
-      const query = toLowerCaseAndRemoveSpaces(selectedCountry.label)
-      const queryStates = countryStates.filter(
-        (c) => toLowerCaseAndRemoveSpaces(c.country) === query
-      )
-      if (queryStates.length) {
-        return queryStates[0].states.map((state) => {
+      const { states } = selectedCountry
+      if (states?.length) {
+        return states.map(({ name }) => {
           return {
-            value: state,
-            label: state,
+            value: name,
+            label: name,
           }
         })
       }
