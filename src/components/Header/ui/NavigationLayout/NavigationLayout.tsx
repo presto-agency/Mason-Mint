@@ -67,7 +67,10 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
     >
       <div className={styles.navigation} ref={divRef}>
         <nav className={styles.navigation__content}>
-          <Link className={styles.navigation__content_link} href={'/'}>
+          <Link
+            className={styles.navigation__content_link}
+            href={routes.public.about}
+          >
             <AnimatedTextCharacter text="About Us" />
           </Link>
           <Link className={styles.navigation__content_link} href={'/'}>
@@ -79,7 +82,10 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
           <Link className={styles.navigation__content_link} href={'/'}>
             <AnimatedTextCharacter text="Packaging" />
           </Link>
-          <Link className={styles.navigation__content_link} href={'/'}>
+          <Link
+            className={styles.navigation__content_link}
+            href={routes.public.contactUs}
+          >
             <AnimatedTextCharacter text="Contact Us" />
           </Link>
         </nav>

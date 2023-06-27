@@ -1,6 +1,6 @@
 import { useContext, FC, ComponentType } from 'react'
 import { ModalContext, ModalContextType } from '@/context/modal'
-import { ModalWindowProps } from '@/components/ModalWindow/ModalWindow'
+import { ModalWindowProps } from '@/ui/ModalWindow/ModalWindow'
 
 type Options = {
   size?: string

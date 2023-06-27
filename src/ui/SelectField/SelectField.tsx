@@ -14,9 +14,9 @@ import Select, {
 } from 'react-select'
 import classNames from 'classnames'
 import Attention from '@/ui/Icons/Attention'
+import ArrowSelect from '@/ui/Icons/ArrowSelect'
 
 import styles from './SelectField.module.scss'
-import ArrowSelect from '@/ui/Icons/ArrowSelect'
 
 export interface OptionInterface {
   value: string | undefined

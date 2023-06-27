@@ -1,13 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import styles from './CustomCursor.module.scss'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
+import { Store } from '@/utils/Store'
 
 const CustomCursor = () => {
   const [isOnSubject, setIsOnSubject] = useState(false)
   const { route } = useRouter()
   const mainCursor = useRef<HTMLDivElement>(null)
+  const store = useContext(Store)
+
   const positionRef = useRef({
     mouseX: 0,
     mouseY: 0,
@@ -35,12 +38,11 @@ const CustomCursor = () => {
     document.addEventListener('mousemove', (event) => {
       const { clientX, clientY } = event
 
-      const mouseX = clientX
-      const mouseY = clientY
       if (mainCursor.current) {
-        positionRef.current.mouseX = mouseX - mainCursor.current.clientWidth / 2
+        positionRef.current.mouseX =
+          clientX - mainCursor.current.clientWidth / 2
         positionRef.current.mouseY =
-          mouseY - mainCursor.current.clientHeight / 2
+          clientY - mainCursor.current.clientHeight / 2
       }
     })
   }, [])
@@ -91,23 +93,17 @@ const CustomCursor = () => {
     }
 
     if (typeof window !== 'undefined') {
-      const links = document.querySelectorAll('a, button, input, textarea')
-      links.forEach((link) => {
-        link.addEventListener('mouseenter', handleMouseEnter)
-        link.addEventListener('mouseleave', handleMouseLeave)
-      })
-    }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        const links = document.querySelectorAll('a, button, input, textarea')
+      setTimeout(() => {
+        const links = document.querySelectorAll(
+          'a, button, input, textarea, [class*="SelectField"], [class*="select__menu"]'
+        )
         links.forEach((link) => {
-          link.removeEventListener('mouseenter', handleMouseEnter)
-          link.removeEventListener('mouseleave', handleMouseLeave)
+          link.addEventListener('mouseenter', handleMouseEnter)
+          link.addEventListener('mouseleave', handleMouseLeave)
         })
-      }
+      }, 500)
     }
-  }, [route])
+  }, [route, store?.state.modal.isOpenModal])
 
   return (
     <>

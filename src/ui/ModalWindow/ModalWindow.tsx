@@ -15,9 +15,12 @@ const ModalWindow = ({ onClose, size, children }: ModalWindowProps) => {
       <div className={styles['modal__bg']} />
       <div className={styles['modal__close']} onClick={() => onClose()} />
       <div className={classNames(styles['modal__body'], styles[size])}>
-        <div className={styles['modal__body_close']} onClick={() => onClose()}>
+        <button
+          className={styles['modal__body_close']}
+          onClick={() => onClose()}
+        >
           <Close className={styles['modal__body_close_icon']} />
-        </div>
+        </button>
         <div className={styles['modal__body_content']}>{children}</div>
       </div>
     </div>
