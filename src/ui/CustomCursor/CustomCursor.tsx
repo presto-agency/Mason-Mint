@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import styles from './CustomCursor.module.scss'
 import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import { Store } from '@/utils/Store'
+
+import styles from './CustomCursor.module.scss'
 
 const CustomCursor = () => {
   const [isOnSubject, setIsOnSubject] = useState(false)
