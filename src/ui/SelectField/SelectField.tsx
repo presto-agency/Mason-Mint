@@ -195,6 +195,7 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
         className={classNames(styles['selectField'], className, {
           [styles['active']]: isFocused,
         })}
+        data-id="select-field"
       >
         <Select<OptionInterface, false>
           components={{
