@@ -1,21 +1,21 @@
-import { FC, useCallback, useEffect, useRef, useState } from 'react'
+import { FC, useCallback, useEffect, useRef, useState, memo } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
-import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
-import { useRouter } from 'next/router'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
 }
 
-export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
+const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
   const [substrateHeight, setSubstrateHeight] = useState(0)
   const [menuOpened, setMenuOpened] = useState(false)
@@ -170,3 +170,5 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     </>
   )
 }
+
+export default memo(Header)
