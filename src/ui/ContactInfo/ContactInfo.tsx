@@ -8,7 +8,7 @@ import styles from './ContactInfo.module.scss'
 const ContactInfo: FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={classNames(styles['list'], className)}>
-      <AnimatedElement delay={0.2}>
+      <AnimatedElement delay={0}>
         <div className={styles['list__item']}>
           <Arrow
             className={classNames(styles['list__item_arrow'], styles['__1'])}
@@ -24,7 +24,7 @@ const ContactInfo: FC<{ className?: string }> = ({ className }) => {
           />
         </div>
       </AnimatedElement>
-      <AnimatedElement delay={0.2}>
+      <AnimatedElement delay={0.1}>
         <div className={styles['list__item']}>
           <Arrow
             className={classNames(styles['list__item_arrow'], styles['__1'])}

@@ -36,7 +36,7 @@ const AnimatedText: FC<AnimatedTextProps> = ({
       y: 0,
       transition: {
         type: 'spring',
-        duration: 1,
+        duration: 1.2,
         bounce: 0,
       },
     },

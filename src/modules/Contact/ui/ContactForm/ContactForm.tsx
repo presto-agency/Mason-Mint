@@ -57,6 +57,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
       transition: {
         type: 'tween',
         duration: 1,
+        delay: 0.3,
       },
     },
     hidden: {
