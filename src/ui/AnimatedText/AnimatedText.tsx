@@ -35,8 +35,9 @@ const AnimatedText: FC<AnimatedTextProps> = ({
       rotate: 0,
       y: 0,
       transition: {
-        ease: 'anticipate',
-        duration: 2,
+        type: 'spring',
+        duration: 1,
+        bounce: 0,
       },
     },
     hidden: title
