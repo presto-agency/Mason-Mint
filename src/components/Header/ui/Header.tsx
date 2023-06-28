@@ -9,6 +9,7 @@ import routes from '@/utils/routes'
 
 import styles from './Header.module.scss'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+import { useRouter } from 'next/router'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -21,6 +22,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
   const { width } = useWindowDimensions()
   const headerRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
 
   const mods = {
     [styles[headerTheme]]: true,
@@ -89,6 +91,18 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   useEffect(() => {
     document.body.style.overflow = menuOpened ? 'hidden' : 'auto'
   }, [menuOpened])
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setMenuOpened(false)
+    }
+
+    router.events.on('routeChangeStart', handleRouteChange)
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange)
+    }
+  }, [router])
 
   return (
     <>
