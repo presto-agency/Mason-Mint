@@ -7,7 +7,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const query = ''
   try {
     if (query === '') {
-      res.status(201).json({ message: 'Search query os empty' })
+      res.status(200).json({ message: 'Search query is empty' })
     }
     await db.connect()
     const products = await Product.find({
