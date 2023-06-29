@@ -1,9 +1,9 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, FC, ReactNode } from 'react'
 import classNames from 'classnames'
+import Link from 'next/link'
 import Arrow from '@/ui/Icons/Arrow'
 
 import styles from './ButtonPrimary.module.scss'
-import Link from 'next/link'
 
 type ButtonPrimaryVariants = 'white' | 'transparent' | 'blue' | 'noStroked'
 type ButtonPrimarySizes = 'small' | 'large'

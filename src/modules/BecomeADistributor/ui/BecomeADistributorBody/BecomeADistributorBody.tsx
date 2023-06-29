@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
+import classNames from 'classnames'
 
 import styles from './BecomeADistributorBody.module.scss'
-import classNames from 'classnames'
 
 const BecomeADistributorBody: FC<{ className?: string }> = ({ className }) => {
   return (

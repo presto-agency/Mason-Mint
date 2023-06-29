@@ -1,8 +1,9 @@
 import { FC, ReactNode, useRef } from 'react'
 import classNames from 'classnames'
 import Image, { ImageProps } from 'next/image'
-import styles from './BackgroundImage.module.scss'
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion'
+
+import styles from './BackgroundImage.module.scss'
 
 type BackgroundImageProps = {
   className?: string

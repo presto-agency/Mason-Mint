@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useState, memo } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
@@ -15,7 +15,7 @@ type HeaderProps = {
   theme: 'dark' | 'light'
 }
 
-export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
+const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpened, setMenuOpened] = useState(false)
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
@@ -128,3 +128,5 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     </>
   )
 }
+
+export default memo(Header)
