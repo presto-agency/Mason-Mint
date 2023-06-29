@@ -85,6 +85,7 @@
       <workItem from="1687160941274" duration="20822000" />
       <workItem from="1687425445453" duration="27770000" />
       <workItem from="1687766042625" duration="34482000" />
+      <workItem from="1688024624139" duration="10886000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -128,7 +129,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687863440401</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fix: some code refactor">
+      <created>1688032851817</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688032851817</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: some code refactor - 2">
+      <created>1688038482073</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688038482073</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +166,9 @@
     <MESSAGE value="fix: header some fixes" />
     <MESSAGE value="fix: commit after pull" />
     <MESSAGE value="fix: some component fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: some component fixes" />
+    <MESSAGE value="fix: some code refactor" />
+    <MESSAGE value="fix: some code refactor - 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: some code refactor - 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

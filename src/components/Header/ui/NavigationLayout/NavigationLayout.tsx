@@ -8,16 +8,9 @@ import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 import styles from '../Header.module.scss'
 
-type MotionProps = {
-  animate: { height: string }
-  initial: { height: string }
-  exit: { height: string }
-  transition: { ease: string; duration: number; delay: number }
-}
-
 type MobileMenuProps = {
-  motionProps: MotionProps
   className?: string
+  isAnimated?: boolean
 }
 
 const buttonVariant = {
@@ -42,9 +35,54 @@ const buttonVariant = {
   },
 }
 
+const headerVariant = {
+  animate: { height: '100%' },
+  initial: { height: '0%' },
+  exit: { height: '0%' },
+  transition: {
+    ease: 'easeInOut',
+    duration: 0.5,
+    delay: 0.5,
+  },
+}
+
+const navigationHeaderLinks = [
+  {
+    href: routes.public.about,
+    description: 'About Us',
+  },
+  {
+    href: '',
+    description: 'Custom Minting',
+  },
+  {
+    href: routes.public.about,
+    description: 'Designs',
+  },
+  {
+    href: routes.public.about,
+    description: 'Packaging',
+  },
+  {
+    href: routes.public.contactUs,
+    description: 'Contact Us',
+  },
+]
+
+const button = (
+  <ButtonPrimary
+    variant="blue"
+    arrows={false}
+    size={'small'}
+    href={routes.public.becomeDistributor}
+  >
+    Become A Distributor
+  </ButtonPrimary>
+)
+
 export const NavigationLayout: FC<MobileMenuProps> = ({
-  motionProps,
   className,
+  isAnimated = false,
 }) => {
   const divRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(0)
@@ -56,38 +94,26 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
     }
   }, [])
 
-  return (
+  return isAnimated ? (
     <motion.div
       className={classNames(styles.header__content_desktop, [className])}
       animate={{ height: height }}
-      initial={motionProps.initial}
-      exit={motionProps.exit}
-      transition={motionProps.transition}
+      initial={headerVariant.initial}
+      exit={headerVariant.exit}
+      transition={headerVariant.transition}
       data-lenis-prevent
     >
       <div className={styles.navigation} ref={divRef}>
         <nav className={styles.navigation__content}>
-          <Link
-            className={styles.navigation__content_link}
-            href={routes.public.about}
-          >
-            <AnimatedTextCharacter text="About Us" />
-          </Link>
-          <Link className={styles.navigation__content_link} href={'/'}>
-            <AnimatedTextCharacter text="Custom Minting" />
-          </Link>
-          <Link className={styles.navigation__content_link} href={'/'}>
-            <AnimatedTextCharacter text="Designs" />
-          </Link>
-          <Link className={styles.navigation__content_link} href={'/'}>
-            <AnimatedTextCharacter text="Packaging" />
-          </Link>
-          <Link
-            className={styles.navigation__content_link}
-            href={routes.public.contactUs}
-          >
-            <AnimatedTextCharacter text="Contact Us" />
-          </Link>
+          {navigationHeaderLinks.map((item) => (
+            <Link
+              className={styles.navigation__content_link}
+              href={item.href}
+              key={item.description}
+            >
+              <AnimatedTextCharacter text={item.description} />
+            </Link>
+          ))}
         </nav>
         <motion.div
           variants={buttonVariant}
@@ -95,16 +121,26 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
           animate="visible"
           exit="hidden"
         >
-          <ButtonPrimary
-            variant="blue"
-            arrows={false}
-            size={'small'}
-            href={routes.public.becomeDistributor}
-          >
-            Become A Distributor
-          </ButtonPrimary>
+          {button}
         </motion.div>
       </div>
     </motion.div>
+  ) : (
+    <div className={styles.header__content_desktop}>
+      <div className={styles.navigation}>
+        <nav className={styles.navigation__content}>
+          {navigationHeaderLinks.map((item) => (
+            <Link
+              className={styles.navigation__content_link}
+              href={item.href}
+              key={item.description}
+            >
+              {item.description}
+            </Link>
+          ))}
+        </nav>
+        {button}
+      </div>
+    </div>
   )
 }

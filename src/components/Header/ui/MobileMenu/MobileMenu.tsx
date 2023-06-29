@@ -10,7 +10,7 @@ type MobileMenuProps = {
   className?: string
 }
 
-const motionProps = {
+const headerVariant = {
   animate: { height: '100%' },
   initial: { height: '0%' },
   exit: { height: '0%' },
@@ -26,12 +26,9 @@ const MobileMenu: FC<MobileMenuProps> = ({ className }) => {
     <Portal>
       <motion.div
         className={classNames(styles.menu, [className])}
-        {...motionProps}
+        {...headerVariant}
       >
-        <NavigationLayout
-          motionProps={motionProps}
-          className={headerStyles.mobile}
-        />
+        <NavigationLayout className={headerStyles.mobile} isAnimated={true} />
       </motion.div>
     </Portal>
   )

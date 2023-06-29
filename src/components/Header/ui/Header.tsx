@@ -1,15 +1,15 @@
-import { FC, useCallback, useEffect, useRef, useState, memo } from 'react'
-import { useRouter } from 'next/router'
+import { FC, useCallback, useEffect, useState, memo } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
-import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
-import routes from '@/utils/routes'
+import { motion } from 'framer-motion'
 
 import styles from './Header.module.scss'
+import { useRouter } from 'next/router'
+import { NavigationLayout } from '@/components/Header/ui/NavigationLayout/NavigationLayout'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -17,16 +17,26 @@ type HeaderProps = {
 
 const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
-  const [substrateHeight, setSubstrateHeight] = useState(0)
   const [menuOpened, setMenuOpened] = useState(false)
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
   const { width } = useWindowDimensions()
-  const headerRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
+
+  const bgVariant = {
+    opened: {
+      backgroundColor: 'var(--black)',
+    },
+    closed: {
+      backgroundColor: scrolled ? 'var(--white)' : '',
+      transition: {
+        delay: scrolled ? 0.8 : 0,
+      },
+    },
+  }
 
   const mods = {
     [styles[headerTheme]]: true,
-    [styles.opened]: menuOpened,
+    [styles.scrolled]: scrolled,
   }
 
   const toggleMenu = () => {
@@ -34,11 +44,6 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }
 
   const handleScroll = useCallback(() => {
-    if (headerRef.current) {
-      const heightOfHeader = headerRef.current.offsetHeight
-      setSubstrateHeight(heightOfHeader)
-    }
-
     if (menuOpened) {
       return
     }
@@ -82,13 +87,6 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   }, [width])
 
   useEffect(() => {
-    if (headerRef.current) {
-      const heightOfHeader = headerRef.current.offsetHeight
-      setSubstrateHeight(heightOfHeader)
-    }
-  }, [width])
-
-  useEffect(() => {
     document.body.style.overflow = menuOpened ? 'hidden' : 'auto'
   }, [menuOpened])
 
@@ -106,51 +104,18 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <header
-        ref={headerRef}
+      <motion.header
         className={classNames(styles.header, mods)}
-        style={{ padding: scrolled ? '12rem 0' : '' }}
+        variants={bgVariant}
+        initial="closed"
+        animate={menuOpened ? 'opened' : 'closed'}
       >
         <Container>
           <div className={styles.header__content}>
             <Link className={styles.header__content_link} href={'/'}>
               <Logo className={styles.logo} />
             </Link>
-            <div className={styles.header__content_desktop}>
-              <div className={styles.navigation}>
-                <nav className={styles.navigation__content}>
-                  <Link
-                    className={styles.navigation__content_link}
-                    href={routes.public.about}
-                  >
-                    About Us
-                  </Link>
-                  <Link className={styles.navigation__content_link} href={'/'}>
-                    Custom Minting
-                  </Link>
-                  <Link className={styles.navigation__content_link} href={'/'}>
-                    Designs
-                  </Link>
-                  <Link className={styles.navigation__content_link} href={'/'}>
-                    Packaging
-                  </Link>
-                  <Link
-                    className={styles.navigation__content_link}
-                    href={routes.public.contactUs}
-                  >
-                    Contact Us
-                  </Link>
-                </nav>
-                <ButtonPrimary
-                  variant="blue"
-                  arrows={false}
-                  size={'small'}
-                  href={routes.public.becomeDistributor}
-                >
-                  Become A Distributor
-                </ButtonPrimary>
-              </div>
-            </div>
+            <NavigationLayout />
             <MobileLayout
               scrolled={scrolled}
               theme={headerTheme}
@@ -159,14 +124,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
             />
           </div>
         </Container>
-      </header>
-      <div
-        style={{
-          height: substrateHeight,
-          backgroundColor: scrolled ? 'var(--white)' : '',
-        }}
-        className={classNames(styles.substrate)}
-      ></div>
+      </motion.header>
     </>
   )
 }
