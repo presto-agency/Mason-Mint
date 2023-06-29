@@ -1,15 +1,28 @@
 import { NextApiResponse, NextApiRequest } from 'next'
 import db from '@/utils/db'
 import Product from '../../../models/Product'
+import { getError } from '@/utils/error'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const query = 'Dollar'
-  await db.connect()
-  const products = await Product.find({
-    ProductName: { $regex: query, $options: 'i' },
-  })
-  await db.disconnect()
-  res.status(200).json({ success: true, method: req.method, products })
+  const query = ''
+  try {
+    if (query === '') {
+      res.status(201).json({ message: 'Search query os empty' })
+    }
+    await db.connect()
+    const products = await Product.find({
+      ProductName: { $regex: query, $options: 'i' },
+    })
+    await db.disconnect()
+    res.status(200).json({
+      success: true,
+      method: req.method,
+      total: products.length,
+      products,
+    })
+  } catch (error) {
+    res.status(500).json({ success: false, message: getError(error as Error) })
+  }
 }
 
 export default handler
