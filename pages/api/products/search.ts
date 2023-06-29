@@ -4,7 +4,8 @@ import Product from '../../../models/Product'
 import { getError } from '@/utils/error'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const query = ''
+  const { query } = req.body
+  if (req.method !== 'POST') return
   try {
     if (query === '') {
       res.status(200).json({ message: 'Search query is empty' })
