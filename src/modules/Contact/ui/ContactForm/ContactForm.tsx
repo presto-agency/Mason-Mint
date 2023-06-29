@@ -65,7 +65,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
       y: 20,
     },
   }
-
+  console.log('errors ', errors)
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     await browserSendEmail({
       subject: `Let's talk!`,
