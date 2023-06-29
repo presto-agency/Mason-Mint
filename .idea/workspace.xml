@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
       <workItem from="1687160941274" duration="20822000" />
       <workItem from="1687425445453" duration="27770000" />
       <workItem from="1687766042625" duration="34482000" />
-      <workItem from="1688024624139" duration="10886000" />
+      <workItem from="1688024624139" duration="13561000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -143,7 +144,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688038482073</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix: commit after pull">
+      <created>1688039258849</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1688039258849</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,11 +172,11 @@
     <MESSAGE value="feat: animation Backgroundimage" />
     <MESSAGE value="fix: buttonPrimary" />
     <MESSAGE value="fix: header some fixes" />
-    <MESSAGE value="fix: commit after pull" />
     <MESSAGE value="fix: some component fixes" />
     <MESSAGE value="fix: some code refactor" />
     <MESSAGE value="fix: some code refactor - 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: some code refactor - 2" />
+    <MESSAGE value="fix: commit after pull" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: commit after pull" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

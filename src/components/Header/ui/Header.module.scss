@@ -5,7 +5,7 @@
   z-index: 999;
   width: 100%;
   padding: 32rem 0;
-  transition: 0.3s ease-out;
+  transition: 0.4s ease-out;
 
   .logo{
     transition: fill 0.3s ease-in-out;
@@ -46,6 +46,10 @@
   &.scrolled{
     padding: 12rem 0;
     background-color: var(--white);
+  }
+
+  &.opened{
+    background-color: var(--black);
   }
 
   &__content {

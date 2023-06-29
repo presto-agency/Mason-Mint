@@ -5,7 +5,6 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
-import { motion } from 'framer-motion'
 
 import styles from './Header.module.scss'
 import { useRouter } from 'next/router'
@@ -22,21 +21,10 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const { width } = useWindowDimensions()
   const router = useRouter()
 
-  const bgVariant = {
-    opened: {
-      backgroundColor: 'var(--black)',
-    },
-    closed: {
-      backgroundColor: scrolled ? 'var(--white)' : '',
-      transition: {
-        delay: scrolled ? 0.8 : 0,
-      },
-    },
-  }
-
   const mods = {
     [styles[headerTheme]]: true,
     [styles.scrolled]: scrolled,
+    [styles.opened]: menuOpened,
   }
 
   const toggleMenu = () => {
@@ -104,12 +92,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <motion.header
-        className={classNames(styles.header, mods)}
-        variants={bgVariant}
-        initial="closed"
-        animate={menuOpened ? 'opened' : 'closed'}
-      >
+      <header className={classNames(styles.header, mods)}>
         <Container>
           <div className={styles.header__content}>
             <Link className={styles.header__content_link} href={'/'}>
@@ -124,7 +107,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
             />
           </div>
         </Container>
-      </motion.header>
+      </header>
     </>
   )
 }
