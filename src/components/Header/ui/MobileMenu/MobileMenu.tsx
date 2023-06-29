@@ -28,10 +28,7 @@ const MobileMenu: FC<MobileMenuProps> = ({ className }) => {
         className={classNames(styles.menu, [className])}
         {...motionProps}
       >
-        <NavigationLayout
-          motionProps={motionProps}
-          className={headerStyles.mobile}
-        />
+        <NavigationLayout className={headerStyles.mobile} isAnimated={true} />
       </motion.div>
     </Portal>
   )

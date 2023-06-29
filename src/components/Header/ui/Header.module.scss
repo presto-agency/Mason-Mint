@@ -5,7 +5,7 @@
   z-index: 999;
   width: 100%;
   padding: 32rem 0;
-  transition: padding .3s ease-out;
+  transition: 0.3s ease-out;
 
   .logo{
     transition: fill 0.3s ease-in-out;
@@ -43,9 +43,13 @@
     }
   }
 
+  &.scrolled{
+    padding: 12rem 0;
+    background-color: var(--white);
+  }
+
   &.opened{
     background-color: var(--black);
-    transition: background-color 0.3s ease-in-out 1s;
   }
 
   &__content {
@@ -115,14 +119,6 @@
       }
     }
   }
-}
-
-.substrate{
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 998;
-  width: 100%;
 }
 
 @media (width <= $breakpoint-tablet) {
