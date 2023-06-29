@@ -35,7 +35,7 @@ const buttonVariant = {
   },
 }
 
-const motionProps = {
+const headerVariant = {
   animate: { height: '100%' },
   initial: { height: '0%' },
   exit: { height: '0%' },
@@ -98,9 +98,9 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
     <motion.div
       className={classNames(styles.header__content_desktop, [className])}
       animate={{ height: height }}
-      initial={motionProps.initial}
-      exit={motionProps.exit}
-      transition={motionProps.transition}
+      initial={headerVariant.initial}
+      exit={headerVariant.exit}
+      transition={headerVariant.transition}
       data-lenis-prevent
     >
       <div className={styles.navigation} ref={divRef}>

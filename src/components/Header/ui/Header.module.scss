@@ -48,10 +48,6 @@
     background-color: var(--white);
   }
 
-  &.opened{
-    background-color: var(--black);
-  }
-
   &__content {
     display: flex;
     gap: 36rem;

@@ -5,6 +5,7 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
+import { motion } from 'framer-motion'
 
 import styles from './Header.module.scss'
 import { useRouter } from 'next/router'
@@ -21,9 +22,20 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const { width } = useWindowDimensions()
   const router = useRouter()
 
+  const bgVariant = {
+    opened: {
+      backgroundColor: 'var(--black)',
+    },
+    closed: {
+      backgroundColor: scrolled ? 'var(--white)' : '',
+      transition: {
+        delay: 0.5,
+      },
+    },
+  }
+
   const mods = {
     [styles[headerTheme]]: true,
-    [styles.opened]: menuOpened,
     [styles.scrolled]: scrolled,
   }
 
@@ -92,7 +104,12 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <header className={classNames(styles.header, mods)}>
+      <motion.header
+        className={classNames(styles.header, mods)}
+        variants={bgVariant}
+        initial="closed"
+        animate={menuOpened ? 'opened' : 'closed'}
+      >
         <Container>
           <div className={styles.header__content}>
             <Link className={styles.header__content_link} href={'/'}>
@@ -107,7 +124,7 @@ export const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
             />
           </div>
         </Container>
-      </header>
+      </motion.header>
     </>
   )
 }
