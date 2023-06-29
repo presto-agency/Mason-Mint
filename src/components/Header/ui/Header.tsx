@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     closed: {
       backgroundColor: scrolled ? 'var(--white)' : '',
       transition: {
-        delay: 0.5,
+        delay: scrolled ? 0.8 : 0,
       },
     },
   }
