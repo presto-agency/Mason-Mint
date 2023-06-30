@@ -10,14 +10,17 @@ export default function ProductsPage() {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
+    // axios
+    //   .get(`${window.location.origin}/api/products`)
+    //   .then((res) => setProducts(res.data.data))
     axios
-      .get(`${window.location.origin}/api/products`)
-      .then((res) => setProducts(res.data.data))
+      .get('https://jsonplaceholder.typicode.com/comments')
+      .then((res) => console.log('res ', res))
   }, [])
 
   return (
     <PageLayout>
-      <AdminProducts products={products} />
+      <AdminProducts products={[]} />
     </PageLayout>
   )
 }
