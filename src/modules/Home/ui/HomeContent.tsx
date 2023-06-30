@@ -14,13 +14,13 @@ export const HomeContent: FC = () => {
   return (
     <main className={styles.HomeContent}>
       <IntroSection />
-      <StorySection />
-      <ExploreDesignsSection />
-      <FeaturedDesignsSection />
-      <CustomDesignsSection />
+      {/*<StorySection />*/}
+      {/*<ExploreDesignsSection />*/}
+      {/*<FeaturedDesignsSection />*/}
+      {/*<CustomDesignsSection />*/}
       {/* SELL OUR PRODUCTS SECTION  */}
-      <FAQSection />
-      <BecomeDistributorSection />
+      {/*<FAQSection />*/}
+      {/*<BecomeDistributorSection />*/}
     </main>
   )
 }
