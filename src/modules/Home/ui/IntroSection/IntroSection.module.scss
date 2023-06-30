@@ -5,6 +5,7 @@
   display: flex;
   min-height: 100vh;
   padding: 150rem 0 48rem;
+  overflow: hidden;
 
   .video {
     position: absolute;
@@ -21,10 +22,25 @@
   }
 
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 100%;
+
+    &::before{
+      position: absolute;
+      top: 126rem;
+      right: -39rem;
+      width: 1395rem;
+      height: 1551rem;
+      background-image: url("/images/home/home_bg.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1395rem 1551rem;
+      opacity: .2;
+      content: '';
+    }
 
     &_top {
       position: relative;
@@ -76,6 +92,14 @@
 
     &__content {
       justify-content: space-between;
+
+      &::before{
+        top: 135rem;
+        right: 19rem;
+        width: 802rem;
+        height: 892rem;
+        background-size: 802rem 892rem;
+      }
 
       &_top {
         flex: 1 1;
