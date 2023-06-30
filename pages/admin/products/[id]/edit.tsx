@@ -4,7 +4,6 @@ import { ProductEdit } from '@/modules/Admin'
 import ProductModel from '../../../../models/Product'
 import CategoryModel from '../../../../models/Category'
 import db from '@/utils/db'
-import { CategoryProps } from '@/utils/types'
 
 export default function ProductEditPage({
   product,

@@ -9,7 +9,7 @@ import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import { useModal } from '@/hooks/useModal'
 import ThanksModal from '@/modals/Thanks/Thanks'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
-import { OptionInterface } from '@/ui/SelectField/SelectField'
+import { OptionInterface } from '@/utils/types'
 import { countryList } from '@/utils/countries/countryList'
 import { useInView, motion } from 'framer-motion'
 const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
