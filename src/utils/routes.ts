@@ -5,4 +5,9 @@ export default {
     becomeDistributor: '/become-a-distributor',
     contactUs: '/contact',
   },
+  private: {
+    admin: '/admin',
+    products: '/admin/products',
+    categories: '/admin/categories',
+  },
 }
