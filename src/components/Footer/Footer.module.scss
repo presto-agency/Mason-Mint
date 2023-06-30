@@ -2,15 +2,33 @@
 
 .footer {
   width: 100%;
+  overflow: hidden;
   background-color: var(--black);
   background-image: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 32%) 93.75%);
 
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    &::before{
+      position: absolute;
+      top: -164rem;
+      left: 360rem;
+      width: 1395rem;
+      height: 1551rem;
+      background-image: url("/images/home/home_bg.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1395rem 1551rem;
+      transform: scaleX(-1);
+      opacity: .2;
+      content: '';
+    }
+
     &_top {
+      position: relative;
       display: grid;
       grid-template-areas:
     "logo nav"
@@ -23,6 +41,7 @@
     }
 
     &_bottom {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -110,6 +129,15 @@
 @media (width <= $breakpoint-mob) {
   .footer {
     &__content {
+      &::before{
+        top: 81rem;
+        left: 91rem;
+        width: 937rem;
+        height: 1043rem;
+        background-image: url("/images/home/home_bg.svg");
+        background-size: 937rem 1043rem;
+      }
+
       &_top {
         grid-template-areas:
       "logo"
