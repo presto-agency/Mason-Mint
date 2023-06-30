@@ -8,12 +8,14 @@ type AnimatedElementProps = {
   children: ReactNode
   className?: string
   delay?: number
+  reverse?: boolean
 }
 
 const AnimatedElement: FC<AnimatedElementProps> = ({
   children,
   className,
   delay = 0,
+  reverse,
 }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
@@ -30,7 +32,7 @@ const AnimatedElement: FC<AnimatedElementProps> = ({
     },
     hidden: {
       opacity: 0,
-      y: 20,
+      y: reverse ? -20 : 20,
     },
   }
 
