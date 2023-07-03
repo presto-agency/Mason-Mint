@@ -47,14 +47,16 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
   useEffect(() => {
     if (isLoading) {
       setArrowVisible(false)
-    } else {
+    } else if (!isLoading && !arrows) {
+      setArrowVisible(false)
+    } else if (!isLoading) {
       setArrowVisible(true)
     }
-  }, [isLoading])
+  }, [isLoading, arrows])
 
   const mods = {
     [styles[variant]]: true,
-    [styles[size]]: true,
+    [styles[size]]: size === 'small',
     [styles['noArrowsAnimation']]: !arrowVisible,
     [styles['backwardArrows']]: backwardArrows,
   }
