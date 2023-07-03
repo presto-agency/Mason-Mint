@@ -16,6 +16,7 @@ export default function Home() {
       <ButtonPrimary
         className={styles['button']}
         variant="white"
+        isLoading={true}
         backwardArrows={true}
       >
         LEARN MORE
@@ -24,6 +25,7 @@ export default function Home() {
         className={styles['button']}
         variant="white"
         backwardArrows={true}
+        isLoading={true}
         size="small"
       >
         LEARN MORE
@@ -45,6 +47,7 @@ export default function Home() {
       <ButtonPrimary
         className={styles['button']}
         backwardArrows={true}
+        isLoading={true}
         variant="blue"
       >
         LEARN MORE
@@ -53,6 +56,7 @@ export default function Home() {
         className={styles['button']}
         backwardArrows={true}
         variant="blue"
+        isLoading={true}
         size="small"
       >
         LEARN MORE
@@ -86,6 +90,7 @@ export default function Home() {
         className={styles['button']}
         variant="noStroked"
         backwardArrows={true}
+        isLoading={true}
         size="small"
       >
         LEARN MORE
@@ -102,6 +107,27 @@ export default function Home() {
         className={styles['button']}
         variant="noStroked"
         arrows={false}
+      >
+        LEARN MORE
+      </ButtonPrimary>
+      <ButtonPrimary
+        className={styles['button']}
+        variant="blue"
+        isLoading={true}
+      >
+        LEARN MORE
+      </ButtonPrimary>
+      <ButtonPrimary
+        className={styles['button']}
+        variant="white"
+        isLoading={true}
+      >
+        LEARN MORE
+      </ButtonPrimary>
+      <ButtonPrimary
+        className={styles['button']}
+        variant="noStroked"
+        isLoading={true}
       >
         LEARN MORE
       </ButtonPrimary>

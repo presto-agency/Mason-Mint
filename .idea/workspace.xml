@@ -7,7 +7,6 @@
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +88,7 @@
       <workItem from="1687766042625" duration="34482000" />
       <workItem from="1688024624139" duration="14429000" />
       <workItem from="1688108234733" duration="20803000" />
-      <workItem from="1688366472951" duration="6562000" />
+      <workItem from="1688366472951" duration="9313000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -189,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688137674014</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix: add backward mod to button">
+      <created>1688386370785</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688386370785</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +225,8 @@
     <MESSAGE value="fix: some hero fixes" />
     <MESSAGE value="fix: some fixes" />
     <MESSAGE value="fix: some fixes-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: some fixes-2" />
+    <MESSAGE value="fix: add backward mod to button" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add backward mod to button" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
