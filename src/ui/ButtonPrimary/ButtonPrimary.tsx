@@ -15,6 +15,7 @@ type ButtonPrimaryProps = {
   fullWidth?: boolean
   href?: string
   arrows?: boolean
+  backwardArrows?: boolean
 } & DetailedHTMLProps<
   ButtonHTMLAttributes<HTMLButtonElement>,
   HTMLButtonElement
@@ -56,12 +57,14 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
   fullWidth = false,
   href,
   arrows = true,
+  backwardArrows = false,
   ...buttonProps
 }) => {
   const mods = {
     [styles[variant]]: true,
     [styles[size]]: true,
     [styles['noArrowsAnimation']]: !arrows,
+    [styles['backwardArrows']]: backwardArrows,
   }
 
   return (

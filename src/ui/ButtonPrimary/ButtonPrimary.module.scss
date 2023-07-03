@@ -93,7 +93,7 @@
   background-color: var(--primary-color);
 }
 
-.large{
+.large {
   height: 48rem;
   padding: 0 32rem;
   font-size: 16rem;
@@ -137,7 +137,7 @@
   }
 }
 
-.small{
+.small {
   height: 36rem;
   padding: 0 16rem;
   font-weight: 500;
@@ -188,12 +188,92 @@
   }
 }
 
+.backwardArrows {
+  .buttonPrimary {
+    &__content {
+      padding-right: 0;
+      padding-left: 32rem;
+
+      &_icon {
+        &.__1 {
+          right: 0;
+          left: initial;
+          transform: translate(32rem, -50%) rotate(180deg);
+        }
+
+        &.__2 {
+          right: initial;
+          left: 0;
+          transform: translate(0, -50%) rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &.small {
+    .buttonPrimary {
+      &__content {
+        padding-left: 24rem;
+
+        &_icon {
+          &.__1 {
+            transform: translate(24rem, -50%) rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    &:hover {
+      .buttonPrimary {
+        &__content {
+          padding-right: 32rem;
+          padding-left: 0;
+
+          &_icon {
+            &.__1 {
+              transform: translate(0, -50%) rotate(180deg);
+            }
+
+            &.__2 {
+              transform: translate(-32rem, -50%) rotate(180deg);
+            }
+          }
+        }
+      }
+
+      &.small {
+        .buttonPrimary {
+          &__content {
+            padding-right: 24rem;
+            padding-left: 0;
+
+            &_icon {
+              &.__2 {
+                transform: translate(-24rem, -50%) rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .noStroked {
   gap: 16rem;
   width: fit-content;
   padding: 0;
   color: var(--primary-color);
   background: none;
+
+  &.noArrowsAnimation {
+    &:hover {
+      color: var(--black);
+      background-color: initial;
+    }
+  }
 
   .arrow {
     stroke: var(--primary-color);
@@ -203,20 +283,20 @@
 .noArrowsAnimation {
   transition: var(--move-duration) var(--ease);
 
-@media (min-width: $breakpoint-tablet) {
-  &:hover {
-    color: var(--white);
-    background-color: var(--black);
-    cursor: pointer;
+  @media (min-width: $breakpoint-tablet) {
+    &:hover {
+      color: var(--white);
+      background-color: var(--black);
+      cursor: pointer;
 
-    .buttonPrimary {
-      &__content {
-        padding-right: initial;
-        padding-left: initial;
+      .buttonPrimary {
+        &__content {
+          padding-right: initial;
+          padding-left: initial;
+        }
       }
     }
   }
-}
 
   .buttonPrimary {
     &__content {
