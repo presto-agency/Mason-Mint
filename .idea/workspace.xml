@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="fix: add isLoading">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ButtonPrimary/ButtonPrimary.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +61,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/home" />
       <recent name="$PROJECT_DIR$/src/ui/Button" />
       <recent name="$PROJECT_DIR$/src/ui/Button/ui" />
       <recent name="$PROJECT_DIR$/src/modules/BecomeADistributor/ui" />
       <recent name="$PROJECT_DIR$/src/app/styles" />
-      <recent name="$PROJECT_DIR$/src/app/styles/variables" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -86,7 +88,8 @@
       <workItem from="1687425445453" duration="27770000" />
       <workItem from="1687766042625" duration="34482000" />
       <workItem from="1688024624139" duration="14429000" />
-      <workItem from="1688108234733" duration="17348000" />
+      <workItem from="1688108234733" duration="20803000" />
+      <workItem from="1688366472951" duration="13602000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -165,7 +168,42 @@
       <option name="project" value="LOCAL" />
       <updated>1688130122544</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix: some hero fixes">
+      <created>1688134353516</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1688134353516</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix: some fixes">
+      <created>1688136969499</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1688136969499</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix: some fixes-2">
+      <created>1688137674014</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1688137674014</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix: add backward mod to button">
+      <created>1688386370785</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1688386370785</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix: add isLoading mod to button">
+      <created>1688389382978</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1688389382978</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +230,13 @@
     <MESSAGE value="fix: commit after pull" />
     <MESSAGE value="fix: some refactor(#21)" />
     <MESSAGE value="feat: add hero section with animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add hero section with animation" />
+    <MESSAGE value="fix: some hero fixes" />
+    <MESSAGE value="fix: some fixes" />
+    <MESSAGE value="fix: some fixes-2" />
+    <MESSAGE value="fix: add backward mod to button" />
+    <MESSAGE value="fix: add isLoading mod to button" />
+    <MESSAGE value="fix: add isLoading" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add isLoading" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
