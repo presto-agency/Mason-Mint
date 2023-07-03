@@ -9,7 +9,7 @@ import routes from '@/utils/routes'
 
 import styles from '@/modules/Admin/Admin.module.scss'
 
-export const ProductEdit: FC<{
+const ProductEdit: FC<{
   product: ProductProps
   categories: CategoryProps[]
 }> = ({ product, categories }) => {
@@ -41,3 +41,5 @@ export const ProductEdit: FC<{
     </main>
   )
 }
+
+export default ProductEdit

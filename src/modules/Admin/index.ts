@@ -1,4 +1,7 @@
-import { AdminProducts } from '@/modules/Admin/ui/Products'
-import { ProductEdit } from '@/modules/Admin/ui/ProductEdit/ProductEdit'
+import dynamic from 'next/dynamic'
+const AdminProducts = dynamic(() => import('@/modules/Admin/ui/Products'))
+const ProductEdit = dynamic(
+  () => import('@/modules/Admin/ui/ProductEdit/ProductEdit')
+)
 
 export { AdminProducts, ProductEdit }

@@ -5,7 +5,7 @@
 		&__table{
 			position: relative;
 			width: 100%;
-			margin: 12rem 0;
+			margin: 18rem 0;
 			padding: 5rem 0;
 			border: 1px var(--gray-300) solid;
 			border-spacing: 0;
@@ -27,7 +27,9 @@
 					padding: 5rem 0;
 					text-align: left;
 					border-bottom: 1px var(--gray-300) solid;
-					
+				}
+			
+				th, td{
 						&:nth-child(1){
 							padding-left: 12rem;
 						}
@@ -43,6 +45,12 @@
 								border-bottom: none;
 							}
 						}
+				}
+			
+				&_header{
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
 				}
 		}
 }
