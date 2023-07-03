@@ -4,8 +4,8 @@ import CategoryModel from '../../../models/Category'
 import { getError } from '@/utils/error'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  await db.connect()
   try {
+    await db.connect()
     const categories = await CategoryModel.find()
     await db.disconnect()
     res.status(200).json({
