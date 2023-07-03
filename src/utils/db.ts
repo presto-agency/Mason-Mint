@@ -5,9 +5,7 @@ type connectionProps = {
 }
 
 type docProps = {
-  _id: string | object
-  createdAt: string | object
-  updatedAt: string | object
+  _id: object | string
 }
 
 const connection: connectionProps = {}
@@ -43,8 +41,6 @@ const disconnect = async () => {
 
 const convertDocToObj = (doc: docProps) => {
   doc._id = doc._id.toString()
-  doc.createdAt = doc.createdAt.toString()
-  doc.updatedAt = doc.updatedAt.toString()
   return doc
 }
 

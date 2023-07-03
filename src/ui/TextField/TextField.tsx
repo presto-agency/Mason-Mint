@@ -6,6 +6,7 @@ import Resize from '@/ui/Icons/Resize'
 import styles from './TextField.module.scss'
 
 type TextFieldProps = {
+  value?: string
   name: string
   placeholder?: string
   label?: string
@@ -27,6 +28,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       type = 'text',
       onChange,
       element = 'input',
+      value,
     }: TextFieldProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
@@ -53,6 +55,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
               placeholder={placeholder}
               onChange={handleChange}
               ref={textAreaRef}
+              value={value}
             />
             <Resize className={styles['inputField__item_resize']} />
           </>
@@ -63,6 +66,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             name={name}
             placeholder={placeholder}
             ref={ref}
+            value={value}
             onChange={handleChange}
           />
         )}

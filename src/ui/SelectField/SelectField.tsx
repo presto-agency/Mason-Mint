@@ -15,17 +15,9 @@ import Select, {
 import classNames from 'classnames'
 import Attention from '@/ui/Icons/Attention'
 import ArrowSelect from '@/ui/Icons/ArrowSelect'
+import { OptionInterface } from '@/utils/types'
 
 import styles from './SelectField.module.scss'
-
-export interface OptionInterface {
-  value: string | undefined
-  label: string
-  states?:
-    | { name: string; state_code: string }[]
-    | { name: string; state_code: null }[]
-  disabled?: boolean | undefined
-}
 
 type SelectOptionProps = {
   name: string
@@ -38,6 +30,7 @@ type SelectOptionProps = {
   options: OptionInterface[]
   isSearchable?: boolean
   isDisabled?: boolean
+  isMulti?: boolean
 }
 
 const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
@@ -53,6 +46,7 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       options,
       isSearchable = false,
       isDisabled = false,
+      isMulti = false,
     }: SelectOptionProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {

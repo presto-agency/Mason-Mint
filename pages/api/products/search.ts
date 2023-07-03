@@ -19,7 +19,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       success: true,
       method: req.method,
       total: products.length,
-      products,
+      data: products,
     })
   } catch (error) {
     res.status(500).json({ success: false, message: getError(error as Error) })
