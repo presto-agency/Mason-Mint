@@ -1,11 +1,17 @@
 import { FC, useState } from 'react'
 import { useRouter } from 'next/router'
-import axios from 'axios'
+import dynamic from 'next/dynamic'
+import axios, { AxiosResponse } from 'axios'
 import ProductForm from '@/ui/ProductForm/ProductForm'
 import Container from '@/app/layouts/Container'
 import { CategoryProps, ProductProps } from '@/utils/types'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+import { useModal } from '@/hooks/useModal'
 import routes from '@/utils/routes'
+const ProductManipulatedSuccessModal = dynamic(
+  () => import('@/modals/ProductManipulatedSuccess/ProductManipulatedSuccess'),
+  { ssr: false }
+)
 
 import styles from '@/modules/Admin/Admin.module.scss'
 
@@ -15,11 +21,22 @@ const ProductEdit: FC<{
 }> = ({ product, categories }) => {
   const { query } = useRouter()
   const [productState, setProductState] = useState(product)
+  const [loading, setLoading] = useState(false)
+  const openSuccessModal = useModal(ProductManipulatedSuccessModal, {
+    size: 'md',
+  })
 
   const handleEdit = async (data: ProductProps) => {
+    setLoading(true)
     await axios
       .put(`${window.location.origin}/api/products/${query.id}/edit`, data)
-      .then((res) => setProductState(res.data.data))
+      .then(({ data: { success, data } }: AxiosResponse) => {
+        if (success) {
+          setProductState(data)
+          setLoading(false)
+          openSuccessModal()
+        }
+      })
   }
 
   return (
@@ -36,6 +53,7 @@ const ProductEdit: FC<{
           product={productState}
           categories={categories}
           onValues={handleEdit}
+          loading={loading}
         />
       </Container>
     </main>

@@ -1,4 +1,5 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import Close from '@/ui/Icons/Close'
 
@@ -10,6 +11,12 @@ export type ModalWindowProps = {
   children?: ReactNode
 }
 const ModalWindow = ({ onClose, size, children }: ModalWindowProps) => {
+  const router = useRouter()
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', () => onClose())
+  }, [onClose, router])
+
   return (
     <div className={styles['modal']}>
       <div className={styles['modal__bg']} />

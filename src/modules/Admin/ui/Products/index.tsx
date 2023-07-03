@@ -1,9 +1,10 @@
 import { FC } from 'react'
-import styles from '@/modules/Admin/Admin.module.scss'
 import Container from '@/app/layouts/Container'
 import { ProductProps } from '@/utils/types'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import routes from '@/utils/routes'
+
+import styles from '@/modules/Admin/Admin.module.scss'
 
 const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
   return (
@@ -19,6 +20,7 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
           <thead>
             <tr>
               <th></th>
+              <th></th>
               <th>Name</th>
               <th>Category</th>
               <th></th>
@@ -29,6 +31,16 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
               return (
                 <tr key={index}>
                   <td>{index + 1}.</td>
+                  <td>
+                    {product.Images?.length ? (
+                      <img
+                        src={product.Images[0].ImageUrl || ''}
+                        alt="Product"
+                        width={100}
+                        height={100}
+                      />
+                    ) : null}
+                  </td>
                   <td>{product.ProductName}</td>
                   <td>{product.category?.name}</td>
                   <td>

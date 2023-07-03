@@ -10,7 +10,9 @@ import { useModal } from '@/hooks/useModal'
 import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 import { useInView, motion } from 'framer-motion'
-const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'))
+const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'), {
+  ssr: false,
+})
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 
 import styles from './ContactForm.module.scss'
