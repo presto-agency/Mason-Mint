@@ -43,9 +43,9 @@ const ProductEdit: FC<{
     <main className={styles['admin']}>
       <Container>
         <ButtonPrimary
-          arrows={false}
-          size="small"
           href={routes.private.products}
+          backwardArrows
+          size="small"
         >
           Back to list
         </ButtonPrimary>
