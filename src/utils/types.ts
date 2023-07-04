@@ -1,3 +1,5 @@
+import success from '@/modals/ProductManipulatedSuccess/ProductManipulatedSuccess'
+
 export type ProductProps = {
   id: string
   ProductName: string

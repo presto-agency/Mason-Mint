@@ -1,16 +1,39 @@
 import { NextApiResponse, NextApiRequest } from 'next'
 import db from '@/utils/db'
-import Product from '../../../../models/Product'
+import ProductModel from '../../../../models/Product'
+import CategoryModel from '../../../../models/Category'
 import { getError } from '@/utils/error'
+import { ProductProps } from '@/utils/types'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== 'PUT') return
+  if (req.method !== 'PUT') {
+    res.status(400).json({ success: false, message: 'Invalid request method' })
+    return
+  }
   try {
+    const productId = req.query.id
     const body = req.body
+    const categoryId = body.category?.id
+
+    if (categoryId) {
+      const category = await CategoryModel.findOne({ id: categoryId })
+
+      const existProductInCategory = category.products.some(
+        (product: ProductProps) => product.id === productId
+      )
+
+      if (!existProductInCategory) {
+        category.products.push({
+          name: body.ProductName,
+          id: productId,
+        })
+        await category.save()
+      }
+    }
+
     await db.connect()
-    const filter = { id: req.query.id }
-    let product = await Product.findOneAndUpdate(filter, body)
-    product = await Product.findOne(filter)
+    let product = await ProductModel.findOneAndUpdate({ id: productId }, body)
+    product = await ProductModel.findOne({ id: productId })
     await db.disconnect()
     res.status(200).json({ success: true, data: product })
   } catch (error) {

@@ -30,10 +30,11 @@ const ProductForm: FC<{
   product: ProductProps
   categories: CategoryProps[]
   onValues: (formData: ProductProps) => void
-}> = ({ product, categories, onValues }) => {
+  loading: boolean
+}> = ({ product, categories, onValues, loading = false }) => {
   const [selectedCategory, setSelectedCategory] = useState<OptionInterface>({
     label: product.category?.name || '',
-    value: product.category?.id,
+    value: product.category?.id || '',
   })
 
   const defaultValues: FormProps = useMemo(
@@ -48,6 +49,7 @@ const ProductForm: FC<{
       IraApproved: product.specification[0].IraApproved,
       Series: product.specification[0].Series,
       Thickness: product.specification[0].Thickness,
+      category: product.category,
     }),
     [product]
   )
@@ -76,7 +78,7 @@ const ProductForm: FC<{
       setValue('category', { name: category?.label, id: category?.value })
       setSelectedCategory(category as OptionInterface)
     },
-    [setValue]
+    [setValue, setSelectedCategory]
   )
 
   const onSubmit = (formData: FormProps) => {
@@ -285,7 +287,9 @@ const ProductForm: FC<{
               )
             }}
           />
-          <ButtonPrimary type="submit">Save product</ButtonPrimary>
+          <ButtonPrimary type="submit" isLoading={loading}>
+            Save product
+          </ButtonPrimary>
         </form>
       </div>
       <div className="col-md-6">Photos</div>

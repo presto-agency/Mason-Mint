@@ -4,20 +4,27 @@ import Product from '../../../models/Product'
 import { getError } from '@/utils/error'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  if (req.method !== 'PUT') {
+    res.status(400).json({ success: false, message: 'Invalid request method' })
+    return
+  }
+
   const { query } = req.body
-  if (req.method !== 'POST') return
+
   try {
     if (query === '') {
-      res.status(200).json({ message: 'Search query is empty' })
+      res.status(400).json({ success: false, message: 'Search query is empty' })
+      return
     }
+
     await db.connect()
     const products = await Product.find({
       ProductName: { $regex: query, $options: 'i' },
     })
     await db.disconnect()
+
     res.status(200).json({
       success: true,
-      method: req.method,
       total: products.length,
       data: products,
     })
