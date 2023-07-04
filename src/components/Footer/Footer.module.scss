@@ -49,6 +49,19 @@
       color: var(--gray-800);
       font: var(--font-s);
       border-top: 1px solid var(--gray-800);
+      transition: color var(--hover-duration) var(--ease);
+
+      @media (min-width: $breakpoint-tablet) {
+        &:hover{
+          color: var(--primary-color);
+
+          .creators{
+            &__logo{
+              fill: var(--primary-color)
+            }
+          }
+        }
+      }
 
       .creators {
         display: flex;
@@ -56,6 +69,8 @@
 
         &__logo {
           margin: 0 16rem;
+          transition: fill var(--hover-duration) var(--ease);
+          fill: var(--gray-800);
         }
       }
     }
@@ -121,6 +136,13 @@
       color: var(--white);
       font: var(--font-button-m);
       white-space: nowrap;
+      transition: color var(--hover-duration) var(--ease);
+
+      @media (min-width: $breakpoint-tablet) {
+        &:hover{
+          color: var(--primary-color);
+        }
+      }
     }
   }
 }
