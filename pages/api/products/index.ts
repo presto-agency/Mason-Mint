@@ -4,9 +4,18 @@ import Product from '../../../models/Product'
 import { getError } from '@/utils/error'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  const {
+    query: { category = null },
+  } = req
+
+  const categories: string[] = category ? category.toString().split(',') : []
+  const filter: { 'category.id'?: string[] } = categories.length
+    ? { 'category.id': categories }
+    : {}
+
   try {
     await db.connect()
-    const products = await Product.find()
+    const products = await Product.find(filter)
     await db.disconnect()
     res.status(200).json({ success: true, data: products })
   } catch (error) {

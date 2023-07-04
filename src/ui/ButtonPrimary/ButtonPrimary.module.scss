@@ -313,5 +313,9 @@
   &.fullWidth {
     width: 100%;
   }
+  
+  &.disabled{
+    pointer-events: none;
+  }
 }
 

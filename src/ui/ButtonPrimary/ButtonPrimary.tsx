@@ -91,6 +91,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
             styles['buttonPrimary'],
             mods,
             fullWidth ? styles['fullWidth'] : '',
+            isLoading ? styles['disabled'] : '',
             className
           )}
           disabled={disabled}
@@ -104,6 +105,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
           className={classNames(
             styles['buttonPrimary'],
             mods,
+            disabled || isLoading ? styles['disabled'] : '',
             fullWidth ? styles['fullWidth'] : '',
             className
           )}

@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react'
+import { FC, useRef, useState } from 'react'
 import classNames from 'classnames'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
 import dynamic from 'next/dynamic'
@@ -10,6 +10,7 @@ import { useModal } from '@/hooks/useModal'
 import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 import { useInView, motion } from 'framer-motion'
+const ErrorModal = dynamic(() => import('@/modals/Error/Error'), { ssr: false })
 const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'), {
   ssr: false,
 })
@@ -38,13 +39,16 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
     handleSubmit,
     formState: { errors },
     control,
+    reset,
   } = useForm<FormValues>({
     values: defaultValues,
     resolver: yupResolver(validationSchema),
   })
   const openThanksModal = useModal(ThanksModal, { size: 'xs' })
+  const openErrorModal = useModal(ErrorModal, { size: 'xs' })
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [sending, setSending] = useState(false)
 
   const container = {
     visible: () => ({
@@ -69,21 +73,25 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
   }
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    setSending(true)
     await browserSendEmail({
       subject: `Let's talk!`,
       htmlMessage: 'Hello, I want to test this mail',
       data,
     })
       .then((response) => response.json())
-      .then(({ success = false }) => {
-        // @TODO process all answers - success, response, error
-        // @TODO reset fields after success
-        if (success) {
+      .then(({ success = false, response = null }) => {
+        if (success && response && response.messageId) {
           openThanksModal()
+          setSending(false)
+          reset()
         }
       })
-      .catch((error) => console.error(`Error on send email ${error}`))
-    // @TODO display error on page
+      .catch((error) => {
+        openErrorModal()
+        setSending(false)
+        console.error(`Error on send email ${error}`)
+      })
   }
 
   return (
@@ -194,6 +202,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
             variant="blue"
             fullWidth
             className={styles['form__action']}
+            isLoading={sending}
           >
             Submit
           </ButtonPrimary>
