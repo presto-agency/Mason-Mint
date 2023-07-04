@@ -9,7 +9,7 @@ type BackgroundImageProps = {
   className?: string
   children?: ReactNode
   parallax?: boolean
-  transformValue?: number[]
+  parallaxValues?: number[]
 } & ImageProps
 
 export const BackgroundImage: FC<BackgroundImageProps> = ({
@@ -19,11 +19,11 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   className,
   children,
   parallax = false,
-  transformValue = [-50, 50],
+  parallaxValues = [-50, 50],
   ...props
 }) => {
   const useParallax = (value: MotionValue<number>) => {
-    return useTransform(value, [0, 1], transformValue)
+    return useTransform(value, [0, 1], parallaxValues)
   }
   const refTarget = useRef(null)
   const { scrollYProgress } = useScroll({
