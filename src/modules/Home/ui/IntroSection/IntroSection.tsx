@@ -3,10 +3,10 @@ import classNames from 'classnames'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 
 import styles from './IntroSection.module.scss'
 import stylesAnimated from '@/ui/AnimatedElement/AnimatedElement.module.scss'
-import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 
 export const IntroSection = () => {
   return (
