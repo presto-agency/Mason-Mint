@@ -57,11 +57,11 @@ const navigationHeaderLinks = [
     description: 'Custom Minting',
   },
   {
-    href: routes.public.about,
+    href: '',
     description: 'Designs',
   },
   {
-    href: routes.public.about,
+    href: '',
     description: 'Packaging',
   },
   {

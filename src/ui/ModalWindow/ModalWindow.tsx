@@ -9,8 +9,14 @@ export type ModalWindowProps = {
   onClose: () => void
   size: string
   children?: ReactNode
+  className?: string
 }
-const ModalWindow = ({ onClose, size, children }: ModalWindowProps) => {
+const ModalWindow = ({
+  onClose,
+  size,
+  children,
+  className,
+}: ModalWindowProps) => {
   const router = useRouter()
 
   useEffect(() => {
@@ -21,7 +27,9 @@ const ModalWindow = ({ onClose, size, children }: ModalWindowProps) => {
     <div className={styles['modal']}>
       <div className={styles['modal__bg']} />
       <div className={styles['modal__close']} onClick={() => onClose()} />
-      <div className={classNames(styles['modal__body'], styles[size])}>
+      <div
+        className={classNames(styles['modal__body'], styles[size], className)}
+      >
         <button
           className={styles['modal__body_close']}
           onClick={() => onClose()}

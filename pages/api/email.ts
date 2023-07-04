@@ -6,12 +6,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const { subject, htmlMessage } = req.body
 
-    await sendEmail({
+    const response = await sendEmail({
       subject,
       htmlMessage,
     })
-
-    res.status(200).json({ success: true, response: null, error: null })
+    res.status(200).json({ success: true, response, error: null })
   } catch (error) {
     res
       .status(500)

@@ -7,12 +7,15 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { validationSchema } from '@/modules/BecomeADistributor/ui/BecomeADistributorForm/validationSchema'
 import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import { useModal } from '@/hooks/useModal'
-import ThanksModal from '@/modals/Thanks/Thanks'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { OptionInterface } from '@/utils/types'
 import { countryList } from '@/utils/countries/countryList'
 import { useInView, motion } from 'framer-motion'
 const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
+  ssr: false,
+})
+const ErrorModal = dynamic(() => import('@/modals/Error/Error'), { ssr: false })
+const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'), {
   ssr: false,
 })
 
@@ -53,12 +56,14 @@ const BecomeADistributorForm: FC<{
     control,
     setValue,
     clearErrors,
+    reset,
   } = useForm<FormValues>({
     values: defaultValues,
     resolver: yupResolver(validationSchema),
   })
 
   const openThanksModal = useModal(ThanksModal, { size: 'xs' })
+  const openErrorModal = useModal(ErrorModal, { size: 'xs' })
   const [selectedCountry, setSelectedCountry] =
     useState<OptionInterface | null>(null)
   const [selectedState, setSelectedState] = useState<OptionInterface | null>(
@@ -66,6 +71,7 @@ const BecomeADistributorForm: FC<{
   )
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [sending, setSending] = useState(false)
 
   const container = {
     visible: () => ({
@@ -116,21 +122,25 @@ const BecomeADistributorForm: FC<{
   }, [selectedCountry])
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    setSending(true)
     await browserSendEmail({
       subject: `Become a distributor`,
       htmlMessage: 'Hello, I want to be a distributor',
       data,
     })
       .then((response) => response.json())
-      .then(({ success = false }) => {
-        // @TODO process all answers - success, response, error
-        // @TODO reset fields after success
-        if (success) {
+      .then(({ success = false, response = null }) => {
+        if (success && response && response.messageId) {
           openThanksModal()
+          setSending(false)
+          reset()
         }
       })
-      .catch((error) => console.error(`Error on send email ${error}`))
-    // @TODO display error on page
+      .catch((error) => {
+        openErrorModal()
+        setSending(false)
+        console.error(`Error on send email ${error}`)
+      })
   }
 
   const handleStateChange = useCallback(
@@ -376,6 +386,7 @@ const BecomeADistributorForm: FC<{
             variant="blue"
             fullWidth
             className={styles['form__action']}
+            isLoading={sending}
           >
             Submit
           </ButtonPrimary>
