@@ -96,18 +96,18 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
 
   return isAnimated ? (
     <motion.div
-      className={classNames(styles.header__content_desktop, [className])}
+      className={classNames(styles['header__content_desktop'], [className])}
       animate={{ height: height }}
       initial={headerVariant.initial}
       exit={headerVariant.exit}
       transition={headerVariant.transition}
       data-lenis-prevent
     >
-      <div className={styles.navigation} ref={divRef}>
-        <nav className={styles.navigation__content}>
+      <div className={styles['navigation']} ref={divRef}>
+        <nav className={styles['navigation__content']}>
           {navigationHeaderLinks.map((item) => (
             <Link
-              className={styles.navigation__content_link}
+              className={styles['navigation__content_link']}
               href={item.href}
               key={item.description}
             >
@@ -126,12 +126,12 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
       </div>
     </motion.div>
   ) : (
-    <div className={styles.header__content_desktop}>
-      <div className={styles.navigation}>
-        <nav className={styles.navigation__content}>
+    <div className={styles['header__content_desktop']}>
+      <div className={styles['navigation']}>
+        <nav className={styles['navigation__content']}>
           {navigationHeaderLinks.map((item) => (
             <Link
-              className={styles.navigation__content_link}
+              className={styles['navigation__content_link']}
               href={item.href}
               key={item.description}
             >

@@ -85,21 +85,21 @@ export const Burger: FC<BurgerProps> = ({
   }
   return (
     <motion.div
-      className={classNames(styles.burger, mods)}
+      className={classNames(styles['burger'], mods)}
       onClick={toggleMenu}
       initial={false}
       animate={opened ? 'open' : 'closed'}
     >
       <motion.span
-        className={styles.burger__line}
+        className={styles['burger__line']}
         variants={topLineVariants}
       ></motion.span>
       <motion.span
-        className={styles.burger__line}
+        className={styles['burger__line']}
         variants={middleLineVariants}
       ></motion.span>
       <motion.span
-        className={styles.burger__line}
+        className={styles['burger__line']}
         variants={bottomLineVariants}
       ></motion.span>
     </motion.div>
