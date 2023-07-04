@@ -6,17 +6,12 @@ import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
 import styles from './IntroSection.module.scss'
 import stylesAnimated from '@/ui/AnimatedElement/AnimatedElement.module.scss'
+import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 
 export const IntroSection = () => {
   return (
     <section className={styles['intro']}>
-      <video
-        className={styles['video']}
-        autoPlay
-        loop
-        muted
-        src="/video/hero_video_bg-compress.mp4"
-      ></video>
+      <VideoComponent src="/video/hero_video_bg-compress.mp4" />
       <Container>
         <div className={styles['intro__content']}>
           <div className={styles['intro__content_top']}>
