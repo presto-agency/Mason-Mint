@@ -7,6 +7,7 @@ import routes from '@/utils/routes'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
 import styles from '../Header.module.scss'
+import { useRouter } from 'next/router'
 
 type MobileMenuProps = {
   className?: string
@@ -86,6 +87,11 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
 }) => {
   const divRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(0)
+  const router = useRouter()
+  const [activeLink, setActiveLink] = useState('')
+  useEffect(() => {
+    setActiveLink(router.asPath)
+  }, [router.asPath])
 
   useEffect(() => {
     if (divRef.current) {
@@ -96,18 +102,20 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
 
   return isAnimated ? (
     <motion.div
-      className={classNames(styles.header__content_desktop, [className])}
+      className={classNames(styles['header__content_desktop'], [className])}
       animate={{ height: height }}
       initial={headerVariant.initial}
       exit={headerVariant.exit}
       transition={headerVariant.transition}
       data-lenis-prevent
     >
-      <div className={styles.navigation} ref={divRef}>
-        <nav className={styles.navigation__content}>
+      <div className={styles['navigation']} ref={divRef}>
+        <nav className={styles['navigation__content']}>
           {navigationHeaderLinks.map((item) => (
             <Link
-              className={styles.navigation__content_link}
+              className={classNames(styles['navigation__content_link'], {
+                [styles['active']]: item.href === activeLink,
+              })}
               href={item.href}
               key={item.description}
             >
@@ -126,12 +134,14 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
       </div>
     </motion.div>
   ) : (
-    <div className={styles.header__content_desktop}>
-      <div className={styles.navigation}>
-        <nav className={styles.navigation__content}>
+    <div className={styles['header__content_desktop']}>
+      <div className={styles['navigation']}>
+        <nav className={styles['navigation__content']}>
           {navigationHeaderLinks.map((item) => (
             <Link
-              className={styles.navigation__content_link}
+              className={classNames(styles['navigation__content_link'], {
+                [styles['active']]: item.href === activeLink,
+              })}
               href={item.href}
               key={item.description}
             >

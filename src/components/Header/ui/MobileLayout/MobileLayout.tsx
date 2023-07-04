@@ -16,7 +16,7 @@ type MobileLayoutProps = {
 export const MobileLayout: FC<MobileLayoutProps> = memo(
   ({ menuOpened, scrolled, theme, toggleMenu }) => {
     return (
-      <div className={styles.header__content_mobile}>
+      <div className={styles['header__content_mobile']}>
         <Burger
           scrolled={scrolled}
           theme={theme}

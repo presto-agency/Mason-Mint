@@ -82,10 +82,13 @@ export const Footer: FC = () => {
             <NavigationBlock />
           </div>
           <div className={styles.footer__content_bottom}>
-            <div className={styles.creators}>
+            <Link
+              href={'https://www.studiopresto.com/'}
+              className={styles.creators}
+            >
               Made by <PrestoLogo className={styles.creators__logo} />{' '}
               Studiopresto
-            </div>
+            </Link>
             <div>
               2023 Mason Mint excellence in minting. All rights reserved.
             </div>

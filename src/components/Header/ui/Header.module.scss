@@ -74,6 +74,17 @@
 
           &_link{
             text-transform: uppercase;
+            transition: color var(--hover-duration) var(--ease);
+
+            &.active{
+              color: var(--primary-color);
+            }
+
+            @media (min-width: $breakpoint-tablet) {
+              &:hover{
+                color: var(--primary-color);
+              }
+            }
           }
         }
       }
@@ -120,6 +131,11 @@
               color: var(--white);
               font: var(--font-h4);
               text-transform: initial;
+              transition: color var(--hover-duration) var(--ease);
+
+              &.active{
+                color: var(--primary-color);
+              }
             }
           }
         }

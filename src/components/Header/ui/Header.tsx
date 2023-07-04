@@ -5,10 +5,10 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Logo } from '@/ui/Logo'
 import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
-
-import styles from './Header.module.scss'
 import { useRouter } from 'next/router'
 import { NavigationLayout } from '@/components/Header/ui/NavigationLayout/NavigationLayout'
+
+import styles from './Header.module.scss'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -92,11 +92,11 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <header className={classNames(styles.header, mods)}>
+      <header className={classNames(styles['header'], mods)}>
         <Container>
-          <div className={styles.header__content}>
-            <Link className={styles.header__content_link} href={'/'}>
-              <Logo className={styles.logo} />
+          <div className={styles['header__content']}>
+            <Link className={styles['header__content_link']} href={'/'}>
+              <Logo className={styles['logo']} />
             </Link>
             <NavigationLayout />
             <MobileLayout
