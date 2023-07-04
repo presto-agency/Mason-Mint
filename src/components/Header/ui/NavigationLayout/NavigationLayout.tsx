@@ -111,20 +111,17 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
     >
       <div className={styles['navigation']} ref={divRef}>
         <nav className={styles['navigation__content']}>
-          {navigationHeaderLinks.map((item) => {
-            const isActive = item.href === activeLink
-            return (
-              <Link
-                className={classNames(styles['navigation__content_link'], {
-                  [styles['active']]: isActive,
-                })}
-                href={item.href}
-                key={item.description}
-              >
-                <AnimatedTextCharacter text={item.description} />
-              </Link>
-            )
-          })}
+          {navigationHeaderLinks.map((item) => (
+            <Link
+              className={classNames(styles['navigation__content_link'], {
+                [styles['active']]: item.href === activeLink,
+              })}
+              href={item.href}
+              key={item.description}
+            >
+              <AnimatedTextCharacter text={item.description} />
+            </Link>
+          ))}
         </nav>
         <motion.div
           variants={buttonVariant}
@@ -140,19 +137,17 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
     <div className={styles['header__content_desktop']}>
       <div className={styles['navigation']}>
         <nav className={styles['navigation__content']}>
-          {navigationHeaderLinks.map((item) => {
-            return (
-              <Link
-                className={classNames(styles['navigation__content_link'], {
-                  [styles['active']]: item.href === activeLink,
-                })}
-                href={item.href}
-                key={item.description}
-              >
-                {item.description}
-              </Link>
-            )
-          })}
+          {navigationHeaderLinks.map((item) => (
+            <Link
+              className={classNames(styles['navigation__content_link'], {
+                [styles['active']]: item.href === activeLink,
+              })}
+              href={item.href}
+              key={item.description}
+            >
+              {item.description}
+            </Link>
+          ))}
         </nav>
         {button}
       </div>
