@@ -1,85 +1,98 @@
 @import '@/app/styles/variables/breackpoints';
 
-#story{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 164rem 64rem;
-
-  p {
-    color: var(--gray-800);
+.story {
+  position: relative;
+  padding: 164rem 0;
+  overflow: hidden;
+  
+  &::before{
+    position: absolute;
+    top: -110rem;
+    right: 153rem;
+    width: 1395rem;
+    height: 1550rem;
+    background-image: url("/images/home/story_bg.svg");
+    background-size: 1395rem 1550rem;
+    content: '';
   }
 
-  .left {
+  &__content{
     display: flex;
-    flex-direction: column;
-    gap: 24rem;
-    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 112rem 0 0;
 
-    .photoContainer {
-      align-self: flex-end;
-      width: 80%;
-      margin-top: 164rem;
-      aspect-ratio: 18/23;
-
-      &::before {
-        position: absolute;
-        top: -5rem;
-        left: -24rem;
-        z-index: 1;
-        display: block;
-        color: var(--gray-700);
-        font: var(--font-h6);
-        transform: rotate(90deg);
-        transform-origin: left;
-        content: 'welcome to masonmint';
-      }
-    }
-  }
-
-  .right {
-    width: 25%;
-
-
-    .text {
+    &_left {
       display: flex;
       flex-direction: column;
-      gap: 16rem;
-      padding: 32rem 0 40rem;
+      gap: 24rem;
+      width: 50%;
+
+      .photoContainer {
+        align-self: flex-end;
+        width: 80%;
+        margin-top: 164rem;
+        aspect-ratio: 18/23;
+
+        &::before {
+          position: absolute;
+          top: -5rem;
+          left: -24rem;
+          z-index: 1;
+          display: block;
+          color: var(--gray-700);
+          font: var(--font-h6);
+          transform: rotate(90deg);
+          transform-origin: left;
+          content: 'welcome to masonmint';
+        }
+      }
     }
 
-    .photoContainer {
-      aspect-ratio: 16/19;
+    &_right {
+      width: 25%;
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 16rem;
+        padding: 32rem 0 40rem;
+      }
+
+      .photoContainer {
+        aspect-ratio: 16/19;
+      }
     }
   }
 }
 
 @media (width <= $breakpoint-mob) {
-  #story {
-    flex-direction: column;
-    gap: 32rem;
-    padding: 8rem 24rem;
+  .story {
+    padding: 80rem 0;
 
-    .left {
-      gap: 16rem;
-      width: 100%;
+    &__content{
+      flex-direction: column;
+      gap: 32rem;
+      padding: 0;
 
-      .photoContainer {
-        display: none;
-        width: 100%;
-      }
-    }
-
-    .right {
-      width: 100%;
-      
-      .text {
+      &_left {
         gap: 16rem;
-        padding: 16rem 0 32rem;
+        width: 100%;
+
+        .photoContainer {
+          display: none;
+          width: 100%;
+        }
       }
 
-      button {
+      &_right {
         width: 100%;
+        margin: 30rem 0 80rem;
+
+        .text {
+          gap: 16rem;
+          padding: 16rem 0 32rem;
+        }
       }
     }
   }

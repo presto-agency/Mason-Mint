@@ -9,11 +9,11 @@ type ParallaxSection = {
 
 const ParallaxSection: FC<ParallaxSection> = ({
   children,
-  parallaxValues = [100, -100],
+  parallaxValues = [0, 150],
   className,
 }) => {
   const useParallax = (value: MotionValue<number>) => {
-    return useTransform(value, [1, 0], parallaxValues)
+    return useTransform(value, [0, 1], parallaxValues)
   }
   const refTarget = useRef(null)
 
