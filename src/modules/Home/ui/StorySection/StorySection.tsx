@@ -1,16 +1,10 @@
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import styles from './StorySection.module.scss'
-import { MotionValue, motion, useTransform, useScroll } from 'framer-motion'
 import { FC } from 'react'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 
 export const StorySection: FC = () => {
-  const useParallax = (value: MotionValue<number>) => {
-    return useTransform(value, [1, 0], [-300, 300])
-  }
-  const { scrollYProgress } = useScroll({})
-  const y = useParallax(scrollYProgress)
-
   return (
     <section id={styles.story}>
       <div className={styles.left}>
@@ -30,7 +24,7 @@ export const StorySection: FC = () => {
           parallax={true}
         />
       </div>
-      <motion.div style={{ y }} className={styles.right}>
+      <ParallaxSection className={styles.right}>
         <BackgroundImage
           src="/images/home/home_story_2.png"
           className={styles.photoContainer}
@@ -51,7 +45,7 @@ export const StorySection: FC = () => {
           </p>
         </div>
         <ButtonPrimary variant="transparent">OUR STORY</ButtonPrimary>
-      </motion.div>
+      </ParallaxSection>
     </section>
   )
 }

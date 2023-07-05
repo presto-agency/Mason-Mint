@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ui/ParallaxSection/ParallaxSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layouts/PageLayout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/PageLayout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/BecomeADistributor/ui/BecomeADistributorBody/BecomeADistributorBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/BecomeADistributor/ui/BecomeADistributorBody/BecomeADistributorBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -262,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688538935111</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix: some footer fixes">
+      <created>1688555328270</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1688555328270</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
