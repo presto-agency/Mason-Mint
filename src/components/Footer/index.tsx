@@ -10,8 +10,8 @@ import styles from './Footer.module.scss'
 
 const LogoBlock = () => {
   return (
-    <div className={styles.logo}>
-      <Logo className={styles.logo__item} />
+    <div className={styles['logo']}>
+      <Logo className={styles['logo__item']} />
     </div>
   )
 }
@@ -70,20 +70,20 @@ const NavigationBlock = () => {
 
 export const Footer: FC = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles['footer']}>
       <Container>
-        <div className={styles.footer__content}>
-          <div className={styles.footer__content_top}>
+        <div className={styles['footer__content']}>
+          <div className={styles['footer__content_top']}>
             <LogoBlock />
             <ContactInfo />
             <NavigationBlock />
           </div>
-          <div className={styles.footer__content_bottom}>
+          <div className={styles['footer__content_bottom']}>
             <Link
               href={'https://www.studiopresto.com/'}
-              className={styles.creators}
+              className={styles['creators']}
             >
-              Made by <PrestoLogo className={styles.creators__logo} />{' '}
+              Made by <PrestoLogo className={styles['creators__logo']} />{' '}
               Studiopresto
             </Link>
             <div>
