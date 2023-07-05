@@ -9,7 +9,7 @@ type BackgroundImageProps = {
   className?: string
   children?: ReactNode
   parallax?: boolean
-  parallaxValues?: number[]
+  parallaxValues?: [number, number]
 } & ImageProps
 
 export const BackgroundImage: FC<BackgroundImageProps> = ({
@@ -32,6 +32,20 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   })
   const y = useParallax(scrollYProgress)
 
+  const getLargestAbsoluteValue = (array: [number, number]) => {
+    let largestAbsoluteValue = 0
+
+    array.forEach((num) => {
+      const absoluteValue = Math.abs(num)
+
+      if (absoluteValue > largestAbsoluteValue) {
+        largestAbsoluteValue = absoluteValue
+      }
+    })
+
+    return largestAbsoluteValue
+  }
+
   const ImageComponent = (
     <Image
       src={src}
@@ -44,13 +58,28 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
     />
   )
 
+  const parallaxPictureSize = (value: number) =>
+    `calc(100% + (${value * 2}rem))`
+
+  const landslide = (value: number) => `-${value}rem`
+
   return (
     <div className={classNames(styles['BackgroundImage'], className)}>
       <div className={styles['BackgroundImage__container']}>
         {parallax ? (
           <motion.div
             className={styles['BackgroundImage__container_animatedWrapper']}
-            style={{ y }}
+            style={{
+              y,
+              width: parallaxPictureSize(
+                getLargestAbsoluteValue(parallaxValues)
+              ),
+              height: parallaxPictureSize(
+                getLargestAbsoluteValue(parallaxValues)
+              ),
+              top: landslide(getLargestAbsoluteValue(parallaxValues)),
+              left: landslide(getLargestAbsoluteValue(parallaxValues)),
+            }}
           >
             {ImageComponent}
           </motion.div>
