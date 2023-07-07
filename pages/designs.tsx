@@ -5,13 +5,10 @@ import CategoryModel from '../models/Category'
 import { PageLayout } from '@/app/layouts/PageLayout'
 import { DesignBody } from '@/modules/Designs'
 import { ProductProps, CategoryProps } from '@/utils/types'
-import { GetServerSidePropsContext } from 'next'
-import { ParsedUrlQuery } from 'querystring'
 
 interface DesignsProps {
   products: ProductProps[]
   categories: CategoryProps[]
-  selectedCategories: string[]
 }
 
 const Designs: React.FC<DesignsProps> = ({ products, categories }) => {
