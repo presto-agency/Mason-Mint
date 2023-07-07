@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/home/story_bg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/designs.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Designs/DesignBody/DesignBody.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Designs/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688568397519</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat: add storySection img">
+      <created>1688626913616</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1688626913616</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +329,8 @@
     <MESSAGE value="fix: some footer fixes" />
     <MESSAGE value="feat: add parallaxSection" />
     <MESSAGE value="feat: add storySection" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add storySection" />
+    <MESSAGE value="feat: add storySection img" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add storySection img" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
