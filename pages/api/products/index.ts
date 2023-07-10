@@ -5,13 +5,22 @@ import { getError } from '@/utils/error'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const {
-    query: { category = null },
+    query: { category = null, search = '' },
   } = req
 
   const categories: string[] = category ? category.toString().split(',') : []
-  const filter: { 'category.id'?: string[] } = categories.length
-    ? { 'category.id': categories }
-    : {}
+  const filter: {
+    'category.id'?: string[]
+    ProductName?: object
+  } = {}
+
+  if (categories.length) {
+    filter['category.id'] = categories
+  }
+
+  if (search) {
+    filter.ProductName = { $regex: search, $options: 'i' }
+  }
 
   try {
     await db.connect()
