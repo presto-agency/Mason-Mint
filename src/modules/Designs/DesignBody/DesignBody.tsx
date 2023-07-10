@@ -1,37 +1,34 @@
 import React, { FC, useEffect, useState } from 'react'
 import Container from '@/app/layouts/Container'
-import { ProductProps, CategoryProps } from '@/utils/types'
+import { CategoryProps, ProductProps } from '@/utils/types'
 import axios from 'axios'
+import { useDebounce } from '@uidotdev/usehooks'
+interface DesignsProps {
+  categories: CategoryProps[]
+}
 
-export const DesignBody: FC = () => {
+export const DesignBody: FC<DesignsProps> = ({ categories }) => {
   const [products, setProducts] = useState<ProductProps[]>([])
-  const [categories, setCategories] = useState<CategoryProps[]>([])
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategories, setSelectedCategories] = useState<string[]>([
     '649d9cca1a2f216bdc54e33a',
   ])
+  const debouncedSearchTerm = useDebounce(searchTerm, 500)
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const responseProducts = await axios.get('/api/products', {
-          params: {
-            category: selectedCategories.join(','),
-            search: searchTerm,
-          },
-        })
-        const responseCategories = await axios.get('/api/categories')
+      const responseProducts = await axios.get('/api/products', {
+        params: {
+          category: selectedCategories.join(','),
+          search: debouncedSearchTerm,
+        },
+      })
 
-        setProducts(responseProducts.data.data)
-        setCategories(responseCategories.data.data)
-        console.log('products', responseProducts.data.data)
-      } catch (error) {
-        console.error(error)
-      }
+      setProducts(responseProducts.data.data)
     }
 
     fetchData()
-  }, [selectedCategories, searchTerm])
+  }, [selectedCategories, debouncedSearchTerm])
 
   const handleCategoryChange = (categoryId: string) => {
     const updatedCategories = [...selectedCategories]
@@ -46,16 +43,6 @@ export const DesignBody: FC = () => {
     setSelectedCategories(updatedCategories)
   }
 
-  // const filteredProducts = products.filter((product) => {
-  //   const matchedCategory =
-  //     selectedCategories.length === 0 ||
-  //     selectedCategories.includes(product.category?.id || '')
-  //   const matchedSearchTerm =
-  //     searchTerm === '' ||
-  //     product.ProductName.toLowerCase().includes(searchTerm.toLowerCase())
-  //   return matchedCategory && matchedSearchTerm
-  // })
-
   return (
     <div style={{ padding: '150px 0' }}>
       <Container>
@@ -66,6 +53,7 @@ export const DesignBody: FC = () => {
               type="search"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="search"
             />
             {' Пошук'}
           </label>

@@ -1,20 +1,18 @@
-import React from 'react'
-import db from '@/utils/db'
-import ProductModel from '../models/Product'
-import CategoryModel from '../models/Category'
+import React, { FC } from 'react'
 import { PageLayout } from '@/app/layouts/PageLayout'
 import { DesignBody } from '@/modules/Designs'
-import { ProductProps, CategoryProps } from '@/utils/types'
+import db from '@/utils/db'
+import CategoryModel from '../models/Category'
+import { CategoryProps } from '@/utils/types'
 
 interface DesignsProps {
-  products: ProductProps[]
   categories: CategoryProps[]
 }
 
-const Designs: React.FC<DesignsProps> = ({ products, categories }) => {
+const Designs: FC<DesignsProps> = ({ categories }) => {
   return (
     <PageLayout>
-      <DesignBody products={products} categories={categories} />
+      <DesignBody categories={categories} />
     </PageLayout>
   )
 }
@@ -22,14 +20,12 @@ const Designs: React.FC<DesignsProps> = ({ products, categories }) => {
 export const getServerSideProps = async () => {
   await db.connect()
 
-  const products = await ProductModel.find()
   const categories = await CategoryModel.find()
 
   await db.disconnect()
 
   return {
     props: {
-      products: JSON.parse(JSON.stringify(products.map(db.convertDocToObj))),
       categories: JSON.parse(
         JSON.stringify(categories.map(db.convertDocToObj))
       ),
