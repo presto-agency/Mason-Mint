@@ -8,7 +8,7 @@ import { CustomDesignsSection } from './CustomDesignsSection/CustomDesignsSectio
 
 import styles from './HomeContent.module.scss'
 import { FAQSection } from './FAQSection/FAQSection'
-import { BecomeDistributorSection } from '@/components/BecomeDistributorSection'
+import { BecomeDistributorSection } from '@/components/BecomeDistributorSection/BecomeDistributorSection'
 
 export const HomeContent: FC = () => {
   return (
@@ -20,7 +20,7 @@ export const HomeContent: FC = () => {
       {/*<CustomDesignsSection />*/}
       {/* SELL OUR PRODUCTS SECTION  */}
       {/*<FAQSection />*/}
-      {/*<BecomeDistributorSection />*/}
+      <BecomeDistributorSection />
     </main>
   )
 }
