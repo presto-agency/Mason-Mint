@@ -6,7 +6,6 @@ import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 
 import styles from './IntroSection.module.scss'
-import stylesAnimated from '@/ui/AnimatedElement/AnimatedElement.module.scss'
 
 export const IntroSection = () => {
   return (
@@ -16,10 +15,9 @@ export const IntroSection = () => {
         <div className={styles['intro__content']}>
           <div className={styles['intro__content_top']}>
             <h1 className={classNames('h1', styles['title'])}>
-              <AnimatedText
-                title
-                withBlueDot
-              >{`Excellence in minting`}</AnimatedText>
+              <AnimatedText title withBlueDot>
+                Excellence in minting
+              </AnimatedText>
             </h1>
             <div className={styles['description']}>
               <AnimatedElement delay={0.2} reverse>
@@ -28,11 +26,11 @@ export const IntroSection = () => {
             </div>
           </div>
           <div className={styles['intro__content_bottom']}>
-            <AnimatedElement
-              className={stylesAnimated['fullwidth_mb']}
-              delay={0.2}
-            >
-              <ButtonPrimary className={styles['button']} variant="white">
+            <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
+              <ButtonPrimary
+                className={styles['buttonContainer__button']}
+                variant="white"
+              >
                 LEARN MORE
               </ButtonPrimary>
             </AnimatedElement>

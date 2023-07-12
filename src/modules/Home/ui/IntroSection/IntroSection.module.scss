@@ -109,8 +109,12 @@
           width: 100%;
         }
 
-        .button {
+        .buttonContainer{
           width: 100%;
+
+          &__button {
+            width: 100%;
+          }
         }
       }
     }

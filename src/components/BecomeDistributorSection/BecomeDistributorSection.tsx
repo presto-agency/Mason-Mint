@@ -2,6 +2,8 @@ import styles from './BecomeDistributorSection.module.scss'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import Container from '@/app/layouts/Container'
 import VideoComponent from '@/ui/VideoComponent/VideoComponent'
+import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
 export const BecomeDistributorSection = () => {
   return (
@@ -9,19 +11,25 @@ export const BecomeDistributorSection = () => {
       <VideoComponent src="/video/CTA.mp4" />
       <Container>
         <div className={styles['BecomeDistributorSection__content']}>
-          <h2 className="h2">Become An Authorized Distributor</h2>
+          <h2 className="h2">
+            <AnimatedText title>Become An Authorized Distributor</AnimatedText>
+          </h2>
           <p
             className={styles['BecomeDistributorSection__content_description']}
           >
-            Our authorized dealer partners have access to our entire line of
-            products at industry leading wholesale prices.
+            <AnimatedText>
+              Our authorized dealer partners have access to our entire line of
+              products at industry leading wholesale prices.
+            </AnimatedText>
           </p>
-          <ButtonPrimary
-            className={styles['BecomeDistributorSection__content_button']}
-            variant="blue"
-          >
-            JOIN NOW
-          </ButtonPrimary>
+          <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
+            <ButtonPrimary
+              className={styles['buttonContainer__button']}
+              variant="blue"
+            >
+              JOIN NOW
+            </ButtonPrimary>
+          </AnimatedElement>
         </div>
       </Container>
     </section>

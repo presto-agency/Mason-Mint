@@ -4,6 +4,8 @@ import { FC } from 'react'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 import Container from '@/app/layouts/Container'
+import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
 export const StorySection: FC = () => {
   return (
@@ -11,14 +13,18 @@ export const StorySection: FC = () => {
       <Container>
         <div className={styles['story__content']}>
           <div className={styles['story__content_left']}>
-            <h3>
-              Mason Mint was born from the idea of producing world-class custom
-              minted sulver products
+            <h3 className="h3">
+              <AnimatedText title>
+                Mason Mint was born from the idea of producing world-class
+                custom minted sulver products
+              </AnimatedText>
             </h3>
             <p style={{ color: 'var(--gray-800)' }}>
-              Mason Mint was born from the idea of producing world-class custom
-              minted silver products. Our motto &quot;Excellence In
-              Minting&quot; are words that we live by.
+              <AnimatedText>
+                Mason Mint was born from the idea of producing world-class
+                custom minted silver products. Our motto &quot;Excellence In
+                Minting&quot; are words that we live by.
+              </AnimatedText>
             </p>
             <BackgroundImage
               src="/images/home/home_story_1.png"
@@ -35,19 +41,30 @@ export const StorySection: FC = () => {
               alt="Coin photo"
             />
             <div className={styles['text']}>
-              <h4>
-                Mason Mint was born from the idea of producing world-class
-                custom minted sulver products
+              <h4 className="h4">
+                <AnimatedText title>
+                  Mason Mint was born from the idea of producing world-class
+                  custom minted sulver products
+                </AnimatedText>
               </h4>
               <p style={{ color: 'var(--gray-800)' }}>
-                Our motto &quot;Excellence In Minting&quot; are words that we
-                live by. Our high standards for quality and design is what
-                separates us from everyone else. We look forward to supplying
-                both the investor and collector silver market with superior
-                products that are sure to impress.
+                <AnimatedText>
+                  Our motto &quot;Excellence In Minting&quot; are words that we
+                  live by. Our high standards for quality and design is what
+                  separates us from everyone else. We look forward to supplying
+                  both the investor and collector silver market with superior
+                  products that are sure to impress.
+                </AnimatedText>
               </p>
             </div>
-            <ButtonPrimary variant="transparent">OUR STORY</ButtonPrimary>
+            <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
+              <ButtonPrimary
+                className={styles['buttonContainer__button']}
+                variant="transparent"
+              >
+                OUR STORY
+              </ButtonPrimary>
+            </AnimatedElement>
           </ParallaxSection>
         </div>
       </Container>

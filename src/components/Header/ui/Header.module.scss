@@ -97,6 +97,10 @@
         max-height: 100%;
         overflow-y: auto;
         background-color: var(--black);
+        background-image: url("/images/home/drawn_arrow_bg_mirr.svg");
+        background-repeat: no-repeat;
+        background-size: 937rem 1043rem;
+        background-attachment: fixed;
 
         .navigation{
           position: relative;
@@ -104,22 +108,6 @@
           align-items: initial;
           padding: 140rem 56rem;
           overflow: hidden;
-
-          &::before{
-            position: absolute;
-            top: 130rem;
-            left: 0;
-            width: 937rem;
-            height: 1043rem;
-            background-image: url("/images/home/drawn_arrow_bg.svg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 937rem 1043rem;
-            transform: scaleX(-1);
-            opacity: .2;
-            content: '';
-          }
-          
 
           &__content{
             position: relative;
@@ -160,6 +148,10 @@
     &__content {
       &_desktop {
         display: none;
+
+        &.mobile{
+          background-position: top 130rem left 17rem;
+        }
       }
 
       &_mobile {
@@ -174,6 +166,8 @@
     &__content {
       &_desktop {
         &.mobile{
+          background-position: top 130rem left 17rem;
+
           .navigation{
             padding: 120rem 56rem;
 

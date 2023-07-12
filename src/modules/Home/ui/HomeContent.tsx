@@ -17,7 +17,7 @@ export const HomeContent: FC = () => {
       <StorySection />
       {/*<ExploreDesignsSection />*/}
       {/*<FeaturedDesignsSection />*/}
-      {/*<CustomDesignsSection />*/}
+      <CustomDesignsSection />
       {/* SELL OUR PRODUCTS SECTION  */}
       {/*<FAQSection />*/}
       <BecomeDistributorSection />
