@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react'
 import Container from '@/app/layouts/Container'
 import { CategoryProps, ProductProps } from '@/utils/types'
 import axios from 'axios'
-import { useDebounce } from '@uidotdev/usehooks'
+import { useDebounce } from 'usehooks-ts'
 interface DesignsProps {
   categories: CategoryProps[]
 }

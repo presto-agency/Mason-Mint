@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/designs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/designs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Designs/DesignBody/DesignBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Designs/DesignBody/DesignBody.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +90,9 @@
       <workItem from="1688024624139" duration="14429000" />
       <workItem from="1688108234733" duration="20803000" />
       <workItem from="1688366472951" duration="31901000" />
-      <workItem from="1688973566610" duration="13372000" />
+      <workItem from="1688973566610" duration="14287000" />
+      <workItem from="1688996388473" duration="613000" />
+      <workItem from="1689145401691" duration="1261000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -296,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688741626217</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix: refactor filter">
+      <created>1688992755619</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1688992755619</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +322,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix: buttonPrimary" />
     <MESSAGE value="fix: some component fixes" />
     <MESSAGE value="fix: some code refactor" />
     <MESSAGE value="fix: some code refactor - 2" />
@@ -339,7 +346,8 @@
     <MESSAGE value="feat: add storySection" />
     <MESSAGE value="feat: add storySection img" />
     <MESSAGE value="feat: add filter" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add filter" />
+    <MESSAGE value="fix: refactor filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: refactor filter" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

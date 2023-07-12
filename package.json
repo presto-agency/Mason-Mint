@@ -46,7 +46,6 @@
   },
   "dependencies": {
     "@studio-freight/react-lenis": "^0.0.20",
-    "@uidotdev/usehooks": "^2.0.1",
     "axios": "^1.4.0",
     "mongodb": "^5.6.0",
     "mongoose": "^7.3.1",
@@ -56,6 +55,7 @@
     "react-hook-form": "^7.44.3",
     "react-is": "^18.2.0",
     "react-select": "^5.7.3",
-    "striptags": "^3.2.0"
+    "striptags": "^3.2.0",
+    "usehooks-ts": "^2.9.1"
   }
 }
