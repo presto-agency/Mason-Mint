@@ -1,0 +1,76 @@
+@import '@/app/styles/variables/breackpoints';
+
+.sellSection{
+  position: relative;
+  padding: 164rem 0;
+
+  &::before{
+    position: absolute;
+    top: 10rem;
+    right: -49rem;
+    width: 1395rem;
+    height: 1551rem;
+    background-image: url("/images/home/circled_arrow_bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1395rem 1551rem;
+    content: '';
+  }
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 112rem;
+
+    &_left{
+      .image{
+        width: 528rem;
+        height: 528rem;
+      }
+    }
+
+    &_right{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 416rem;
+
+      .subtitle{
+        margin: 8rem 0 24rem;
+        color: var(--gray-700);
+      }
+
+      .title{
+        margin: 0 0 8rem;
+      }
+
+      .description{
+        margin: 0 0 20rem;
+      }
+    }
+  }
+}
+
+@media (width <= $breakpoint-mob) {
+  .sellSection{
+    padding: 80rem 0;
+
+    &::before{
+      display: none;
+    }
+
+    &__content{
+      flex-direction: column;
+      padding: 0;
+
+      &_left{
+        margin: 0 0 31rem;
+
+        .image{
+          width: 200rem;
+          height: 200rem;
+        }
+      }
+    }
+  }
+}

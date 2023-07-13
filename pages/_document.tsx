@@ -88,9 +88,11 @@ export default function Document() {
         />
       </Head>
       <body>
-        <Main />
-        <div id="portal" />
-        <NextScript />
+        <div className="wrapper">
+          <Main />
+          <div id="portal" />
+          <NextScript />
+        </div>
       </body>
     </Html>
   )
