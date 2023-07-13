@@ -131,7 +131,7 @@ const ProductForm: FC<{
     for (const image of uploadedImages) {
       fd.append('images', image)
     }
-
+    // @TODO Detect and display errors
     await axios
       .post(`/api/files/${product.id}/upload`, fd)
       .then(({ data: { files = [], success = false, error = null } }) => {
@@ -340,11 +340,13 @@ const ProductForm: FC<{
             <div className={styles['form__thumbs']}>
               {product.Images.map((image, key) => (
                 <Fragment key={key}>
-                  <BackgroundImage
-                    src={image.ImageUrl || ''}
-                    alt="Alt"
-                    className={styles['form__thumbs_item']}
-                  />
+                  {!image.ImageUrl?.includes('www.masonmint.com') ? (
+                    <BackgroundImage
+                      src={image.ImageUrl || ''}
+                      alt="Alt"
+                      className={styles['form__thumbs_item']}
+                    />
+                  ) : null}
                 </Fragment>
               ))}
             </div>

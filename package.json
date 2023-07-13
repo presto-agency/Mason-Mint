@@ -46,6 +46,7 @@
     "yup": "^1.2.0"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "@studio-freight/react-lenis": "^0.0.20",
     "@types/formidable": "^3.4.0",
     "axios": "^1.4.0",

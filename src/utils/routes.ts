@@ -4,6 +4,7 @@ export default {
     about: '/about',
     becomeDistributor: '/become-a-distributor',
     contactUs: '/contact',
+    designs: '/designs',
   },
   private: {
     admin: '/admin',

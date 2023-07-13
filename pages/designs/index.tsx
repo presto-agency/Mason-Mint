@@ -2,14 +2,14 @@ import React, { FC } from 'react'
 import { PageLayout } from '@/app/layouts/PageLayout'
 import { DesignBody } from '@/modules/Designs'
 import db from '@/utils/db'
-import CategoryModel from '../models/Category'
+import CategoryModel from '../../models/Category'
 import { CategoryProps } from '@/utils/types'
 
 interface DesignsProps {
   categories: CategoryProps[]
 }
 
-const Designs: FC<DesignsProps> = ({ categories }) => {
+const Index: FC<DesignsProps> = ({ categories }) => {
   return (
     <PageLayout>
       <DesignBody categories={categories} />
@@ -33,4 +33,4 @@ export const getServerSideProps = async () => {
   }
 }
 
-export default Designs
+export default Index

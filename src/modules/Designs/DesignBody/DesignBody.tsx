@@ -1,8 +1,10 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, Fragment, useEffect, useState } from 'react'
 import Container from '@/app/layouts/Container'
 import { CategoryProps, ProductProps } from '@/utils/types'
 import axios from 'axios'
 import { useDebounce } from 'usehooks-ts'
+import ProductCard from '@/ui/ProductCard/ProductCard'
+import ProductCarousel from '@/ui/ProductCarousel/ProductCarousel'
 interface DesignsProps {
   categories: CategoryProps[]
 }
@@ -44,7 +46,7 @@ export const DesignBody: FC<DesignsProps> = ({ categories }) => {
   }
 
   return (
-    <div style={{ padding: '150px 0' }}>
+    <div style={{ padding: '150px 0', width: '100%', overflow: 'hidden' }}>
       <Container>
         <div>
           <h2>Пошук:</h2>
@@ -80,6 +82,12 @@ export const DesignBody: FC<DesignsProps> = ({ categories }) => {
             ))}
           </tbody>
         </table>
+        <ProductCarousel data={products} />
+        {/*{products.map((product, index) => (*/}
+        {/*  <Fragment key={index}>*/}
+        {/*    <ProductCard data={product} />*/}
+        {/*  </Fragment>*/}
+        {/*))}*/}
       </Container>
     </div>
   )

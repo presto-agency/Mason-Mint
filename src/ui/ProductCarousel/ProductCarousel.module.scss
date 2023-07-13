@@ -1,0 +1,111 @@
+.carousel{
+	position: relative;
+	overflow: visible;
+	
+		&__item{
+			margin: 32rem 0 10rem;
+			visibility: visible;
+		}
+	
+		&__track{
+			overflow: initial;
+		}
+	
+		&__slide{
+			position: relative;
+		}
+	
+		&__arrow{
+			top: calc(50% - 33rem);
+			width: 56rem;
+			height: 56rem;
+			color: var(--primary-color);
+			background-color: var(--white);
+			border: 1px var(--primary-color) solid;
+			transition: background-color var(--hover-duration) var(--ease), color var(--hover-duration) var(--ease);
+			
+				&_prev{
+					left: -28rem;
+				}
+			
+				&_next{
+					right: -28rem;
+				}
+			
+				&[disabled]{
+					color: var(--gray-700);
+					background-color: var(--white);
+					border-color: var(--gray-700);
+					cursor: default;
+					opacity: 1;
+				}
+			
+				&_icon,
+				svg.carousel__arrow_icon{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					width: 16rem;
+					height: 9rem;
+					color: inherit;
+					transform: translate(-50%,-50%);
+					transition: left var(--move-duration) var(--ease), opacity var(--hover-duration) var(--ease);
+					fill: none;
+					
+						&.prev{
+							left: 47%;
+							transform: translate(-50%,-50%) rotate(90deg);
+
+								&.__2{
+									left: 67%;
+									opacity: 0;
+									transition-delay: .03s;
+								}
+						}
+						
+						&.next{
+							left: 53%;
+							transform: translate(-50%,-50%) rotate(-90deg);
+
+								&.__2{
+									left: 33%;
+									opacity: 0;
+									transition-delay: .03s;
+								}
+						}
+				}
+			
+				&:hover:not(:disabled){
+					color: var(--white);
+					background-color: var(--primary-color);
+					opacity: 1;
+					
+						.carousel__arrow_icon,
+						svg.carousel__arrow_icon{
+								&.prev{
+									&.__1{
+										left: 27%;
+										opacity: 0;
+									}
+									
+									&.__2{
+										left: 47%;
+										opacity: 1;
+									}
+								}
+
+								&.next{
+									&.__1{
+										left: 73%;
+										opacity: 0;
+									}
+
+									&.__2{
+										left: 53%;
+										opacity: 1;
+									}
+								}
+						}
+				}
+		}
+}

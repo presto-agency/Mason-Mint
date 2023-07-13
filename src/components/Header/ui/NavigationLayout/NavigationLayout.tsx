@@ -53,15 +53,15 @@ const navigationHeaderLinks = [
     description: 'About Us',
   },
   {
-    href: '',
+    href: '#',
     description: 'Custom Minting',
   },
   {
-    href: '',
+    href: '#',
     description: 'Designs',
   },
   {
-    href: '',
+    href: '#',
     description: 'Packaging',
   },
   {
