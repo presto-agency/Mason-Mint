@@ -14,8 +14,8 @@
 
     &::before{
       position: absolute;
-      top: -164rem;
-      left: 360rem;
+      top: -161rem;
+      left: 286rem;
       width: 1395rem;
       height: 1551rem;
       background-image: url("/images/home/drawn_arrow_bg.svg");
@@ -34,10 +34,9 @@
     "logo nav"
     "info nav";
       grid-template-rows: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-      gap: 36rem;
+      grid-template-columns: 60% 40%;
       width: 100%;
-      padding: 50rem 0;
+      padding: 80rem 0 42rem;
     }
 
     &_bottom {
@@ -109,13 +108,16 @@
 .navigation {
   display: flex;
   grid-area: nav;
-  grid-gap: 104rem;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   &__column{
     display: flex;
     flex-direction: column;
-    width: calc(100% / 3);
+    padding: 0 20rem 0 0;
+
+    &:last-child{
+      padding: 0;
+    }
 
     &_title{
       margin: 0 0 24rem;
@@ -147,8 +149,8 @@
   .footer {
     &__content {
       &::before{
-        top: 81rem;
-        left: 91rem;
+        top: 84rem;
+        left: 72rem;
         width: 937rem;
         height: 1043rem;
         background-size: 937rem 1043rem;
@@ -162,11 +164,15 @@
         grid-template-rows: 1fr;
         grid-template-columns: 1fr;
         gap: 0;
+        padding: 67rem 0 42rem;
       }
 
       &_bottom {
         flex-direction: column;
         gap: 24rem;
+        max-width: 234rem;
+        margin: 0 auto;
+        padding: 24rem 0 28rem;
         text-align: center;
       }
     }
@@ -174,13 +180,14 @@
 
   .navigation {
     display: grid;
-    grid-gap: initial;
+    grid-gap: 14rem;
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(2, 1fr);
-    margin: 40rem 0 32rem;
+    margin: 33rem 0 32rem;
 
     &__column{
       width: initial;
+      padding: 0;
       
 
       &:nth-child(1){

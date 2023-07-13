@@ -1,5 +1,6 @@
-import React, { FC, ReactNode, useRef } from 'react'
+import React, { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 type ParallaxSection = {
   children: ReactNode
@@ -15,6 +16,8 @@ const ParallaxSection: FC<ParallaxSection> = ({
   const useParallax = (value: MotionValue<number>) => {
     return useTransform(value, [0, 1], parallaxValues)
   }
+  const { width } = useWindowDimensions()
+
   const refTarget = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -22,16 +25,27 @@ const ParallaxSection: FC<ParallaxSection> = ({
     offset: ['start end', 'end start'],
   })
   const y = useParallax(scrollYProgress)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
   return (
-    <motion.div
-      ref={refTarget}
-      className={className}
-      style={{
-        y,
-      }}
-    >
-      {children}
-    </motion.div>
+    <>
+      {isMounted && width <= 767 ? (
+        <div className={className}>{children}</div>
+      ) : (
+        <motion.div
+          ref={refTarget}
+          className={className}
+          style={{
+            y,
+          }}
+        >
+          {children}
+        </motion.div>
+      )}
+    </>
   )
 }
 

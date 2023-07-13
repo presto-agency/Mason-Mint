@@ -8,9 +8,9 @@ import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 export const BecomeDistributorSection = () => {
   return (
     <section className={styles['BecomeDistributorSection']}>
-      <VideoComponent src="/video/CTA.mp4" />
-      <Container>
+      <Container size={'xl'}>
         <div className={styles['BecomeDistributorSection__content']}>
+          <VideoComponent src="/video/CTA.mp4" />
           <h2 className="h2">
             <AnimatedText title>Become An Authorized Distributor</AnimatedText>
           </h2>
