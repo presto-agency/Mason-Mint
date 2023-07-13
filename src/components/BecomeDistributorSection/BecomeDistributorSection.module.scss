@@ -2,11 +2,9 @@
 
 .BecomeDistributorSection {
   position: relative;
-  padding: 158rem 0;
   overflow: hidden;
   color: var(--white);
   text-align: center;
-  background-color: #637392;
 
   &::before {
     position: absolute;
@@ -32,10 +30,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 158rem 0;
 
     &_description {
-      max-width: 582rem;
-      padding: 24rem 0 40rem;
+      max-width: 540rem;
+      padding: 13rem 0 40rem;
       color: var(--gray-300);
     }
   }
@@ -55,9 +54,11 @@
     }
 
     &__content {
+      padding: 124rem 15rem 122rem;
+
       &_description {
         max-width: 280rem;
-        padding: 16rem 0 24rem;
+        padding: 6rem 0 24rem;
       }
 
       .buttonContainer {

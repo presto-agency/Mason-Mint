@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   min-height: 100vh;
-  padding: 150rem 0 48rem;
+  padding: 150rem 0 16rem;
   overflow: hidden;
 
   .container {
@@ -21,8 +21,8 @@
 
     &::before{
       position: absolute;
-      top: 126rem;
-      right: -39rem;
+      top: 69rem;
+      right: -26rem;
       width: 1395rem;
       height: 1551rem;
       background-image: url("/images/home/drawn_arrow_bg.svg");
@@ -38,13 +38,12 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 0 0 32rem;
 
       .description {
         position: absolute;
         right: 0;
         bottom: 0;
-        margin: 0 0 95rem;
+        margin: 0 25rem 95rem 0;
         color: var(--gray-700);
         font: var(--font-h6);
         writing-mode: vertical-rl;
@@ -52,7 +51,7 @@
 
       .title {
         width: fit-content;
-        max-width: 500rem;
+        max-width: 485rem;
         color: var(--white);
         line-height: 1.1em;
       }
@@ -78,7 +77,7 @@
 
 @media (width <= $breakpoint-mob) {
   .intro {
-    padding: 150rem 0 24rem;
+    padding: 136rem 0 0;
 
     &__content {
       justify-content: space-between;
@@ -97,6 +96,10 @@
 
         .description {
           margin: 0 0 24rem;
+        }
+
+        .title{
+          max-width: 287rem;
         }
       }
 

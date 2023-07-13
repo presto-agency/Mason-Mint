@@ -2,12 +2,12 @@
 
 .story {
   position: relative;
-  padding: 164rem 0;
+  padding: 164rem 0 155rem;
   overflow: hidden;
   
   &::before{
     position: absolute;
-    top: -110rem;
+    top: -84rem;
     right: 153rem;
     width: 1395rem;
     height: 1550rem;
@@ -25,13 +25,13 @@
     &_left {
       display: flex;
       flex-direction: column;
-      gap: 24rem;
-      width: 50%;
+      gap: 18rem;
+      max-width: 640rem;
 
       .photoContainer {
         align-self: flex-end;
-        width: 80%;
-        margin-top: 164rem;
+        width: 83%;
+        margin-top: 145rem;
         aspect-ratio: 18/23;
 
         &::before {
@@ -62,14 +62,6 @@
       .photoContainer {
         aspect-ratio: 16/19;
       }
-
-      .buttonContainer{
-        width: 100%;
-
-        &__button{
-          width: 100%;
-        }
-      }
     }
   }
 }
@@ -95,11 +87,23 @@
 
       &_right {
         width: 100%;
-        margin: 30rem 0 80rem;
+        margin: 00 80rem;
 
         .text {
           gap: 16rem;
           padding: 16rem 0 32rem;
+        }
+
+        .buttonContainer{
+          width: 100%;
+
+          &__button{
+            width: 100%;
+          }
+        }
+
+        .photoContainer{
+          aspect-ratio: 17/19;
         }
       }
     }

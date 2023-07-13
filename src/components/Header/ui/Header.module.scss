@@ -4,7 +4,7 @@
   position: fixed;
   z-index: 10;
   width: 100%;
-  padding: 32rem 0;
+  padding: 30rem 0;
   transition: 0.4s ease-out;
 
   .logo{
@@ -54,22 +54,24 @@
 
   &__content {
     display: flex;
-    gap: 36rem;
     align-items: center;
     justify-content: space-between;
 
     &_desktop {
+      width: 100%;
+
       .navigation {
         position: relative;
         display: flex;
-        flex-grow: 0.5;
-        gap: 36rem;
         align-items: center;
         justify-content: space-between;
 
         &__content{
           display: flex;
           gap: 36rem;
+          justify-content: center;
+          width: 100%;
+          padding: 0 30rem;
           font: var(--font-button-m);
 
           &_link{
@@ -151,6 +153,18 @@
 
         &.mobile{
           background-position: top 130rem left 17rem;
+
+          .navigation{
+            padding: 194rem 56rem 143rem;
+
+            &__content{
+              padding: 0;
+
+              &_link{
+                font-size: 24rem;
+              }
+            }
+          }
         }
       }
 
@@ -169,11 +183,8 @@
           background-position: top 130rem left 17rem;
 
           .navigation{
-            padding: 120rem 56rem;
-
             &__content{
               align-items: center;
-
             }
           }
         }
