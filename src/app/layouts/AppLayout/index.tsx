@@ -2,7 +2,7 @@ import { FC, ReactNode, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { withModal } from '@/context/modal'
-import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
+// import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 const CustomCursor = dynamic(() => import('@/ui/CustomCursor/CustomCursor'), {
   ssr: false,
@@ -15,10 +15,10 @@ type AppLayoutProps = {
 const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const [isTablet, setIsTablet] = useState(false)
   const { width } = useWindowDimensions()
-  const options = {
-    duration: 2.5,
-    smoothWheel: true,
-  }
+  // const options = {
+  //   duration: 2.5,
+  //   smoothWheel: true,
+  // }
 
   useEffect(() => {
     setIsTablet(width <= 991)
@@ -32,9 +32,9 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       {!isTablet && <CustomCursor />}
-      <ReactLenis root options={{ ...options }}>
-        {children}
-      </ReactLenis>
+      {/*<ReactLenis root options={{ ...options }}>*/}
+      {children}
+      {/*</ReactLenis>*/}
     </>
   )
 }
