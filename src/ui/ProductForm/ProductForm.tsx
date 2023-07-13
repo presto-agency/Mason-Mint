@@ -1,15 +1,18 @@
-import { FC, useCallback, useMemo, useState } from 'react'
+import { FC, Fragment, useCallback, useMemo, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { CategoryProps, ProductProps, SpecificationProps } from '@/utils/types'
 import { Controller, useForm } from 'react-hook-form'
+import RCUploader from 'rc-upload'
 import TextField from '@/ui/TextField/TextField'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { OptionInterface } from '@/utils/types'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 const SelectField = dynamic(() => import('@/ui/SelectField/SelectField'), {
   ssr: false,
 })
 
 import styles from './ProductForm.module.scss'
+import axios from 'axios'
 
 type FormProps = {
   ProductName: string
@@ -24,6 +27,7 @@ type FormProps = {
   Thickness?: string
   category?: CategoryProps
   specification?: SpecificationProps[]
+  Images?: { ImageUrl: string }[]
 }
 
 const ProductForm: FC<{
@@ -36,6 +40,8 @@ const ProductForm: FC<{
     label: product.category?.name || '',
     value: product.category?.id || '',
   })
+  const [uploadedImages, setUploadedImages] = useState<File[]>([])
+  const [uploadedImagesUrl, setUploadedImagesUrl] = useState<string[]>([])
 
   const defaultValues: FormProps = useMemo(
     () => ({
@@ -50,6 +56,7 @@ const ProductForm: FC<{
       Series: product.specification[0].Series,
       Thickness: product.specification[0].Thickness,
       category: product.category,
+      Images: [],
     }),
     [product]
   )
@@ -81,7 +88,23 @@ const ProductForm: FC<{
     [setValue, setSelectedCategory]
   )
 
-  const onSubmit = (formData: FormProps) => {
+  const uploadProps = {
+    beforeUpload: async (file: File) => {
+      setUploadedImages((prevState: File[]) => [...prevState, file])
+      setUploadedImagesUrl((prevState: string[]) => [
+        ...prevState,
+        URL.createObjectURL(file),
+      ])
+    },
+    onError: (error: Error) => {
+      console.error(error)
+    },
+    multiple: true,
+    action: '',
+    accept: 'image/jpeg, image/png',
+  }
+
+  const onSubmit = async (formData: FormProps) => {
     formData.specification = [
       {
         ActualMetalWeight: formData.ActualMetalWeight || '',
@@ -104,13 +127,34 @@ const ProductForm: FC<{
     delete formData.Fineness
     delete formData.IraApproved
 
-    onValues && onValues(formData as ProductProps)
+    const fd = new FormData()
+    for (const image of uploadedImages) {
+      fd.append('images', image)
+    }
+
+    await axios
+      .post(`/api/files/${product.id}/upload`, fd)
+      .then(({ data: { files = [], success = false, error = null } }) => {
+        if (error) {
+          console.error(error)
+        }
+
+        if (success) {
+          const images: { ImageUrl: string }[] = []
+          Object.values(files).map((file) => {
+            images.push({ ImageUrl: file as string })
+          })
+          formData.Images = images
+        }
+      })
+      .catch((error) => console.error(error))
+    ;(await onValues) && onValues(formData as ProductProps)
   }
 
   return (
-    <div className="row">
-      <div className="col-md-6">
-        <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
+      <div className="row">
+        <div className="col-md-6">
           <Controller
             control={control}
             name="ProductName"
@@ -290,10 +334,44 @@ const ProductForm: FC<{
           <ButtonPrimary type="submit" isLoading={loading}>
             Save product
           </ButtonPrimary>
-        </form>
+        </div>
+        <div className="col-md-6">
+          {product?.Images?.length ? (
+            <div className={styles['form__thumbs']}>
+              {product.Images.map((image, key) => (
+                <Fragment key={key}>
+                  <BackgroundImage
+                    src={image.ImageUrl || ''}
+                    alt="Alt"
+                    className={styles['form__thumbs_item']}
+                  />
+                </Fragment>
+              ))}
+            </div>
+          ) : null}
+          {uploadedImagesUrl.length ? (
+            <div className={styles['form__thumbs']}>
+              {uploadedImagesUrl.map((image, key) => (
+                <Fragment key={key}>
+                  <BackgroundImage
+                    src={image}
+                    alt="Alt"
+                    className={styles['form__thumbs_item']}
+                  />
+                </Fragment>
+              ))}
+            </div>
+          ) : null}
+          <RCUploader {...uploadProps}>
+            <div className={styles['form__uploader']}>
+              <p className={styles['form__uploader_title']}>
+                Choose, or drag the files
+              </p>
+            </div>
+          </RCUploader>
+        </div>
       </div>
-      <div className="col-md-6">Photos</div>
-    </div>
+    </form>
   )
 }
 
