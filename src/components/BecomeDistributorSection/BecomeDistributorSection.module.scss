@@ -1,35 +1,72 @@
 @import '@/app/styles/variables/breackpoints';
 
-.BecomeDistributorSection{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 545px;
-  margin: 0 36rem;
-  padding: 0 32rem;
+.BecomeDistributorSection {
+  position: relative;
+  padding: 158rem 0;
+  overflow: hidden;
   color: var(--white);
   text-align: center;
-  background-color:#637392;
+  background-color: #637392;
 
-  p {
-    max-width: 60%;
-    padding: 24rem 0 40rem;
-    color: var(--gray-300);
+  &::before {
+    position: absolute;
+    top: -962rem;
+    right: 193rem;
+    z-index: 2;
+    width: 1458rem;
+    height: 1617rem;
+    background-image: url("/images/home/drawn_arrow_bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1458rem 1617rem;
+    transform: rotate(-180deg);
+    opacity: .5;
+    content: '';
+    pointer-events: none;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &_description {
+      max-width: 582rem;
+      padding: 24rem 0 40rem;
+      color: var(--gray-300);
+    }
   }
 }
 
 @media (width <= $breakpoint-mob) {
-  .BecomeDistributorSection{
-    margin: 0 8rem;
+  .BecomeDistributorSection {
+    padding: 124rem 0;
 
-    p {
-      max-width: 100%;
-      padding: 16rem 0 24rem;
+    &::before {
+      top: -178rem;
+      right: 168rem;
+      width: 1052rem;
+      height: 1165rem;
+      background-size: 1052rem 1165rem;
+      transform: initial;
     }
 
-    button {
-      width: 100%;
+    &__content {
+      &_description {
+        max-width: 280rem;
+        padding: 16rem 0 24rem;
+      }
+
+      .buttonContainer {
+        width: 100%;
+
+        &__button {
+          width: 100%;
+        }
+      }
     }
   }
 }

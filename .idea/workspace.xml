@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/home/story_bg.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/home_custom_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BecomeDistributorSection/BecomeDistributorSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BecomeDistributorSection/BecomeDistributorSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BecomeDistributorSection/BecomeDistributorSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BecomeDistributorSection/BecomeDistributorSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/AnimatedElement/AnimatedElement.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/AnimatedElement/AnimatedElement.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +99,9 @@
       <workItem from="1688024624139" duration="14429000" />
       <workItem from="1688108234733" duration="20803000" />
       <workItem from="1688366472951" duration="31901000" />
+      <workItem from="1688973566610" duration="14287000" />
+      <workItem from="1688996388473" duration="613000" />
+      <workItem from="1689145401691" duration="17883000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -278,7 +292,42 @@
       <option name="project" value="LOCAL" />
       <updated>1688568397519</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat: add storySection img">
+      <created>1688626913616</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1688626913616</updated>
+    </task>
+    <task id="LOCAL-00029" summary="feat: add filter">
+      <created>1688741626217</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1688741626217</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fix: refactor filter">
+      <created>1688992755619</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1688992755619</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fix: filter npm package">
+      <created>1689146778623</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1689146778623</updated>
+    </task>
+    <task id="LOCAL-00032" summary="feat: add section CTA">
+      <created>1689152141131</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1689152141131</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,10 +345,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: animation Backgroundimage" />
-    <MESSAGE value="fix: buttonPrimary" />
-    <MESSAGE value="fix: some component fixes" />
-    <MESSAGE value="fix: some code refactor" />
     <MESSAGE value="fix: some code refactor - 2" />
     <MESSAGE value="fix: commit after pull" />
     <MESSAGE value="fix: some refactor(#21)" />
@@ -320,7 +365,12 @@
     <MESSAGE value="fix: some footer fixes" />
     <MESSAGE value="feat: add parallaxSection" />
     <MESSAGE value="feat: add storySection" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add storySection" />
+    <MESSAGE value="feat: add storySection img" />
+    <MESSAGE value="feat: add filter" />
+    <MESSAGE value="fix: refactor filter" />
+    <MESSAGE value="fix: filter npm package" />
+    <MESSAGE value="feat: add section CTA" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add section CTA" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

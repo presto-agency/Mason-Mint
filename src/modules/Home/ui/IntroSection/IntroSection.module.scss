@@ -25,7 +25,7 @@
       right: -39rem;
       width: 1395rem;
       height: 1551rem;
-      background-image: url("/images/home/home_bg.svg");
+      background-image: url("/images/home/drawn_arrow_bg.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 1395rem 1551rem;
@@ -109,8 +109,12 @@
           width: 100%;
         }
 
-        .button {
+        .buttonContainer{
           width: 100%;
+
+          &__button {
+            width: 100%;
+          }
         }
       }
     }

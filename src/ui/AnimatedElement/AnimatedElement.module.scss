@@ -4,15 +4,3 @@
   display: inline-block;
   transform-origin: bottom left;
 }
-
-.fullwidth {
-  &_lg {
-    width: 100%;
-  }
-
-  &_mb {
-    @media (max-width: $breakpoint-mob) {
-      width: 100%;
-    }
-  }
-}
