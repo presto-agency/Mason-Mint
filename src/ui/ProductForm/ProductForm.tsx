@@ -12,6 +12,7 @@ const SelectField = dynamic(() => import('@/ui/SelectField/SelectField'), {
 })
 
 import styles from './ProductForm.module.scss'
+import axios from 'axios'
 
 type FormProps = {
   ProductName: string
@@ -95,10 +96,6 @@ const ProductForm: FC<{
         URL.createObjectURL(file),
       ])
     },
-    onSuccess: () => {
-      console.log('uploadedImages ', uploadedImages)
-      console.log('uploadedImagesUrl ', uploadedImagesUrl)
-    },
     onError: (error: Error) => {
       console.error(error)
     },
@@ -130,7 +127,28 @@ const ProductForm: FC<{
     delete formData.Fineness
     delete formData.IraApproved
 
-    onValues && onValues(formData as ProductProps)
+    const fd = new FormData()
+    for (const image of uploadedImages) {
+      fd.append('images', image)
+    }
+
+    await axios
+      .post(`/api/files/${product.id}/upload`, fd)
+      .then(({ data: { files = [], success = false, error = null } }) => {
+        if (error) {
+          console.error(error)
+        }
+
+        if (success) {
+          const images: { ImageUrl: string }[] = []
+          Object.values(files).map((file) => {
+            images.push({ ImageUrl: file as string })
+          })
+          formData.Images = images
+        }
+      })
+      .catch((error) => console.error(error))
+    ;(await onValues) && onValues(formData as ProductProps)
   }
 
   return (
@@ -318,6 +336,19 @@ const ProductForm: FC<{
           </ButtonPrimary>
         </div>
         <div className="col-md-6">
+          {product?.Images?.length ? (
+            <div className={styles['form__thumbs']}>
+              {product.Images.map((image, key) => (
+                <Fragment key={key}>
+                  <BackgroundImage
+                    src={image.ImageUrl || ''}
+                    alt="Alt"
+                    className={styles['form__thumbs_item']}
+                  />
+                </Fragment>
+              ))}
+            </div>
+          ) : null}
           {uploadedImagesUrl.length ? (
             <div className={styles['form__thumbs']}>
               {uploadedImagesUrl.map((image, key) => (

@@ -32,14 +32,14 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                 <tr key={index}>
                   <td>{index + 1}.</td>
                   <td>
-                    {/*{product.Images?.length ? (*/}
-                    {/*  <img*/}
-                    {/*    src={product.Images[0].ImageUrl || ''}*/}
-                    {/*    alt="Product"*/}
-                    {/*    width={100}*/}
-                    {/*    height={100}*/}
-                    {/*  />*/}
-                    {/*) : null}*/}
+                    {product.Images?.length ? (
+                      <img
+                        src={product.Images[0].ImageUrl || ''}
+                        alt="Product"
+                        width={100}
+                        height={100}
+                      />
+                    ) : null}
                   </td>
                   <td>{product.ProductName}</td>
                   <td>{product.category?.name}</td>
