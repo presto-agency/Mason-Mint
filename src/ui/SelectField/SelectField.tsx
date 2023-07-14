@@ -30,7 +30,6 @@ type SelectOptionProps = {
   options: OptionInterface[]
   isSearchable?: boolean
   isDisabled?: boolean
-  isMulti?: boolean
 }
 
 const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
@@ -46,7 +45,6 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
       options,
       isSearchable = false,
       isDisabled = false,
-      isMulti = false,
     }: SelectOptionProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
@@ -210,6 +208,8 @@ const SelectField = forwardRef<HTMLInputElement, SelectOptionProps>(
           onMenuClose={() => setIsMenuOpen(false)}
           isDisabled={isDisabled}
           isOptionDisabled={(option: OptionInterface) => !!option.disabled}
+          hideSelectedOptions={false}
+          isMulti={false}
         />
         {label && (
           <p

@@ -26,6 +26,7 @@ type ImagesProps = {
 export type CategoryProps = {
   name?: string
   id?: string
+  products?: { id: string; name: string }[]
 }
 
 export interface OptionInterface {

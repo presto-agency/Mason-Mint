@@ -1,0 +1,63 @@
+.filter{
+	position: relative;
+	
+		&__option{
+			position: relative;
+			display: flex;
+			align-items: center;
+			
+				&:hover{
+					cursor: pointer;
+				}
+			
+				&_title{
+					font-weight: 400;
+					font-size: 12rem;
+				}
+				
+				&_label{
+					color: var(--gray-800);
+				}
+		}
+	
+		&__checkbox{
+			position: relative;
+			display: flex;
+			align-items: center;
+			
+				& + *{
+					margin-left: 16rem;
+				}
+			
+				&_input{
+					position: absolute;
+					top: 0;
+					left: 0;
+					opacity: 0;
+
+						&:checked + div{
+							background-color: var(--primary-color);
+							border-color: var(--primary-color);
+							
+								svg{
+									opacity: 1;
+								}
+						}
+				}
+			
+				&_icon{
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 16rem;
+					height: 16rem;
+					color: var(--white);
+					border: 2px var(--gray-700) solid;
+					border-radius: 4px;
+					
+						svg{
+							opacity: 0;
+						}
+				}
+		}
+}

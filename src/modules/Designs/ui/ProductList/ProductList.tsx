@@ -5,20 +5,28 @@ import ProductCarousel from '@/ui/ProductCarousel/ProductCarousel'
 import styles from './ProductList.module.scss'
 
 type DesignsProps = {
+  initialCategories: CategoryProps[]
   categories: CategoryProps[]
   products: ProductProps[]
 }
 
-const ProductList: FC<DesignsProps> = ({ categories, products }) => {
+const ProductList: FC<DesignsProps> = ({
+  categories,
+  products,
+  initialCategories,
+}) => {
   const filteredCategories = useMemo(() => {
-    return categories.map((category) => {
-      const productsByCategory = products.filter(
-        (product) => product.category?.id === category.id
+    return categories
+      .sort(
+        (a, b) => initialCategories.indexOf(a) - initialCategories.indexOf(b)
       )
-      return { ...category, products: productsByCategory }
-    })
+      .map((category) => {
+        const productsByCategory = products.filter(
+          (product) => product.category?.id === category.id
+        )
+        return { ...category, products: productsByCategory }
+      })
   }, [products, categories])
-
   return (
     <div className={styles['list']}>
       {filteredCategories.map((category, index) => {

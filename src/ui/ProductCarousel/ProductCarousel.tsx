@@ -30,6 +30,14 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
     pagination: false,
     arrows: hasArrows,
     updateOnMove: true,
+    speed: 1000,
+    easing: 'ease',
+    classes: {
+      arrows: styles['carousel__arrows'],
+      arrow: styles['carousel__arrow'],
+      prev: styles['carousel__arrow_prev'],
+      next: styles['carousel__arrow_next'],
+    },
   }
 
   return (
@@ -59,59 +67,59 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
               </Fragment>
             ))}
           </SplideTrack>
-          {hasArrows ? (
-            <div
-              className={classNames(
-                styles['carousel__arrows'],
-                'splide__arrows'
-              )}
-            >
-              <button
-                className={classNames(
-                  styles['carousel__arrow'],
-                  styles['carousel__arrow_prev'],
-                  'splide__arrow splide__arrow--prev'
-                )}
-              >
-                <ArrowSelect
-                  className={classNames(
-                    styles['carousel__arrow_icon'],
-                    styles['prev'],
-                    styles['__1']
-                  )}
-                />
-                <ArrowSelect
-                  className={classNames(
-                    styles['carousel__arrow_icon'],
-                    styles['prev'],
-                    styles['__2']
-                  )}
-                />
-              </button>
-              <button
-                className={classNames(
-                  styles['carousel__arrow'],
-                  styles['carousel__arrow_next'],
-                  'splide__arrow splide__arrow--next'
-                )}
-              >
-                <ArrowSelect
-                  className={classNames(
-                    styles['carousel__arrow_icon'],
-                    styles['next'],
-                    styles['__1']
-                  )}
-                />
-                <ArrowSelect
-                  className={classNames(
-                    styles['carousel__arrow_icon'],
-                    styles['next'],
-                    styles['__2']
-                  )}
-                />
-              </button>
-            </div>
-          ) : null}
+          {/*{hasArrows ? (*/}
+          {/*  <div*/}
+          {/*    className={classNames(*/}
+          {/*      styles['carousel__arrows'],*/}
+          {/*      'splide__arrows'*/}
+          {/*    )}*/}
+          {/*  >*/}
+          {/*    <button*/}
+          {/*      className={classNames(*/}
+          {/*        styles['carousel__arrow'],*/}
+          {/*        styles['carousel__arrow_prev'],*/}
+          {/*        'splide__arrow splide__arrow--prev'*/}
+          {/*      )}*/}
+          {/*    >*/}
+          {/*      <ArrowSelect*/}
+          {/*        className={classNames(*/}
+          {/*          styles['carousel__arrow_icon'],*/}
+          {/*          styles['prev'],*/}
+          {/*          styles['__1']*/}
+          {/*        )}*/}
+          {/*      />*/}
+          {/*      <ArrowSelect*/}
+          {/*        className={classNames(*/}
+          {/*          styles['carousel__arrow_icon'],*/}
+          {/*          styles['prev'],*/}
+          {/*          styles['__2']*/}
+          {/*        )}*/}
+          {/*      />*/}
+          {/*    </button>*/}
+          {/*    <button*/}
+          {/*      className={classNames(*/}
+          {/*        styles['carousel__arrow'],*/}
+          {/*        styles['carousel__arrow_next'],*/}
+          {/*        'splide__arrow splide__arrow--next'*/}
+          {/*      )}*/}
+          {/*    >*/}
+          {/*      <ArrowSelect*/}
+          {/*        className={classNames(*/}
+          {/*          styles['carousel__arrow_icon'],*/}
+          {/*          styles['next'],*/}
+          {/*          styles['__1']*/}
+          {/*        )}*/}
+          {/*      />*/}
+          {/*      <ArrowSelect*/}
+          {/*        className={classNames(*/}
+          {/*          styles['carousel__arrow_icon'],*/}
+          {/*          styles['next'],*/}
+          {/*          styles['__2']*/}
+          {/*        )}*/}
+          {/*      />*/}
+          {/*    </button>*/}
+          {/*  </div>*/}
+          {/*) : null}*/}
         </Splide>
       ) : null}
     </div>
