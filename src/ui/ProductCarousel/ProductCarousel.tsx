@@ -20,6 +20,7 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
   title,
 }) => {
   const countOfActiveSlides = 4
+  const hasArrows = data?.length ? data.length > countOfActiveSlides : false
   const options = {
     type: 'slide',
     autoWidth: true,
@@ -27,7 +28,7 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
     perPage: countOfActiveSlides,
     gap: '32rem',
     pagination: false,
-    arrows: true,
+    arrows: hasArrows,
     updateOnMove: true,
   }
 
@@ -58,7 +59,7 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
               </Fragment>
             ))}
           </SplideTrack>
-          {data.length > countOfActiveSlides ? (
+          {hasArrows ? (
             <div
               className={classNames(
                 styles['carousel__arrows'],
