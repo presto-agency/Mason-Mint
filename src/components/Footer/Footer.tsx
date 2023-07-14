@@ -5,6 +5,7 @@ import Container from '@/app/layouts/Container'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
 import { Logo } from '@/ui/Logo'
 import PrestoLogo from '../../../public/icons/presto-logo.svg'
+import routes from '@/utils/routes'
 
 import styles from './Footer.module.scss'
 
@@ -20,14 +21,14 @@ const navigationFooterLinks = [
   {
     category: 'sitemap',
     links: [
-      { title: 'About Us', href: '' },
-      { title: 'Contact Us', href: '' },
+      { title: 'About Us', href: routes.public.about },
+      { title: 'Contact Us', href: routes.public.contactUs },
     ],
   },
   {
     category: 'products',
     links: [
-      { title: 'Designs', href: '' },
+      { title: 'Designs', href: routes.public.designs },
       { title: 'Custom Minting', href: '' },
       { title: 'Packaging', href: '' },
     ],

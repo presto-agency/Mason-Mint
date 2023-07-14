@@ -57,7 +57,7 @@ const navigationHeaderLinks = [
     description: 'Custom Minting',
   },
   {
-    href: '#',
+    href: routes.public.designs,
     description: 'Designs',
   },
   {
