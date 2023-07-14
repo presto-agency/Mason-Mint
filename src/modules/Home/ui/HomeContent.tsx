@@ -9,6 +9,7 @@ import { CustomDesignsSection } from './CustomDesignsSection/CustomDesignsSectio
 import styles from './HomeContent.module.scss'
 import { FAQSection } from './FAQSection/FAQSection'
 import { BecomeDistributorSection } from '@/components/BecomeDistributorSection/BecomeDistributorSection'
+import SellSection from '@/modules/Home/ui/SellSection/SellSection'
 
 export const HomeContent: FC = () => {
   return (
@@ -18,8 +19,8 @@ export const HomeContent: FC = () => {
       {/*<ExploreDesignsSection />*/}
       {/*<FeaturedDesignsSection />*/}
       <CustomDesignsSection />
-      {/* SELL OUR PRODUCTS SECTION  */}
-      {/*<FAQSection />*/}
+      <SellSection />
+      <FAQSection />
       <BecomeDistributorSection />
     </main>
   )

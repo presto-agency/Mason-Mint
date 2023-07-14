@@ -27,6 +27,11 @@ body {
   padding: 0 0 132rem;
 }
 
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+
 main{
   position: relative;
   background-color: var(--white);

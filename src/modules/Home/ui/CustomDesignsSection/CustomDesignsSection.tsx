@@ -1,4 +1,3 @@
-import { BlueDot } from '@/ui/BlueDot'
 import styles from './CustomDesignsSection.module.scss'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import Container from '@/app/layouts/Container'
