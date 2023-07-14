@@ -2,7 +2,7 @@
 
 .sellSection{
   position: relative;
-  padding: 164rem 0;
+  margin: 164rem 0;
 
   &::before{
     position: absolute;
@@ -53,7 +53,7 @@
 
 @media (width <= $breakpoint-mob) {
   .sellSection{
-    padding: 80rem 0;
+    margin: 80rem 0;
 
     &::before{
       display: none;

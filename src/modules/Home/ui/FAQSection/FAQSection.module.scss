@@ -2,50 +2,81 @@
 
 .FAQSection{
   display: flex;
-  padding: 164em 64rem;
-}
+  margin: 164rem 0;
 
-.left {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
+  &__content{
+    display: flex;
+    justify-content: space-between;
 
-  p {
-    padding-top: 24rem;
-    color: var(--gray-800);
-  }
-}
+    &_left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      max-width: 500rem;
 
-.photoContainer {
-  align-self: center;
-  min-width: 192px;
-  min-height: 219px;
-  margin-top: 102.5rem;
+      &::before{
+        position: absolute;
+        top: 336rem;
+        right: 154rem;
+        width: 915rem;
+        height: 1116rem;
+        background-image: url("/images/home/circled_arrow_bg.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 915rem 1116rem;
+        content: '';
+      }
+
+      .subtitle {
+        max-width: 416rem;
+        padding-top: 10rem;
+        color: var(--gray-800);
+      }
+
+      .photoContainer {
+        width: 192rem;
+        height: 219rem;
+        margin: 152rem 0 0 102rem;
 
 
-  &::after {
-    position: absolute;
-    top: -5rem;
-    right: -80rem;
-    display: block;
-    color: var(--gray-700);
-    font: var(--font-h6);
-    transform: rotate(90deg);
-    transform-origin: left;
-    content: 'support';
+        &::after {
+          position: absolute;
+          top: -5rem;
+          right: -80rem;
+          display: block;
+          color: var(--gray-700);
+          font: var(--font-h6);
+          transform: rotate(90deg);
+          transform-origin: left;
+          content: 'support';
+        }
+      }
+    }
+
+    &_right{
+      width: 100%;
+      max-width: 640rem;
+    }
   }
 }
 
 @media (width <= $breakpoint-mob) {
   .FAQSection{
-    padding: 80rem 24rem;
-  }
+    margin: 80rem 0;
 
-  .left {
-    width: 100%;
+    &__content{
+      flex-direction: column;
+      justify-content: initial;
 
-    .photoContainer{ 
-      display: none;
+      &_left{
+        &::before{
+          display: none;
+        }
+
+        .photoContainer{
+          display: none;
+        }
+      }
     }
   }
 }

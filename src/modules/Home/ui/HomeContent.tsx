@@ -20,7 +20,7 @@ export const HomeContent: FC = () => {
       {/*<FeaturedDesignsSection />*/}
       <CustomDesignsSection />
       <SellSection />
-      {/*<FAQSection />*/}
+      <FAQSection />
       <BecomeDistributorSection />
     </main>
   )

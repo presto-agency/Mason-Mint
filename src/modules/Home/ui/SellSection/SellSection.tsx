@@ -1,12 +1,12 @@
 import React from 'react'
 import Container from '@/app/layouts/Container'
-import styles from './SellSection.module.scss'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 
+import styles from './SellSection.module.scss'
 const SellSection = () => {
   return (
     <div className={styles['sellSection']}>
