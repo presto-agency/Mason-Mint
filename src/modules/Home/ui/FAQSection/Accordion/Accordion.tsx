@@ -10,7 +10,7 @@ type AccordionType = {
   expanded: boolean | number
   setExpanded: React.Dispatch<React.SetStateAction<number | false>>
   description?: string
-  src?: string
+  src: string
   title?: string
 }
 
@@ -55,15 +55,17 @@ const Accordion: FC<AccordionType> = ({
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
             className={styles['item__dropdownMenu']}
           >
-            <BackgroundImage
-              className={styles['item__dropdownMenu_photoContainer']}
-              src={`${src}`}
-              alt="coin"
-              quality={75}
-            />
-            <p className={styles['item__dropdownMenu_description']}>
-              {description}
-            </p>
+            <div style={{ overflow: 'hidden' }}>
+              <BackgroundImage
+                className={styles['item__dropdownMenu_photoContainer']}
+                src={src}
+                alt="coin"
+                quality={75}
+              />
+              <p className={styles['item__dropdownMenu_description']}>
+                {description}
+              </p>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -15,42 +15,42 @@ export const FAQSection = () => {
       title: 'Who is scottsdale mint?',
       description:
         'Scottsdale mint is located in Arizona and was founded in 2009 by Josh Phair as a Worldwide Manufacturer for the Highest quality silver and gold bullion. The company originally started as a reseller for silver coins and bullion, it then shifted to become a full private mint out of North Scottsdale minting original and unique rounds, coins and other bullion products for distributors and foreign Governments around the world.',
-      src: '/images/home/coin-example.png',
+      src: '/images/home/сoin_example.png',
     },
     {
       id: 2,
       title: 'Are precious metals a good investment?',
       description:
         'Scottsdale mint is located in Arizona and was founded in 2009 by Josh Phair as a Worldwide Manufacturer for the Highest quality silver and gold bullion. The company originally started as a reseller for silver coins and bullion, it then shifted to become a full private mint out of North Scottsdale minting original and unique rounds, coins and other bullion products for distributors and foreign Governments around the world.',
-      src: '/images/home/coin-example.png',
+      src: '/images/home/сoin_example.png',
     },
     {
       id: 3,
       title: 'How to start investing in precious metals and silver coin',
       description:
         'Scottsdale mint is located in Arizona and was founded in 2009 by Josh Phair as a Worldwide Manufacturer for the Highest quality silver and gold bullion. The company originally started as a reseller for silver coins and bullion, it then shifted to become a full private mint out of North Scottsdale minting original and unique rounds, coins and other bullion products for distributors and foreign Governments around the world.',
-      src: '/images/home/coin-example.png',
+      src: '/images/home/сoin_example.png',
     },
     {
       id: 4,
       title: 'Why buy gold and silver from Mason Mint?',
       description:
         'Scottsdale mint is located in Arizona and was founded in 2009 by Josh Phair as a Worldwide Manufacturer for the Highest quality silver and gold bullion. The company originally started as a reseller for silver coins and bullion, it then shifted to become a full private mint out of North Scottsdale minting original and unique rounds, coins and other bullion products for distributors and foreign Governments around the world.',
-      src: '/images/home/coin-example.png',
+      src: '/images/home/сoin_example.png',
     },
     {
       id: 5,
       title: 'Can you buy gold with bitcoin or other cryptocurrency?',
       description:
         'Scottsdale mint is located in Arizona and was founded in 2009 by Josh Phair as a Worldwide Manufacturer for the Highest quality silver and gold bullion. The company originally started as a reseller for silver coins and bullion, it then shifted to become a full private mint out of North Scottsdale minting original and unique rounds, coins and other bullion products for distributors and foreign Governments around the world.',
-      src: '/images/home/сoin-example.png',
+      src: '/images/home/сoin_example.png',
     },
     {
       id: 6,
       title: 'Can you visit Mason Mint in Scottsdale az?',
       description:
         'Scottsdale mint is located in Arizona and was founded in 2009 by Josh Phair as a Worldwide Manufacturer for the Highest quality silver and gold bullion. The company originally started as a reseller for silver coins and bullion, it then shifted to become a full private mint out of North Scottsdale minting original and unique rounds, coins and other bullion products for distributors and foreign Governments around the world.',
-      src: '/images/home/сoin-example.png',
+      src: '/images/home/сoin_example.png',
     },
   ]
 
