@@ -1,9 +1,25 @@
 .carousel{
 	position: relative;
+	margin-bottom: 114rem;
 	overflow: visible;
 	
+		&__title{
+			&:empty{
+				display: none;
+			}
+		}
+	
+		&__label{
+			margin-top: 25rem;
+			color: var(--gray-800);
+			font-weight: 500;
+			font-family: var(--font-family-primary);
+			letter-spacing: -.01em;
+			text-align: right;
+		}
+	
 		&__item{
-			margin: 32rem 0 10rem;
+			margin: 27rem 0 10rem;
 			visibility: visible;
 		}
 	
