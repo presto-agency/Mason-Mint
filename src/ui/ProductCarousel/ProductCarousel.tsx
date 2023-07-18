@@ -52,7 +52,9 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
     <div className={classNames(styles['carousel'], className)}>
       <div className="row">
         <div className="col-md-3 order-md-2">
-          <p className={styles['carousel__label']}>{data?.length} results</p>
+          <p className={styles['carousel__label']}>
+            <AnimatedText>{`${data?.length} results`}</AnimatedText>
+          </p>
         </div>
         <div className="col-md-9 order-md-1">
           <p className={classNames(styles['carousel__title'], 'h3')}>

@@ -1,7 +1,9 @@
 @import "@/app/styles/variables/breackpoints";
 
 .hero{
+	position: relative;
 	padding: 208rem 0 80rem;
+	overflow: hidden;
 	
 		@media (width <= $breakpoint-mob) {
 			padding: 150rem 0 65rem;
@@ -43,11 +45,32 @@
 				}
 		}
 	
+		& &__abstract{
+			top: 97rem;
+			left: 80rem;
+			width: 89%;
+			
+				@media (width <= $breakpoint-mob) {
+					top: 60%;
+					right: 24rem;
+					left: auto;
+					width: 170vw;
+				}
+		}
+	
 		&.white{
 			background-color: var(--white);
+			
+				.hero__abstract{
+					color: var(--gray-300);
+				}
 		}
 	
 		&.gray{
 			background-color: var(--gray-300);
+			
+				.hero__abstract{
+					color: var(--white);
+				}
 		}
 }

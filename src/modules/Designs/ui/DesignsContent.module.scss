@@ -6,10 +6,10 @@
 	overflow: hidden;
 	
 		&__body{
-			padding-top: 154rem;
+			padding: 154rem 0 164rem;
 			
 				@media (width <= $breakpoint-mob) {
-					padding-top: 80rem;
+					padding: 80rem 0;
 				}
 		}
 	

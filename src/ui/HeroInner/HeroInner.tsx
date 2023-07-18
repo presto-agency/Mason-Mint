@@ -2,6 +2,9 @@ import { FC } from 'react'
 import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import Container from '@/app/layouts/Container'
+const AbstractLogo = dynamic(() => import('@/ui/AbstractLogo/AbstractLogo'), {
+  ssr: false,
+})
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 
 import styles from './HeroInner.module.scss'
@@ -25,6 +28,7 @@ const HeroInner: FC<HeroInnerProps> = ({
 }) => {
   return (
     <div className={classNames(styles['hero'], styles[theme], className)}>
+      <AbstractLogo className={styles['hero__abstract']} />
       <Container>
         <div className="row">
           <div className="col-md-10">
