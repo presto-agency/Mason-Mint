@@ -4,8 +4,9 @@ import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import Container from '@/app/layouts/Container'
 import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
-import { Navigation, Controller } from 'swiper/modules'
+import { Navigation, Controller, EffectFade } from 'swiper/modules'
 import 'swiper/css'
+import 'swiper/css/effect-fade'
 import {
   Dispatch,
   FC,
@@ -69,9 +70,9 @@ const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
   const swiper = useSwiper()
 
   const handleClick = () => {
-    setRevertAnimation(true)
+    // setRevertAnimation(true)
     setTimeout(() => {
-      swiper.slidePrev()
+      swiper.slideNext()
     }, 100)
   }
 
@@ -93,9 +94,9 @@ const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
   const swiper = useSwiper()
 
   const handleClick = () => {
-    setRevertAnimation(false)
+    // setRevertAnimation(false)
     setTimeout(() => {
-      swiper.slideNext()
+      swiper.slidePrev()
     }, 100)
   }
 
@@ -126,18 +127,26 @@ export const ExploreDesignsSection = () => {
   const { width } = useWindowDimensions()
   const [isClient, setIsClient] = useState(false)
 
+  const handleSlideChangeNext = () => {
+    setRevertAnimation(true)
+  }
+
+  const handleSlideChangePrev = () => {
+    setRevertAnimation(false)
+  }
+
   useEffect(() => {
     setIsClient(true)
   }, [])
 
   const motionProps = {
     initial: revertAnimation
-      ? { rotate: -75, opacity: 0 }
-      : { rotate: 75, opacity: 0 },
-    animate: { rotate: 0, opacity: 1 },
+      ? { rotate: -75, x: 0, opacity: 0 }
+      : { rotate: 75, x: 140, opacity: 0 },
+    animate: { rotate: 0, x: 70, opacity: 1 },
     exit: revertAnimation
-      ? { rotate: 75, opacity: 0 }
-      : { rotate: -75, opacity: 0 },
+      ? { rotate: 75, x: 140, opacity: 0 }
+      : { rotate: -75, x: 0, opacity: 0 },
     transition: { duration: 1 },
   }
 
@@ -175,9 +184,13 @@ export const ExploreDesignsSection = () => {
           </div>
           <div className={styles['ExploreDesignsSection__content_swiper']}>
             <Swiper
-              modules={[Navigation, Controller]}
+              modules={[Navigation, Controller, EffectFade]}
               className={styles['slider']}
               speed={1000}
+              effect={'fade'}
+              // allowTouchMove={false}
+              onSlideNextTransitionStart={handleSlideChangeNext}
+              onSlidePrevTransitionStart={handleSlideChangePrev}
               loop={true}
               controller={{ control: controlledSwiper }}
               slidesPerView={1}
