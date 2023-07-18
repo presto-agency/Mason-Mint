@@ -10,7 +10,10 @@ import styles from './IntroSection.module.scss'
 export const IntroSection = () => {
   return (
     <section className={styles['intro']}>
-      <VideoComponent src="/video/hero_video_bg-compress.mp4" />
+      <VideoComponent
+        src="/video/hero_video_bg-compress.mp4"
+        poster="/images/home/poster.jpg"
+      />
       <Container>
         <div className={styles['intro__content']}>
           <div className={styles['intro__content_top']}>

@@ -16,7 +16,7 @@ export const HomeContent: FC = () => {
     <main className={styles.HomeContent}>
       <IntroSection />
       <StorySection />
-      {/*<ExploreDesignsSection />*/}
+      <ExploreDesignsSection />
       {/*<FeaturedDesignsSection />*/}
       <CustomDesignsSection />
       <SellSection />
