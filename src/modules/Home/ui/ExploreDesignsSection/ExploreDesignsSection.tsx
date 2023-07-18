@@ -3,7 +3,7 @@ import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import Container from '@/app/layouts/Container'
-import { SwiperSlide, Swiper, useSwiper, useSwiperSlide } from 'swiper/react'
+import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
 import { Navigation, Controller } from 'swiper/modules'
 import 'swiper/css'
 import {
@@ -57,18 +57,28 @@ type SwiperButtonNextProps = {
   setRevertAnimation: Dispatch<SetStateAction<boolean>>
 }
 
+type SlideInner = {
+  title: string
+  subtitle: string
+}
+
 const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
   children,
   setRevertAnimation,
 }) => {
   const swiper = useSwiper()
+
+  const handleClick = () => {
+    setRevertAnimation(true)
+    setTimeout(() => {
+      swiper.slidePrev()
+    }, 100)
+  }
+
   return (
     <button
       className={classNames(styles['arrowDesign'], styles['arrowDesign__next'])}
-      onClick={() => {
-        setRevertAnimation(true)
-        swiper.slidePrev()
-      }}
+      onClick={handleClick}
     >
       {children}
       <ArrowSelect className={styles['insideArrow']} />
@@ -81,13 +91,18 @@ const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
   setRevertAnimation,
 }) => {
   const swiper = useSwiper()
+
+  const handleClick = () => {
+    setRevertAnimation(false)
+    setTimeout(() => {
+      swiper.slideNext()
+    }, 100)
+  }
+
   return (
     <button
       className={classNames(styles['arrowDesign'], styles['arrowDesign__prev'])}
-      onClick={() => {
-        setRevertAnimation(false)
-        swiper.slideNext()
-      }}
+      onClick={handleClick}
     >
       {children}
       <ArrowSelect className={styles['insideArrow']} />
@@ -95,14 +110,9 @@ const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
   )
 }
 
-type SlideInner = {
-  title: string
-  subtitle: string
-}
 const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
   return (
     <>
-      {' '}
       <h4 className={classNames('h4', styles['textSwiper__title'])}>{title}</h4>
       <p className={styles['textSwiper__description']}>{subtitle}</p>
       <ButtonPrimary variant="noStroked">VIEW CATALOG</ButtonPrimary>
@@ -114,15 +124,20 @@ export const ExploreDesignsSection = () => {
   const [controlledSwiper, setControlledSwiper] = useState<Swiper | null>(null)
   const [revertAnimation, setRevertAnimation] = useState(false)
   const { width } = useWindowDimensions()
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const motionProps = {
     initial: revertAnimation
-      ? { rotate: -45, opacity: 0 }
-      : { rotate: 45, opacity: 0 },
+      ? { rotate: -75, opacity: 0 }
+      : { rotate: 75, opacity: 0 },
     animate: { rotate: 0, opacity: 1 },
     exit: revertAnimation
-      ? { rotate: 45, opacity: 0 }
-      : { rotate: -45, opacity: 0 },
+      ? { rotate: 75, opacity: 0 }
+      : { rotate: -75, opacity: 0 },
     transition: { duration: 1 },
   }
 
@@ -136,7 +151,7 @@ export const ExploreDesignsSection = () => {
                 Explore Our Designs
               </AnimatedText>
             </h2>
-            {width > 767 ? (
+            {isClient && width > 767 ? (
               <div>
                 <Swiper
                   modules={[Controller]}
@@ -195,7 +210,7 @@ export const ExploreDesignsSection = () => {
                               />
                             </motion.div>
                           </div>
-                          {width <= 767 ? (
+                          {isClient && width <= 767 ? (
                             <SlideInner
                               title={slide.title}
                               subtitle={slide.subtitle}
