@@ -3,7 +3,11 @@
 .list{
 	position: relative;
 	padding-top: 82rem;
-		
+	
+		@media (width <= $breakpoint-mob) {
+			padding-top: 60rem;
+		}
+	
 		&::before{
 			position: absolute;
 			top: 0;

@@ -1,9 +1,8 @@
-import { FC, Fragment } from 'react'
+import { FC, Fragment, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { ProductProps } from '@/utils/types'
 import ProductCard from '@/ui/ProductCard/ProductCard'
-import ArrowSelect from '@/ui/Icons/ArrowSelect'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 
 import styles from './ProductCarousel.module.scss'
@@ -19,14 +18,23 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
   className,
   title,
 }) => {
-  const countOfActiveSlides = 4
+  const [countOfActiveSlides, setCountOfActiveSlides] = useState<number>(4)
+  const [gap, setGap] = useState<number>(32)
   const hasArrows = data?.length ? data.length > countOfActiveSlides : false
+
+  useEffect(() => {
+    if (window && window.innerWidth <= 767) {
+      setCountOfActiveSlides(2)
+      setGap(24)
+    }
+  }, [])
+
   const options = {
     type: 'slide',
     autoWidth: true,
     perMove: 1,
     perPage: countOfActiveSlides,
-    gap: '32rem',
+    gap: `${gap}rem`,
     pagination: false,
     arrows: hasArrows,
     updateOnMove: true,
@@ -67,59 +75,6 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
               </Fragment>
             ))}
           </SplideTrack>
-          {/*{hasArrows ? (*/}
-          {/*  <div*/}
-          {/*    className={classNames(*/}
-          {/*      styles['carousel__arrows'],*/}
-          {/*      'splide__arrows'*/}
-          {/*    )}*/}
-          {/*  >*/}
-          {/*    <button*/}
-          {/*      className={classNames(*/}
-          {/*        styles['carousel__arrow'],*/}
-          {/*        styles['carousel__arrow_prev'],*/}
-          {/*        'splide__arrow splide__arrow--prev'*/}
-          {/*      )}*/}
-          {/*    >*/}
-          {/*      <ArrowSelect*/}
-          {/*        className={classNames(*/}
-          {/*          styles['carousel__arrow_icon'],*/}
-          {/*          styles['prev'],*/}
-          {/*          styles['__1']*/}
-          {/*        )}*/}
-          {/*      />*/}
-          {/*      <ArrowSelect*/}
-          {/*        className={classNames(*/}
-          {/*          styles['carousel__arrow_icon'],*/}
-          {/*          styles['prev'],*/}
-          {/*          styles['__2']*/}
-          {/*        )}*/}
-          {/*      />*/}
-          {/*    </button>*/}
-          {/*    <button*/}
-          {/*      className={classNames(*/}
-          {/*        styles['carousel__arrow'],*/}
-          {/*        styles['carousel__arrow_next'],*/}
-          {/*        'splide__arrow splide__arrow--next'*/}
-          {/*      )}*/}
-          {/*    >*/}
-          {/*      <ArrowSelect*/}
-          {/*        className={classNames(*/}
-          {/*          styles['carousel__arrow_icon'],*/}
-          {/*          styles['next'],*/}
-          {/*          styles['__1']*/}
-          {/*        )}*/}
-          {/*      />*/}
-          {/*      <ArrowSelect*/}
-          {/*        className={classNames(*/}
-          {/*          styles['carousel__arrow_icon'],*/}
-          {/*          styles['next'],*/}
-          {/*          styles['__2']*/}
-          {/*        )}*/}
-          {/*      />*/}
-          {/*    </button>*/}
-          {/*  </div>*/}
-          {/*) : null}*/}
         </Splide>
       ) : null}
     </div>

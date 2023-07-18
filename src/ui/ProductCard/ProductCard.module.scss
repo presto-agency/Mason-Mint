@@ -1,9 +1,15 @@
+@import "@/app/styles/variables/breackpoints";
+
 .product{
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	max-width: 304rem;
+	
+		@media (width <= $breakpoint-mob) {
+			max-width: 144rem;
+		}
 	
 		&__thumb{
 			position: relative;
@@ -21,12 +27,23 @@
 			perspective: 500px;
 			pointer-events: none;
 			
+				@media (width <= $breakpoint-mob) {
+					width: 144rem;
+					height: 144rem;
+					margin: 0;
+				}
+			
 				&_item{
 					position: relative;
 					width: 186rem;
 					height: 186rem;
 					transform-style: preserve-3d;
 					transition: transform .5s ease-in-out;
+					
+						@media (width <= $breakpoint-mob) {
+							width: 112rem;
+							height: 112rem;
+						}
 					
 						img{
 							width: 100%;

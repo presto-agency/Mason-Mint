@@ -5,6 +5,10 @@
 	margin-bottom: 114rem;
 	overflow: visible;
 	
+		@media (width <= $breakpoint-mob) {
+			margin-bottom: 60rem;
+		}
+	
 		&__title{
 			&:empty{
 				display: none;
@@ -18,15 +22,31 @@
 			font-family: var(--font-family-primary);
 			letter-spacing: -.01em;
 			text-align: right;
+			
+				@media (width <= $breakpoint-mob) {
+					margin-top: 0;
+					margin-bottom: 12rem;
+					text-align: left;
+				}
 		}
 	
 		&__item{
 			margin: 27rem 0 10rem;
 			visibility: visible;
+			
+				@media (width <= $breakpoint-mob) {
+					display: flex;
+					flex-direction: column;
+					margin: 23rem 0 10rem;
+				}
 		}
 	
 		&__track{
 			overflow: initial;
+			
+				@media (width <= $breakpoint-mob) {
+					order: 1;
+				}
 		}
 	
 		&__slide{
@@ -35,7 +55,7 @@
 	
 		&__arrows{
 			position: absolute;
-			top: calc(50% - 33rem);
+			top: calc(50% - 60rem);
 			right: -28rem;
 			left: -28rem;
 			z-index: 1;
@@ -43,6 +63,17 @@
 			align-items: center;
 			justify-content: space-between;
 			pointer-events: none;
+			
+				@media (width <= $breakpoint-mob) {
+					position: relative;
+					top: 0;
+					right: 0;
+					left: 0;
+					gap: 12rem;
+					justify-content: center;
+					order: 2;
+					margin-top: 33rem;
+				}
 		}
 	
 		&__arrow{

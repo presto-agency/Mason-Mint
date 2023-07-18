@@ -98,19 +98,28 @@ const ProductFilter: FC<ProductFilterProps> = ({
         </div>
       </Dropdown>
       {selectedCategories.length > 0 && (
-        <div className={styles['filter__tags']}>
-          {selectedCategories.map((category, index) => {
-            return (
-              <div
-                className={styles['filter__tags_item']}
-                key={index}
-                onClick={() => handleChange(false, category)}
-              >
-                <CloseIcon className={styles['filter__tags_icon']} />
-                {category.name}
-              </div>
-            )
-          })}
+        <div className={styles['filter__tagsBox']}>
+          <div className={styles['filter__tags']}>
+            {selectedCategories.map((category, index) => {
+              return (
+                <div
+                  className={styles['filter__tags_item']}
+                  key={index}
+                  onClick={() => handleChange(false, category)}
+                >
+                  <CloseIcon className={styles['filter__tags_icon']} />
+                  {category.name}
+                </div>
+              )
+            })}
+            <button
+              className={styles['filter__button']}
+              onClick={handleReset}
+              disabled={!selectedCategories.length}
+            >
+              Reset
+            </button>
+          </div>
           <button
             className={styles['filter__button']}
             onClick={handleReset}

@@ -20,6 +20,10 @@
 					font-size: 15rem;
 					font-family: var(--font-family-primary);
 					text-transform: uppercase;
+					
+						@media (width <= $breakpoint-mob) {
+							font-size: 13rem;
+						}
 				}
 			
 				&_border{
