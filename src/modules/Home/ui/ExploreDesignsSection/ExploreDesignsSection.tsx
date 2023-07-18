@@ -63,17 +63,11 @@ type SlideInner = {
   subtitle: string
 }
 
-const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
-  children,
-  setRevertAnimation,
-}) => {
+const SwiperButtonNext: FC<SwiperButtonNextProps> = ({ children }) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
-    // setRevertAnimation(true)
-    setTimeout(() => {
-      swiper.slideNext()
-    }, 100)
+    swiper.slideNext()
   }
 
   return (
@@ -87,17 +81,11 @@ const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
   )
 }
 
-const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
-  children,
-  setRevertAnimation,
-}) => {
+const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({ children }) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
-    // setRevertAnimation(false)
-    setTimeout(() => {
-      swiper.slidePrev()
-    }, 100)
+    swiper.slidePrev()
   }
 
   return (
@@ -122,6 +110,7 @@ const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
 }
 
 export const ExploreDesignsSection = () => {
+  // @ts-ignore/Swiper developers unresolved type problem
   const [controlledSwiper, setControlledSwiper] = useState<Swiper | null>(null)
   const [revertAnimation, setRevertAnimation] = useState(false)
   const { width } = useWindowDimensions()
@@ -188,7 +177,6 @@ export const ExploreDesignsSection = () => {
               className={styles['slider']}
               speed={1000}
               effect={'fade'}
-              // allowTouchMove={false}
               onSlideNextTransitionStart={handleSlideChangeNext}
               onSlidePrevTransitionStart={handleSlideChangePrev}
               loop={true}

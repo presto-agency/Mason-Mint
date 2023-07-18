@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +93,7 @@
       <workItem from="1688973566610" duration="14287000" />
       <workItem from="1688996388473" duration="613000" />
       <workItem from="1689145401691" duration="52286000" />
-      <workItem from="1689577119846" duration="62494000" />
+      <workItem from="1689577119846" duration="65850000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -396,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689685412299</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="fix: some animation">
+      <created>1689710991291</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1689710991291</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +422,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feature: add disabled variants to buttonPrimary" />
     <MESSAGE value="feature: add active class, hover effects to header, footer" />
     <MESSAGE value="fix: footer creators link" />
     <MESSAGE value="fix: some navigation fixes" />
@@ -440,7 +446,8 @@
     <MESSAGE value="fix: pixel perfect swiper desktop" />
     <MESSAGE value="fet: add mobile slider version" />
     <MESSAGE value="fet: finish slider DesignSection" />
-    <option name="LAST_COMMIT_MESSAGE" value="fet: finish slider DesignSection" />
+    <MESSAGE value="fix: some animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: some animation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

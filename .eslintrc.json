@@ -16,6 +16,12 @@
       "tabWidth": 2,
       "semi": false,
       "singleQuote": true
-    }]
+    }],
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-ignore": "allow-with-description"
+      }
+    ]
   }
 }
