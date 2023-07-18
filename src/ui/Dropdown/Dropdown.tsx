@@ -60,7 +60,12 @@ const Dropdown: FC<DropdownProps> = ({
         onClick={() => setIsOpenMenu(!isOpenMenu)}
       >
         <p className={styles['dropdown__header_placeholder']}>{placeholder}</p>
-        <ArrowSelect className={styles['dropdown__arrow']} />
+        <ArrowSelect
+          className={classNames(
+            styles['dropdown__arrow'],
+            isOpenMenu ? styles['active'] : ''
+          )}
+        />
         <div
           className={styles['dropdown__header_border']}
           style={{ opacity: !isOpenMenu ? 1 : 0 }}
