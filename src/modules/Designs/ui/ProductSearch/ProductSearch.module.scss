@@ -28,6 +28,10 @@
 					background-color: var(--gray-800);
 					border-radius: 2px;
 					content: '';
+					
+						@media (width <= $breakpoint-mob) {
+							height: 1px;
+						}
 				}
 
 				&::before{
@@ -46,10 +50,6 @@
 						background-color: var(--black);
 						transition: background-color var(--hover-duration) var(--ease);
 					}
-				}
-			
-				@media (width <= $breakpoint-mob) {
-					height: 1px;
 				}
 		}
 	
