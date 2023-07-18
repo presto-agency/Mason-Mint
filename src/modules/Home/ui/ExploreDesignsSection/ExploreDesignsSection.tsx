@@ -65,8 +65,8 @@ const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
     <button
       className={classNames(styles['arrowDesign'], styles['arrowDesign__next'])}
       onClick={() => {
-        swiper.slidePrev()
         setRevertAnimation(true)
+        swiper.slidePrev()
       }}
     >
       {children}
@@ -84,8 +84,8 @@ const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
     <button
       className={classNames(styles['arrowDesign'], styles['arrowDesign__prev'])}
       onClick={() => {
-        swiper.slideNext()
         setRevertAnimation(false)
+        swiper.slideNext()
       }}
     >
       {children}

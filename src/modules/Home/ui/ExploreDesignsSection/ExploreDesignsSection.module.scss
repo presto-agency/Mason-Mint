@@ -1,12 +1,26 @@
 @import '@/app/styles/variables/breackpoints';
 
 .ExploreDesignsSection {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 115rem 0;
+  overflow: hidden;
   background-color: var(--gray-300);
 
+  &::before{
+    position: absolute;
+    top: -312rem;
+    left: 153rem;
+    width: 1223rem;
+    height: 1318rem;
+    background-image: url("/images/home/circled_arrow_bg_w.svg");
+    background-size: 1223rem 1318rem;
+    content: '';
+  }
+
   &__content{
+    position: relative;
     display: flex;
     justify-content: space-between;
 
