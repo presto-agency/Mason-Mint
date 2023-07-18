@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/home/back_coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/home/front_coin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/home/poster.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/common.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/HomeContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/VideoComponent/VideoComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/VideoComponent/VideoComponent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +93,7 @@
       <workItem from="1688973566610" duration="14287000" />
       <workItem from="1688996388473" duration="613000" />
       <workItem from="1689145401691" duration="52286000" />
-      <workItem from="1689577119846" duration="46507000" />
+      <workItem from="1689577119846" duration="48497000" />
     </task>
     <task id="LOCAL-00001" summary="fix: buttonPrimary">
       <created>1687511469937</created>
@@ -370,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689342448861</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="fix: add swiper desktop">
+      <created>1689668294559</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1689668294559</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +387,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: some fixes-2" />
     <MESSAGE value="fix: add backward mod to button" />
     <MESSAGE value="fix: add isLoading mod to button" />
     <MESSAGE value="fix: add isLoading" />
@@ -414,7 +411,8 @@
     <MESSAGE value="fix: some fixes" />
     <MESSAGE value="fix: add faq section" />
     <MESSAGE value="fix: faq section" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: faq section" />
+    <MESSAGE value="fix: add swiper desktop" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add swiper desktop" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

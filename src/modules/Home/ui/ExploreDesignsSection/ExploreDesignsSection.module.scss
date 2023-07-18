@@ -13,10 +13,13 @@
     &_description {
       display: flex;
       flex-direction: column;
-      max-width: 416rem;
+      justify-content: center;
+      max-width: 505rem;
+      padding: 50rem 0 0 80rem;
 
       .textSwiper {
         max-height: 190rem;
+        margin: 30rem 0 0;
 
         &__title{
           display: -webkit-box;
@@ -31,6 +34,7 @@
           display: -webkit-box;
           margin: 0 0 20rem;
           overflow: hidden;
+          color: var(--gray-800);
           -webkit-line-clamp: 3;
           line-clamp: 3;
           -webkit-box-orient: vertical;
@@ -81,21 +85,47 @@
       .arrowDesign{
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 55rem;
         z-index: 2;
         width: 56rem;
         height: 56rem;
+        color: var(--gray-700);
         background-color: var(--white);
-        border: 1px solid var(--primary-color);
+        border: 1px solid var(--gray-700);
         border-radius: 50%;
+        cursor: pointer;
+        transition: var(--hover-duration) var(--ease);
 
+        &:hover{
+          color: var(--primary-color);
+          border: 1px solid var(--primary-color)
+        }
+
+        .insideArrow{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 24rem;
+          height: 24rem;
+          transform: translate(-50%, -50%);
+        }
 
         &__prev{
           right: 64rem;
+
+          .insideArrow{
+            left: calc(50% - 4rem);
+            transform: translate(-50%, -50%) rotate(90deg);
+          }
         }
 
         &__next{
           right: 0;
+
+          .insideArrow{
+            left: calc(50% + 4rem);
+            transform: translate(-50%, -50%) rotate(-90deg);
+          }
         }
       }
     }

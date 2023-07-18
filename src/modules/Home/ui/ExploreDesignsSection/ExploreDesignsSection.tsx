@@ -16,6 +16,7 @@ import {
 } from 'react'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
+import ArrowSelect from '@/ui/Icons/ArrowSelect'
 
 const slides = [
   {
@@ -51,7 +52,7 @@ const slides = [
 ]
 
 type SwiperButtonNextProps = {
-  children: ReactNode
+  children?: ReactNode
   setRevertAnimation: Dispatch<SetStateAction<boolean>>
 }
 
@@ -69,6 +70,7 @@ const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
       }}
     >
       {children}
+      <ArrowSelect className={styles['insideArrow']} />
     </button>
   )
 }
@@ -87,6 +89,7 @@ const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
       }}
     >
       {children}
+      <ArrowSelect className={styles['insideArrow']} />
     </button>
   )
 }
@@ -184,12 +187,8 @@ export const ExploreDesignsSection = () => {
                   )}
                 </SwiperSlide>
               ))}
-              <SwiperButtonNext setRevertAnimation={setRevertAnimation}>
-                next
-              </SwiperButtonNext>
-              <SwiperButtonPrev setRevertAnimation={setRevertAnimation}>
-                prev
-              </SwiperButtonPrev>
+              <SwiperButtonNext setRevertAnimation={setRevertAnimation} />
+              <SwiperButtonPrev setRevertAnimation={setRevertAnimation} />
             </Swiper>
           </div>
         </div>
