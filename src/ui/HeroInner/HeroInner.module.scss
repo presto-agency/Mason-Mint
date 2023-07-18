@@ -9,7 +9,7 @@
 	
 		&__title{
 			margin-top: 18rem;
-			
+
 				@media (width <= $breakpoint-mob) {
 					margin-top: 20rem;
 				}
@@ -31,7 +31,7 @@
 		}
 	
 		&__description{
-			margin-top: 25rem;
+			margin-top: 15rem;
 			color: var(--gray-800);
 			
 				@media (width <= $breakpoint-mob) {
