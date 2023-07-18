@@ -17,6 +17,7 @@ import {
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
 import ArrowSelect from '@/ui/Icons/ArrowSelect'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 const slides = [
   {
@@ -94,9 +95,25 @@ const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
   )
 }
 
+type SlideInner = {
+  title: string
+  subtitle: string
+}
+const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
+  return (
+    <>
+      {' '}
+      <h4 className={classNames('h4', styles['textSwiper__title'])}>{title}</h4>
+      <p className={styles['textSwiper__description']}>{subtitle}</p>
+      <ButtonPrimary variant="noStroked">VIEW CATALOG</ButtonPrimary>
+    </>
+  )
+}
+
 export const ExploreDesignsSection = () => {
   const [controlledSwiper, setControlledSwiper] = useState<Swiper | null>(null)
   const [revertAnimation, setRevertAnimation] = useState(false)
+  const { width } = useWindowDimensions()
 
   const motionProps = {
     initial: revertAnimation
@@ -119,32 +136,27 @@ export const ExploreDesignsSection = () => {
                 Explore Our Designs
               </AnimatedText>
             </h2>
-            <div>
-              <Swiper
-                modules={[Controller]}
-                onSwiper={setControlledSwiper}
-                slidesPerView={1}
-                allowTouchMove={false}
-                direction={'vertical'}
-                className={styles['textSwiper']}
-              >
-                {slides.map((slide) => (
-                  <SwiperSlide key={slide.id}>
-                    <h4
-                      className={classNames('h4', styles['textSwiper__title'])}
-                    >
-                      {slide.title}
-                    </h4>
-                    <p className={styles['textSwiper__description']}>
-                      {slide.subtitle}
-                    </p>
-                    <ButtonPrimary variant="noStroked">
-                      VIEW CATALOG
-                    </ButtonPrimary>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+            {width > 767 ? (
+              <div>
+                <Swiper
+                  modules={[Controller]}
+                  onSwiper={setControlledSwiper}
+                  slidesPerView={1}
+                  allowTouchMove={false}
+                  direction={'vertical'}
+                  className={styles['textSwiper']}
+                >
+                  {slides.map((slide) => (
+                    <SwiperSlide key={slide.id}>
+                      <SlideInner
+                        title={slide.title}
+                        subtitle={slide.subtitle}
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+            ) : null}
           </div>
           <div className={styles['ExploreDesignsSection__content_swiper']}>
             <Swiper
@@ -161,26 +173,34 @@ export const ExploreDesignsSection = () => {
                     <AnimatePresence>
                       {isActive && (
                         <>
-                          <motion.div
-                            className={styles['slider__slide_containerBack']}
-                            {...motionProps}
-                          >
-                            <BackgroundImage
-                              className={styles['coinBack']}
-                              src={slide.url.back}
-                              alt="coin back"
+                          <div className={styles['coinsContainer']}>
+                            <motion.div
+                              className={styles['slider__slide_containerBack']}
+                              {...motionProps}
+                            >
+                              <BackgroundImage
+                                className={styles['coinBack']}
+                                src={slide.url.back}
+                                alt="coin back"
+                              />
+                            </motion.div>
+                            <motion.div
+                              className={styles['slider__slide_containerFront']}
+                              {...motionProps}
+                            >
+                              <BackgroundImage
+                                className={styles['coinFront']}
+                                src={slide.url.front}
+                                alt="coin front"
+                              />
+                            </motion.div>
+                          </div>
+                          {width <= 767 ? (
+                            <SlideInner
+                              title={slide.title}
+                              subtitle={slide.subtitle}
                             />
-                          </motion.div>
-                          <motion.div
-                            className={styles['slider__slide_containerFront']}
-                            {...motionProps}
-                          >
-                            <BackgroundImage
-                              className={styles['coinFront']}
-                              src={slide.url.front}
-                              alt="coin front"
-                            />
-                          </motion.div>
+                          ) : null}
                         </>
                       )}
                     </AnimatePresence>
