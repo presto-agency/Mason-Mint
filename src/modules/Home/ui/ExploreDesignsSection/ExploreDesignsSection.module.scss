@@ -24,7 +24,7 @@
     display: flex;
     justify-content: space-between;
 
-    .textSwiper {
+    .sliderText {
       max-height: 190rem;
       margin: 30rem 0 0;
 
@@ -60,12 +60,12 @@
       padding: 50rem 0 0 80rem;
     }
 
-    &_swiper{
+    &_sliderCoin{
       position: relative;
       width: 100%;
       max-width: 672rem;
 
-      .slider{
+      .sliderCoin{
         &__slide{
           position: relative;
 
@@ -175,8 +175,8 @@
         padding: 0;
       }
 
-      &_swiper{
-        .slider{
+      &_sliderCoin{
+        .sliderCoin{
           padding: 40rem 0 90rem;
 
           &__slide{
@@ -215,7 +215,6 @@
             left: calc(50% + 6rem);
           }
         }
-
       }
     }
   }

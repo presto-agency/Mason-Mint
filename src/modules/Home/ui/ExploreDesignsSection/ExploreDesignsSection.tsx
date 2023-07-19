@@ -63,11 +63,17 @@ type SlideInner = {
   subtitle: string
 }
 
-const SwiperButtonNext: FC<SwiperButtonNextProps> = ({ children }) => {
+const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
+  children,
+  setRevertAnimation,
+}) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
-    swiper.slideNext()
+    setRevertAnimation(true)
+    setTimeout(() => {
+      swiper.slideNext()
+    }, 100)
   }
 
   return (
@@ -81,11 +87,17 @@ const SwiperButtonNext: FC<SwiperButtonNextProps> = ({ children }) => {
   )
 }
 
-const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({ children }) => {
+const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
+  children,
+  setRevertAnimation,
+}) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
-    swiper.slidePrev()
+    setRevertAnimation(false)
+    setTimeout(() => {
+      swiper.slidePrev()
+    }, 100)
   }
 
   return (
@@ -116,22 +128,14 @@ export const ExploreDesignsSection = () => {
   const { width } = useWindowDimensions()
   const [isClient, setIsClient] = useState(false)
 
-  const handleSlideChangeNext = () => {
-    setRevertAnimation(true)
-  }
-
-  const handleSlideChangePrev = () => {
-    setRevertAnimation(false)
-  }
-
   useEffect(() => {
     setIsClient(true)
   }, [])
 
   const motionProps = {
     initial: revertAnimation
-      ? { rotate: -75, x: 0, opacity: 0 }
-      : { rotate: 75, x: 140, opacity: 0 },
+      ? { rotate: -75, x: 0, opacity: 0.5 }
+      : { rotate: 75, x: 140, opacity: 0.5 },
     animate: { rotate: 0, x: 70, opacity: 1 },
     exit: revertAnimation
       ? { rotate: 75, x: 140, opacity: 0 }
@@ -139,12 +143,16 @@ export const ExploreDesignsSection = () => {
     transition: { duration: 1 },
   }
 
-  // const motionProps = {
-  //   initial: { rotate: -75, x: 0, opacity: 0 },
-  //   animate: { rotate: 0, x: 70, opacity: 1 },
-  //   exit: { rotate: 75, x: 140, opacity: 0 },
-  //   transition: { duration: 1 },
-  // }
+  const motionPropsForBackCoin = {
+    initial: revertAnimation
+      ? { rotate: -75, x: 0, opacity: 0.5 }
+      : { rotate: 75, x: 150, opacity: 0.5 },
+    animate: { rotate: 0, x: 75, opacity: 1 },
+    exit: revertAnimation
+      ? { rotate: 75, x: 150, opacity: 0 }
+      : { rotate: -75, x: 0, opacity: 0 },
+    transition: { duration: 1, delay: 0.1 },
+  }
 
   return (
     <section className={styles['ExploreDesignsSection']}>
@@ -164,7 +172,7 @@ export const ExploreDesignsSection = () => {
                   slidesPerView={1}
                   allowTouchMove={false}
                   direction={'vertical'}
-                  className={styles['textSwiper']}
+                  className={styles['sliderText']}
                 >
                   {slides.map((slide) => (
                     <SwiperSlide key={slide.id}>
@@ -178,28 +186,32 @@ export const ExploreDesignsSection = () => {
               </div>
             ) : null}
           </div>
-          <div className={styles['ExploreDesignsSection__content_swiper']}>
+          <div className={styles['ExploreDesignsSection__content_sliderCoin']}>
             <Swiper
               modules={[Navigation, Controller, EffectFade]}
-              className={styles['slider']}
+              className={styles['sliderCoin']}
               speed={1000}
               effect={'fade'}
-              onSlideNextTransitionStart={handleSlideChangeNext}
-              onSlidePrevTransitionStart={handleSlideChangePrev}
+              allowTouchMove={false}
               loop={true}
               controller={{ control: controlledSwiper }}
               slidesPerView={1}
             >
               {slides.map((slide) => (
-                <SwiperSlide className={styles['slider__slide']} key={slide.id}>
+                <SwiperSlide
+                  className={styles['sliderCoin__slide']}
+                  key={slide.id}
+                >
                   {({ isActive }) => (
                     <AnimatePresence>
                       {isActive && (
                         <>
                           <div className={styles['coinsContainer']}>
                             <motion.div
-                              className={styles['slider__slide_containerBack']}
-                              {...motionProps}
+                              className={
+                                styles['sliderCoin__slide_containerBack']
+                              }
+                              {...motionPropsForBackCoin}
                             >
                               <BackgroundImage
                                 className={styles['coinBack']}
@@ -208,7 +220,9 @@ export const ExploreDesignsSection = () => {
                               />
                             </motion.div>
                             <motion.div
-                              className={styles['slider__slide_containerFront']}
+                              className={
+                                styles['sliderCoin__slide_containerFront']
+                              }
                               {...motionProps}
                             >
                               <BackgroundImage
@@ -232,8 +246,6 @@ export const ExploreDesignsSection = () => {
               ))}
               <SwiperButtonPrev setRevertAnimation={setRevertAnimation} />
               <SwiperButtonNext setRevertAnimation={setRevertAnimation} />
-              {/*<SwiperButtonPrev />*/}
-              {/*<SwiperButtonNext />*/}
             </Swiper>
           </div>
         </div>
