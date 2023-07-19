@@ -12,9 +12,9 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
       <Container>
         <div className={styles['admin__table_header']}>
           <h3 className="h3">Products</h3>
-          <ButtonPrimary variant="white" size="small">
-            Create project
-          </ButtonPrimary>
+          {/*<ButtonPrimary variant="white" size="small">*/}
+          {/*  Create project*/}
+          {/*</ButtonPrimary>*/}
         </div>
         <table className={styles['admin__table']}>
           <thead>

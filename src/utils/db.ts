@@ -1,5 +1,4 @@
-import mongoose, { ObjectId } from 'mongoose'
-import { CategoryProps, ProductProps } from '@/utils/types'
+import mongoose from 'mongoose'
 
 type connectionProps = {
   isConnected?: boolean | number
@@ -36,11 +35,6 @@ const disconnect = async () => {
   }
 }
 
-const convertDocToObj = (doc: any) => {
-  doc._id = (doc._id as ObjectId).toString()
-  return doc
-}
-
-const db = { connect, disconnect, convertDocToObj }
+const db = { connect, disconnect }
 
 export default db

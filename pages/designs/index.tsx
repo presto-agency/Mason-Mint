@@ -29,8 +29,8 @@ export const getStaticProps: GetStaticProps<{
   const products = await ProductModel.find().lean()
   return {
     props: {
-      categories: categories.map(db.convertDocToObj),
-      products: products.map(db.convertDocToObj),
+      categories: JSON.parse(JSON.stringify(categories)),
+      products: JSON.parse(JSON.stringify(products)),
     },
   }
 }
