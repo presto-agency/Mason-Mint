@@ -20,39 +20,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import ArrowSelect from '@/ui/Icons/ArrowSelect'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import type SwiperCore from 'swiper'
-
-const slides = [
-  {
-    title: 'Classic design rounds',
-    id: 1,
-    subtitle:
-      'We look forward to supplying both the investor and collector silver market with superior products that are sure to impress.',
-    url: {
-      front: '/images/home/front_coin.png',
-      back: '/images/home/back_coin.png',
-    },
-  },
-  {
-    title: 'Classic design rounds',
-    id: 2,
-    subtitle:
-      'We look forward to supplying both the investor and collector silver market with superior products that are sure to impress.',
-    url: {
-      front: '/images/home/front_coin.png',
-      back: '/images/home/back_coin.png',
-    },
-  },
-  {
-    title: 'Classic design rounds',
-    id: 3,
-    subtitle:
-      'We look forward to supplying both the investor and collector silver market with superior products that are sure to impress.',
-    url: {
-      front: '/images/home/front_coin.png',
-      back: '/images/home/back_coin.png',
-    },
-  },
-]
+import { slidesExploreDesigns } from '@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent'
 
 type SwiperButtonNextProps = {
   children?: ReactNode
@@ -134,27 +102,32 @@ export const ExploreDesignsSection = () => {
     setIsClient(true)
   }, [])
 
+  const motionPropsText = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.1, delay: 0.3 } },
+    exit: { opacity: 0, transition: { duration: 0.2 }, delay: 0.5 },
+    transition: { duration: 0.1 },
+  }
+
   const motionProps = {
     initial: revertAnimation
-      ? { rotate: -75, x: 0, opacity: 0.5 }
-      : { rotate: 75, x: 140, opacity: 0.5 },
-    animate: { rotate: 0, x: 70, opacity: 1 },
+      ? { rotate: 75, x: 200, opacity: 0 }
+      : { rotate: -75, x: -200, opacity: 0 },
+    animate: { rotate: 0, x: 0, opacity: 1 },
     exit: revertAnimation
-      ? { rotate: 75, x: 140, opacity: 0 }
-      : { rotate: -75, x: 0, opacity: 0 },
-    transition: { duration: 1 },
+      ? { rotate: -75, x: -200, opacity: 0 }
+      : { rotate: 75, x: 200, opacity: 0 },
+    transition: { duration: 1, delay: 0.1 },
   }
 
   const motionPropsForBackCoin = {
-    initial: revertAnimation
-      ? { rotate: -75, x: 0, opacity: 0.5 }
-      : { rotate: 75, x: 150, opacity: 0.5 },
-    animate: { rotate: 0, x: 75, opacity: 1 },
-    exit: revertAnimation
-      ? { rotate: 75, x: 150, opacity: 0 }
-      : { rotate: -75, x: 0, opacity: 0 },
-    transition: { duration: 1, delay: 0.1 },
+    ...motionProps,
+    transition: { ...motionProps.transition, delay: 0 },
   }
+
+  useEffect(() => {
+    console.log(motionPropsForBackCoin)
+  }, [])
 
   return (
     <section className={styles['ExploreDesignsSection']}>
@@ -167,31 +140,43 @@ export const ExploreDesignsSection = () => {
               </AnimatedText>
             </h2>
             {isClient && width > 767 ? (
-              <div>
+              <>
                 <Swiper
+                  style={{ overflow: 'visible' }}
+                  className={styles['sliderText']}
                   modules={[Controller]}
+                  speed={1000}
                   onSwiper={setControlledSwiper}
+                  loop={true}
                   slidesPerView={1}
                   allowTouchMove={false}
                   direction={'vertical'}
-                  className={styles['sliderText']}
                 >
-                  {slides.map((slide) => (
+                  {slidesExploreDesigns.map((slide) => (
                     <SwiperSlide key={slide.id}>
-                      <SlideInner
-                        title={slide.title}
-                        subtitle={slide.subtitle}
-                      />
+                      {({ isActive }) => (
+                        <AnimatePresence>
+                          {isActive && (
+                            <motion.div {...motionPropsText}>
+                              <SlideInner
+                                title={slide.title}
+                                subtitle={slide.subtitle}
+                              />
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      )}
                     </SwiperSlide>
                   ))}
                 </Swiper>
-              </div>
+              </>
             ) : null}
           </div>
           <div className={styles['ExploreDesignsSection__content_sliderCoin']}>
             <Swiper
-              modules={[Navigation, Controller, EffectFade]}
+              style={{ overflow: 'visible' }}
               className={styles['sliderCoin']}
+              modules={[Navigation, Controller, EffectFade]}
               speed={1000}
               effect={'fade'}
               allowTouchMove={false}
@@ -199,7 +184,7 @@ export const ExploreDesignsSection = () => {
               controller={{ control: controlledSwiper }}
               slidesPerView={1}
             >
-              {slides.map((slide) => (
+              {slidesExploreDesigns.map((slide) => (
                 <SwiperSlide
                   className={styles['sliderCoin__slide']}
                   key={slide.id}
