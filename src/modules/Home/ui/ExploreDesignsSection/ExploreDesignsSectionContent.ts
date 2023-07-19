@@ -1,0 +1,32 @@
+export const slidesExploreDesigns = [
+  {
+    title: 'Classic design rounds',
+    id: 1,
+    subtitle:
+      'We look forward to supplying both the investor and collector silver market with superior products that are sure to impress.',
+    url: {
+      front: '/images/home/front_coin.png',
+      back: '/images/home/back_coin.png',
+    },
+  },
+  {
+    title: 'Classic design rounds',
+    id: 2,
+    subtitle:
+      'We look forward to supplying both the investor and collector silver market with superior products that are sure to impress.',
+    url: {
+      front: '/images/home/front_coin.png',
+      back: '/images/home/back_coin.png',
+    },
+  },
+  {
+    title: 'Classic design rounds',
+    id: 3,
+    subtitle:
+      'We look forward to supplying both the investor and collector silver market with superior products that are sure to impress.',
+    url: {
+      front: '/images/home/front_coin.png',
+      back: '/images/home/back_coin.png',
+    },
+  },
+]
