@@ -112,7 +112,7 @@ const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
 export const ExploreDesignsSection = () => {
   // @ts-ignore/Swiper developers unresolved type problem
   const [controlledSwiper, setControlledSwiper] = useState<Swiper | null>(null)
-  const [revertAnimation, setRevertAnimation] = useState(false)
+  const [revertAnimation, setRevertAnimation] = useState(true)
   const { width } = useWindowDimensions()
   const [isClient, setIsClient] = useState(false)
 
@@ -138,6 +138,13 @@ export const ExploreDesignsSection = () => {
       : { rotate: -75, x: 0, opacity: 0 },
     transition: { duration: 1 },
   }
+
+  // const motionProps = {
+  //   initial: { rotate: -75, x: 0, opacity: 0 },
+  //   animate: { rotate: 0, x: 70, opacity: 1 },
+  //   exit: { rotate: 75, x: 140, opacity: 0 },
+  //   transition: { duration: 1 },
+  // }
 
   return (
     <section className={styles['ExploreDesignsSection']}>
@@ -223,8 +230,10 @@ export const ExploreDesignsSection = () => {
                   )}
                 </SwiperSlide>
               ))}
-              <SwiperButtonNext setRevertAnimation={setRevertAnimation} />
               <SwiperButtonPrev setRevertAnimation={setRevertAnimation} />
+              <SwiperButtonNext setRevertAnimation={setRevertAnimation} />
+              {/*<SwiperButtonPrev />*/}
+              {/*<SwiperButtonNext />*/}
             </Swiper>
           </div>
         </div>
