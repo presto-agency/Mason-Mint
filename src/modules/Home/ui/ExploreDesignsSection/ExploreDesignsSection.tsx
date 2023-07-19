@@ -123,9 +123,7 @@ const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
 }
 
 export const ExploreDesignsSection = () => {
-  const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(
-    null
-  )
+  const [controlledSwiper, setControlledSwiper] = useState<SwiperCore>()
   const [revertAnimation, setRevertAnimation] = useState(true)
   const { width } = useWindowDimensions()
   const [isClient, setIsClient] = useState(false)
