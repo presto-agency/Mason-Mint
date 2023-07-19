@@ -29,8 +29,8 @@ const navigationFooterLinks = [
     category: 'products',
     links: [
       { title: 'Designs', href: routes.public.designs },
-      { title: 'Custom Minting', href: '' },
-      { title: 'Packaging', href: '' },
+      { title: 'Custom Minting', href: routes.public.customMinting },
+      { title: 'Packaging', href: routes.public.packaging },
     ],
   },
   {

@@ -26,13 +26,16 @@ const ProductList: FC<DesignsProps> = ({
         )
         return { ...category, products: productsByCategory }
       })
-  }, [products, categories])
+  }, [products, categories, initialCategories])
+
   return (
     <div className={styles['list']}>
       {filteredCategories.map((category, index) => {
         return (
           <Fragment key={index}>
-            <ProductCarousel title={category.name} data={category.products} />
+            {category.products.length ? (
+              <ProductCarousel title={category.name} data={category.products} />
+            ) : null}
           </Fragment>
         )
       })}

@@ -6,10 +6,7 @@ import styles from './AboutContent.module.scss'
 export const AboutContent: FC = () => {
   return (
     <main className={styles.AboutContent}>
-      <HeroInner
-        title="Finding a partner you can trust is not an easy decision"
-        subtitle="Welcome to masonmint"
-      />
+      <HeroInner title="Coming soon" subtitle="Welcome to masonmint" />
     </main>
   )
 }
