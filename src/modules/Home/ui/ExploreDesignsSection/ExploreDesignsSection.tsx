@@ -19,6 +19,7 @@ import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
 import ArrowSelect from '@/ui/Icons/ArrowSelect'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
+import type SwiperCore from 'swiper'
 
 const slides = [
   {
@@ -122,8 +123,9 @@ const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
 }
 
 export const ExploreDesignsSection = () => {
-  // @ts-ignore/Swiper developers unresolved type problem
-  const [controlledSwiper, setControlledSwiper] = useState<Swiper | null>(null)
+  const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(
+    null
+  )
   const [revertAnimation, setRevertAnimation] = useState(true)
   const { width } = useWindowDimensions()
   const [isClient, setIsClient] = useState(false)
