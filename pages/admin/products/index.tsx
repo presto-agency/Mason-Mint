@@ -22,7 +22,8 @@ export const getServerSideProps = async () => {
   await db.disconnect()
   return {
     props: {
-      products: JSON.parse(JSON.stringify(products)),
+      // products: JSON.parse(JSON.stringify(products)),
+      products: products.map(db.convertDocToObj),
     },
   }
 }

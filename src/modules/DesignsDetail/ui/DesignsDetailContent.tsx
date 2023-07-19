@@ -6,6 +6,7 @@ import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import routes from '@/utils/routes'
 
 import styles from './DesignsDetailContent.module.scss'
+import DesignsDetailDescription from '@/modules/DesignsDetail/ui/DesignsDetailDescription/DesignsDetailDescription'
 
 type DesignsDetailProps = {
   product: ProductProps | null
@@ -23,7 +24,9 @@ const DesignsDetailContent: FC<DesignsDetailProps> = ({ product }) => {
               </ButtonPrimary>
             </Link>
           </div>
-          <div className="col-md-5 offset-md-1">Description</div>
+          <div className="col-md-5 offset-md-1">
+            <DesignsDetailDescription product={product} />
+          </div>
         </div>
       </Container>
     </main>

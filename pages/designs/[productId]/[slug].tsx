@@ -25,7 +25,7 @@ export const getServerSideProps = async (req: NextApiRequest) => {
   await db.disconnect()
   return {
     props: {
-      product: product ? JSON.parse(JSON.stringify(product)) : null,
+      product: db.convertDocToObj(product),
     },
   }
 }

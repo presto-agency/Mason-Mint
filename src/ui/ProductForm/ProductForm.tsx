@@ -1,4 +1,5 @@
 import { FC, Fragment, useCallback, useMemo, useState } from 'react'
+import { ObjectId } from 'mongoose'
 import axios from 'axios'
 import dynamic from 'next/dynamic'
 import { CategoryProps, ProductProps, SpecificationProps } from '@/utils/types'
@@ -84,7 +85,10 @@ const ProductForm: FC<{
 
   const handleCategoryChange = useCallback(
     (category: OptionInterface | null) => {
-      setValue('category', { name: category?.label, id: category?.value })
+      setValue('category', {
+        name: category?.label,
+        id: category?.value,
+      })
       setSelectedCategory(category as OptionInterface)
     },
     [setValue, setSelectedCategory]

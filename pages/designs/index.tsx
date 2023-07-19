@@ -22,15 +22,15 @@ const Index: FC<DesignsProps> = ({ categories, products }) => {
 
 export const getStaticProps: GetStaticProps<{
   categories: CategoryProps[]
-  products: CategoryProps[]
+  products: ProductProps[]
 }> = async () => {
   await db.connect()
   const categories = await CategoryModel.find().lean()
   const products = await ProductModel.find().lean()
   return {
     props: {
-      categories: JSON.parse(JSON.stringify(categories)),
-      products: JSON.parse(JSON.stringify(products)),
+      categories: categories.map(db.convertDocToObj),
+      products: products.map(db.convertDocToObj),
     },
   }
 }
