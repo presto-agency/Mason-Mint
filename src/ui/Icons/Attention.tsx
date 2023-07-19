@@ -6,7 +6,7 @@ import styles from '@/ui/Icons/Icons.module.scss'
 const Attention: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
-      viewBox="0 0 3 10"
+      viewBox="0 0 16 16"
       fill="none"
       className={classNames(styles['icon'], styles['iconAttention'], className)}
     >

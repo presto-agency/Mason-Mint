@@ -39,6 +39,7 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                         alt="Product"
                         width={100}
                         height={100}
+                        style={{ marginRight: '10rem' }}
                       />
                     ) : null}
                   </td>

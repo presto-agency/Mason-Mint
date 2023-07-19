@@ -1,4 +1,7 @@
+import { ObjectId } from 'mongoose'
+
 export type ProductProps = {
+  _id: ObjectId
   id: string
   ProductName: string
   Metal?: string
@@ -26,6 +29,7 @@ type ImagesProps = {
 export type CategoryProps = {
   name?: string
   id?: string
+  _id: ObjectId
   products?: { id: string; name: string }[]
 }
 

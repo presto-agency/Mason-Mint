@@ -2,22 +2,27 @@ import { PageLayout } from '@/app/layouts/PageLayout'
 import { AdminProducts } from '@/modules/Admin'
 import db from '@/utils/db'
 import ProductModel from '../../../models/Product'
+import { ProductProps } from '@/utils/types'
 
-export default function ProductsPage({ products }: { products: string }) {
+type ProductsPageProps = {
+  products: ProductProps[]
+}
+
+export default function ProductsPage({ products }: ProductsPageProps) {
   return (
     <PageLayout>
-      <AdminProducts products={JSON.parse(products)} />
+      <AdminProducts products={products} />
     </PageLayout>
   )
 }
 
 export const getServerSideProps = async () => {
   await db.connect()
-  const products = await ProductModel.find()
+  const products = await ProductModel.find().lean()
   await db.disconnect()
   return {
     props: {
-      products: JSON.stringify(products.map(db.convertDocToObj)),
+      products: products.map(db.convertDocToObj),
     },
   }
 }

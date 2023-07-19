@@ -23,7 +23,7 @@ const ProductCard: FC<ProductCardProps> = ({
   )
   return (
     <Link
-      href={`${routes.public.designs}/${data.id}`}
+      href={`${routes.public.designs}/${data.id}/${data.slug}`}
       className={classNames(
         styles['product'],
         flip ? styles['enable-flip'] : '',
