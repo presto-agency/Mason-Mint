@@ -6,6 +6,7 @@ import CategoryModel from '../../models/Category'
 import ProductModel from '../../models/Product'
 import { CategoryProps, ProductProps } from '@/utils/types'
 import { DesignsContent } from '@/modules/Designs'
+import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 type DesignsProps = {
   categories: CategoryProps[]
@@ -29,8 +30,8 @@ export const getStaticProps: GetStaticProps<{
   const products = await ProductModel.find().lean()
   return {
     props: {
-      categories: categories.map(db.convertDocToObj),
-      products: products.map(db.convertDocToObj),
+      categories: transformObjectsToJson(categories),
+      products: transformObjectsToJson(products),
     },
   }
 }

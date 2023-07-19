@@ -6,6 +6,7 @@ export type ProductProps = {
   specification: SpecificationProps[]
   slug: string
   category?: CategoryProps
+  description?: string
 }
 
 export type SpecificationProps = {

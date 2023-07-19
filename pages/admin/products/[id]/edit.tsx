@@ -5,6 +5,7 @@ import ProductModel from '../../../../models/Product'
 import CategoryModel from '../../../../models/Category'
 import db from '@/utils/db'
 import { CategoryProps, ProductProps } from '@/utils/types'
+import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 export default function ProductEditPage({
   product,
@@ -28,8 +29,8 @@ export const getServerSideProps = async (req: NextApiRequest) => {
   await db.disconnect()
   return {
     props: {
-      product: db.convertDocToObj(product),
-      categories: categories.map(db.convertDocToObj),
+      product: transformObjectsToJson(product),
+      categories: transformObjectsToJson(categories),
     },
   }
 }

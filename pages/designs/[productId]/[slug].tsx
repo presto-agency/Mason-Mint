@@ -5,6 +5,7 @@ import db from '@/utils/db'
 import ProductModel from '../../../models/Product'
 import { PageLayout } from '@/app/layouts/PageLayout'
 import { DesignsDetailContent } from '@/modules/DesignsDetail'
+import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 type ProductDetailProps = {
   product: ProductProps | null
@@ -25,7 +26,7 @@ export const getServerSideProps = async (req: NextApiRequest) => {
   await db.disconnect()
   return {
     props: {
-      product: db.convertDocToObj(product),
+      product: transformObjectsToJson(product),
     },
   }
 }

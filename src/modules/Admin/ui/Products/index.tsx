@@ -35,7 +35,7 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                     {product.Images?.length ? (
                       <img
                         // src={product.Images[0].ImageUrl || ''}
-                        src="/uploads/649eb251a7e3c76fd7827df6/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
+                        src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
                         alt="Product"
                         width={100}
                         height={100}

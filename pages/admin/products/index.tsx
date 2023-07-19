@@ -3,6 +3,7 @@ import { AdminProducts } from '@/modules/Admin'
 import db from '@/utils/db'
 import ProductModel from '../../../models/Product'
 import { ProductProps } from '@/utils/types'
+import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 type ProductsPageProps = {
   products: ProductProps[]
@@ -22,8 +23,7 @@ export const getServerSideProps = async () => {
   await db.disconnect()
   return {
     props: {
-      // products: JSON.parse(JSON.stringify(products)),
-      products: products.map(db.convertDocToObj),
+      products: transformObjectsToJson(products),
     },
   }
 }

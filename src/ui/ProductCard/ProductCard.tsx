@@ -43,7 +43,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 className={classNames(styles['product__side'], styles['front'])}
               >
                 <img
-                  src="/uploads/649eb251a7e3c76fd7827df6/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
+                  src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
                   alt="Alt"
                 />
               </div>
@@ -51,7 +51,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 className={classNames(styles['product__side'], styles['back'])}
               >
                 <img
-                  src="/uploads/649eb251a7e3c76fd7827df6/1-oz-American-Revolution-Round-Antique-Reverse-Max.png"
+                  src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Reverse-Max.png"
                   alt="Alt"
                 />
               </div>
@@ -59,7 +59,7 @@ const ProductCard: FC<ProductCardProps> = ({
           ) : (
             <div className={classNames(styles['product__side'])}>
               <img
-                src="/uploads/649eb251a7e3c76fd7827df6/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
+                src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
                 alt="Alt"
               />
             </div>

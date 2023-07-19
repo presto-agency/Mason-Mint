@@ -31,6 +31,7 @@ type FormProps = {
   specification?: SpecificationProps[]
   Images?: { ImageUrl: string }[]
   slug: string
+  description?: string
 }
 
 const ProductForm: FC<{
@@ -60,6 +61,7 @@ const ProductForm: FC<{
       Thickness: product.specification[0].Thickness,
       category: product.category,
       slug: product.slug,
+      description: product.description || '',
     }),
     [product]
   )
@@ -192,6 +194,21 @@ const ProductForm: FC<{
                   label="Product should have a name*"
                   error={errors['slug']?.message}
                   readOnly
+                />
+              )
+            }}
+          />
+          <Controller
+            control={control}
+            name="description"
+            render={({ field }) => {
+              return (
+                <TextField
+                  {...field}
+                  value={getValues().description}
+                  placeholder="Description"
+                  label="Product can have a some description*"
+                  error={errors['description']?.message}
                 />
               )
             }}

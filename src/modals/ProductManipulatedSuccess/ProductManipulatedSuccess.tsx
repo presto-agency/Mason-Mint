@@ -22,7 +22,8 @@ const ProductManipulatedSuccessModal: FC<ModalWindowProps> = (props) => {
           <ButtonPrimary
             size="small"
             href={routes.private.products}
-            arrows={false}
+            variant="noStroked"
+            backwardArrows
           >
             Back to list
           </ButtonPrimary>

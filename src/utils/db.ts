@@ -1,4 +1,4 @@
-import mongoose, { FlattenMaps, IfAny, Require_id } from 'mongoose'
+import mongoose from 'mongoose'
 
 type connectionProps = {
   isConnected?: boolean | number
@@ -35,30 +35,11 @@ const disconnect = async () => {
   }
 }
 
-const convertDocToObj = (
-  doc: Query<
-    Require_id<FlattenMaps<any>>[] | FlattenMaps<any> extends {
-      _id?: infer U
-    }
-      ? IfAny<
-          U,
-          FlattenMaps<any> & { _id: Types.ObjectId },
-          FlattenMaps<any> &
-            Required<{
-              _id: U
-            }>
-        >
-      : (FlattenMaps<any> & { _id: Types.ObjectId }) | null,
-    any,
-    {},
-    any,
-    'findOne'
-  > & {}
-) => {
-  doc._id = JSON.parse(JSON.stringify(doc._id))
-  return doc
-}
+// const convertDocToObj = (doc: object | null | undefined) => {
+//   doc._id = JSON.parse(JSON.stringify(doc._id))
+//   return doc
+// }
 
-const db = { connect, disconnect, convertDocToObj }
+const db = { connect, disconnect }
 
 export default db
