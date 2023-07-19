@@ -8,6 +8,7 @@ type VideoComponent = {
   loop?: boolean
   muted?: boolean
   src: string
+  poster?: string
 }
 const VideoComponent: FC<VideoComponent> = ({
   className,
@@ -15,6 +16,7 @@ const VideoComponent: FC<VideoComponent> = ({
   loop = true,
   muted = true,
   src = '/video/hero_video_bg-compress.mp4',
+  poster,
 }) => {
   return (
     <video
@@ -23,6 +25,7 @@ const VideoComponent: FC<VideoComponent> = ({
       autoPlay={autoPlay}
       loop={loop}
       muted={muted}
+      poster={poster}
     >
       <source src={src} type="video/mp4" />
     </video>
