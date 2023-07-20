@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ProductProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
 import routes from '@/utils/routes'
+import { detectImages } from '@/utils/data/detectImages'
 
 import styles from './ProductCard.module.scss'
 
@@ -21,6 +22,7 @@ const ProductCard: FC<ProductCardProps> = ({
   const categorySlug = toLoverCaseAndSpacesToHyphen(
     data.category?.name as string
   )
+  // @TODO detect images for display
   return (
     <Link
       href={`${routes.public.designs}/${data.id}/${data.slug}`}
@@ -43,25 +45,22 @@ const ProductCard: FC<ProductCardProps> = ({
                 className={classNames(styles['product__side'], styles['front'])}
               >
                 <img
-                  src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
-                  alt="Alt"
+                  src={detectImages(data.Images, 0)}
+                  alt={data.ProductName}
                 />
               </div>
               <div
                 className={classNames(styles['product__side'], styles['back'])}
               >
                 <img
-                  src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Reverse-Max.png"
-                  alt="Alt"
+                  src={detectImages(data.Images, 1)}
+                  alt={data.ProductName}
                 />
               </div>
             </>
           ) : (
             <div className={classNames(styles['product__side'])}>
-              <img
-                src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
-                alt="Alt"
-              />
+              <img src={detectImages(data.Images, 0)} alt={data.ProductName} />
             </div>
           )}
         </div>

@@ -5,7 +5,7 @@ import Container from '@/app/layouts/Container'
 import ProductList from '@/modules/Designs/ui/ProductList/ProductList'
 import ProductFilter from '@/modules/Designs/ui/ProductFilter/ProductFilter'
 import ProductSearch from '@/modules/Designs/ui/ProductSearch/ProductSearch'
-import { BecomeDistributorSection } from '@/components/BecomeDistributorSection/BecomeDistributorSection'
+import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
 
 import styles from './DesignsContent.module.scss'
 

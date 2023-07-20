@@ -20,7 +20,7 @@ export type SpecificationProps = {
   IraApproved: string
 }
 
-type ImagesProps = {
+export type ImagesProps = {
   ImageUrl?: string
 }
 

@@ -20,7 +20,7 @@ const ContactBody: FC<{ className?: string }> = ({ className }) => {
         </p>
         <ContactInfo className={styles['contactBody__contacts']} />
       </div>
-      <AnimatedElement delay={0.2} className={styles['contactBody__clock_box']}>
+      <AnimatedElement delay={0.3} className={styles['contactBody__clock_box']}>
         <Clock className={styles['contactBody__clock']} />
       </AnimatedElement>
       <p className={styles['contactBody__address_title']}>

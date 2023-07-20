@@ -1,5 +1,21 @@
 .detail{
 	position: relative;
-	padding-top: 175rem;
+	padding-top: 160rem;
 	padding-bottom: 164rem;
+	
+		&__thumbnail{
+			margin-bottom: 152rem;
+		}
+	
+		&__description{
+			margin-bottom: 152rem;
+		}
+	
+		&__gallery{
+			margin-bottom: 160rem;
+		}
+	
+		&__carousel{
+			margin: 160rem 0 158rem;
+		}
 }

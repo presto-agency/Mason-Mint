@@ -8,13 +8,14 @@ import { DesignsDetailContent } from '@/modules/DesignsDetail'
 import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 type ProductDetailProps = {
-  product: ProductProps | null
+  product: ProductProps
+  sameProducts: ProductProps[]
 }
 
-const Index: FC<ProductDetailProps> = ({ product }) => {
+const Index: FC<ProductDetailProps> = ({ product, sameProducts }) => {
   return (
     <PageLayout>
-      <DesignsDetailContent product={product} />
+      <DesignsDetailContent product={product} sameProducts={sameProducts} />
     </PageLayout>
   )
 }
@@ -22,11 +23,25 @@ const Index: FC<ProductDetailProps> = ({ product }) => {
 export const getServerSideProps = async (req: NextApiRequest) => {
   const { query } = req
   await db.connect()
-  const product = await ProductModel.findOne({ id: query.productId }).lean()
+  const product: ProductProps | null = await ProductModel.findOne({
+    id: query.productId,
+  }).lean()
+  let sameProducts: ProductProps[] = []
+  // const filteredSameProducts: ProductProps[] = []
+  if (product && product.category && product.category.id) {
+    sameProducts = (await ProductModel.find({
+      ['category.id']: product.category.id,
+    })
+      .lean()
+      .then((products) =>
+        products.filter((p) => p.id !== query.productId)
+      )) as ProductProps[]
+  }
   await db.disconnect()
   return {
     props: {
       product: transformObjectsToJson(product),
+      sameProducts: transformObjectsToJson(sameProducts),
     },
   }
 }

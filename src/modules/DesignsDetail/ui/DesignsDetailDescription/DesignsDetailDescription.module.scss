@@ -1,0 +1,62 @@
+@import "@/app/styles/variables/breackpoints";
+
+.product{
+	padding-top: 13rem;
+	
+		&__category{
+			display: inline-block;
+			padding: 6rem 12rem;
+			font-size: 12rem;
+			white-space: nowrap;
+			background-color: var(--gray-300);
+			border-radius: 100px;
+		}
+	
+		&__title{
+			margin-top: 25rem;
+			margin-bottom: 10rem;
+		}
+	
+		&__description{
+			padding: 6rem 0;
+			color: var(--gray-800);
+			font-family: var(--font-family-secondary);
+			line-height: 1.563em;
+			
+				&:empty{
+					display: none;
+				}
+		}
+	
+		&__follow{
+			margin: 34rem 0 64rem;
+		}
+	
+		&__list{
+			margin: 0;
+			padding: 8rem 0;
+			list-style-type: none;
+
+				&_item{
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					padding: 13rem 0 14rem;
+					border-bottom: 1rem #E9EAEA solid;
+					
+						@media (width <= $breakpoint-mob) {
+							border-width: 1px;
+						}
+				}
+		}
+	
+		&__label{
+			color: var(--gray-800);
+		}
+	
+		&__value{
+			font-size: 19rem;
+			font-family: var(--font-family-primary);
+		}
+}

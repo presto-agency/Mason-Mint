@@ -5,7 +5,7 @@ import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
-export const BecomeDistributorSection = () => {
+const BecomeDistributorSection = () => {
   return (
     <section className={styles['BecomeDistributorSection']}>
       <Container size={'xl'}>
@@ -35,3 +35,5 @@ export const BecomeDistributorSection = () => {
     </section>
   )
 }
+
+export default BecomeDistributorSection
