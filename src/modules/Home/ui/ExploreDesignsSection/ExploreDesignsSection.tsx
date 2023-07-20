@@ -7,14 +7,7 @@ import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
 import { Controller, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
-import {
-  Dispatch,
-  FC,
-  ReactNode,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react'
+import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
@@ -88,11 +81,6 @@ export const ExploreDesignsSection = () => {
   )
   const [revertAnimation, setRevertAnimation] = useState(true)
   const { width } = useWindowDimensions()
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
 
   const motionPropsText = {
     initial: { opacity: 0 },
@@ -134,7 +122,7 @@ export const ExploreDesignsSection = () => {
                 Explore Our Designs
               </AnimatedText>
             </h2>
-            {isClient && width > 767 ? (
+            {width > 767 ? (
               <>
                 <Swiper
                   style={{ overflow: 'visible' }}
@@ -215,11 +203,13 @@ export const ExploreDesignsSection = () => {
                               />
                             </motion.div>
                           </div>
-                          {isClient && width <= 767 ? (
-                            <SlideInner
-                              title={slide.title}
-                              subtitle={slide.subtitle}
-                            />
+                          {width <= 767 ? (
+                            <motion.div {...motionPropsText}>
+                              <SlideInner
+                                title={slide.title}
+                                subtitle={slide.subtitle}
+                              />
+                            </motion.div>
                           ) : null}
                         </>
                       )}
