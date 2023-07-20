@@ -112,11 +112,11 @@
         width: 56rem;
         height: 56rem;
 
-        &__next{
+        &__prev{
           right: 64rem;
         }
 
-        &__prev{
+        &__next{
           right: 0;
         }
       }
@@ -176,11 +176,11 @@
           right: 0;
           bottom: 0;
 
-          &__next{
+          &__prev{
             right: calc(50% + 6rem);
           }
 
-          &__prev{
+          &__next{
             right: 0;
             left: calc(50% + 6rem);
           }
