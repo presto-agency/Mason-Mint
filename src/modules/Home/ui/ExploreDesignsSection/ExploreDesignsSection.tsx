@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import Container from '@/app/layouts/Container'
 import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
-import { Navigation, Controller, EffectFade } from 'swiper/modules'
+import { Controller, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import {
@@ -17,12 +17,12 @@ import {
 } from 'react'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
-import ArrowSelect from '@/ui/Icons/ArrowSelect'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import type SwiperCore from 'swiper'
 import { slidesExploreDesigns } from '@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent'
+import SliderArrow from '@/ui/SliderArrow/SliderArrow'
 
-type SwiperButtonNextProps = {
+type SwiperButtonProps = {
   children?: ReactNode
   setRevertAnimation: Dispatch<SetStateAction<boolean>>
 }
@@ -32,10 +32,7 @@ type SlideInner = {
   subtitle: string
 }
 
-const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
-  children,
-  setRevertAnimation,
-}) => {
+const SwiperButtonNext: FC<SwiperButtonProps> = ({ setRevertAnimation }) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
@@ -46,20 +43,16 @@ const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
   }
 
   return (
-    <button
+    <div
       className={classNames(styles['arrowDesign'], styles['arrowDesign__next'])}
       onClick={handleClick}
     >
-      {children}
-      <ArrowSelect className={styles['insideArrow']} />
-    </button>
+      <SliderArrow type="prev" />
+    </div>
   )
 }
 
-const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
-  children,
-  setRevertAnimation,
-}) => {
+const SwiperButtonPrev: FC<SwiperButtonProps> = ({ setRevertAnimation }) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
@@ -70,13 +63,12 @@ const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
   }
 
   return (
-    <button
+    <div
       className={classNames(styles['arrowDesign'], styles['arrowDesign__prev'])}
       onClick={handleClick}
     >
-      {children}
-      <ArrowSelect className={styles['insideArrow']} />
-    </button>
+      <SliderArrow />
+    </div>
   )
 }
 
@@ -104,9 +96,16 @@ export const ExploreDesignsSection = () => {
 
   const motionPropsText = {
     initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.1, delay: 0.3 } },
-    exit: { opacity: 0, transition: { duration: 0.2 }, delay: 0.5 },
-    transition: { duration: 0.1 },
+    animate: {
+      opacity: 1,
+      transition: { duration: 0.2, delay: 0.4, ease: [0.55, 0.61, 0, 1.04] },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.2, ease: [0.55, 0.61, 0, 1.04] },
+      delay: 0.1,
+    },
+    transition: { duration: 0.1, ease: [0.55, 0.61, 0, 1.04] },
   }
 
   const motionProps = {
@@ -125,10 +124,6 @@ export const ExploreDesignsSection = () => {
     transition: { ...motionProps.transition, delay: 0 },
   }
 
-  useEffect(() => {
-    console.log(motionPropsForBackCoin)
-  }, [])
-
   return (
     <section className={styles['ExploreDesignsSection']}>
       <Container>
@@ -145,7 +140,6 @@ export const ExploreDesignsSection = () => {
                   style={{ overflow: 'visible' }}
                   className={styles['sliderText']}
                   modules={[Controller]}
-                  speed={1000}
                   onSwiper={setControlledSwiper}
                   loop={true}
                   slidesPerView={1}
@@ -176,7 +170,7 @@ export const ExploreDesignsSection = () => {
             <Swiper
               style={{ overflow: 'visible' }}
               className={styles['sliderCoin']}
-              modules={[Navigation, Controller, EffectFade]}
+              modules={[Controller, EffectFade]}
               speed={1000}
               effect={'fade'}
               allowTouchMove={false}
@@ -204,6 +198,7 @@ export const ExploreDesignsSection = () => {
                                 className={styles['coinBack']}
                                 src={slide.url.back}
                                 alt="coin back"
+                                quality={100}
                               />
                             </motion.div>
                             <motion.div
@@ -216,6 +211,7 @@ export const ExploreDesignsSection = () => {
                                 className={styles['coinFront']}
                                 src={slide.url.front}
                                 alt="coin front"
+                                quality={100}
                               />
                             </motion.div>
                           </div>
