@@ -29,6 +29,7 @@ const productSchema = new mongoose.Schema({
   specification: [specificationSchema],
   slug: { type: String, required: true, unique: true },
   category: { id: String, name: String },
+  description: String,
 })
 
 const Product =

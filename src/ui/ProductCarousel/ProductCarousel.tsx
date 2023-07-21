@@ -1,9 +1,10 @@
 import { FC, Fragment, useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { ProductProps } from '@/utils/types'
 import ProductCard from '@/ui/ProductCard/ProductCard'
-import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 
 import styles from './ProductCarousel.module.scss'
 
@@ -11,12 +12,20 @@ type ProductCarouselProps = {
   data?: ProductProps[]
   className?: string
   title?: string
+  titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  titleWithBlueDot?: boolean
+  subtitle?: string
+  showResults?: boolean
 }
 
 const ProductCarousel: FC<ProductCarouselProps> = ({
   data,
   className,
   title,
+  titleTag = 'h3',
+  titleWithBlueDot = true,
+  subtitle,
+  showResults = true,
 }) => {
   const [countOfActiveSlides, setCountOfActiveSlides] = useState<number>(4)
   const [gap, setGap] = useState<number>(32)
@@ -51,14 +60,29 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
   return (
     <div className={classNames(styles['carousel'], className)}>
       <div className="row">
-        <div className="col-md-3 order-md-2">
-          <p className={styles['carousel__label']}>
-            <AnimatedText>{`${data?.length} results`}</AnimatedText>
-          </p>
-        </div>
+        {showResults && (
+          <div className="col-md-3 order-md-2">
+            <p className={styles['carousel__label']}>
+              <AnimatedText>{`${data?.length} results`}</AnimatedText>
+            </p>
+          </div>
+        )}
         <div className="col-md-9 order-md-1">
-          <p className={classNames(styles['carousel__title'], 'h3')}>
-            <AnimatedText withBlueDot>{`${title}`}</AnimatedText>
+          {subtitle && (
+            <p className={styles['carousel__subtitle']}>
+              <AnimatedText>{subtitle}</AnimatedText>
+            </p>
+          )}
+          <p
+            className={classNames(
+              styles['carousel__title'],
+              styles[titleTag],
+              titleTag
+            )}
+          >
+            <AnimatedText
+              withBlueDot={titleWithBlueDot}
+            >{`${title}`}</AnimatedText>
           </p>
         </div>
       </div>

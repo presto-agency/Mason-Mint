@@ -22,7 +22,7 @@
 			overflow: hidden;
 			background-repeat: no-repeat;
 			background-size: 100% 100%;
-			border: 1px var(--gray-200) solid;
+			border: 1rem var(--gray-200) solid;
 			border-radius: 50%;
 			perspective: 500px;
 			pointer-events: none;
@@ -31,6 +31,7 @@
 					width: 144rem;
 					height: 144rem;
 					margin: 0;
+					border-width: 1px;
 				}
 			
 				&_item{
@@ -72,13 +73,15 @@
 				}
 		}
 	
-		&.enable-flip:hover{
-			.product{
+		@media (width > $breakpoint-tablet) {
+			&.enable-flip:hover{
+				.product{
 					&__thumb{
-							&_item{
-								transform: rotateY(180deg);
-							}
+						&_item{
+							transform: rotateY(180deg);
+						}
 					}
+				}
 			}
 		}
 	

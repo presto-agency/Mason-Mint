@@ -15,6 +15,7 @@ type TextFieldProps = {
   type?: string | 'text' | 'email' | 'tel'
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
   element?: string | 'input' | 'textarea'
+  readOnly?: boolean
 }
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
@@ -29,6 +30,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       onChange,
       element = 'input',
       value,
+      readOnly = false,
     }: TextFieldProps,
     ref: ForwardedRef<HTMLInputElement>
   ) => {
@@ -46,7 +48,13 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     }
 
     return (
-      <label className={classNames(styles['inputField'], className)}>
+      <label
+        className={classNames(
+          styles['inputField'],
+          readOnly ? styles['readonly'] : '',
+          className
+        )}
+      >
         {element === 'textarea' ? (
           <>
             <textarea
@@ -56,6 +64,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
               onChange={handleChange}
               ref={textAreaRef}
               value={value}
+              readOnly={readOnly}
             />
             <Resize className={styles['inputField__item_resize']} />
           </>
@@ -68,6 +77,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
             ref={ref}
             value={value}
             onChange={handleChange}
+            readOnly={readOnly}
           />
         )}
         {label && (

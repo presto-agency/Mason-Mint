@@ -4,10 +4,6 @@ type connectionProps = {
   isConnected?: boolean | number
 }
 
-type docProps = {
-  _id: object | string
-}
-
 const connection: connectionProps = {}
 
 const connect = async () => {
@@ -39,11 +35,11 @@ const disconnect = async () => {
   }
 }
 
-const convertDocToObj = (doc: docProps) => {
-  doc._id = doc._id.toString()
-  return doc
-}
+// const convertDocToObj = (doc: object | null | undefined) => {
+//   doc._id = JSON.parse(JSON.stringify(doc._id))
+//   return doc
+// }
 
-const db = { connect, disconnect, convertDocToObj }
+const db = { connect, disconnect }
 
 export default db

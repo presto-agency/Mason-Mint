@@ -6,6 +6,7 @@ export type ProductProps = {
   specification: SpecificationProps[]
   slug: string
   category?: CategoryProps
+  description?: string
 }
 
 export type SpecificationProps = {
@@ -19,7 +20,7 @@ export type SpecificationProps = {
   IraApproved: string
 }
 
-type ImagesProps = {
+export type ImagesProps = {
   ImageUrl?: string
 }
 

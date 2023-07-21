@@ -12,9 +12,9 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
       <Container>
         <div className={styles['admin__table_header']}>
           <h3 className="h3">Products</h3>
-          <ButtonPrimary variant="white" size="small">
-            Create project
-          </ButtonPrimary>
+          {/*<ButtonPrimary variant="white" size="small">*/}
+          {/*  Create project*/}
+          {/*</ButtonPrimary>*/}
         </div>
         <table className={styles['admin__table']}>
           <thead>
@@ -35,10 +35,11 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                     {product.Images?.length ? (
                       <img
                         // src={product.Images[0].ImageUrl || ''}
-                        src="/uploads/649eb251a7e3c76fd7827df6/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
+                        src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
                         alt="Product"
                         width={100}
                         height={100}
+                        style={{ marginRight: '10rem' }}
                       />
                     ) : null}
                   </td>

@@ -4,20 +4,19 @@ import { ProductEdit } from '@/modules/Admin'
 import ProductModel from '../../../../models/Product'
 import CategoryModel from '../../../../models/Category'
 import db from '@/utils/db'
+import { CategoryProps, ProductProps } from '@/utils/types'
+import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 export default function ProductEditPage({
   product,
   categories,
 }: {
-  product: string
-  categories: string
+  product: ProductProps
+  categories: CategoryProps[]
 }) {
   return (
     <PageLayout>
-      <ProductEdit
-        product={JSON.parse(product)}
-        categories={JSON.parse(categories)}
-      />
+      <ProductEdit product={product} categories={categories} />
     </PageLayout>
   )
 }
@@ -25,13 +24,13 @@ export default function ProductEditPage({
 export const getServerSideProps = async (req: NextApiRequest) => {
   const { query } = req
   await db.connect()
-  const product = await ProductModel.findOne({ id: query.id })
-  const categories = await CategoryModel.find()
+  const product = await ProductModel.findOne({ id: query.id }).lean()
+  const categories = await CategoryModel.find().lean()
   await db.disconnect()
   return {
     props: {
-      product: JSON.stringify(db.convertDocToObj(product)),
-      categories: JSON.stringify(categories.map(db.convertDocToObj)),
+      product: transformObjectsToJson(product),
+      categories: transformObjectsToJson(categories),
     },
   }
 }

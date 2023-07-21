@@ -8,3 +8,9 @@ export default function Contact() {
     </PageLayout>
   )
 }
+
+export const getStaticProps = () => {
+  return {
+    props: {},
+  }
+}

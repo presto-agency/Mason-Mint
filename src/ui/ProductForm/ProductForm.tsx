@@ -1,4 +1,6 @@
 import { FC, Fragment, useCallback, useMemo, useState } from 'react'
+import { ObjectId } from 'mongoose'
+import axios from 'axios'
 import dynamic from 'next/dynamic'
 import { CategoryProps, ProductProps, SpecificationProps } from '@/utils/types'
 import { Controller, useForm } from 'react-hook-form'
@@ -7,12 +9,12 @@ import TextField from '@/ui/TextField/TextField'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { OptionInterface } from '@/utils/types'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
+import { generateSlug } from '@/utils/string/generateSlug'
 const SelectField = dynamic(() => import('@/ui/SelectField/SelectField'), {
   ssr: false,
 })
 
 import styles from './ProductForm.module.scss'
-import axios from 'axios'
 
 type FormProps = {
   ProductName: string
@@ -28,6 +30,8 @@ type FormProps = {
   category?: CategoryProps
   specification?: SpecificationProps[]
   Images?: { ImageUrl: string }[]
+  slug: string
+  description?: string
 }
 
 const ProductForm: FC<{
@@ -56,7 +60,8 @@ const ProductForm: FC<{
       Series: product.specification[0].Series,
       Thickness: product.specification[0].Thickness,
       category: product.category,
-      Images: [],
+      slug: product.slug,
+      description: product.description || '',
     }),
     [product]
   )
@@ -82,7 +87,10 @@ const ProductForm: FC<{
 
   const handleCategoryChange = useCallback(
     (category: OptionInterface | null) => {
-      setValue('category', { name: category?.label, id: category?.value })
+      setValue('category', {
+        name: category?.label,
+        id: category?.value,
+      })
       setSelectedCategory(category as OptionInterface)
     },
     [setValue, setSelectedCategory]
@@ -127,27 +135,31 @@ const ProductForm: FC<{
     delete formData.Fineness
     delete formData.IraApproved
 
-    const fd = new FormData()
-    for (const image of uploadedImages) {
-      fd.append('images', image)
-    }
-    // @TODO Detect and display errors
-    await axios
-      .post(`/api/files/${product.id}/upload`, fd)
-      .then(({ data: { files = [], success = false, error = null } }) => {
-        if (error) {
-          console.error(error)
-        }
+    formData.slug = generateSlug(formData.slug)
 
-        if (success) {
-          const images: { ImageUrl: string }[] = []
-          Object.values(files).map((file) => {
-            images.push({ ImageUrl: file as string })
-          })
-          formData.Images = images
-        }
-      })
-      .catch((error) => console.error(error))
+    if (uploadedImages.length > 0) {
+      const fd = new FormData()
+      for (const image of uploadedImages) {
+        fd.append('images', image)
+      }
+      // @TODO Detect and display errors
+      await axios
+        .post(`/api/files/${product.id}/upload`, fd)
+        .then(({ data: { files = [], success = false, error = null } }) => {
+          if (error) {
+            console.error(error)
+          }
+
+          if (success) {
+            const images: { ImageUrl: string }[] = []
+            Object.values(files).map((file) => {
+              images.push({ ImageUrl: file as string })
+            })
+            formData.Images = images
+          }
+        })
+        .catch((error) => console.error(error))
+    }
     ;(await onValues) && onValues(formData as ProductProps)
   }
 
@@ -166,6 +178,37 @@ const ProductForm: FC<{
                   placeholder="Product name"
                   label="Product should have a name*"
                   error={errors['ProductName']?.message}
+                />
+              )
+            }}
+          />
+          <Controller
+            control={control}
+            name="slug"
+            render={({ field }) => {
+              return (
+                <TextField
+                  {...field}
+                  value={getValues().slug}
+                  placeholder="Slug"
+                  label="Product should have a name*"
+                  error={errors['slug']?.message}
+                  readOnly
+                />
+              )
+            }}
+          />
+          <Controller
+            control={control}
+            name="description"
+            render={({ field }) => {
+              return (
+                <TextField
+                  {...field}
+                  value={getValues().description}
+                  placeholder="Description"
+                  label="Product can have a some description*"
+                  error={errors['description']?.message}
                 />
               )
             }}

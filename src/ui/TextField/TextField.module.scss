@@ -11,6 +11,10 @@
 			padding-bottom: 28rem;
 		}
 	
+		&.readonly{
+			pointer-events: none;
+		}
+	
 		&__item{
 			position: relative;
 			width: 100%;
@@ -55,6 +59,11 @@
 						& ~ [class*="__label"]{
 							color: var(--primary-color);
 						}
+				}
+			
+				&[readonly]{
+					color: var(--gray-800);
+					pointer-events: none;
 				}
 		}
 	

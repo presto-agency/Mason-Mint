@@ -5,7 +5,7 @@ import { IntroSection } from './IntroSection/IntroSection'
 import { CustomDesignsSection } from './CustomDesignsSection/CustomDesignsSection'
 import styles from './HomeContent.module.scss'
 import { FAQSection } from './FAQSection/FAQSection'
-import { BecomeDistributorSection } from '@/components/BecomeDistributorSection/BecomeDistributorSection'
+import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
 import SellSection from '@/modules/Home/ui/SellSection/SellSection'
 import { ExploreDesignsSection } from './ExploreDesignsSection/ExploreDesignsSection' // Regular import
 

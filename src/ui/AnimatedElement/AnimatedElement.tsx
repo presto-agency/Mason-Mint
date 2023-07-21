@@ -26,7 +26,7 @@ const AnimatedElement: FC<AnimatedElementProps> = ({
       y: 0,
       transition: {
         ease: 'anticipate',
-        duration: 2,
+        duration: 1,
         delay,
       },
     },

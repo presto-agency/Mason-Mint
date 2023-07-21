@@ -10,9 +10,30 @@
 		}
 	
 		&__title{
-			&:empty{
-				display: none;
-			}
+				&:empty{
+					display: none;
+				}
+			
+				&.h2{
+					margin-bottom: 28rem;
+				}
+		}
+	
+		&__subtitle{
+			margin-bottom: 18rem;
+			color: var(--gray-800);
+			font-weight: 500;
+			font-family: var(--font-family-primary);
+			letter-spacing: -.01em;
+			text-transform: lowercase;
+			
+				@media (width <= $breakpoint-mob) {
+					margin-bottom: 13rem;
+				}
+			
+				&:empty{
+					display: none;
+				}
 		}
 	
 		&__label{

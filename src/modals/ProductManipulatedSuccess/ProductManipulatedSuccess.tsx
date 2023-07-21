@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useRouter } from 'next/router'
 import ModalWindow, { ModalWindowProps } from '@/ui/ModalWindow/ModalWindow'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import routes from '@/utils/routes'
@@ -6,6 +7,13 @@ import routes from '@/utils/routes'
 import styles from './ProductManipulatedSuccess.module.scss'
 
 const ProductManipulatedSuccessModal: FC<ModalWindowProps> = (props) => {
+  const router = useRouter()
+
+  const handleClose = () => {
+    props.onClose()
+    router.reload()
+  }
+
   return (
     <ModalWindow {...props}>
       <div className={styles['modal']}>
@@ -14,14 +22,15 @@ const ProductManipulatedSuccessModal: FC<ModalWindowProps> = (props) => {
           <ButtonPrimary
             size="small"
             href={routes.private.products}
-            arrows={false}
+            variant="noStroked"
+            backwardArrows
           >
             Back to list
           </ButtonPrimary>
           <ButtonPrimary
             size="small"
             variant="blue"
-            onClick={() => props.onClose()}
+            onClick={handleClose}
             arrows={false}
           >
             Continue on this page
