@@ -4,27 +4,24 @@ import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import Container from '@/app/layouts/Container'
 import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
-import { Navigation, Controller, EffectFade } from 'swiper/modules'
+import { Controller, EffectCreative } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
-import {
-  Dispatch,
-  FC,
-  ReactNode,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react'
+import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
-import ArrowSelect from '@/ui/Icons/ArrowSelect'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import type SwiperCore from 'swiper'
 import { slidesExploreDesigns } from '@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent'
+import SliderArrow from '@/ui/SliderArrow/SliderArrow'
 
-type SwiperButtonNextProps = {
+type SwiperButtonProps = {
   children?: ReactNode
   setRevertAnimation: Dispatch<SetStateAction<boolean>>
+  setIsFirstSlide: Dispatch<SetStateAction<boolean>>
+  setIsLastSlide: Dispatch<SetStateAction<boolean>>
+  isFirstSlide?: boolean
+  isLastSlide?: boolean
 }
 
 type SlideInner = {
@@ -32,51 +29,61 @@ type SlideInner = {
   subtitle: string
 }
 
-const SwiperButtonNext: FC<SwiperButtonNextProps> = ({
-  children,
+const SwiperButtonNext: FC<SwiperButtonProps> = ({
   setRevertAnimation,
+  setIsLastSlide,
+  setIsFirstSlide,
+  isLastSlide,
 }) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
-    setRevertAnimation(true)
-    setTimeout(() => {
-      swiper.slideNext()
-    }, 100)
+    if (swiper) {
+      setRevertAnimation(true)
+      setTimeout(() => {
+        swiper.slideNext()
+        setIsLastSlide(swiper.isEnd)
+        setIsFirstSlide(swiper.isBeginning)
+      }, 100)
+    }
   }
 
   return (
-    <button
+    <div
       className={classNames(styles['arrowDesign'], styles['arrowDesign__next'])}
       onClick={handleClick}
     >
-      {children}
-      <ArrowSelect className={styles['insideArrow']} />
-    </button>
+      <SliderArrow disabled={isLastSlide} />
+    </div>
   )
 }
 
-const SwiperButtonPrev: FC<SwiperButtonNextProps> = ({
-  children,
+const SwiperButtonPrev: FC<SwiperButtonProps> = ({
   setRevertAnimation,
+  setIsLastSlide,
+  setIsFirstSlide,
+  isFirstSlide,
 }) => {
   const swiper = useSwiper()
 
   const handleClick = () => {
-    setRevertAnimation(false)
-    setTimeout(() => {
-      swiper.slidePrev()
-    }, 100)
+    if (swiper) {
+      setRevertAnimation(false)
+      setTimeout(() => {
+        swiper.slidePrev()
+        setIsLastSlide(swiper.isEnd)
+        setIsFirstSlide(swiper.isBeginning)
+      }, 100)
+    }
   }
 
   return (
-    <button
+    <div
       className={classNames(styles['arrowDesign'], styles['arrowDesign__prev'])}
       onClick={handleClick}
     >
-      {children}
-      <ArrowSelect className={styles['insideArrow']} />
-    </button>
+      <SliderArrow disabled={isFirstSlide} type="prev" />
+    </div>
   )
 }
 
@@ -95,28 +102,43 @@ export const ExploreDesignsSection = () => {
     null
   )
   const [revertAnimation, setRevertAnimation] = useState(true)
+  const [isFirstSlide, setIsFirstSlide] = useState(true)
+  const [isLastSlide, setIsLastSlide] = useState(false)
   const { width } = useWindowDimensions()
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
 
   const motionPropsText = {
-    initial: { opacity: 0 },
-    animate: { opacity: 1, transition: { duration: 0.1, delay: 0.3 } },
-    exit: { opacity: 0, transition: { duration: 0.2 }, delay: 0.5 },
-    transition: { duration: 0.1 },
+    initial: revertAnimation
+      ? { opacity: 0, y: '-20rem' }
+      : { opacity: 0, y: '20rem' },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, delay: 0.4, ease: [0.55, 0.61, 0, 1.04] },
+    },
+    exit: revertAnimation
+      ? {
+          opacity: 0,
+          transition: { duration: 1, ease: [0.55, 0.61, 0, 1.04] },
+          y: '20rem',
+          delay: 0.1,
+        }
+      : {
+          opacity: 0,
+          transition: { duration: 1, ease: [0.55, 0.61, 0, 1.04] },
+          y: '-20rem',
+          delay: 0.1,
+        },
+    transition: { duration: 1, ease: [0.55, 0.61, 0, 1.04] },
   }
 
   const motionProps = {
     initial: revertAnimation
-      ? { rotate: 75, x: 200, opacity: 0 }
-      : { rotate: -75, x: -200, opacity: 0 },
-    animate: { rotate: 0, x: 0, opacity: 1 },
-    exit: revertAnimation
       ? { rotate: -75, x: -200, opacity: 0 }
       : { rotate: 75, x: 200, opacity: 0 },
+    animate: { rotate: 0, x: 0, opacity: 1 },
+    exit: revertAnimation
+      ? { rotate: 75, x: 200, opacity: 0 }
+      : { rotate: -75, x: -200, opacity: 0 },
     transition: { duration: 1, delay: 0.1 },
   }
 
@@ -124,10 +146,6 @@ export const ExploreDesignsSection = () => {
     ...motionProps,
     transition: { ...motionProps.transition, delay: 0 },
   }
-
-  useEffect(() => {
-    console.log(motionPropsForBackCoin)
-  }, [])
 
   return (
     <section className={styles['ExploreDesignsSection']}>
@@ -139,18 +157,25 @@ export const ExploreDesignsSection = () => {
                 Explore Our Designs
               </AnimatedText>
             </h2>
-            {isClient && width > 767 ? (
+            {width > 767 ? (
               <>
                 <Swiper
                   style={{ overflow: 'visible' }}
                   className={styles['sliderText']}
-                  modules={[Controller]}
-                  speed={1000}
+                  modules={[Controller, EffectCreative]}
                   onSwiper={setControlledSwiper}
-                  loop={true}
+                  effect={'creative'}
+                  virtualTranslate={true}
+                  creativeEffect={{
+                    prev: {
+                      translate: [0, 0, 0],
+                    },
+                    next: {
+                      translate: [0, 0, 0],
+                    },
+                  }}
                   slidesPerView={1}
                   allowTouchMove={false}
-                  direction={'vertical'}
                 >
                   {slidesExploreDesigns.map((slide) => (
                     <SwiperSlide key={slide.id}>
@@ -176,11 +201,19 @@ export const ExploreDesignsSection = () => {
             <Swiper
               style={{ overflow: 'visible' }}
               className={styles['sliderCoin']}
-              modules={[Navigation, Controller, EffectFade]}
+              modules={[Controller, EffectCreative]}
               speed={1000}
-              effect={'fade'}
+              effect={'creative'}
+              virtualTranslate={true}
+              creativeEffect={{
+                prev: {
+                  translate: [0, 0, 0],
+                },
+                next: {
+                  translate: [0, 0, 0],
+                },
+              }}
               allowTouchMove={false}
-              loop={true}
               controller={{ control: controlledSwiper }}
               slidesPerView={1}
             >
@@ -204,6 +237,7 @@ export const ExploreDesignsSection = () => {
                                 className={styles['coinBack']}
                                 src={slide.url.back}
                                 alt="coin back"
+                                quality={100}
                               />
                             </motion.div>
                             <motion.div
@@ -216,14 +250,17 @@ export const ExploreDesignsSection = () => {
                                 className={styles['coinFront']}
                                 src={slide.url.front}
                                 alt="coin front"
+                                quality={100}
                               />
                             </motion.div>
                           </div>
-                          {isClient && width <= 767 ? (
-                            <SlideInner
-                              title={slide.title}
-                              subtitle={slide.subtitle}
-                            />
+                          {width <= 767 ? (
+                            <motion.div {...motionPropsText}>
+                              <SlideInner
+                                title={slide.title}
+                                subtitle={slide.subtitle}
+                              />
+                            </motion.div>
                           ) : null}
                         </>
                       )}
@@ -231,8 +268,18 @@ export const ExploreDesignsSection = () => {
                   )}
                 </SwiperSlide>
               ))}
-              <SwiperButtonPrev setRevertAnimation={setRevertAnimation} />
-              <SwiperButtonNext setRevertAnimation={setRevertAnimation} />
+              <SwiperButtonPrev
+                setRevertAnimation={setRevertAnimation}
+                setIsFirstSlide={setIsFirstSlide}
+                setIsLastSlide={setIsLastSlide}
+                isFirstSlide={isFirstSlide}
+              />
+              <SwiperButtonNext
+                setRevertAnimation={setRevertAnimation}
+                setIsFirstSlide={setIsFirstSlide}
+                setIsLastSlide={setIsLastSlide}
+                isLastSlide={isLastSlide}
+              />
             </Swiper>
           </div>
         </div>

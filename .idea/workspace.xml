@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/SliderArrow/SliderArrow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SliderArrow/SliderArrow.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="SCSS File" />
-        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -96,27 +97,6 @@
       <workItem from="1688996388473" duration="613000" />
       <workItem from="1689145401691" duration="52286000" />
       <workItem from="1689577119846" duration="71124000" />
-    </task>
-    <task id="LOCAL-00001" summary="fix: buttonPrimary">
-      <created>1687511469937</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1687511469937</updated>
-    </task>
-    <task id="LOCAL-00002" summary="feat: animation Backgroundimage">
-      <created>1687530270978</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1687530270978</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fix: buttonPrimary">
-      <created>1687773141468</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1687773141468</updated>
     </task>
     <task id="LOCAL-00004" summary="fix: header some fixes">
       <created>1687807072840</created>
@@ -440,7 +420,28 @@
       <option name="project" value="LOCAL" />
       <updated>1689766103052</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fix: swiper #4">
+      <created>1689780515511</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1689780515513</updated>
+    </task>
+    <task id="LOCAL-00051" summary="feat: add sliderArrow component">
+      <created>1689861573044</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1689861573044</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fix: animation mobile fix">
+      <created>1689862906614</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1689862906614</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,9 +460,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: some footer fixes" />
-    <MESSAGE value="feat: add parallaxSection" />
-    <MESSAGE value="feat: add storySection" />
     <MESSAGE value="feat: add storySection img" />
     <MESSAGE value="feat: add filter" />
     <MESSAGE value="fix: refactor filter" />
@@ -484,7 +482,10 @@
     <MESSAGE value="fix: type error swiper" />
     <MESSAGE value="fix: type error swiper #2" />
     <MESSAGE value="fix: type error swiper #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: type error swiper #3" />
+    <MESSAGE value="fix: swiper #4" />
+    <MESSAGE value="feat: add sliderArrow component" />
+    <MESSAGE value="fix: animation mobile fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: animation mobile fix" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
