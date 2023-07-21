@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
 
 import styles from './AnimateScaleBG.module.scss'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 
 const motionProps = {
   initial: { scale: 1.1, opacity: 0 },
@@ -30,9 +30,11 @@ const AnimateScaleBg: FC<{ pictures: string[] }> = ({ pictures }) => {
               className={styles['AnimateScaleBG__container']}
               {...motionProps}
             >
-              <Image
+              <BackgroundImage
                 className={styles['AnimateScaleBG__container_picture']}
                 src={picture}
+                cover
+                parallax={true}
                 alt="coin picture"
                 fill={true}
                 sizes="100%"
