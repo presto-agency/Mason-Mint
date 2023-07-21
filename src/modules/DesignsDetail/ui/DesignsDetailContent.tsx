@@ -29,52 +29,49 @@ const ProductCarousel = dynamic(
 
 import styles from './DesignsDetailContent.module.scss'
 
-type DesignsDetailContentProps = {
-  product: ProductProps
-  sameProducts: ProductProps[]
-}
+// type DesignsDetailContentProps = {
+//   product: ProductProps
+//   sameProducts: ProductProps[]
+// }
 
-const DesignsDetailContent: FC<DesignsDetailContentProps> = ({
-  product,
-  sameProducts,
-}) => {
-  // const {
-  //   query: { productId },
-  // } = useRouter()
-  // const [product, setProduct] = useState<ProductProps | null>(null)
-  // const [sameProducts, setSameProducts] = useState<ProductProps[]>([])
-  //
-  // useEffect(() => {
-  //   const fetchProduct = async () => {
-  //     try {
-  //       const res = await axios.get(`/api/products/${productId}`)
-  //       setProduct(res.data.data)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-  //
-  //   fetchProduct()
-  // }, [productId])
-  //
-  // useEffect(() => {
-  //   const fetchSameProducts = async () => {
-  //     if (product) {
-  //       try {
-  //         const res = await axios.get(
-  //           `/api/products?category=${product?.category?.id}`
-  //         )
-  //         setSameProducts(
-  //           res.data.data.filter((p: ProductProps) => p.id !== productId)
-  //         )
-  //       } catch (error) {
-  //         console.log(error)
-  //       }
-  //     }
-  //   }
-  //
-  //   fetchSameProducts()
-  // }, [product])
+const DesignsDetailContent = () => {
+  const {
+    query: { productId },
+  } = useRouter()
+  const [product, setProduct] = useState<ProductProps | null>(null)
+  const [sameProducts, setSameProducts] = useState<ProductProps[]>([])
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const res = await axios.get(`/api/products/${productId}`)
+        setProduct(res.data.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchProduct()
+  }, [productId])
+
+  useEffect(() => {
+    const fetchSameProducts = async () => {
+      if (product) {
+        try {
+          const res = await axios.get(
+            `/api/products?category=${product?.category?.id}`
+          )
+          setSameProducts(
+            res.data.data.filter((p: ProductProps) => p.id !== productId)
+          )
+        } catch (error) {
+          console.log(error)
+        }
+      }
+    }
+
+    fetchSameProducts()
+  }, [product, productId])
 
   return (
     <main className={styles['detail']}>
@@ -107,10 +104,12 @@ const DesignsDetailContent: FC<DesignsDetailContentProps> = ({
             )}
           </div>
         </div>
-        <DesignsDetailGallery
-          className={styles['detail__gallery']}
-          product={product}
-        />
+        {product && (
+          <DesignsDetailGallery
+            className={styles['detail__gallery']}
+            product={product}
+          />
+        )}
         {sameProducts.length > 0 && (
           <ProductCarousel
             className={styles['detail__carousel']}
