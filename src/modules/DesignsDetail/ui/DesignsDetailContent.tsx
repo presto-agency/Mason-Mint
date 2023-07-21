@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, FC } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -29,44 +29,52 @@ const ProductCarousel = dynamic(
 
 import styles from './DesignsDetailContent.module.scss'
 
-const DesignsDetailContent = () => {
-  const {
-    query: { productId },
-  } = useRouter()
-  const [product, setProduct] = useState<ProductProps | null>(null)
-  const [sameProducts, setSameProducts] = useState<ProductProps[]>([])
+type DesignsDetailContentProps = {
+  product: ProductProps
+  sameProducts: ProductProps[]
+}
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const res = await axios.get(`/api/products/${productId}`)
-        setProduct(res.data.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    fetchProduct()
-  }, [productId])
-
-  useEffect(() => {
-    const fetchSameProducts = async () => {
-      if (product) {
-        try {
-          const res = await axios.get(
-            `/api/products?category=${product?.category?.id}`
-          )
-          setSameProducts(
-            res.data.data.filter((p: ProductProps) => p.id !== productId)
-          )
-        } catch (error) {
-          console.log(error)
-        }
-      }
-    }
-
-    fetchSameProducts()
-  }, [product])
+const DesignsDetailContent: FC<DesignsDetailContentProps> = ({
+  product,
+  sameProducts,
+}) => {
+  // const {
+  //   query: { productId },
+  // } = useRouter()
+  // const [product, setProduct] = useState<ProductProps | null>(null)
+  // const [sameProducts, setSameProducts] = useState<ProductProps[]>([])
+  //
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     try {
+  //       const res = await axios.get(`/api/products/${productId}`)
+  //       setProduct(res.data.data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
+  //
+  //   fetchProduct()
+  // }, [productId])
+  //
+  // useEffect(() => {
+  //   const fetchSameProducts = async () => {
+  //     if (product) {
+  //       try {
+  //         const res = await axios.get(
+  //           `/api/products?category=${product?.category?.id}`
+  //         )
+  //         setSameProducts(
+  //           res.data.data.filter((p: ProductProps) => p.id !== productId)
+  //         )
+  //       } catch (error) {
+  //         console.log(error)
+  //       }
+  //     }
+  //   }
+  //
+  //   fetchSameProducts()
+  // }, [product])
 
   return (
     <main className={styles['detail']}>
