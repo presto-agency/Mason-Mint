@@ -1,20 +1,17 @@
-import styles from './ExploreDesignsSection.module.scss'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import Container from '@/app/layouts/Container'
 import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
 import { Controller, EffectCreative } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/effect-fade'
 import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
-import type SwiperCore from 'swiper'
 import { slidesExploreDesigns } from '@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent'
 import SliderArrow from '@/ui/SliderArrow/SliderArrow'
 
+import type SwiperCore from 'swiper'
 type SwiperButtonProps = {
   children?: ReactNode
   setRevertAnimation: Dispatch<SetStateAction<boolean>>
@@ -23,11 +20,13 @@ type SwiperButtonProps = {
   isFirstSlide?: boolean
   isLastSlide?: boolean
 }
-
 type SlideInner = {
   title: string
   subtitle: string
 }
+
+import 'swiper/css'
+import styles from './ExploreDesignsSection.module.scss'
 
 const SwiperButtonNext: FC<SwiperButtonProps> = ({
   setRevertAnimation,

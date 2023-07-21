@@ -2,8 +2,10 @@
 
 .sellSection{
   position: relative;
-  margin: 164rem 0;
-
+  height: 100vh;
+  padding: 143rem 0 50rem;
+  overflow: hidden;
+  
   &::before{
     position: absolute;
     top: 10rem;
@@ -18,22 +20,34 @@
   }
 
   &__content{
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 0 112rem;
 
-    &_left{
-      .image{
-        width: 528rem;
-        height: 528rem;
-      }
+    .image{
+      position: absolute;
+      top: 0;
+      left: 112rem;
+      width: 528rem;
+      height: 528rem;
+      pointer-events: none;
     }
 
     &_right{
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      max-width: 416rem;
+      align-items: flex-end;
+      width: 100%;
+      max-height: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .subtitle{
         margin: 8rem 0 24rem;
@@ -46,6 +60,12 @@
 
       .description{
         margin: 0 0 20rem;
+      }
+
+      .sectionContent{
+        max-width: 416rem;
+        min-height: 100%;
+        padding: 100rem 0 0;
       }
     }
   }

@@ -1,8 +1,8 @@
 import React, { FC, useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 
 import styles from './AnimateScaleBG.module.scss'
-import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 
 const motionProps = {
   initial: { scale: 1.1, opacity: 0 },

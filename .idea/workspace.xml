@@ -7,9 +7,11 @@
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/AnimateScaleBG/AnimateScaleBG.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/AnimateScaleBG/AnimateScaleBG.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,14 +99,7 @@
       <workItem from="1688996388473" duration="613000" />
       <workItem from="1689145401691" duration="52286000" />
       <workItem from="1689577119846" duration="71124000" />
-      <workItem from="1689921175923" duration="12167000" />
-    </task>
-    <task id="LOCAL-00006" summary="fix: some component fixes">
-      <created>1687863440401</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1687863440401</updated>
+      <workItem from="1689921175923" duration="21909000" />
     </task>
     <task id="LOCAL-00007" summary="fix: some code refactor">
       <created>1688032851817</created>
@@ -442,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689932806671</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="fix: animateScaleBG styles">
+      <created>1689939161150</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1689939161150</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +463,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: refactor filter" />
     <MESSAGE value="fix: filter npm package" />
     <MESSAGE value="feat: add section CTA" />
     <MESSAGE value="feat: add section customDesigns" />
@@ -486,7 +487,8 @@
     <MESSAGE value="fix: animation mobile fix" />
     <MESSAGE value="fix: animation slider" />
     <MESSAGE value="feat: add animateScaleBG" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add animateScaleBG" />
+    <MESSAGE value="fix: animateScaleBG styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: animateScaleBG styles" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
