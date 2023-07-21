@@ -4,10 +4,31 @@ import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import classNames from 'classnames'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
+import { useEffect, useState } from 'react'
+
+const urlPicturesSlides = [
+  '/images/home/customDesign/slide.jpg',
+  '/images/home/customDesign/slide_1.jpg',
+  '/images/home/customDesign/slide_2.jpg',
+  '/images/home/customDesign/slide_3.jpg',
+  '/images/home/customDesign/slide_4.jpg',
+]
 
 export const CustomDesignsSection = () => {
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+  const { width } = useWindowDimensions()
+
   return (
     <section className={styles['CustomDesignsSection']}>
+      {isClient && width > 767 && (
+        <AnimateScaleBg pictures={urlPicturesSlides} />
+      )}
       <Container>
         <div className={styles['CustomDesignsSection__content']}>
           <h6
