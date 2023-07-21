@@ -12,6 +12,8 @@ type ProductDetailProps = {
   sameProducts: ProductProps[]
 }
 
+// @TODO detect with fetch data on client side
+
 const Index: FC<ProductDetailProps> = ({ product, sameProducts }) => {
   return (
     <PageLayout>

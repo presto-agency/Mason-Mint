@@ -27,6 +27,10 @@
 			letter-spacing: -.01em;
 			text-transform: lowercase;
 			
+				@media (width <= $breakpoint-mob) {
+					margin-bottom: 13rem;
+				}
+			
 				&:empty{
 					display: none;
 				}

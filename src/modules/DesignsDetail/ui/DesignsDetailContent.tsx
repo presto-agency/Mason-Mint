@@ -40,11 +40,13 @@ const DesignsDetailContent: FC<DesignsDetailProps> = ({
       <Container>
         <div className="row">
           <div className="col-md-5">
-            <Link href={routes.public.designs}>
-              <ButtonPrimary backwardArrows variant="noStroked">
-                Go to back
-              </ButtonPrimary>
-            </Link>
+            <div className={styles['detail__nav']}>
+              <Link href={routes.public.designs}>
+                <ButtonPrimary backwardArrows variant="noStroked">
+                  Go to back
+                </ButtonPrimary>
+              </Link>
+            </div>
             <DesignsDetailThumbnail
               className={styles['detail__thumbnail']}
               product={product}
@@ -65,7 +67,6 @@ const DesignsDetailContent: FC<DesignsDetailProps> = ({
           <ProductCarousel
             className={styles['detail__carousel']}
             title="Сoins from this category."
-            titleTag="h2"
             titleWithBlueDot={false}
             subtitle="Patriot series"
             data={sameProducts}
