@@ -11,13 +11,17 @@ const DesignsDetailGallery = dynamic(
   () =>
     import(
       '@/modules/DesignsDetail/ui/DesignsDetailGallery/DesignsDetailGallery'
-    )
+    ),
+  { ssr: false }
 )
 const BecomeDistributorSection = dynamic(
-  () => import('@/components/BecomeDistributorSection/BecomeDistributorSection')
+  () =>
+    import('@/components/BecomeDistributorSection/BecomeDistributorSection'),
+  { ssr: false }
 )
 const ProductCarousel = dynamic(
-  () => import('@/ui/ProductCarousel/ProductCarousel')
+  () => import('@/ui/ProductCarousel/ProductCarousel'),
+  { ssr: false }
 )
 
 import styles from './DesignsDetailContent.module.scss'

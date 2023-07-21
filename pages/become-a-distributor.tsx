@@ -8,3 +8,9 @@ export default function BecomeADistributor() {
     </PageLayout>
   )
 }
+
+export const getStaticProps = () => {
+  return {
+    props: {},
+  }
+}

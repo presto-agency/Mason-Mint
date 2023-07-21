@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { ProductProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
 import { detectImage, detectImages } from '@/utils/data/detectImages'
+import { motion } from 'framer-motion'
 
 import styles from './DesignsDetailThumbnail.module.scss'
 
@@ -32,7 +33,12 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
   )
 
   return (
-    <div className={className}>
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: 'spring', duration: 1, bounce: 0, delay: 0.5 }}
+    >
       <audio
         src="/sounds/coin-rotate-2.mp3"
         ref={audioRef}
@@ -80,7 +86,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
             )
           })}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

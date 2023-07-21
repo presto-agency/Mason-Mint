@@ -22,12 +22,15 @@ const Index: FC<ProductDetailProps> = ({ product, sameProducts }) => {
 
 export const getServerSideProps = async (req: NextApiRequest) => {
   const { query } = req
+
   await db.connect()
+
   const product: ProductProps | null = await ProductModel.findOne({
     id: query.productId,
   }).lean()
+
   let sameProducts: ProductProps[] = []
-  // const filteredSameProducts: ProductProps[] = []
+
   if (product && product.category && product.category.id) {
     sameProducts = (await ProductModel.find({
       ['category.id']: product.category.id,
@@ -37,7 +40,9 @@ export const getServerSideProps = async (req: NextApiRequest) => {
         products.filter((p) => p.id !== query.productId)
       )) as ProductProps[]
   }
+
   await db.disconnect()
+
   return {
     props: {
       product: transformObjectsToJson(product),
