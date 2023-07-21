@@ -2,12 +2,11 @@
 
 .CustomDesignsSection {
   position: relative;
-  padding: 172rem 0 182rem;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 93rem);
+  padding: 50rem 0;
   color: var(--white);
-  background-image: url("/images/home/home_custom_1.jpg");
-  background-repeat: no-repeat;
-  background-position: top -55rem left 0;
-  background-size: 1634rem 1090rem;
 
   &::before{
     position: absolute;
@@ -48,7 +47,10 @@
 
 @media (width <= $breakpoint-mob) {
   .CustomDesignsSection {
-    padding: 64rem 0 291rem;
+    align-items: flex-start;
+    min-height: calc(100vh - 68rem);
+    background-image: url("/images/home/home_custom_1.jpg");
+    background-repeat: no-repeat;
     background-position: top 0 left -195rem;
     background-size: 1248rem 749rem;
 

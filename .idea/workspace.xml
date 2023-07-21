@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/home/customDesign/slide.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/home/customDesign/slide_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/home/customDesign/slide_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/home/customDesign/slide_3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/home/customDesign/slide_4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/AnimateScaleBG/AnimateScaleBG.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/AnimateScaleBG/AnimateScaleBG.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/SliderArrow/SliderArrow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/SliderArrow/SliderArrow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +63,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/anton_kamarhin/Desktop/Projects/Mason-Mint/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.stylesheets.stylelint&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/anton_kamarhin/Desktop/Projects/Mason-Mint/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -97,13 +103,7 @@
       <workItem from="1688996388473" duration="613000" />
       <workItem from="1689145401691" duration="52286000" />
       <workItem from="1689577119846" duration="71124000" />
-    </task>
-    <task id="LOCAL-00004" summary="fix: header some fixes">
-      <created>1687807072840</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1687807072840</updated>
+      <workItem from="1689921175923" duration="10615000" />
     </task>
     <task id="LOCAL-00005" summary="fix: commit after pull">
       <created>1687846044042</created>
@@ -441,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689862906614</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix: animation slider">
+      <created>1689884094556</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1689884094556</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +467,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add storySection img" />
     <MESSAGE value="feat: add filter" />
     <MESSAGE value="fix: refactor filter" />
     <MESSAGE value="fix: filter npm package" />
@@ -485,7 +491,8 @@
     <MESSAGE value="fix: swiper #4" />
     <MESSAGE value="feat: add sliderArrow component" />
     <MESSAGE value="fix: animation mobile fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: animation mobile fix" />
+    <MESSAGE value="fix: animation slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: animation slider" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
