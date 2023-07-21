@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import styles from './DesignsDetailThumbnail.module.scss'
 
 type DesignsDetailThumbnailProps = {
-  product: ProductProps
+  product: ProductProps | null
   className?: string
 }
 
@@ -18,9 +18,9 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [activeSide, setActiveSide] = useState<number>(0)
-  const categorySlug = toLoverCaseAndSpacesToHyphen(
-    product.category?.name as string
-  )
+  const categorySlug = product
+    ? toLoverCaseAndSpacesToHyphen(product.category?.name as string)
+    : ''
 
   const handleFlip = useCallback(
     (index: number) => {
@@ -33,12 +33,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
   )
 
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ type: 'spring', duration: 1, bounce: 0, delay: 0.5 }}
-    >
+    <div className={className}>
       <audio
         src="/sounds/coin-rotate-2.mp3"
         ref={audioRef}
@@ -53,27 +48,38 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
           backgroundImage: `url(/images/category-shadows/${categorySlug}.svg)`,
         }}
       >
-        <div className={styles['image__item']}>
-          <div
-            className={classNames(styles['image__item_side'], styles['front'])}
+        {product && (
+          <motion.div
+            className={styles['image__item']}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
           >
-            <img
-              src={detectImages(product.Images, 0)}
-              alt={product.ProductName}
-            />
-          </div>
-          <div
-            className={classNames(styles['image__item_side'], styles['back'])}
-          >
-            <img
-              src={detectImages(product.Images, 1)}
-              alt={product.ProductName}
-            />
-          </div>
-        </div>
+            <div
+              className={classNames(
+                styles['image__item_side'],
+                styles['front']
+              )}
+            >
+              <img
+                src={detectImages(product.Images, 0)}
+                alt={product.ProductName}
+              />
+            </div>
+            <div
+              className={classNames(styles['image__item_side'], styles['back'])}
+            >
+              <img
+                src={detectImages(product.Images, 1)}
+                alt={product.ProductName}
+              />
+            </div>
+          </motion.div>
+        )}
       </div>
       <div className={styles['thumbs']}>
-        {product.Images?.length &&
+        {product &&
+          product.Images?.length &&
           product.Images.slice(0, 2).map((p, index) => {
             return (
               <div
@@ -86,7 +92,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
             )
           })}
       </div>
-    </motion.div>
+    </div>
   )
 }
 
