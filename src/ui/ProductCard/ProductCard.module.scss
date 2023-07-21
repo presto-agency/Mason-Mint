@@ -73,13 +73,15 @@
 				}
 		}
 	
-		&.enable-flip:hover{
-			.product{
+		@media (width > $breakpoint-tablet) {
+			&.enable-flip:hover{
+				.product{
 					&__thumb{
-							&_item{
-								transform: rotateY(180deg);
-							}
+						&_item{
+							transform: rotateY(180deg);
+						}
 					}
+				}
 			}
 		}
 	

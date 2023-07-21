@@ -30,9 +30,7 @@ const DesignsDetailDescription: FC<DesignsDetailDescriptionProps> = ({
         <AnimatedText title>{`${product?.ProductName}`}</AnimatedText>
       </h1>
       <div className={styles['product__description']}>
-        {/*<AnimatedText>{`${product?.description}`}</AnimatedText>*/}
-        Description We look forward to supplying both the investor and collector
-        silver market with superior products that are sure to impress.
+        <AnimatedText>{`${product?.description}`}</AnimatedText>
       </div>
       <div className={styles['product__follow']}>
         <AnimatedElement delay={0}>
