@@ -73,7 +73,14 @@ const DesignsDetailContent = () => {
       }
     }
 
-    fetchSameProducts()
+    if (store?.state.products && store?.state.products.length > 0 && product) {
+      const sameProductsFromStore = store.state.products
+        .filter((p) => p.category?.id === product?.category?.id)
+        .filter((p) => p.id !== productId)
+      setSameProducts(sameProductsFromStore)
+    } else {
+      fetchSameProducts()
+    }
   }, [product, productId])
 
   return (
