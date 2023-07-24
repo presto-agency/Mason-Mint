@@ -162,7 +162,7 @@ const ProductForm: FC<{
     }
     ;(await onValues) && onValues(formData as ProductProps)
   }
-
+  console.log('uploadedImages ', uploadedImages)
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
       <div className="row">
@@ -407,13 +407,15 @@ const ProductForm: FC<{
               ))}
             </div>
           ) : null}
-          <RCUploader {...uploadProps}>
-            <div className={styles['form__uploader']}>
-              <p className={styles['form__uploader_title']}>
-                Choose, or drag the files
-              </p>
-            </div>
-          </RCUploader>
+          {process.env.NODE_ENV === 'development' && (
+            <RCUploader {...uploadProps}>
+              <div className={styles['form__uploader']}>
+                <p className={styles['form__uploader_title']}>
+                  Choose, or drag the files
+                </p>
+              </div>
+            </RCUploader>
+          )}
         </div>
       </div>
     </form>

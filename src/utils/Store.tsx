@@ -1,9 +1,11 @@
-import { createContext, ReactNode, useReducer, Dispatch } from 'react'
+import { createContext, ReactNode, useReducer, Dispatch, Reducer } from 'react'
+import { ProductProps } from '@/utils/types'
 
 export interface IInitialStateProps {
   modal: {
     isOpenModal: boolean
   }
+  products: ProductProps[]
 }
 
 export interface IActionProps {
@@ -15,6 +17,7 @@ const initialState: IInitialStateProps = {
   modal: {
     isOpenModal: false,
   },
+  products: [],
 }
 
 export const Store = createContext<{
@@ -42,12 +45,27 @@ const reducer = (state: IInitialStateProps, action: IActionProps) => {
         },
       }
     }
+    // Products
+    case 'ADD_PRODUCTS': {
+      return {
+        ...state,
+        products: action.payload as ProductProps[],
+      }
+    }
+    case 'RESET_PRODUCTS': {
+      return {
+        ...state,
+        products: [],
+      }
+    }
     default:
       return state
   }
 }
 
 export const StoreProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer<
+    Reducer<IInitialStateProps, IActionProps>
+  >(reducer, initialState)
   return <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
 }

@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react'
+import { FC, useCallback, useContext, useEffect, useState } from 'react'
 import { CategoryProps, ProductProps } from '@/utils/types'
 import HeroInner from '@/ui/HeroInner/HeroInner'
 import Container from '@/app/layouts/Container'
@@ -6,6 +6,7 @@ import ProductList from '@/modules/Designs/ui/ProductList/ProductList'
 import ProductFilter from '@/modules/Designs/ui/ProductFilter/ProductFilter'
 import ProductSearch from '@/modules/Designs/ui/ProductSearch/ProductSearch'
 import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
+import { Store } from '@/utils/Store'
 
 import styles from './DesignsContent.module.scss'
 
@@ -15,9 +16,17 @@ type DesignsProps = {
 }
 
 const DesignsContent: FC<DesignsProps> = ({ categories, products }) => {
+  const store = useContext(Store)
+
   const [filteredCategories, setFilteredCategories] =
     useState<CategoryProps[]>(categories)
   const [searchQuery, setSearchQuery] = useState<string>('')
+
+  useEffect(() => {
+    if (store?.dispatch && store?.state.products.length <= 0) {
+      store?.dispatch({ type: 'ADD_PRODUCTS', payload: products })
+    }
+  }, [])
 
   const handleFilterChange = useCallback((c: CategoryProps[]) => {
     setFilteredCategories(c)
