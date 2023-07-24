@@ -2,52 +2,57 @@
 
 .sellSection{
   position: relative;
-  height: 100vh;
-  padding: 143rem 0 50rem;
-  overflow: hidden;
-  
-  &::before{
-    position: absolute;
-    top: 10rem;
-    right: -49rem;
-    width: 1395rem;
-    height: 1551rem;
-    background-image: url("/images/home/circled_arrow_bg.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1395rem 1551rem;
-    content: '';
-  }
+  height: 200vh;
 
   &__content{
-    position: relative;
     display: flex;
-    justify-content: flex-end;
-    padding: 0 112rem;
+    justify-content: space-between;
+    padding: 94rem 112rem;
 
-    .image{
-      position: absolute;
+    .imageWrapper{
+      position: sticky;
       top: 0;
-      left: 112rem;
+      left: 0;
       width: 528rem;
-      height: 528rem;
+      height: 100vh;
+
+      &::before{
+        position: absolute;
+        top: 0;
+        right: -735rem;
+        width: 1395rem;
+        height: 1551rem;
+        background-image: url("/images/home/circled_arrow_bg.svg");
+        background-repeat: no-repeat;
+        background-position: top 10rem right -49rem;
+        background-size: 1395rem 1551rem;
+        content: '';
+      }
+    }
+
+    .imageContainer{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      max-width: 528rem;
+      height: 100%;
+      max-height: 528rem;
+      backface-visibility: hidden;
       pointer-events: none;
+
+      .image{
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &_left{
+      position: relative;
     }
 
     &_right{
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      width: 100%;
-      max-height: 100%;
-      overflow: hidden;
-      overflow-y: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
+      max-width: 416rem;
 
       .subtitle{
         margin: 8rem 0 24rem;
@@ -62,33 +67,50 @@
         margin: 0 0 20rem;
       }
 
-      .sectionContent{
-        max-width: 416rem;
-        min-height: 100%;
-        padding: 100rem 0 0;
+      .sectionWrapper{
+        display: flex;
+        align-items: center;
+        height: 100vh;
+
+        .image{
+          display: none;
+        }
       }
     }
   }
 }
 
 @media (width <= $breakpoint-mob) {
-  .sellSection{
+  .sellSection {
+    height: initial;
     margin: 80rem 0;
 
-    &::before{
-      display: none;
-    }
-
     &__content{
-      flex-direction: column;
-      padding: 0;
+      padding: initial;
 
-      &_left{
-        margin: 0 0 31rem;
+      &_right{
+        .subtitle{
+          margin: 8rem 0 11rem;
+        }
 
-        .image{
-          width: 200rem;
-          height: 200rem;
+        .title{
+          margin: 0;
+        }
+
+        .sectionWrapper{
+          height: initial;
+          margin: 0 0 67rem;
+
+          &:last-of-type{
+            margin: 0;
+          }
+
+          .image{
+            display: block;
+            width: 200rem;
+            height: 200rem;
+            margin: 0 0 46rem;
+          }
         }
       }
     }
