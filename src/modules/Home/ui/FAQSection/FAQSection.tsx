@@ -75,6 +75,8 @@ export const FAQSection = () => {
               className={styles['photoContainer']}
               quality={75}
               alt="Coin photo"
+              description="suppert"
+              descriptionPositionRight={true}
             />
           </div>
           <div className={styles['FAQSection__content_right']}>

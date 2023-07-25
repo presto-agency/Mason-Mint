@@ -1,7 +1,21 @@
 .BackgroundImage {
   position: relative;
 
-  //background-color: var(--gray-400);
+  .description{
+    position: absolute;
+    top: 0;
+    left: -34rem;
+    z-index: 1;
+    display: block;
+    color: var(--gray-700);
+    font: var(--font-h6);
+    writing-mode: vertical-rl;
+
+    &.right{
+      right: -34rem;
+      left: initial;
+    }
+  }
 
   &__container{
     position: absolute;

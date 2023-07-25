@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/about/innerAbout.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/about/pict_1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/about/pict_2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/About/ui/FindPartner/FindPartner.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/About/ui/FindPartner/FindPartner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/About/ui/WasBorn/WasBorn.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/About/ui/WasBorn/WasBorn.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layouts/Container/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/Container/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,13 +104,6 @@
       <workItem from="1689577119846" duration="71124000" />
       <workItem from="1689921175923" duration="21983000" />
       <workItem from="1690025430866" duration="15014000" />
-    </task>
-    <task id="LOCAL-00008" summary="fix: some code refactor - 2">
-      <created>1688038482073</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1688038482073</updated>
     </task>
     <task id="LOCAL-00009" summary="fix: commit after pull">
       <created>1688039258849</created>
@@ -446,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689953520790</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="feat: add section FindPartner">
+      <created>1690300959826</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1690300959826</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +467,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add section CTA" />
     <MESSAGE value="feat: add section customDesigns" />
     <MESSAGE value="feat: add pixel perfect" />
     <MESSAGE value="feat: add sellSection" />
@@ -490,7 +491,8 @@
     <MESSAGE value="feat: add animateScaleBG" />
     <MESSAGE value="fix: animateScaleBG styles" />
     <MESSAGE value="feat: start sell section animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: start sell section animation" />
+    <MESSAGE value="feat: add section FindPartner" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add section FindPartner" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
