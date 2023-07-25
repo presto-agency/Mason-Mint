@@ -8,8 +8,8 @@ const ExploreDesignsSection = dynamic(
   () => import('@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection'),
   { ssr: false }
 )
-const CustomDesignsSection2 = dynamic(
-  () => import('@/modules/Home/ui/CustomDesignsSection2/CustomDesignsSection'),
+const CustomDesignsSection = dynamic(
+  () => import('@/modules/Home/ui/CustomDesignsSection/CustomDesignsSection'),
   { ssr: false }
 )
 
@@ -21,7 +21,7 @@ const HomeContent = () => {
       <IntroSection />
       <StorySection />
       <ExploreDesignsSection />
-      <CustomDesignsSection2 />
+      <CustomDesignsSection />
       <SellSection />
       <FAQSection />
       <BecomeDistributorSection />
