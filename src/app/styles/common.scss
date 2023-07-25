@@ -7,9 +7,9 @@
 html {
   font-size: calc(100vw / 1440);
 
-    @media (width <= $breakpoint-mob) {
-      font-size: calc(100vw / 360);
-    }
+  @media (width <= $breakpoint-mob) {
+    font-size: calc(100vw / 360);
+  }
 }
 
 body {
@@ -40,3 +40,6 @@ main{
   color: var(--primary-color);
 }
 
+#nprogress .spinner {
+  display: none !important;
+}
