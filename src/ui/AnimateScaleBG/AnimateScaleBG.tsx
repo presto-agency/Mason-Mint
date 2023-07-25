@@ -1,34 +1,59 @@
-import React, { FC, useState, useEffect } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import React, { FC, useEffect, useRef, useState } from 'react'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 
 import styles from './AnimateScaleBG.module.scss'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper/modules'
+import { motion, useInView } from 'framer-motion'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import type SwiperCore from 'swiper'
 
 const motionProps = {
-  initial: { scale: 1.1, opacity: 0 },
-  animate: { scale: 1, opacity: 1, transition: { duration: 3 } },
-  exit: { opacity: 0, transition: { duration: 3 } },
+  animate: { scale: 1, transition: { duration: 7 } },
+  initial: { scale: 1.1 },
+  exit: { scale: 1.1, transition: { delay: 8 } },
 }
 
 const AnimateScaleBg: FC<{ pictures: string[] }> = ({ pictures }) => {
-  const [currentPictureIndex, setCurrentPictureIndex] = useState(0)
+  const ref = useRef<null>(null)
+  const swiperRef = useRef<SwiperCore>()
+  const isInView = useInView(ref, { once: true })
+  const onInit = (Swiper: SwiperCore): void => {
+    swiperRef.current = Swiper
+  }
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPictureIndex((prevIndex) => (prevIndex + 1) % pictures.length)
-    }, 5000)
-
-    return () => clearInterval(interval)
-  }, [pictures])
+    if (isInView && swiperRef) {
+      setTimeout(() => {
+        swiperRef.current?.autoplay.start()
+      }, 8000)
+    }
+  }, [isInView])
 
   return (
-    <div className={styles['AnimateScaleBG']}>
+    <Swiper
+      ref={ref}
+      style={{ position: 'absolute' }}
+      className={styles['AnimateScaleBG']}
+      speed={8000}
+      loop
+      allowTouchMove={false}
+      modules={[Autoplay, EffectFade]}
+      effect={'fade'}
+      onInit={onInit}
+    >
       {pictures.map((picture, index) => (
-        <AnimatePresence key={index}>
-          {index === currentPictureIndex && (
+        <SwiperSlide
+          key={index}
+          className={styles['AnimateScaleBG__container']}
+        >
+          {({ isActive }) => (
             <motion.div
-              className={styles['AnimateScaleBG__container']}
-              {...motionProps}
+              style={{ height: '100%' }}
+              initial="initial"
+              variants={motionProps}
+              animate={isInView && isActive ? 'animate' : 'exit'}
             >
               <BackgroundImage
                 className={styles['AnimateScaleBG__container_picture']}
@@ -41,9 +66,9 @@ const AnimateScaleBg: FC<{ pictures: string[] }> = ({ pictures }) => {
               />
             </motion.div>
           )}
-        </AnimatePresence>
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   )
 }
 
