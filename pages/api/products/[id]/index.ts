@@ -7,7 +7,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await db.connect()
     const product = await Product.findOne({ id: req.query.id })
-    await db.disconnect()
+    // await db.disconnect()
     res.status(200).json({ success: true, data: product })
   } catch (error) {
     res.status(500).json({ success: false, message: getError(error as Error) })

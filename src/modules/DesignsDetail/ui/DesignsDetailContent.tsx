@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import axios from 'axios'
+import { Store } from '@/utils/Store'
 import { ProductProps } from '@/utils/types'
 import Container from '@/app/layouts/Container'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
@@ -33,6 +34,7 @@ const DesignsDetailContent = () => {
   const {
     query: { productId },
   } = useRouter()
+  const store = useContext(Store)
   const [product, setProduct] = useState<ProductProps | null>(null)
   const [sameProducts, setSameProducts] = useState<ProductProps[]>([])
 
@@ -46,7 +48,13 @@ const DesignsDetailContent = () => {
       }
     }
 
-    fetchProduct()
+    if (store?.state.products && store?.state.products.length > 0) {
+      setProduct(
+        store.state.products.filter((p) => p.id === productId)[0] || null
+      )
+    } else {
+      fetchProduct()
+    }
   }, [productId])
 
   useEffect(() => {
@@ -65,8 +73,15 @@ const DesignsDetailContent = () => {
       }
     }
 
-    fetchSameProducts()
-  }, [product])
+    if (store?.state.products && store?.state.products.length > 0 && product) {
+      const sameProductsFromStore = store.state.products
+        .filter((p) => p.category?.id === product?.category?.id)
+        .filter((p) => p.id !== productId)
+      setSameProducts(sameProductsFromStore)
+    } else {
+      fetchSameProducts()
+    }
+  }, [product, productId])
 
   return (
     <main className={styles['detail']}>
@@ -99,10 +114,12 @@ const DesignsDetailContent = () => {
             )}
           </div>
         </div>
-        <DesignsDetailGallery
-          className={styles['detail__gallery']}
-          product={product}
-        />
+        {product && (
+          <DesignsDetailGallery
+            className={styles['detail__gallery']}
+            product={product}
+          />
+        )}
         {sameProducts.length > 0 && (
           <ProductCarousel
             className={styles['detail__carousel']}
