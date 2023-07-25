@@ -1,0 +1,20 @@
+.process{
+	position: relative;
+	z-index: 1;
+	height: 812rem;
+	padding: 136rem 0;
+	overflow: hidden;
+	background-color: var(--gray-300);
+	
+		& &__abstract{
+			top: 0;
+			left: 60%;
+			width: 1515rem;
+			height: auto;
+			color: var(--white);
+
+				svg{
+					transform: scaleX(-1);
+				}
+		}
+}

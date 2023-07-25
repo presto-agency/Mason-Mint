@@ -96,7 +96,7 @@ const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
   )
 }
 
-export const ExploreDesignsSection = () => {
+const ExploreDesignsSection = () => {
   const [controlledSwiper, setControlledSwiper] = useState<SwiperCore | null>(
     null
   )
@@ -286,3 +286,5 @@ export const ExploreDesignsSection = () => {
     </section>
   )
 }
+
+export default ExploreDesignsSection

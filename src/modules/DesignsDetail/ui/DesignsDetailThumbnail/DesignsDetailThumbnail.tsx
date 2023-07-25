@@ -78,19 +78,20 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
         )}
       </div>
       <div className={styles['thumbs']}>
-        {product &&
-          product.Images?.length &&
-          product.Images.slice(0, 2).map((p, index) => {
-            return (
-              <div
-                key={index}
-                className={styles['thumbs__item']}
-                onClick={() => handleFlip(index)}
-              >
-                <img src={detectImage(p, index)} alt={product.ProductName} />
-              </div>
-            )
-          })}
+        {product
+          ? product.Images?.length &&
+            product.Images.slice(0, 2).map((p, index) => {
+              return (
+                <div
+                  key={index}
+                  className={styles['thumbs__item']}
+                  onClick={() => handleFlip(index)}
+                >
+                  <img src={detectImage(p, index)} alt={product.ProductName} />
+                </div>
+              )
+            })
+          : null}
       </div>
     </div>
   )

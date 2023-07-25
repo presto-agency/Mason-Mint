@@ -31,7 +31,7 @@ const HeroInner: FC<HeroInnerProps> = ({
       <AbstractLogo className={styles['hero__abstract']} />
       <Container>
         <div className="row">
-          <div className="col-md-10">
+          <div className="col-md-8">
             <p className={styles['hero__subtitle']}>
               <AnimatedText>{`${subtitle}`}</AnimatedText>
             </p>

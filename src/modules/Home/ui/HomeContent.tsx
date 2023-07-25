@@ -1,32 +1,32 @@
-import React, { FC, useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { StorySection } from './StorySection/StorySection'
 import { IntroSection } from './IntroSection/IntroSection'
-// import { FeaturedDesignsSection } from './FeaturedDesignsSection/FeaturedDesignsSection'
-import { CustomDesignsSection } from './CustomDesignsSection/CustomDesignsSection'
-import styles from './HomeContent.module.scss'
 import { FAQSection } from './FAQSection/FAQSection'
 import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
-import SellSection from '@/modules/Home/ui/SellSection/SellSection'
-import { ExploreDesignsSection } from './ExploreDesignsSection/ExploreDesignsSection' // Regular import
+import SellSection from './SellSection/SellSection'
+const ExploreDesignsSection = dynamic(
+  () => import('@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection'),
+  { ssr: false }
+)
+const CustomDesignsSection2 = dynamic(
+  () => import('@/modules/Home/ui/CustomDesignsSection2/CustomDesignsSection'),
+  { ssr: false }
+)
 
-export const HomeContent: FC = () => {
-  const [isClient, setIsClient] = useState(false)
+import styles from './HomeContent.module.scss'
 
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
+const HomeContent = () => {
   return (
-    <main className={styles.HomeContent}>
+    <main className={styles['HomeContent']}>
       <IntroSection />
       <StorySection />
-      {/* Conditionally render ExploreDesignsSection on the client side */}
-      {isClient && <ExploreDesignsSection />}
-      {/*<FeaturedDesignsSection />*/}
-      <CustomDesignsSection />
+      <ExploreDesignsSection />
+      <CustomDesignsSection2 />
       <SellSection />
       <FAQSection />
       <BecomeDistributorSection />
     </main>
   )
 }
+
+export default HomeContent
