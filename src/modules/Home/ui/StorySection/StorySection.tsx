@@ -1,13 +1,14 @@
-import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
-import styles from './StorySection.module.scss'
 import { FC } from 'react'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
-export const StorySection: FC = () => {
+import styles from './StorySection.module.scss'
+
+const StorySection: FC = () => {
   return (
     <section className={styles['story']}>
       <Container>
@@ -62,7 +63,7 @@ export const StorySection: FC = () => {
                 className={styles['buttonContainer__button']}
                 variant="transparent"
               >
-                OUR STORY
+                Our story
               </ButtonPrimary>
             </AnimatedElement>
           </ParallaxSection>
@@ -71,3 +72,5 @@ export const StorySection: FC = () => {
     </section>
   )
 }
+
+export default StorySection

@@ -1,12 +1,13 @@
+import { useState } from 'react'
+import classNames from 'classnames'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import Container from '@/app/layouts/Container'
-import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import Accordion from '@/modules/Home/ui/FAQSection/Accordion/Accordion'
-import { useState } from 'react'
 
 import styles from './FAQSection.module.scss'
-export const FAQSection = () => {
+
+const FAQSection = () => {
   const [expanded, setExpanded] = useState<false | number>(0)
 
   const accordionsDescription = [
@@ -97,3 +98,5 @@ export const FAQSection = () => {
     </section>
   )
 }
+
+export default FAQSection

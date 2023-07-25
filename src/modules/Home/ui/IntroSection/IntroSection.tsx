@@ -1,19 +1,20 @@
-import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import classNames from 'classnames'
+import dynamic from 'next/dynamic'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
-import VideoComponent from '@/ui/VideoComponent/VideoComponent'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+const VideoComponent = dynamic(
+  () => import('@/ui/VideoComponent/VideoComponent'),
+  { ssr: false }
+)
 
 import styles from './IntroSection.module.scss'
 
-export const IntroSection = () => {
+const IntroSection = () => {
   return (
     <section className={styles['intro']}>
-      <VideoComponent
-        src="/video/hero_video_bg-compress.mp4"
-        poster="/images/home/poster.jpg"
-      />
+      <VideoComponent src="/video/hero_video_bg-compress.mp4" />
       <Container>
         <div className={styles['intro__content']}>
           <div className={styles['intro__content_top']}>
@@ -34,7 +35,7 @@ export const IntroSection = () => {
                 className={styles['buttonContainer__button']}
                 variant="white"
               >
-                LEARN MORE
+                Learn more
               </ButtonPrimary>
             </AnimatedElement>
             <div className={styles['subtitle']}>
@@ -49,3 +50,5 @@ export const IntroSection = () => {
     </section>
   )
 }
+
+export default IntroSection

@@ -1,17 +1,20 @@
-import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
 import classNames from 'classnames'
-import AnimatedText from '@/ui/AnimatedText/AnimatedText'
-import Container from '@/app/layouts/Container'
+import type SwiperCore from 'swiper'
 import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
 import { Controller, EffectCreative } from 'swiper/modules'
-import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
+import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+import Container from '@/app/layouts/Container'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { AnimatePresence, motion } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
-import { slidesExploreDesigns } from '@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSectionContent'
 import SliderArrow from '@/ui/SliderArrow/SliderArrow'
+import { data } from '@/modules/Home/ui/ExploreDesignsSection/data'
 
-import type SwiperCore from 'swiper'
+import 'swiper/css'
+import styles from './ExploreDesignsSection.module.scss'
+
 type SwiperButtonProps = {
   children?: ReactNode
   setRevertAnimation: Dispatch<SetStateAction<boolean>>
@@ -24,9 +27,6 @@ type SlideInner = {
   title: string
   subtitle: string
 }
-
-import 'swiper/css'
-import styles from './ExploreDesignsSection.module.scss'
 
 const SwiperButtonNext: FC<SwiperButtonProps> = ({
   setRevertAnimation,
@@ -176,7 +176,7 @@ const ExploreDesignsSection = () => {
                   slidesPerView={1}
                   allowTouchMove={false}
                 >
-                  {slidesExploreDesigns.map((slide) => (
+                  {data.map((slide) => (
                     <SwiperSlide key={slide.id}>
                       {({ isActive }) => (
                         <AnimatePresence>
@@ -216,7 +216,7 @@ const ExploreDesignsSection = () => {
               controller={{ control: controlledSwiper }}
               slidesPerView={1}
             >
-              {slidesExploreDesigns.map((slide) => (
+              {data.map((slide) => (
                 <SwiperSlide
                   className={styles['sliderCoin__slide']}
                   key={slide.id}
