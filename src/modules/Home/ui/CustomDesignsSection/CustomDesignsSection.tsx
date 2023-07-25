@@ -1,4 +1,3 @@
-import styles from './CustomDesignsSection.module.scss'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
@@ -7,6 +6,8 @@ import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { useEffect, useState } from 'react'
+
+import styles from './CustomDesignsSection.module.scss'
 
 const urlPicturesSlides = [
   '/images/home/customDesign/slide.jpg',
