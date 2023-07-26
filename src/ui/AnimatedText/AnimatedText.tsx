@@ -5,6 +5,7 @@ import { useInView, motion } from 'framer-motion'
 import styles from './AnimatedText.module.scss'
 
 type AnimatedTextProps = {
+  className?: string
   children: string
   title?: boolean
   withBlueDot?: boolean
@@ -14,6 +15,7 @@ const AnimatedText: FC<AnimatedTextProps> = ({
   children,
   title = false,
   withBlueDot = false,
+  className,
 }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
@@ -56,7 +58,11 @@ const AnimatedText: FC<AnimatedTextProps> = ({
 
   return (
     <motion.span
-      className={classNames(styles['split'], title ? styles['title'] : '')}
+      className={classNames(
+        styles['split'],
+        title ? styles['title'] : '',
+        className
+      )}
       ref={ref}
       variants={container}
       initial="hidden"

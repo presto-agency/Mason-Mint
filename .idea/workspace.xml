@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/about/all_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about/all_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about/all_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about/best_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/about/best_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/About/ui/AllProducts/AllProducts.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/About/ui/AllProducts/AllProducts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/WasBorn/WasBorn.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/WasBorn/WasBorn.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/About/ui/WasBorn/WasBorn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/WasBorn/WasBorn.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/HeroInner/HeroInner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/HeroInner/HeroInner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/AnimatedText/AnimatedText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/AnimatedText/AnimatedText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/BackgroundImage/BackgroundImage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,14 +108,7 @@
       <workItem from="1689921175923" duration="21983000" />
       <workItem from="1690025430866" duration="15014000" />
       <workItem from="1690354317927" duration="23000" />
-      <workItem from="1690354345499" duration="1355000" />
-    </task>
-    <task id="LOCAL-00010" summary="fix: some refactor(#21)">
-      <created>1688043535836</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1688043535836</updated>
+      <workItem from="1690354345499" duration="10021000" />
     </task>
     <task id="LOCAL-00011" summary="feat: add hero section with animation">
       <created>1688130122544</created>
@@ -445,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690305353687</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="fix: some about page fixes">
+      <created>1690356480710</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1690356480711</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +472,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add pixel perfect" />
     <MESSAGE value="feat: add sellSection" />
     <MESSAGE value="fix: some fixes" />
     <MESSAGE value="fix: add faq section" />
@@ -489,7 +496,8 @@
     <MESSAGE value="feat: start sell section animation" />
     <MESSAGE value="feat: add section FindPartner" />
     <MESSAGE value="feat: add wasBorn section" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add wasBorn section" />
+    <MESSAGE value="fix: some about page fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: some about page fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -4,6 +4,7 @@ import FindPartner from '@/modules/About/ui/FindPartner/FindPartner'
 import styles from './AboutContent.module.scss'
 import HeroInner from '@/ui/HeroInner/HeroInner'
 import WasBorn from '@/modules/About/ui/WasBorn/WasBorn'
+import AllProducts from '@/modules/About/ui/AllProducts/AllProducts'
 
 export const AboutContent: FC = () => {
   return (
@@ -15,6 +16,7 @@ export const AboutContent: FC = () => {
       />
       <FindPartner />
       <WasBorn />
+      <AllProducts />
     </main>
   )
 }

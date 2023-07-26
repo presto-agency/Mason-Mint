@@ -12,7 +12,7 @@ const WasBorn: FC<{ className?: string }> = ({ className }) => {
     <section className={classNames(styles['WasBorn'], className)}>
       <Container>
         <h2 className={classNames('h2', styles['title'])}>
-          <AnimatedText>
+          <AnimatedText title>
             Mason Mint was born from the idea of producing world-class custom
             minted silver products.
           </AnimatedText>

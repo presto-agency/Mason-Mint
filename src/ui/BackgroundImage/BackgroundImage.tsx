@@ -13,6 +13,7 @@ type BackgroundImageProps = {
   children?: ReactNode
   parallax?: boolean
   cover?: boolean
+  contain?: boolean
   parallaxValues?: [number, number]
 } & ImageProps
 
@@ -25,6 +26,7 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   parallax = false,
   parallaxValues = [-50, 50],
   cover = false,
+  contain = false,
   description,
   descriptionPositionRight,
   descriptionClass,
@@ -56,7 +58,10 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
 
   const ImageComponent = (
     <Image
-      className={cover ? styles['cowerStyle'] : ''}
+      className={classNames(
+        cover ? styles['cowerStyle'] : '',
+        contain ? styles['containStyle'] : ''
+      )}
       src={src}
       ref={refTarget}
       alt={alt}
