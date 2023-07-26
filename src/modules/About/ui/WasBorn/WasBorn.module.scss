@@ -1,7 +1,23 @@
 @import '@/app/styles/variables/breackpoints';
 
 .WasBorn{
+  position: relative;
   margin: 164rem 0;
+
+  &::before{
+    position: absolute;
+    top: -104rem;
+    right: 42rem;
+    width: 1343rem;
+    height: 1494rem;
+    background-image: url("/images/home/circled_arrow_bg.svg");
+    background-size: 1343rem 1494rem;
+    content: '';
+
+    @media (width<=$breakpoint-mob) {
+      display: none;
+    }
+  }
 
   @media (width<=$breakpoint-mob) {
     margin: 80rem 0;

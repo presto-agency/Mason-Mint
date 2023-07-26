@@ -11,6 +11,7 @@ export const AboutContent: FC = () => {
       <HeroInner
         title="Finding a partner you can trust is not an easy decision"
         subtitle="Welcome to masonmint"
+        columns={10}
       />
       <FindPartner />
       <WasBorn />

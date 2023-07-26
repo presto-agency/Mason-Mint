@@ -16,6 +16,7 @@ type HeroInnerProps = {
   description?: string
   theme?: 'white' | 'gray'
   withBlueDot?: boolean
+  columns?: number
 }
 
 const HeroInner: FC<HeroInnerProps> = ({
@@ -25,13 +26,15 @@ const HeroInner: FC<HeroInnerProps> = ({
   description,
   theme = 'white',
   withBlueDot = true,
+  columns = 8,
 }) => {
+  const colClassName = `col-md-${columns}`
   return (
     <div className={classNames(styles['hero'], styles[theme], className)}>
       <AbstractLogo className={styles['hero__abstract']} />
       <Container>
         <div className="row">
-          <div className="col-md-8">
+          <div className={colClassName}>
             <p className={styles['hero__subtitle']}>
               <AnimatedText>{`${subtitle}`}</AnimatedText>
             </p>

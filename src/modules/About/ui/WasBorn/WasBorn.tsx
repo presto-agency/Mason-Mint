@@ -7,7 +7,7 @@ import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 
 import styles from './WasBorn.module.scss'
 
-const WasBorn: FC<{ className: string }> = ({ className }) => {
+const WasBorn: FC<{ className?: string }> = ({ className }) => {
   return (
     <section className={classNames(styles['WasBorn'], className)}>
       <Container>
@@ -39,9 +39,9 @@ const WasBorn: FC<{ className: string }> = ({ className }) => {
               />
               <h4 className={classNames('h4', styles['description'])}>
                 <AnimatedText title>
-                  Our motto "Excellence In Minting" are words that we live by.
-                  Our high standards for quality and design is what separates us
-                  from everyone else.
+                  Our motto &quot;Excellence In Minting&quot; are words that we
+                  live by. Our high standards for quality and design is what
+                  separates us from everyone else.
                 </AnimatedText>
               </h4>
               <p style={{ color: 'var(--gray-800)' }}>
