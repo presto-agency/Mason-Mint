@@ -15,6 +15,7 @@
       left: 0;
       width: 528rem;
       height: 100vh;
+      transform-style: preserve-3d;
 
       &::before{
         position: absolute;

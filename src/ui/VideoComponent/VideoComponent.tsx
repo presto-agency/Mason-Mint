@@ -1,6 +1,8 @@
-import React, { FC, useEffect, useRef } from 'react'
-import styles from './VideoComponent.module.scss'
+import React, { FC } from 'react'
 import classNames from 'classnames'
+import { motion } from 'framer-motion'
+
+import styles from './VideoComponent.module.scss'
 
 type VideoComponent = {
   className?: string
@@ -19,16 +21,23 @@ const VideoComponent: FC<VideoComponent> = ({
   poster,
 }) => {
   return (
-    <video
-      className={classNames(styles['video'], className)}
-      playsInline
-      autoPlay={autoPlay}
-      loop={loop}
-      muted={muted}
-      poster={poster}
+    <motion.div
+      initial={{ opacity: 0, scale: 1.1 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      className={styles['video']}
     >
-      <source src={src} type="video/mp4" />
-    </video>
+      <video
+        className={classNames(styles['video__item'], className)}
+        playsInline
+        autoPlay={autoPlay}
+        loop={loop}
+        muted={muted}
+        poster={poster}
+      >
+        <source src={src} type="video/mp4" />
+      </video>
+    </motion.div>
   )
 }
 

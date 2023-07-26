@@ -1,9 +1,11 @@
 import React, { FC } from 'react'
+import classNames from 'classnames'
 import { motion, AnimatePresence } from 'framer-motion'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
-import styles from './Accordion.module.scss'
-import classNames from 'classnames'
 import ArrowSelect from '@/ui/Icons/ArrowSelect'
+import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+
+import styles from './Accordion.module.scss'
 
 type AccordionType = {
   i: number
@@ -34,7 +36,7 @@ const Accordion: FC<AccordionType> = ({
         className={classNames('h5', styles['item__title'])}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
-        {title}
+        <AnimatedText title>{`${title}`}</AnimatedText>
         <ArrowSelect
           className={classNames(styles['item__title_arrow'], {
             [styles['active']]: isOpen,
@@ -60,7 +62,7 @@ const Accordion: FC<AccordionType> = ({
                 className={styles['item__dropdownMenu_photoContainer']}
                 src={src}
                 alt="coin"
-                quality={75}
+                quality={100}
               />
               <p className={styles['item__dropdownMenu_description']}>
                 {description}

@@ -1,4 +1,4 @@
-export const slidesExploreDesigns = [
+export const data = [
   {
     title: 'Classic design rounds',
     id: 1,

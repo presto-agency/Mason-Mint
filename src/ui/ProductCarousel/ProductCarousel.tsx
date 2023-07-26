@@ -73,17 +73,19 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
               <AnimatedText>{subtitle}</AnimatedText>
             </p>
           )}
-          <p
-            className={classNames(
-              styles['carousel__title'],
-              styles[titleTag],
-              titleTag
-            )}
-          >
-            <AnimatedText
-              withBlueDot={titleWithBlueDot}
-            >{`${title}`}</AnimatedText>
-          </p>
+          {title ? (
+            <p
+              className={classNames(
+                styles['carousel__title'],
+                styles[titleTag],
+                titleTag
+              )}
+            >
+              <AnimatedText
+                withBlueDot={titleWithBlueDot}
+              >{`${title}`}</AnimatedText>
+            </p>
+          ) : null}
         </div>
       </div>
       {data?.length ? (

@@ -110,12 +110,14 @@ const SellSection = () => {
                   </AnimatedText>
                 </p>
                 <AnimatedElement delay={0.2}>
-                  <ButtonPrimary
-                    variant={'noStroked'}
-                    className={styles['button']}
-                  >
-                    VIEW CERTIFICATE
-                  </ButtonPrimary>
+                  <a href="mm-iso9001-2015.pdf" target="_blank">
+                    <ButtonPrimary
+                      variant={'noStroked'}
+                      className={styles['button']}
+                    >
+                      VIEW CERTIFICATE
+                    </ButtonPrimary>
+                  </a>
                 </AnimatedElement>
               </div>
             </li>
