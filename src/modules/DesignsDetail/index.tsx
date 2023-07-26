@@ -1,3 +1,4 @@
-import DesignsDetailContent from '@/modules/DesignsDetail/ui/DesignsDetailContent'
+import DesignsDetailContentTest from './ui/DesignDetailContentTest'
+import DesignsDetailContent from './ui/DesignsDetailContent'
 
-export { DesignsDetailContent }
+export { DesignsDetailContent, DesignsDetailContentTest }
