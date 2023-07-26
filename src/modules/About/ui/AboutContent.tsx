@@ -5,6 +5,8 @@ import styles from './AboutContent.module.scss'
 import HeroInner from '@/ui/HeroInner/HeroInner'
 import WasBorn from '@/modules/About/ui/WasBorn/WasBorn'
 import AllProducts from '@/modules/About/ui/AllProducts/AllProducts'
+import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
+import WhatWeDo from '@/modules/About/ui/WhatWeDo/WhatWeDo'
 
 export const AboutContent: FC = () => {
   return (
@@ -17,6 +19,8 @@ export const AboutContent: FC = () => {
       <FindPartner />
       <WasBorn />
       <AllProducts />
+      <WhatWeDo />
+      <BecomeDistributorSection />
     </main>
   )
 }
