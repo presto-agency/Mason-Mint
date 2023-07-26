@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import dynamic from 'next/dynamic'
 import { data } from '@/modules/CustomMinting/ui/CustomMintingMarketing/data'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 const AbstractLogo = dynamic(() => import('@/ui/AbstractLogo/AbstractLogo'), {
   ssr: false,
@@ -41,21 +42,23 @@ const CustomMintingMarketing: FC<{ className?: string }> = ({ className }) => {
                     }`}
                   >
                     <div className={styles['marketing__description']}>
-                      <p
-                        className={classNames(
-                          styles['marketing__description_title'],
-                          'h2'
-                        )}
-                      >
-                        <AnimatedText title withBlueDot>
-                          {`${item.title}`}
-                        </AnimatedText>
-                      </p>
-                      <div className={styles['marketing__description_item']}>
-                        <p>
-                          <AnimatedText>{item.description}</AnimatedText>
+                      <ParallaxSection parallaxValues={[100, -100]}>
+                        <p
+                          className={classNames(
+                            styles['marketing__description_title'],
+                            'h2'
+                          )}
+                        >
+                          <AnimatedText title withBlueDot>
+                            {`${item.title}`}
+                          </AnimatedText>
                         </p>
-                      </div>
+                        <div className={styles['marketing__description_item']}>
+                          <p>
+                            <AnimatedText>{item.description}</AnimatedText>
+                          </p>
+                        </div>
+                      </ParallaxSection>
                     </div>
                   </div>
                 </div>

@@ -115,7 +115,7 @@ const SellSection = () => {
                       variant={'noStroked'}
                       className={styles['button']}
                     >
-                      VIEW CERTIFICATE
+                      View certificate
                     </ButtonPrimary>
                   </a>
                 </AnimatedElement>
