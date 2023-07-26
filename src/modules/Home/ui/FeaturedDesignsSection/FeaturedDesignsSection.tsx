@@ -1,15 +1,16 @@
 import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
+import axios from 'axios'
 import Link from 'next/link'
 import ProductCarousel from '@/ui/ProductCarousel/ProductCarousel'
 import Container from '@/app/layouts/Container'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+import { ProductProps } from '@/utils/types'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import routes from '@/utils/routes'
 
 import styles from './FeaturedDesignsSection.module.scss'
-import axios from 'axios'
-import { ProductProps } from '@/utils/types'
 
 const FeaturedDesignsSection: FC<{ className?: string }> = ({ className }) => {
   const [products, setProducts] = useState<ProductProps[]>([])
@@ -45,9 +46,11 @@ const FeaturedDesignsSection: FC<{ className?: string }> = ({ className }) => {
           </div>
           <div className="col-md-6">
             <div className={styles['featureDesigns__actions']}>
-              <Link href={routes.public.designs}>
-                <ButtonPrimary variant="transparent">View all</ButtonPrimary>
-              </Link>
+              <AnimatedElement delay={0}>
+                <Link href={routes.public.designs}>
+                  <ButtonPrimary variant="transparent">View all</ButtonPrimary>
+                </Link>
+              </AnimatedElement>
             </div>
           </div>
         </div>

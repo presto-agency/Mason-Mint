@@ -1,5 +1,6 @@
 import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
 import classNames from 'classnames'
+import Link from 'next/link'
 import type SwiperCore from 'swiper'
 import { SwiperSlide, Swiper, useSwiper } from 'swiper/react'
 import { Controller, EffectCreative } from 'swiper/modules'
@@ -11,6 +12,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import SliderArrow from '@/ui/SliderArrow/SliderArrow'
 import { data } from '@/modules/Home/ui/ExploreDesignsSection/data'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+import routes from '@/utils/routes'
 
 import 'swiper/css'
 import styles from './ExploreDesignsSection.module.scss'
@@ -89,9 +92,17 @@ const SwiperButtonPrev: FC<SwiperButtonProps> = ({
 const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
   return (
     <>
-      <h4 className={classNames('h4', styles['textSwiper__title'])}>{title}</h4>
-      <p className={styles['textSwiper__description']}>{subtitle}</p>
-      <ButtonPrimary variant="noStroked">VIEW CATALOG</ButtonPrimary>
+      <h4 className={classNames('h4', styles['textSwiper__title'])}>
+        <AnimatedText>{title}</AnimatedText>
+      </h4>
+      <p className={styles['textSwiper__description']}>
+        <AnimatedText>{subtitle}</AnimatedText>
+      </p>
+      <AnimatedElement delay={0}>
+        <Link href={routes.public.designs}>
+          <ButtonPrimary variant="noStroked">View catalog</ButtonPrimary>
+        </Link>
+      </AnimatedElement>
     </>
   )
 }
