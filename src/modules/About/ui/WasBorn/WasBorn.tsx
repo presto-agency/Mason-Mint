@@ -29,7 +29,7 @@ const WasBorn: FC<{ className?: string }> = ({ className }) => {
             />
           </div>
           <div className={styles['WasBorn__content_right']}>
-            <ParallaxSection>
+            <ParallaxSection parallaxValues={[0, 200]}>
               <BackgroundImage
                 className={styles['image']}
                 parallax

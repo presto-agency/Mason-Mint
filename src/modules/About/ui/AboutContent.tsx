@@ -1,12 +1,16 @@
 import React, { FC } from 'react'
-import FindPartner from '@/modules/About/ui/FindPartner/FindPartner'
-
-import styles from './AboutContent.module.scss'
 import HeroInner from '@/ui/HeroInner/HeroInner'
 import WasBorn from '@/modules/About/ui/WasBorn/WasBorn'
 import AllProducts from '@/modules/About/ui/AllProducts/AllProducts'
 import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
 import WhatWeDo from '@/modules/About/ui/WhatWeDo/WhatWeDo'
+import dynamic from 'next/dynamic'
+const FindPartner = dynamic(
+  () => import('@/modules/About/ui/FindPartner/FindPartner'),
+  { ssr: false }
+)
+
+import styles from './AboutContent.module.scss'
 
 export const AboutContent: FC = () => {
   return (

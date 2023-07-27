@@ -39,8 +39,12 @@ const AllProducts: FC<{ className?: string }> = ({ className }) => {
           </AnimatedElement>
         </h3>
         <ul className={styles['AllProducts__content']}>
-          {sectionContent.map((item) => (
-            <li key={item.id} className={styles['AllProducts__content_item']}>
+          {sectionContent.map((item, index) => (
+            <AnimatedElement
+              delay={(index + 1) * 0.1}
+              key={item.id}
+              className={styles['AllProducts__content_item']}
+            >
               <div className={styles['imageContainer']}>
                 <Image
                   className={styles['image']}
@@ -57,7 +61,7 @@ const AllProducts: FC<{ className?: string }> = ({ className }) => {
                   <AnimatedText>{item.subtitle}</AnimatedText>
                 </p>
               </div>
-            </li>
+            </AnimatedElement>
           ))}
         </ul>
       </Container>

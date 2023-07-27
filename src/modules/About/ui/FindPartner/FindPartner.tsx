@@ -1,23 +1,41 @@
 import React, { FC } from 'react'
 import classNames from 'classnames'
 import Container from '@/app/layouts/Container'
-
-import styles from './FindPartner.module.scss'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+
+import styles from './FindPartner.module.scss'
+import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
+
+const images = [
+  '/images/about/innerAbout.jpg',
+  '/images/home/customDesign/slide_1.jpg',
+  '/images/home/customDesign/slide_2.jpg',
+  '/images/home/customDesign/slide_3.jpg',
+  '/images/home/customDesign/slide_4.jpg',
+  '/images/home/customDesign/slide_5.jpg',
+]
 
 const FindPartner: FC<{ className?: string }> = ({ className }) => {
+  const { width } = useWindowDimensions()
+
   return (
     <section className={classNames(styles['FindPartner'], className)}>
-      <div className={styles['FindPartner__image']}>
-        <BackgroundImage
-          className={styles['image']}
-          parallax
-          cover
-          src="/images/about/innerAbout.jpg"
-          alt="image"
-        />
-      </div>
+      <AnimatedElement delay={0.2} className={styles['FindPartner__image']}>
+        {width > 767 ? (
+          <AnimateScaleBg images={images} />
+        ) : (
+          <BackgroundImage
+            className={styles['image']}
+            parallax
+            cover
+            src="/images/about/innerAbout.jpg"
+            alt="image"
+          />
+        )}
+      </AnimatedElement>
       <Container className={styles['container']}>
         <div className={styles['FindPartner__content']}>
           <div className={styles['FindPartner__content_description']}>
