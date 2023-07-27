@@ -3,12 +3,20 @@ import HeroInner from '@/ui/HeroInner/HeroInner'
 import WasBorn from '@/modules/About/ui/WasBorn/WasBorn'
 import AllProducts from '@/modules/About/ui/AllProducts/AllProducts'
 import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
-import WhatWeDo from '@/modules/About/ui/WhatWeDo/WhatWeDo'
+import WhatWeDo from '@/components/WhatWeDo/WhatWeDo'
 import dynamic from 'next/dynamic'
-const FindPartner = dynamic(
-  () => import('@/modules/About/ui/FindPartner/FindPartner'),
-  { ssr: false }
-)
+const HeroDetail = dynamic(() => import('@/ui/HeroDetail/HeroDetail'), {
+  ssr: false,
+})
+
+const sliderImages = [
+  '/images/about/innerAbout.jpg',
+  '/images/home/customDesign/slide_1.jpg',
+  '/images/home/customDesign/slide_2.jpg',
+  '/images/home/customDesign/slide_3.jpg',
+  '/images/home/customDesign/slide_4.jpg',
+  '/images/home/customDesign/slide_5.jpg',
+]
 
 import styles from './AboutContent.module.scss'
 
@@ -20,7 +28,15 @@ export const AboutContent: FC = () => {
         subtitle="Welcome to masonmint"
         columns={10}
       />
-      <FindPartner />
+      <HeroDetail
+        sliderImages={sliderImages}
+        image="/images/about/innerAbout.jpg"
+        topDescription="We’ve built our business on long-term relationship with the
+                  world’s largest mining companies"
+        bottomDescription="Providing our partners with reliable and efficient results
+                  supported by the resources of a publicly listed, global
+                  company."
+      />
       <WasBorn />
       <AllProducts />
       <WhatWeDo />

@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="" />
+    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/packaging/hero.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/packaging/pack_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/packaging/pack_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/packaging/slide_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/packaging/slide_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/packaging/slide_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/packaging/slide_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/HeroDetail/HeroDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/FindPartner/FindPartner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/HeroDetail/HeroDetail.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/FindPartner/FindPartner.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/WhatWeDo/WhatWeDo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDo/WhatWeDo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/WhatWeDo/WhatWeDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDo/WhatWeDo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,11 +75,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ui" />
+      <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/public/images/home" />
       <recent name="$PROJECT_DIR$/src/ui/Button" />
       <recent name="$PROJECT_DIR$/src/ui/Button/ui" />
-      <recent name="$PROJECT_DIR$/src/modules/BecomeADistributor/ui" />
-      <recent name="$PROJECT_DIR$/src/app/styles" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -94,14 +111,7 @@
       <workItem from="1689921175923" duration="21983000" />
       <workItem from="1690025430866" duration="15014000" />
       <workItem from="1690354317927" duration="23000" />
-      <workItem from="1690354345499" duration="24809000" />
-    </task>
-    <task id="LOCAL-00017" summary="fix: header some fixes">
-      <created>1688393627186</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1688393627186</updated>
+      <workItem from="1690354345499" duration="33720000" />
     </task>
     <task id="LOCAL-00018" summary="feature: add disabled variants to buttonPrimary">
       <created>1688458079972</created>
@@ -439,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690450398144</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="fix: some fixes">
+      <created>1690450853093</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1690450853093</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
