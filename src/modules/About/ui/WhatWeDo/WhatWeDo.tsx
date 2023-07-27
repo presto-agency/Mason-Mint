@@ -22,7 +22,7 @@ const WhatWeDo: FC<{ className?: string }> = ({ className }) => {
             />
           </div>
           <div className={styles['WhatWeDo__content_right']}>
-            <ParallaxSection parallaxValues={[-100, 200]}>
+            <ParallaxSection parallaxValues={[-170, 170]}>
               <div className={styles['descriptionContainer']}>
                 <h2 className={classNames('h2', styles['title'])}>
                   <AnimatedText title withBlueDot>

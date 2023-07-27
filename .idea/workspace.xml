@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/FindPartner/FindPartner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/FindPartner/FindPartner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingMarketing/CustomMintingMarketing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingMarketing/CustomMintingMarketing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/WhatWeDo/WhatWeDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/WhatWeDo/WhatWeDo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,14 +98,7 @@
       <workItem from="1689921175923" duration="21983000" />
       <workItem from="1690025430866" duration="15014000" />
       <workItem from="1690354317927" duration="23000" />
-      <workItem from="1690354345499" duration="22620000" />
-    </task>
-    <task id="LOCAL-00014" summary="fix: some fixes-2">
-      <created>1688137674014</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1688137674014</updated>
+      <workItem from="1690354345499" duration="23341000" />
     </task>
     <task id="LOCAL-00015" summary="fix: add backward mod to button">
       <created>1688386370785</created>
@@ -445,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690446871397</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="fix: custom minting banner">
+      <created>1690448587733</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1690448587733</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,7 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: faq section" />
     <MESSAGE value="fix: add swiper desktop" />
     <MESSAGE value="fix: add pixel perfect to swiper desktop" />
     <MESSAGE value="fix: pixel perfect swiper desktop" />
@@ -489,7 +486,8 @@
     <MESSAGE value="feat: add AllProduct" />
     <MESSAGE value="feat: add whatWeDo" />
     <MESSAGE value="fix: about page animation, animationScaleBg" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: about page animation, animationScaleBg" />
+    <MESSAGE value="fix: custom minting banner" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: custom minting banner" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
