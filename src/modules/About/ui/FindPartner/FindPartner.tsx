@@ -4,10 +4,10 @@ import Container from '@/app/layouts/Container'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
-
-import styles from './FindPartner.module.scss'
 import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
+
+import styles from './FindPartner.module.scss'
 
 const images = [
   '/images/about/innerAbout.jpg',
