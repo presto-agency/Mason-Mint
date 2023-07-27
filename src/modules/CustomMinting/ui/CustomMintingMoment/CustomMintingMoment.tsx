@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 import routes from '@/utils/routes'
 
 const AnimatedElement = dynamic(
@@ -18,34 +19,38 @@ const CustomMintingMoment: FC<{ className?: string }> = ({ className }) => {
     <div className={classNames(styles['moment'], className)}>
       <div className="row">
         <div className="col-md-4">
-          <h3 className={classNames(styles['moment__title'], 'h3')}>
-            <AnimatedText title withBlueDot>
-              Mark the Moment with Exceptional Pieces
-            </AnimatedText>
-          </h3>
-          <div className={styles['moment__description']}>
-            <p>
-              <AnimatedText>
-                From milestone occasions (birth, retirement, award) to
-                promotional items, our team of minting professionals can help
-                guide your project from start to finish.
+          <ParallaxSection parallaxValues={[0, 300]}>
+            <h3 className={classNames(styles['moment__title'], 'h3')}>
+              <AnimatedText title withBlueDot>
+                Mark the Moment with Exceptional Pieces
               </AnimatedText>
-            </p>
-            <p>
-              <AnimatedText>
-                With all of our design, production, and finish work under one
-                roof, your project will receive the attention it deserves. Let
-                us make your vision a reality.
-              </AnimatedText>
-            </p>
-          </div>
-          <div className={styles['moment__action']}>
-            <AnimatedElement>
-              <Link href={routes.public.contactUs}>
-                <ButtonPrimary variant="transparent">Contact us</ButtonPrimary>
-              </Link>
-            </AnimatedElement>
-          </div>
+            </h3>
+            <div className={styles['moment__description']}>
+              <p>
+                <AnimatedText>
+                  From milestone occasions (birth, retirement, award) to
+                  promotional items, our team of minting professionals can help
+                  guide your project from start to finish.
+                </AnimatedText>
+              </p>
+              <p>
+                <AnimatedText>
+                  With all of our design, production, and finish work under one
+                  roof, your project will receive the attention it deserves. Let
+                  us make your vision a reality.
+                </AnimatedText>
+              </p>
+            </div>
+            <div className={styles['moment__action']}>
+              <AnimatedElement>
+                <Link href={routes.public.contactUs}>
+                  <ButtonPrimary variant="transparent">
+                    Contact us
+                  </ButtonPrimary>
+                </Link>
+              </AnimatedElement>
+            </div>
+          </ParallaxSection>
         </div>
         <div className="col-md-6 offset-md-1">
           <div className={styles['moment__banner']}>
@@ -57,7 +62,7 @@ const CustomMintingMoment: FC<{ className?: string }> = ({ className }) => {
               alt="Mark the Moment with Exceptional Pieces"
               className={styles['moment__banner_item']}
               parallax
-              parallaxValues={[100, -100]}
+              parallaxValues={[-200, 200]}
             />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import classNames from 'classnames'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { motion } from 'framer-motion'
@@ -19,12 +19,14 @@ const images = [
 const CustomMintingBanner: FC<{ className?: string }> = ({ className }) => {
   const { width } = useWindowDimensions()
 
+  const [loaded, setLoaded] = useState<boolean>(false)
+
   return (
     <div className={classNames(styles['banner'], className)}>
       <motion.div
         className={styles['banner__overflow']}
         initial={{ opacity: 0, scale: 1.1 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={loaded ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 1 }}
       >
         {width > 767 ? (
@@ -36,6 +38,7 @@ const CustomMintingBanner: FC<{ className?: string }> = ({ className }) => {
             className={styles['banner__item']}
             parallax
             parallaxValues={[-150, 150]}
+            onLoadingComplete={() => setLoaded(true)}
           />
         )}
       </motion.div>
