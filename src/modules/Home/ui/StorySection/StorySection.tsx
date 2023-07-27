@@ -31,6 +31,7 @@ const StorySection: FC = () => {
               src="/images/home/home_story_1.png"
               className={styles['photoContainer']}
               alt="Coin photo"
+              description="welcome to masonmint"
               parallax
               parallaxValues={[-100, 100]}
             />

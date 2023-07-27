@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/AnimateScaleBG/AnimateScaleBG.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/AnimateScaleBG/AnimateScaleBG.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,69 +93,8 @@
       <workItem from="1689577119846" duration="71124000" />
       <workItem from="1689921175923" duration="21983000" />
       <workItem from="1690025430866" duration="15014000" />
-    </task>
-    <task id="LOCAL-00008" summary="fix: some code refactor - 2">
-      <created>1688038482073</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1688038482073</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fix: commit after pull">
-      <created>1688039258849</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1688039258849</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix: some refactor(#21)">
-      <created>1688043535836</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1688043535836</updated>
-    </task>
-    <task id="LOCAL-00011" summary="feat: add hero section with animation">
-      <created>1688130122544</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1688130122544</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fix: some hero fixes">
-      <created>1688134353516</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1688134353516</updated>
-    </task>
-    <task id="LOCAL-00013" summary="fix: some fixes">
-      <created>1688136969499</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1688136969499</updated>
-    </task>
-    <task id="LOCAL-00014" summary="fix: some fixes-2">
-      <created>1688137674014</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1688137674014</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fix: add backward mod to button">
-      <created>1688386370785</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1688386370785</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fix: add isLoading mod to button">
-      <created>1688389382978</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1688389382978</updated>
+      <workItem from="1690354317927" duration="23000" />
+      <workItem from="1690354345499" duration="24809000" />
     </task>
     <task id="LOCAL-00017" summary="fix: header some fixes">
       <created>1688393627186</created>
@@ -440,7 +376,70 @@
       <option name="project" value="LOCAL" />
       <updated>1689953520790</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="feat: add section FindPartner">
+      <created>1690300959826</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1690300959826</updated>
+    </task>
+    <task id="LOCAL-00058" summary="feat: add wasBorn section">
+      <created>1690305353687</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1690305353687</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fix: some about page fixes">
+      <created>1690356480710</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1690356480711</updated>
+    </task>
+    <task id="LOCAL-00060" summary="feat: add AllProduct">
+      <created>1690365359145</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1690365359145</updated>
+    </task>
+    <task id="LOCAL-00061" summary="feat: add whatWeDo">
+      <created>1690376268294</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1690376268295</updated>
+    </task>
+    <task id="LOCAL-00062" summary="fix: about page animation, animationScaleBg">
+      <created>1690446871396</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1690446871397</updated>
+    </task>
+    <task id="LOCAL-00063" summary="fix: custom minting banner">
+      <created>1690448587733</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1690448587733</updated>
+    </task>
+    <task id="LOCAL-00064" summary="fix: some transform fixes">
+      <created>1690449268453</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1690449268453</updated>
+    </task>
+    <task id="LOCAL-00065" summary="fix: some fixes">
+      <created>1690450398143</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1690450398144</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,15 +458,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add section CTA" />
-    <MESSAGE value="feat: add section customDesigns" />
-    <MESSAGE value="feat: add pixel perfect" />
-    <MESSAGE value="feat: add sellSection" />
-    <MESSAGE value="fix: some fixes" />
-    <MESSAGE value="fix: add faq section" />
-    <MESSAGE value="fix: faq section" />
-    <MESSAGE value="fix: add swiper desktop" />
-    <MESSAGE value="fix: add pixel perfect to swiper desktop" />
     <MESSAGE value="fix: pixel perfect swiper desktop" />
     <MESSAGE value="fet: add mobile slider version" />
     <MESSAGE value="fet: finish slider DesignSection" />
@@ -484,7 +474,16 @@
     <MESSAGE value="feat: add animateScaleBG" />
     <MESSAGE value="fix: animateScaleBG styles" />
     <MESSAGE value="feat: start sell section animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: start sell section animation" />
+    <MESSAGE value="feat: add section FindPartner" />
+    <MESSAGE value="feat: add wasBorn section" />
+    <MESSAGE value="fix: some about page fixes" />
+    <MESSAGE value="feat: add AllProduct" />
+    <MESSAGE value="feat: add whatWeDo" />
+    <MESSAGE value="fix: about page animation, animationScaleBg" />
+    <MESSAGE value="fix: custom minting banner" />
+    <MESSAGE value="fix: some transform fixes" />
+    <MESSAGE value="fix: some fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: some fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

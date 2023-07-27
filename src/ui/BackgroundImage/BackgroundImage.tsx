@@ -7,9 +7,13 @@ import styles from './BackgroundImage.module.scss'
 
 type BackgroundImageProps = {
   className?: string
+  description?: string
+  descriptionPositionRight?: boolean
+  descriptionClass?: string
   children?: ReactNode
   parallax?: boolean
   cover?: boolean
+  contain?: boolean
   parallaxValues?: [number, number]
 } & ImageProps
 
@@ -22,6 +26,10 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
   parallax = false,
   parallaxValues = [-50, 50],
   cover = false,
+  contain = false,
+  description,
+  descriptionPositionRight,
+  descriptionClass,
   ...props
 }) => {
   const useParallax = (value: MotionValue<number>) => {
@@ -50,7 +58,10 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
 
   const ImageComponent = (
     <Image
-      className={cover ? styles['cowerStyle'] : ''}
+      className={classNames(
+        cover ? styles['cowerStyle'] : '',
+        contain ? styles['containStyle'] : ''
+      )}
       src={src}
       ref={refTarget}
       alt={alt}
@@ -65,9 +76,23 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
     `calc(100% + (${value * 2}rem))`
 
   const landslide = (value: number) => `-${value}rem`
+  const position = {
+    [styles['right']]: descriptionPositionRight,
+  }
 
   return (
     <div className={classNames(styles['BackgroundImage'], className)}>
+      {description && (
+        <p
+          className={classNames(
+            styles['description'],
+            position,
+            descriptionClass
+          )}
+        >
+          {description}
+        </p>
+      )}
       <div className={styles['BackgroundImage__container']}>
         {parallax ? (
           <motion.div

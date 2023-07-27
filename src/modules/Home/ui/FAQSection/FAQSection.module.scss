@@ -37,19 +37,6 @@
         width: 192rem;
         height: 219rem;
         margin: 152rem 0 0 102rem;
-
-
-        &::after {
-          position: absolute;
-          top: -5rem;
-          right: -80rem;
-          display: block;
-          color: var(--gray-700);
-          font: var(--font-h6);
-          transform: rotate(90deg);
-          transform-origin: left;
-          content: 'support';
-        }
       }
     }
 
