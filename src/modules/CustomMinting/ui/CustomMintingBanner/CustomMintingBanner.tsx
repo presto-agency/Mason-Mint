@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { motion } from 'framer-motion'
@@ -18,8 +18,10 @@ const images = [
 
 const CustomMintingBanner: FC<{ className?: string }> = ({ className }) => {
   const { width } = useWindowDimensions()
-
   const [loaded, setLoaded] = useState<boolean>(false)
+  useEffect(() => {
+    width > 767 && setLoaded(true)
+  }, [width])
 
   return (
     <div className={classNames(styles['banner'], className)}>

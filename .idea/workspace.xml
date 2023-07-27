@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/WhatWeDo/WhatWeDo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/WhatWeDo/WhatWeDo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,14 +97,7 @@
       <workItem from="1689921175923" duration="21983000" />
       <workItem from="1690025430866" duration="15014000" />
       <workItem from="1690354317927" duration="23000" />
-      <workItem from="1690354345499" duration="23341000" />
-    </task>
-    <task id="LOCAL-00015" summary="fix: add backward mod to button">
-      <created>1688386370785</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1688386370785</updated>
+      <workItem from="1690354345499" duration="24357000" />
     </task>
     <task id="LOCAL-00016" summary="fix: add isLoading mod to button">
       <created>1688389382978</created>
@@ -443,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690448587733</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="fix: some transform fixes">
+      <created>1690449268453</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1690449268453</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +461,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: add swiper desktop" />
     <MESSAGE value="fix: add pixel perfect to swiper desktop" />
     <MESSAGE value="fix: pixel perfect swiper desktop" />
     <MESSAGE value="fet: add mobile slider version" />
@@ -487,7 +485,8 @@
     <MESSAGE value="feat: add whatWeDo" />
     <MESSAGE value="fix: about page animation, animationScaleBg" />
     <MESSAGE value="fix: custom minting banner" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: custom minting banner" />
+    <MESSAGE value="fix: some transform fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: some transform fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
