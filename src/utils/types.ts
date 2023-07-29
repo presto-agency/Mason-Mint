@@ -22,8 +22,8 @@ export type ProductTestProps = {
 }
 
 export type MainImagesProps = {
-  obverse: string
-  reverse?: string
+  obverse: string | null
+  reverse: string | null
 }
 
 export type SpecificationProps = {

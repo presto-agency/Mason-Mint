@@ -26,8 +26,8 @@ const productTestSchema = new mongoose.Schema({
   ProductName: String,
   Metal: String,
   mainImages: {
-    obverse: String,
-    reverse: String,
+    obverse: { type: String, default: null },
+    reverse: { type: String, default: null },
   },
   additionalImages: [imageSchema],
   specification: [specificationSchema],

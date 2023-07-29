@@ -1,10 +1,10 @@
-import { FC, Fragment, useCallback, useMemo, useState } from 'react'
-import { ObjectId } from 'mongoose'
+import { FC, useCallback, useMemo, useState } from 'react'
 import axios from 'axios'
 import dynamic from 'next/dynamic'
 import {
   CategoryProps,
-  ProductProps,
+  ImagesProps,
+  MainImagesProps,
   ProductTestProps,
   SpecificationProps,
 } from '@/utils/types'
@@ -20,6 +20,7 @@ const SelectField = dynamic(() => import('@/ui/SelectField/SelectField'), {
 })
 
 import styles from './ProductForm.module.scss'
+import classNames from 'classnames'
 
 type FormProps = {
   ProductName: string
@@ -34,9 +35,57 @@ type FormProps = {
   Thickness?: string
   category?: CategoryProps
   specification?: SpecificationProps[]
-  Images?: { ImageUrl: string }[]
+  mainImages: MainImagesProps
+  additionalImages: ImagesProps[]
   slug: string
   description?: string
+}
+
+type ImageToUpload = {
+  file: File | null
+  ImageUrl: string | null
+}
+
+type AdditionalImageToUpload =
+  | {
+      id: string
+      file: File
+      nameKeyToUpload: string
+      ImageUrl: string
+    }
+  | {
+      id: string
+      file: null
+      nameKeyToUpload: null
+      ImageUrl: string
+    }
+
+type UploadImageResponse =
+  | {
+      type: 'obverse' | 'reverse'
+      url: string
+    }
+  | {
+      type: 'additional'
+      url: string
+      name: string
+    }
+
+const transformAdditionalImages = (images: ImagesProps[]) => {
+  const res: AdditionalImageToUpload[] = []
+
+  images.forEach((image, index) => {
+    if (image.ImageUrl) {
+      res.push({
+        id: `${index + 1}`,
+        file: null,
+        nameKeyToUpload: null,
+        ImageUrl: image.ImageUrl,
+      })
+    }
+  })
+
+  return res
 }
 
 const ProductTestForm: FC<{
@@ -49,8 +98,23 @@ const ProductTestForm: FC<{
     label: product.category?.name || '',
     value: product.category?.id || '',
   })
-  const [uploadedImages, setUploadedImages] = useState<File[]>([])
-  const [uploadedImagesUrl, setUploadedImagesUrl] = useState<string[]>([])
+
+  const [obverseImage, setObverseImage] = useState<ImageToUpload>({
+    file: null,
+    ImageUrl: product.mainImages.obverse || null,
+  })
+  const [reverseImage, setReverseImage] = useState<ImageToUpload>({
+    file: null,
+    ImageUrl: product.mainImages.reverse || null,
+  })
+
+  const [additionalImages, setAdditionalImages] = useState<
+    AdditionalImageToUpload[]
+  >(
+    product.additionalImages.length
+      ? transformAdditionalImages(product.additionalImages)
+      : []
+  )
 
   const defaultValues: FormProps = useMemo(
     () => ({
@@ -65,6 +129,8 @@ const ProductTestForm: FC<{
       Series: product.specification[0].Series,
       Thickness: product.specification[0].Thickness,
       category: product.category,
+      mainImages: product.mainImages,
+      additionalImages: product.additionalImages,
       slug: product.slug,
       description: product.description || '',
     }),
@@ -102,66 +168,153 @@ const ProductTestForm: FC<{
   )
 
   const uploadProps = {
-    beforeUpload: async (file: File) => {
-      setUploadedImages((prevState: File[]) => [...prevState, file])
-      setUploadedImagesUrl((prevState: string[]) => [
-        ...prevState,
-        URL.createObjectURL(file),
-      ])
-    },
     onError: (error: Error) => {
       console.error(error)
     },
-    multiple: true,
     action: '',
     accept: 'image/jpeg, image/png',
   }
 
+  const resetObverseImage = useCallback(() => {
+    const obj = {
+      file: null,
+      ImageUrl: product.mainImages.obverse || null,
+    }
+
+    setObverseImage(obj)
+  }, [product.mainImages.obverse])
+
+  const resetReverseImage = useCallback(() => {
+    const obj = {
+      file: null,
+      ImageUrl: product.mainImages.reverse || null,
+    }
+
+    setReverseImage(obj)
+  }, [product.mainImages.reverse])
+
+  const deleteObverseImage = useCallback(() => {
+    setObverseImage({
+      file: null,
+      ImageUrl: null,
+    })
+  }, [])
+
+  const deleteReverseImage = useCallback(() => {
+    setReverseImage({
+      file: null,
+      ImageUrl: null,
+    })
+  }, [])
+
+  const deleteAdditionalImage = useCallback(
+    (id: string) => {
+      const filteredImages = additionalImages.filter((img) => img.id !== id)
+      setAdditionalImages([...filteredImages])
+    },
+    [additionalImages]
+  )
+
   const onSubmit = async (formData: FormProps) => {
-    // formData.specification = [
-    //   {
-    //     ActualMetalWeight: formData.ActualMetalWeight || '',
-    //     CoinWeight: formData.CoinWeight || '',
-    //     Diameter: formData.Diameter || '',
-    //     Thickness: formData.Thickness || '',
-    //     EdgeDesign: formData.EdgeDesign || '',
-    //     Series: formData.Series || '',
-    //     Fineness: formData.Fineness || '',
-    //     IraApproved: formData.IraApproved || '',
-    //   },
-    // ]
-    // delete formData.ActualMetalWeight
-    // delete formData.CoinWeight
-    // delete formData.Diameter
-    // delete formData.Thickness
-    // delete formData.EdgeDesign
-    // delete formData.Series
-    // delete formData.Fineness
-    // delete formData.IraApproved
-    // formData.slug = generateSlug(formData.slug)
-    // if (uploadedImages.length > 0) {
-    //   const fd = new FormData()
-    //   for (const image of uploadedImages) {
-    //     fd.append('images', image)
-    //   }
-    //   // @TODO Detect and display errors
-    //   await axios
-    //     .post(`/api/files/${product.id}/upload`, fd)
-    //     .then(({ data: { files = [], success = false, error = null } }) => {
-    //       if (error) {
-    //         console.error(error)
-    //       }
-    //       if (success) {
-    //         const images: { ImageUrl: string }[] = []
-    //         Object.values(files).map((file) => {
-    //           images.push({ ImageUrl: file as string })
-    //         })
-    //         formData.Images = images
-    //       }
-    //     })
-    //     .catch((error) => console.error(error))
-    // }
-    // ;(await onValues) && onValues(formData as ProductTestProps)
+    formData.specification = [
+      {
+        ActualMetalWeight: formData.ActualMetalWeight || '',
+        CoinWeight: formData.CoinWeight || '',
+        Diameter: formData.Diameter || '',
+        Thickness: formData.Thickness || '',
+        EdgeDesign: formData.EdgeDesign || '',
+        Series: formData.Series || '',
+        Fineness: formData.Fineness || '',
+        IraApproved: formData.IraApproved || '',
+      },
+    ]
+
+    delete formData.ActualMetalWeight
+    delete formData.CoinWeight
+    delete formData.Diameter
+    delete formData.Thickness
+    delete formData.EdgeDesign
+    delete formData.Series
+    delete formData.Fineness
+    delete formData.IraApproved
+    formData.slug = generateSlug(formData.slug)
+
+    formData.mainImages = {
+      obverse: obverseImage.ImageUrl,
+      reverse: reverseImage.ImageUrl,
+    }
+
+    const additionalImagesHash = new Map<string, string>()
+    const fd = new FormData()
+
+    if (obverseImage.file) {
+      fd.append('obverseImage', obverseImage.file)
+    }
+
+    if (reverseImage.file) {
+      fd.append('reverseImage', reverseImage.file)
+    }
+
+    for (const image of additionalImages) {
+      additionalImagesHash.set(
+        image.nameKeyToUpload ? image.nameKeyToUpload : image.id,
+        image.ImageUrl
+      )
+      if (image.file) {
+        fd.append(`additionalImages`, image.file)
+      }
+    }
+
+    if (
+      fd.has('obverseImage') ||
+      fd.has('reverseImage') ||
+      fd.has('additionalImages')
+    ) {
+      await axios
+        .post(`/api/files/${product.id}/upload`, fd)
+        .then(({ data: { files = [], success = false, error = null } }) => {
+          if (error) {
+            console.log(error)
+          }
+
+          if (success) {
+            Object.values<UploadImageResponse>(files).forEach((file) => {
+              switch (file.type) {
+                case 'obverse':
+                  formData.mainImages.obverse = file.url
+                  break
+                case 'reverse':
+                  formData.mainImages.reverse = file.url
+                  break
+                case 'additional':
+                  additionalImagesHash.set(file.name, file.url)
+                  break
+                default:
+                  break
+              }
+            })
+          }
+        })
+        .catch((error) => console.error(error))
+    }
+    console.log(additionalImagesHash, 'after req additionalImagesHash')
+    const result: { ImageUrl: string }[] = []
+    additionalImages.forEach((image) => {
+      console.log(image, 'image')
+      if (image.nameKeyToUpload) {
+        if (additionalImagesHash.has(image.nameKeyToUpload)) {
+          result.push({
+            ImageUrl: additionalImagesHash.get(image.nameKeyToUpload)!,
+          })
+          return
+        }
+      }
+      result.push({ ImageUrl: image.ImageUrl })
+      return
+    })
+
+    formData.additionalImages = [...result]
+    ;(await onValues) && onValues(formData as ProductTestProps)
   }
 
   return (
@@ -379,42 +532,134 @@ const ProductTestForm: FC<{
             Save product
           </ButtonPrimary>
         </div>
-        <div className="col-md-6">
-          {/* {product?.Images?.length ? (
-            <div className={styles['form__thumbs']}>
-              {product.Images.map((image, key) => (
-                <Fragment key={key}>
-                  {!image.ImageUrl?.includes('www.masonmint.com') ? (
-                    <BackgroundImage
-                      src={image.ImageUrl || ''}
-                      alt="Alt"
-                      className={styles['form__thumbs_item']}
-                    />
-                  ) : null}
-                </Fragment>
-              ))}
+        <div
+          className={classNames('col-md-6', styles['form__upload_container'])}
+        >
+          <div className={classNames(styles['grid_item'], styles['obverse'])}>
+            <h5>Obverse:</h5>
+            {obverseImage.ImageUrl &&
+            !obverseImage.ImageUrl.includes('www.masonmint.com') ? (
+              <BackgroundImage
+                src={obverseImage.ImageUrl}
+                alt="Alt"
+                className={styles['form__thumbs_item']}
+              />
+            ) : (
+              <RCUploader
+                {...uploadProps}
+                beforeUpload={async (file: File) => {
+                  const imageToAdd = {
+                    file: file,
+                    ImageUrl: URL.createObjectURL(file),
+                  }
+                  setObverseImage(imageToAdd)
+                }}
+                className={styles['form__upload_item']}
+              >
+                Choose, or drag the file
+              </RCUploader>
+            )}
+            <div className={styles['buttons']}>
+              <button
+                className={styles['reset_button']}
+                type="button"
+                onClick={resetObverseImage}
+              >
+                Reset
+              </button>
+              <button
+                type="button"
+                className={styles['delete_button']}
+                onClick={deleteObverseImage}
+              >
+                Delete
+              </button>
             </div>
-          ) : null} */}
-          {uploadedImagesUrl.length ? (
-            <div className={styles['form__thumbs']}>
-              {uploadedImagesUrl.map((image, key) => (
-                <Fragment key={key}>
-                  <BackgroundImage
-                    src={image}
-                    alt="Alt"
-                    className={styles['form__thumbs_item']}
-                  />
-                </Fragment>
-              ))}
+          </div>
+          <div className={classNames(styles['grid_item'], styles['reverse'])}>
+            <h5>Reverse:</h5>
+
+            {reverseImage.ImageUrl &&
+            !reverseImage.ImageUrl.includes('www.masonmint.com') ? (
+              <BackgroundImage
+                src={reverseImage.ImageUrl}
+                alt="Alt"
+                className={styles['form__thumbs_item']}
+              />
+            ) : (
+              <RCUploader
+                {...uploadProps}
+                beforeUpload={async (file: File) => {
+                  const imageToAdd = {
+                    file: file,
+                    ImageUrl: URL.createObjectURL(file),
+                  }
+                  setReverseImage(imageToAdd)
+                }}
+                className={styles['form__upload_item']}
+              >
+                Choose, or drag the file
+              </RCUploader>
+            )}
+            <div className={styles['buttons']}>
+              <button
+                type="button"
+                className={styles['reset_button']}
+                onClick={resetReverseImage}
+              >
+                Reset
+              </button>
+              <button
+                type="button"
+                className={styles['delete_button']}
+                onClick={deleteReverseImage}
+              >
+                Delete
+              </button>
             </div>
-          ) : null}
-          <RCUploader {...uploadProps}>
-            <div className={styles['form__uploader']}>
-              <p className={styles['form__uploader_title']}>
-                Choose, or drag the files
-              </p>
-            </div>
-          </RCUploader>
+          </div>
+          <div
+            className={classNames(styles['grid_item'], styles['additional'])}
+          >
+            <h5>Additional images:</h5>
+            {additionalImages.length ? (
+              <div className={styles['images_list']}>
+                {additionalImages.map((image) => {
+                  return (
+                    <div key={image.id} className={styles['images_list_item']}>
+                      <BackgroundImage
+                        src={image.ImageUrl}
+                        alt="Alt"
+                        className={styles['image']}
+                      />
+                      <div
+                        className={styles['delete']}
+                        onClick={() => deleteAdditionalImage(image.id)}
+                      >
+                        x
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            ) : null}
+            <RCUploader
+              {...uploadProps}
+              multiple={true}
+              beforeUpload={async (file: File & { uid: string }) => {
+                const imageToAdd = {
+                  id: file.uid,
+                  file: file,
+                  nameKeyToUpload: file.name,
+                  ImageUrl: URL.createObjectURL(file),
+                }
+                setAdditionalImages((prevSate) => [...prevSate, imageToAdd])
+              }}
+              className={styles['form__upload_item']}
+            >
+              Choose, or drag the files
+            </RCUploader>
+          </div>
         </div>
       </div>
     </form>

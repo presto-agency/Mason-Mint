@@ -51,11 +51,33 @@ const handler: NextApiHandler = async (
 
   try {
     const { files } = await readFiles(req, productId)
-    const fileUrls = Object.values(files.images).map(
-      (file: formidable.File) => {
-        return `/uploads/${productId}/${file.originalFilename}`
-      }
-    )
+    const fileUrls = []
+
+    if (files.obverseImage) {
+      const file: formidable.File = Object.values(files.obverseImage)[0]
+      fileUrls.push({
+        type: 'obverse',
+        url: `/uploads/${productId}/${file.originalFilename}`,
+      })
+    }
+
+    if (files.reverseImage) {
+      const file: formidable.File = Object.values(files.reverseImage)[0]
+      fileUrls.push({
+        type: 'reverse',
+        url: `/uploads/${productId}/${file.originalFilename}`,
+      })
+    }
+
+    if (files.additionalImages) {
+      Object.values(files.additionalImages).forEach((file: formidable.File) => {
+        fileUrls.push({
+          type: 'additional',
+          url: `/uploads/${productId}/${file.originalFilename}`,
+          name: file.newFilename,
+        })
+      })
+    }
     res.status(200).json({ success: true, files: fileUrls })
   } catch (error) {
     console.error('Error while processing files: ', error)

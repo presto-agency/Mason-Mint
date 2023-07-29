@@ -37,7 +37,7 @@ const AdminProductsTest: FC<{ products: ProductTestProps[] }> = ({
                     {product.mainImages?.obverse ? (
                       <img
                         // src={product.Images[0].ImageUrl || ''}
-                        src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
+                        src={product.mainImages.obverse}
                         alt="Product"
                         width={100}
                         height={100}
