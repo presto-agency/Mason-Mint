@@ -43,17 +43,23 @@ const ProductCardTest: FC<ProductCardTestProps> = ({
               <div
                 className={classNames(styles['product__side'], styles['front'])}
               >
-                <img src={data.mainImages.obverse} alt={data.ProductName} />
+                <img
+                  src={data.mainImages.obverse || ''}
+                  alt={data.ProductName}
+                />
               </div>
               <div
                 className={classNames(styles['product__side'], styles['back'])}
               >
-                <img src={data.mainImages.reverse} alt={data.ProductName} />
+                <img
+                  src={data.mainImages.reverse || ''}
+                  alt={data.ProductName}
+                />
               </div>
             </>
           ) : (
             <div className={classNames(styles['product__side'])}>
-              <img src={data.mainImages.obverse} alt={data.ProductName} />
+              <img src={data.mainImages.obverse || ''} alt={data.ProductName} />
             </div>
           )}
         </div>

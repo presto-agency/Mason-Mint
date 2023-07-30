@@ -58,12 +58,18 @@ const DesignsDetailThumbnailTest: FC<DesignsDetailThumbnailTestProps> = ({
                 styles['front']
               )}
             >
-              <img src={product.mainImages.obverse} alt={product.ProductName} />
+              <img
+                src={product.mainImages.obverse || ''}
+                alt={product.ProductName}
+              />
             </div>
             <div
               className={classNames(styles['image__item_side'], styles['back'])}
             >
-              <img src={product.mainImages.reverse} alt={product.ProductName} />
+              <img
+                src={product.mainImages.reverse || ''}
+                alt={product.ProductName}
+              />
             </div>
           </motion.div>
         )}
@@ -75,13 +81,19 @@ const DesignsDetailThumbnailTest: FC<DesignsDetailThumbnailTestProps> = ({
               className={styles['thumbs__item']}
               onClick={() => handleFlip('obverse')}
             >
-              <img src={product.mainImages.obverse} alt={product.ProductName} />
+              <img
+                src={product.mainImages.obverse || ''}
+                alt={product.ProductName}
+              />
             </div>
             <div
               className={styles['thumbs__item']}
               onClick={() => handleFlip('reverse')}
             >
-              <img src={product.mainImages.reverse} alt={product.ProductName} />
+              <img
+                src={product.mainImages.reverse || ''}
+                alt={product.ProductName}
+              />
             </div>
           </>
         )}
