@@ -1,6 +1,6 @@
 import { NextApiRequest } from 'next'
 import { PageLayout } from '@/app/layouts/PageLayout'
-import { ProductTestEdit } from '@/modules/Admin'
+import { ProductEdit } from '@/modules/Admin'
 import CategoryModel from '../../../../models/Category'
 import db from '@/utils/db'
 import { CategoryProps, ProductTestProps } from '@/utils/types'
@@ -16,7 +16,7 @@ export default function ProductEditPage({
 }) {
   return (
     <PageLayout>
-      <ProductTestEdit product={product} categories={categories} />
+      <ProductEdit product={product} categories={categories} />
     </PageLayout>
   )
 }

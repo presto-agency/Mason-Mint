@@ -4,7 +4,7 @@
 // import db from '@/utils/db'
 // import ProductModel from '../../../models/Product'
 import { PageLayout } from '@/app/layouts/PageLayout'
-import { DesignsDetailContentTest } from '@/modules/DesignsDetail'
+import { DesignsDetailContent } from '@/modules/DesignsDetail'
 // import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 // type ProductDetailProps = {
@@ -20,7 +20,7 @@ const Index = () => {
     <PageLayout>
       {/*<DesignsDetailContent product={product} sameProducts={sameProducts} />*/}
       {/* <DesignsDetailContent /> */}
-      <DesignsDetailContentTest />
+      <DesignsDetailContent />
     </PageLayout>
   )
 }

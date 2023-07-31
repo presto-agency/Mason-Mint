@@ -1,36 +1,33 @@
 import { FC, useState, useRef, useCallback } from 'react'
 import classNames from 'classnames'
-import { ProductProps } from '@/utils/types'
+import { ProductTestProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
-import { detectImage, detectImages } from '@/utils/data/detectImages'
 import { motion } from 'framer-motion'
 
 import styles from './DesignsDetailThumbnail.module.scss'
 
 type DesignsDetailThumbnailProps = {
-  product: ProductProps | null
+  product: ProductTestProps | null
   className?: string
 }
-
 const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
   product,
   className,
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
-  const [activeSide, setActiveSide] = useState<number>(0)
+  const [activeSide, setActiveSide] = useState<'obverse' | 'reverse'>('obverse')
   const categorySlug = product
     ? toLoverCaseAndSpacesToHyphen(product.category?.name as string)
     : ''
 
-  const handleFlip = useCallback(
-    (index: number) => {
-      if (index !== activeSide) {
-        setActiveSide(index)
+  const handleFlip = useCallback((valueToSet: 'obverse' | 'reverse') => {
+    setActiveSide((prev) => {
+      if (prev !== valueToSet) {
         if (audioRef.current) audioRef.current.play()
       }
-    },
-    [setActiveSide, activeSide]
-  )
+      return valueToSet
+    })
+  }, [])
 
   return (
     <div className={className}>
@@ -62,7 +59,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
               )}
             >
               <img
-                src={detectImages(product.Images, 0)}
+                src={product.mainImages.obverse || ''}
                 alt={product.ProductName}
               />
             </div>
@@ -70,7 +67,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
               className={classNames(styles['image__item_side'], styles['back'])}
             >
               <img
-                src={detectImages(product.Images, 1)}
+                src={product.mainImages.reverse || ''}
                 alt={product.ProductName}
               />
             </div>
@@ -78,19 +75,28 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
         )}
       </div>
       <div className={styles['thumbs']}>
-        {product &&
-          product.Images?.length &&
-          product.Images.slice(0, 2).map((p, index) => {
-            return (
-              <div
-                key={index}
-                className={styles['thumbs__item']}
-                onClick={() => handleFlip(index)}
-              >
-                <img src={detectImage(p, index)} alt={product.ProductName} />
-              </div>
-            )
-          })}
+        {product?.mainImages && (
+          <>
+            <div
+              className={styles['thumbs__item']}
+              onClick={() => handleFlip('obverse')}
+            >
+              <img
+                src={product.mainImages.obverse || ''}
+                alt={product.ProductName}
+              />
+            </div>
+            <div
+              className={styles['thumbs__item']}
+              onClick={() => handleFlip('reverse')}
+            >
+              <img
+                src={product.mainImages.reverse || ''}
+                alt={product.ProductName}
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
   )

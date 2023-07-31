@@ -1,5 +1,5 @@
 import { PageLayout } from '@/app/layouts/PageLayout'
-import { AdminProductsTest } from '@/modules/Admin'
+import { AdminProducts } from '@/modules/Admin'
 import db from '@/utils/db'
 // import ProductModel from '../../../models/Product'
 import { ProductTestProps } from '@/utils/types'
@@ -13,7 +13,7 @@ type ProductsPageProps = {
 export default function ProductsPage({ products }: ProductsPageProps) {
   return (
     <PageLayout>
-      <AdminProductsTest products={products} />
+      <AdminProducts products={products} />
     </PageLayout>
   )
 }

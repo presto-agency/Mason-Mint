@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import classNames from 'classnames'
-import { ProductProps } from '@/utils/types'
+import { ProductTestProps } from '@/utils/types'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import styles from './DesignsDetailGalley.module.scss'
 
 type DesignsDetailGalleryProps = {
-  product: ProductProps | null
+  product: ProductTestProps | null
   className?: string
 }
 

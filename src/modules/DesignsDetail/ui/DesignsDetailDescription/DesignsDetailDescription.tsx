@@ -2,8 +2,9 @@ import { FC } from 'react'
 import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import Link from 'next/link'
-import { ProductProps } from '@/utils/types'
+import { ProductTestProps } from '@/utils/types'
 import routes from '@/utils/routes'
+
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 const AnimatedElement = dynamic(
@@ -13,7 +14,7 @@ const AnimatedElement = dynamic(
 import styles from './DesignsDetailDescription.module.scss'
 
 type DesignsDetailDescriptionProps = {
-  product: ProductProps | null
+  product: ProductTestProps | null
   className?: string
 }
 

@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { GetStaticProps } from 'next'
 
 import { PageLayout } from '@/app/layouts/PageLayout'
-import { DesignsContentTest } from '@/modules/Designs'
+import { DesignsContent } from '@/modules/Designs'
 
 import db from '@/utils/db'
 import { CategoryProps, ProductProps, ProductTestProps } from '@/utils/types'
@@ -19,7 +19,7 @@ type DesignsProps = {
 const Index: FC<DesignsProps> = ({ categories, products }) => {
   return (
     <PageLayout>
-      <DesignsContentTest products={products} categories={categories} />
+      <DesignsContent products={products} categories={categories} />
     </PageLayout>
   )
 }
