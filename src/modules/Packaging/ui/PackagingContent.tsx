@@ -5,8 +5,10 @@ import BecomeDistributorSection from '@/components/BecomeDistributorSection/Beco
 const HeroDetail = dynamic(() => import('@/ui/HeroDetail/HeroDetail'), {
   ssr: false,
 })
-import styles from './PackagingContent.module.scss'
 import dynamic from 'next/dynamic'
+import NaturalVehicle from '@/modules/Packaging/ui/NaturalVehicle/NaturalVehicle'
+
+import styles from './PackagingContent.module.scss'
 
 const sliderImages = [
   '/images/packaging/hero.jpg',
@@ -30,6 +32,7 @@ export const PackagingContent: FC = () => {
         sliderImages={sliderImages}
         image="/images/packaging/hero.jpg"
       />
+      <NaturalVehicle />
       <WhatWeDo />
       <BecomeDistributorSection />
     </main>
