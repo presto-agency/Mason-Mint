@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/NumismaticPackaging/NumismaticPackaging.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/NumismaticPackaging/NumismaticPackaging.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WhatWeDo/WhatWeDo.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WhatWeDo/WhatWeDo.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,14 +99,7 @@
       <workItem from="1690025430866" duration="15014000" />
       <workItem from="1690354317927" duration="23000" />
       <workItem from="1690354345499" duration="34680000" />
-      <workItem from="1690785883856" duration="16271000" />
-    </task>
-    <task id="LOCAL-00020" summary="fix: footer creators link">
-      <created>1688466898828</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1688466898828</updated>
+      <workItem from="1690785883856" duration="16811000" />
     </task>
     <task id="LOCAL-00021" summary="fix: some navigation fixes">
       <created>1688467451636</created>
@@ -446,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690795542426</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="feat: add NumismaticPackaging section">
+      <created>1690811215741</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1690811215741</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +463,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fet: finish slider DesignSection" />
     <MESSAGE value="fix: some animation" />
     <MESSAGE value="fix: eslintrc file update" />
     <MESSAGE value="feat: add variants of slider animation" />
@@ -490,7 +487,8 @@
     <MESSAGE value="fix: some fixes" />
     <MESSAGE value="feat: create heroDetail" />
     <MESSAGE value="feat: add NaturalVehicle section" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add NaturalVehicle section" />
+    <MESSAGE value="feat: add NumismaticPackaging section" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add NumismaticPackaging section" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
