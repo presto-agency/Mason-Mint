@@ -1,28 +1,36 @@
-import React, { FC, useEffect, useState } from 'react'
-import { StorySection } from './StorySection/StorySection'
-import { IntroSection } from './IntroSection/IntroSection'
-// import { FeaturedDesignsSection } from './FeaturedDesignsSection/FeaturedDesignsSection'
-import { CustomDesignsSection } from './CustomDesignsSection/CustomDesignsSection'
+import dynamic from 'next/dynamic'
+import IntroSection from './IntroSection/IntroSection'
+import StorySection from './StorySection/StorySection'
+import FAQSection from './FAQSection/FAQSection'
+import SellSection from './SellSection/SellSection'
+const BecomeDistributorSection = dynamic(
+  () =>
+    import('@/components/BecomeDistributorSection/BecomeDistributorSection'),
+  { ssr: false }
+)
+const ExploreDesignsSection = dynamic(
+  () => import('@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection'),
+  { ssr: false }
+)
+const CustomDesignsSection = dynamic(
+  () => import('@/modules/Home/ui/CustomDesignsSection/CustomDesignsSection'),
+  { ssr: false }
+)
+const FeaturedDesignsSection = dynamic(
+  () =>
+    import('@/modules/Home/ui/FeaturedDesignsSection/FeaturedDesignsSection'),
+  { ssr: false }
+)
+
 import styles from './HomeContent.module.scss'
-import { FAQSection } from './FAQSection/FAQSection'
-import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
-import SellSection from '@/modules/Home/ui/SellSection/SellSection'
-import { ExploreDesignsSection } from './ExploreDesignsSection/ExploreDesignsSection' // Regular import
 
-export const HomeContent: FC = () => {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
-
+const HomeContent = () => {
   return (
-    <main className={styles.HomeContent}>
+    <main className={styles['HomeContent']}>
       <IntroSection />
       <StorySection />
-      {/* Conditionally render ExploreDesignsSection on the client side */}
-      {isClient && <ExploreDesignsSection />}
-      {/*<FeaturedDesignsSection />*/}
+      <ExploreDesignsSection />
+      <FeaturedDesignsSection />
       <CustomDesignsSection />
       <SellSection />
       <FAQSection />
@@ -30,3 +38,5 @@ export const HomeContent: FC = () => {
     </main>
   )
 }
+
+export default HomeContent

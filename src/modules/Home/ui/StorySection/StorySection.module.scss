@@ -2,7 +2,7 @@
 
 .story {
   position: relative;
-  padding: 164rem 0 155rem;
+  padding: 164rem 0 140rem;
   overflow: hidden;
   
   &::before{
@@ -33,19 +33,6 @@
         width: 83%;
         margin-top: 145rem;
         aspect-ratio: 18/23;
-
-        &::before {
-          position: absolute;
-          top: -5rem;
-          left: -24rem;
-          z-index: 1;
-          display: block;
-          color: var(--gray-700);
-          font: var(--font-h6);
-          transform: rotate(90deg);
-          transform-origin: left;
-          content: 'welcome to masonmint';
-        }
       }
     }
 
@@ -87,7 +74,7 @@
 
       &_right {
         width: 100%;
-        margin: 00 80rem;
+        margin: 0 80rem;
 
         .text {
           gap: 16rem;

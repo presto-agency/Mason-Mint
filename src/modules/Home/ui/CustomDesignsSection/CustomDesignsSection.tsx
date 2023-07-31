@@ -1,34 +1,40 @@
+import { FC } from 'react'
+import classNames from 'classnames'
+import Link from 'next/link'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
-import classNames from 'classnames'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
-import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
-import { useEffect, useState } from 'react'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
+import routes from '@/utils/routes'
 
 import styles from './CustomDesignsSection.module.scss'
+import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
 
-const urlPicturesSlides = [
-  '/images/home/customDesign/slide.jpg',
+const images = [
   '/images/home/customDesign/slide_1.jpg',
   '/images/home/customDesign/slide_2.jpg',
   '/images/home/customDesign/slide_3.jpg',
   '/images/home/customDesign/slide_4.jpg',
+  '/images/home/customDesign/slide_5.jpg',
 ]
 
-export const CustomDesignsSection = () => {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
+const CustomDesignsSection: FC<{ className?: string }> = ({ className }) => {
   const { width } = useWindowDimensions()
 
   return (
-    <section className={styles['CustomDesignsSection']}>
-      {isClient && width > 767 && (
-        <AnimateScaleBg pictures={urlPicturesSlides} />
+    <section className={classNames(styles['CustomDesignsSection'], className)}>
+      {width > 767 ? (
+        <AnimateScaleBg images={images} />
+      ) : (
+        <div className={styles['CustomDesignsSection__mob']}>
+          <BackgroundImage
+            className={styles['CustomDesignsSection__mob_image']}
+            src="/images/home/customDesign/slide_mob_1.jpg"
+            alt="Custom Minting Program"
+          />
+        </div>
       )}
       <Container>
         <div className={styles['CustomDesignsSection__content']}>
@@ -57,14 +63,18 @@ export const CustomDesignsSection = () => {
             </AnimatedText>
           </p>
           <AnimatedElement delay={0.2}>
-            <ButtonPrimary
-              className={styles['CustomDesignsSection__content_button']}
-            >
-              LEARN MORE
-            </ButtonPrimary>
+            <Link href={routes.public.customMinting}>
+              <ButtonPrimary
+                className={styles['CustomDesignsSection__content_button']}
+              >
+                Learn more
+              </ButtonPrimary>
+            </Link>
           </AnimatedElement>
         </div>
       </Container>
     </section>
   )
 }
+
+export default CustomDesignsSection
