@@ -29,7 +29,7 @@ const ProductEdit: FC<{
   const handleEdit = async (data: ProductProps) => {
     setLoading(true)
     await axios
-      .put(`/api/producttest/${query.id}/edit`, data)
+      .put(`/api/products/${query.id}/edit`, data)
       .then(({ data: { success, data } }: AxiosResponse) => {
         if (success) {
           setProductState(data)

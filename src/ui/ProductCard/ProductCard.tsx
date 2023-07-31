@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import classNames from 'classnames'
 import { ProductProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
@@ -21,7 +22,7 @@ const ProductCard: FC<ProductCardProps> = ({
   const categorySlug = toLoverCaseAndSpacesToHyphen(
     data.category?.name as string
   )
-  // @TODO detect images for display
+
   return (
     <Link
       href={`${routes.public.designs}/${data.id}/${data.slug}`}
@@ -43,23 +44,33 @@ const ProductCard: FC<ProductCardProps> = ({
               <div
                 className={classNames(styles['product__side'], styles['front'])}
               >
-                <img
-                  src={data.mainImages.obverse || ''}
+                <Image
+                  src={
+                    data.mainImages?.obverse || '/images/coin-placeholder.png'
+                  }
+                  fill
                   alt={data.ProductName}
                 />
               </div>
               <div
                 className={classNames(styles['product__side'], styles['back'])}
               >
-                <img
-                  src={data.mainImages.reverse || ''}
+                <Image
+                  src={
+                    data.mainImages?.reverse || '/images/coin-placeholder.png'
+                  }
+                  fill
                   alt={data.ProductName}
                 />
               </div>
             </>
           ) : (
             <div className={classNames(styles['product__side'])}>
-              <img src={data.mainImages.obverse || ''} alt={data.ProductName} />
+              <Image
+                src={data.mainImages.obverse || ''}
+                fill
+                alt={data.ProductName}
+              />
             </div>
           )}
         </div>

@@ -3,7 +3,7 @@
 .carousel{
 	position: relative;
 	margin-bottom: 114rem;
-	overflow: visible;
+	overflow: hidden;
 	
 		@media (width <= $breakpoint-mob) {
 			margin-bottom: 60rem;

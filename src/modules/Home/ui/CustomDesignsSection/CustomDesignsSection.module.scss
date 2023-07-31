@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   height: calc(100vh - 93rem);
+  min-height: 450rem;
   padding: 50rem 0;
   overflow: hidden;
   color: var(--white);
@@ -13,6 +14,7 @@
     @media (width <= $breakpoint-mob) {
       align-items: flex-start;
       height: calc(100vh - 70rem);
+      min-height: 0;
       padding: 63rem 0;
     }
 
@@ -74,6 +76,11 @@
       
         &_slide{
           height: calc(100vh - 95rem);
+          min-height: 450rem;
+          
+            @media (width <= $breakpoint-mob) {
+              min-height: 0;
+            }
         }
       
         &_image{

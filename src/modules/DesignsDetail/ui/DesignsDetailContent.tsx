@@ -49,14 +49,18 @@ const DesignsDetailContent = () => {
       }
     }
 
-    if (store?.state.products && store?.state.products.length > 0) {
+    if (
+      productId &&
+      store?.state.products &&
+      store?.state.products.length > 0
+    ) {
       setProduct(
         store.state.products.filter((p) => p.id === productId)[0] || null
       )
-    } else {
+    } else if (productId) {
       fetchProduct()
     }
-  }, [productId])
+  }, [productId, store?.state.products])
 
   useEffect(() => {
     const fetchSameProducts = async () => {
@@ -82,7 +86,7 @@ const DesignsDetailContent = () => {
     } else {
       fetchSameProducts()
     }
-  }, [product, productId])
+  }, [product, productId, store?.state.products])
 
   return (
     <main className={styles['detail']}>
@@ -115,23 +119,23 @@ const DesignsDetailContent = () => {
             )}
           </div>
         </div>
-        {product && (
+        {product?.additionalImages && product.additionalImages.length > 0 ? (
           <DesignsDetailGallery
             className={styles['detail__gallery']}
             product={product}
           />
-        )}
-        {sameProducts.length > 0 && (
-          <ProductCarousel
-            className={styles['detail__carousel']}
-            title="Сoins from this category."
-            titleWithBlueDot={false}
-            subtitle="Patriot series"
-            data={sameProducts}
-            showResults={false}
-          />
-        )}
+        ) : null}
       </Container>
+      {sameProducts.length > 0 && (
+        <ProductCarousel
+          className={styles['detail__carousel']}
+          title="Сoins from this category."
+          titleWithBlueDot={false}
+          subtitle="Patriot series"
+          data={sameProducts}
+          showResults={false}
+        />
+      )}
       <BecomeDistributorSection />
     </main>
   )

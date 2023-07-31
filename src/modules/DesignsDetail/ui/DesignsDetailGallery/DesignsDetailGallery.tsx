@@ -16,22 +16,18 @@ const DesignsDetailGallery: FC<DesignsDetailGalleryProps> = ({
   return (
     <div className={classNames(styles['gallery'], className)}>
       <div className="row">
-        <div className="col-md-6">
-          <BackgroundImage
-            className={styles['gallery__item']}
-            src="/images/detail/placeholder-1.jpg"
-            alt="ProductOld galley image"
-            quality={100}
-          />
-        </div>
-        <div className="col-md-6">
-          <BackgroundImage
-            className={styles['gallery__item']}
-            src="/images/detail/placeholder-2.jpg"
-            alt="ProductOld galley image"
-            quality={100}
-          />
-        </div>
+        {product?.additionalImages && product.additionalImages.length > 0
+          ? product.additionalImages.map((image, index) => (
+              <div key={index} className="col-md-6">
+                <BackgroundImage
+                  className={styles['gallery__item']}
+                  src={image.ImageUrl || ''}
+                  alt="ProductOld galley image"
+                  quality={100}
+                />
+              </div>
+            ))
+          : null}
       </div>
     </div>
   )

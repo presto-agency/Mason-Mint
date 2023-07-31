@@ -101,17 +101,17 @@ const ProductForm: FC<{
 
   const [obverseImage, setObverseImage] = useState<ImageToUpload>({
     file: null,
-    ImageUrl: product.mainImages.obverse || null,
+    ImageUrl: product.mainImages?.obverse || null,
   })
   const [reverseImage, setReverseImage] = useState<ImageToUpload>({
     file: null,
-    ImageUrl: product.mainImages.reverse || null,
+    ImageUrl: product.mainImages?.reverse || null,
   })
 
   const [additionalImages, setAdditionalImages] = useState<
     AdditionalImageToUpload[]
   >(
-    product.additionalImages.length
+    product.additionalImages?.length
       ? transformAdditionalImages(product.additionalImages)
       : []
   )
@@ -182,7 +182,7 @@ const ProductForm: FC<{
     }
 
     setObverseImage(obj)
-  }, [product.mainImages.obverse])
+  }, [product.mainImages?.obverse])
 
   const resetReverseImage = useCallback(() => {
     const obj = {
@@ -191,7 +191,7 @@ const ProductForm: FC<{
     }
 
     setReverseImage(obj)
-  }, [product.mainImages.reverse])
+  }, [product.mainImages?.reverse])
 
   const deleteObverseImage = useCallback(() => {
     setObverseImage({

@@ -72,18 +72,18 @@ const DesignsContent: FC<DesignsContentProps> = ({ categories, products }) => {
               />
             </div>
           </div>
-          {filteredProducts.length > 0 ? (
-            <ProductList
-              products={filteredProducts}
-              categories={filteredCategories}
-              initialCategories={categories}
-            />
-          ) : (
-            <div className={styles['designsContent__empty']}>
-              <p className="h5">List is empty</p>
-            </div>
-          )}
         </Container>
+        {filteredProducts.length > 0 ? (
+          <ProductList
+            products={filteredProducts}
+            categories={filteredCategories}
+            initialCategories={categories}
+          />
+        ) : (
+          <div className={styles['designsContent__empty']}>
+            <p className="h5">List is empty</p>
+          </div>
+        )}
         <BecomeDistributorSection />
       </div>
     </main>

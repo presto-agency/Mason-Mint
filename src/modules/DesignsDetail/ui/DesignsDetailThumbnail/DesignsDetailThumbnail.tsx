@@ -1,5 +1,6 @@
 import { FC, useState, useRef, useCallback } from 'react'
 import classNames from 'classnames'
+import Image from 'next/image'
 import { ProductProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
 import { motion } from 'framer-motion'
@@ -62,16 +63,24 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
                 styles['front']
               )}
             >
-              <img
-                src={product.mainImages.obverse || ''}
+              <Image
+                src={
+                  product.mainImages?.obverse || '/images/coin-placeholder.png'
+                }
+                fill
+                quality={100}
                 alt={product.ProductName}
               />
             </div>
             <div
               className={classNames(styles['image__item_side'], styles['back'])}
             >
-              <img
-                src={product.mainImages.reverse || ''}
+              <Image
+                src={
+                  product.mainImages?.reverse || '/images/coin-placeholder.png'
+                }
+                fill
+                quality={100}
                 alt={product.ProductName}
               />
             </div>
@@ -85,8 +94,11 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
               className={styles['thumbs__item']}
               onClick={() => handleFlip('obverse')}
             >
-              <img
-                src={product.mainImages.obverse || ''}
+              <Image
+                src={
+                  product.mainImages.obverse || '/images/coin-placeholder.png'
+                }
+                fill
                 alt={product.ProductName}
               />
             </div>
@@ -94,8 +106,11 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
               className={styles['thumbs__item']}
               onClick={() => handleFlip('reverse')}
             >
-              <img
-                src={product.mainImages.reverse || ''}
+              <Image
+                src={
+                  product.mainImages.reverse || '/images/coin-placeholder.png'
+                }
+                fill
                 alt={product.ProductName}
               />
             </div>

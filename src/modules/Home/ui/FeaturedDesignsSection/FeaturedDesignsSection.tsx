@@ -3,11 +3,11 @@ import classNames from 'classnames'
 import axios from 'axios'
 import Link from 'next/link'
 import ProductCarousel from '@/ui/ProductCarousel/ProductCarousel'
-import Container from '@/app/layouts/Container'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import { ProductProps } from '@/utils/types'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+import Container from '@/app/layouts/Container'
 import routes from '@/utils/routes'
 
 import styles from './FeaturedDesignsSection.module.scss'
@@ -54,10 +54,10 @@ const FeaturedDesignsSection: FC<{ className?: string }> = ({ className }) => {
             </div>
           </div>
         </div>
-        {products.length > 0 ? (
-          <ProductCarousel data={products} showResults={false} />
-        ) : null}
       </Container>
+      {products.length > 0 ? (
+        <ProductCarousel data={products} showResults={false} />
+      ) : null}
     </section>
   )
 }

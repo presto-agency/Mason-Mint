@@ -12,9 +12,6 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
       <Container>
         <div className={styles['admin__table_header']}>
           <h3 className="h3">Products</h3>
-          {/*<ButtonPrimary variant="white" size="small">*/}
-          {/*  Create project*/}
-          {/*</ButtonPrimary>*/}
         </div>
         <table className={styles['admin__table']}>
           <thead>
@@ -34,9 +31,8 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                   <td>
                     {product.mainImages?.obverse ? (
                       <img
-                        // src={product.Images[0].ImageUrl || ''}
                         src={product.mainImages.obverse}
-                        alt="ProductOld"
+                        alt={product.ProductName}
                         width={100}
                         height={100}
                         style={{ marginRight: '10rem' }}
