@@ -297,10 +297,8 @@ const ProductTestForm: FC<{
         })
         .catch((error) => console.error(error))
     }
-    console.log(additionalImagesHash, 'after req additionalImagesHash')
     const result: { ImageUrl: string }[] = []
     additionalImages.forEach((image) => {
-      console.log(image, 'image')
       if (image.nameKeyToUpload) {
         if (additionalImagesHash.has(image.nameKeyToUpload)) {
           result.push({
