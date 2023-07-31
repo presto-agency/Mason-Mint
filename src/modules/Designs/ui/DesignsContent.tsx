@@ -1,21 +1,23 @@
+import { CategoryProps, ProductTestProps } from '@/utils/types'
+
 import { FC, useCallback, useContext, useEffect, useState } from 'react'
-import { CategoryProps, ProductProps } from '@/utils/types'
-import HeroInner from '@/ui/HeroInner/HeroInner'
 import Container from '@/app/layouts/Container'
-import ProductList from '@/modules/Designs/ui/ProductList/ProductList'
-import ProductFilter from '@/modules/Designs/ui/ProductFilter/ProductFilter'
-import ProductSearch from '@/modules/Designs/ui/ProductSearch/ProductSearch'
 import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
+import HeroInner from '@/ui/HeroInner/HeroInner'
+
+import ProductList from './ProductList/ProductList'
+import ProductFilter from './ProductFilter/ProductFilter'
+import ProductSearch from './ProductSearch/ProductSearch'
 import { Store } from '@/utils/Store'
 
 import styles from './DesignsContent.module.scss'
 
-type DesignsProps = {
+type DesignsContentProps = {
   categories: CategoryProps[]
-  products: ProductProps[]
+  products: ProductTestProps[]
 }
 
-const DesignsContent: FC<DesignsProps> = ({ categories, products }) => {
+const DesignsContent: FC<DesignsContentProps> = ({ categories, products }) => {
   const store = useContext(Store)
 
   const [filteredCategories, setFilteredCategories] =
@@ -36,8 +38,11 @@ const DesignsContent: FC<DesignsProps> = ({ categories, products }) => {
     setSearchQuery(query)
   }, [])
 
-  const filterProductsBySearch = (products: ProductProps[], query: string) => {
-    return products.filter((product: ProductProps) =>
+  const filterProductsBySearch = (
+    products: ProductTestProps[],
+    query: string
+  ) => {
+    return products.filter((product: ProductTestProps) =>
       product.ProductName.toLowerCase().includes(query.toLowerCase())
     )
   }

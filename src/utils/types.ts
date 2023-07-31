@@ -9,6 +9,23 @@ export type ProductProps = {
   description?: string
 }
 
+export type ProductTestProps = {
+  id: string
+  ProductName: string
+  Metal?: string
+  mainImages: MainImagesProps
+  additionalImages: ImagesProps[]
+  specification: SpecificationProps[]
+  slug: string
+  category?: CategoryProps
+  description?: string
+}
+
+export type MainImagesProps = {
+  obverse: string | null
+  reverse: string | null
+}
+
 export type SpecificationProps = {
   ActualMetalWeight: string
   CoinWeight: string
