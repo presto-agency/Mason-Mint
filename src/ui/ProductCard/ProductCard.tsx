@@ -1,15 +1,14 @@
 import { FC } from 'react'
-import classNames from 'classnames'
 import Link from 'next/link'
-import { ProductProps } from '@/utils/types'
+import classNames from 'classnames'
+import { ProductTestProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
 import routes from '@/utils/routes'
-import { detectImages } from '@/utils/data/detectImages'
 
 import styles from './ProductCard.module.scss'
 
 type ProductCardProps = {
-  data: ProductProps
+  data: ProductTestProps
   className?: string
   flip?: boolean
 }
@@ -45,7 +44,7 @@ const ProductCard: FC<ProductCardProps> = ({
                 className={classNames(styles['product__side'], styles['front'])}
               >
                 <img
-                  src={detectImages(data.Images, 0)}
+                  src={data.mainImages.obverse || ''}
                   alt={data.ProductName}
                 />
               </div>
@@ -53,14 +52,14 @@ const ProductCard: FC<ProductCardProps> = ({
                 className={classNames(styles['product__side'], styles['back'])}
               >
                 <img
-                  src={detectImages(data.Images, 1)}
+                  src={data.mainImages.reverse || ''}
                   alt={data.ProductName}
                 />
               </div>
             </>
           ) : (
             <div className={classNames(styles['product__side'])}>
-              <img src={detectImages(data.Images, 0)} alt={data.ProductName} />
+              <img src={data.mainImages.obverse || ''} alt={data.ProductName} />
             </div>
           )}
         </div>

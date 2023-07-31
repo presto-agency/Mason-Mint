@@ -17,6 +17,7 @@ const Index = () => {
   return (
     <PageLayout>
       {/*<DesignsDetailContent product={product} sameProducts={sameProducts} />*/}
+      {/* <DesignsDetailContent /> */}
       <DesignsDetailContent />
     </PageLayout>
   )
