@@ -2,9 +2,8 @@ import { FC, useState } from 'react'
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import axios, { AxiosResponse } from 'axios'
-import ProductForm from '@/ui/ProductForm/ProductForm'
 import Container from '@/app/layouts/Container'
-import { CategoryProps, ProductProps } from '@/utils/types'
+import { CategoryProps, ProductTestProps } from '@/utils/types'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { useModal } from '@/hooks/useModal'
 import routes from '@/utils/routes'
@@ -13,10 +12,11 @@ const ProductManipulatedSuccessModal = dynamic(
   { ssr: false }
 )
 
-import styles from '@/modules/Admin/Admin.module.scss'
+import styles from '../../Admin.module.scss'
+import ProductForm from '@/ui/ProductForm/ProductForm'
 
 const ProductEdit: FC<{
-  product: ProductProps
+  product: ProductTestProps
   categories: CategoryProps[]
 }> = ({ product, categories }) => {
   const { query } = useRouter()
@@ -26,10 +26,10 @@ const ProductEdit: FC<{
     size: 'md',
   })
 
-  const handleEdit = async (data: ProductProps) => {
+  const handleEdit = async (data: ProductTestProps) => {
     setLoading(true)
     await axios
-      .put(`/api/products/${query.id}/edit`, data)
+      .put(`/api/producttest/${query.id}/edit`, data)
       .then(({ data: { success, data } }: AxiosResponse) => {
         if (success) {
           setProductState(data)

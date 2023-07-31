@@ -1,7 +1,8 @@
 @import '@/app/styles/variables/breackpoints';
 
-.FindPartner{
+.HeroDetail{
   position: relative;
+  z-index: 2;
   display: flex;
   min-height: calc(100vh - 95rem);
   margin: 0 0 164rem;

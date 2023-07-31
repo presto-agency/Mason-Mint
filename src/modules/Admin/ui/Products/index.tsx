@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import Container from '@/app/layouts/Container'
-import { ProductProps } from '@/utils/types'
+import { ProductTestProps } from '@/utils/types'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import routes from '@/utils/routes'
 
 import styles from '@/modules/Admin/Admin.module.scss'
 
-const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
+const AdminProducts: FC<{ products: ProductTestProps[] }> = ({ products }) => {
   return (
     <main className={styles['admin']}>
       <Container>
@@ -32,10 +32,10 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                 <tr key={index}>
                   <td>{index + 1}.</td>
                   <td>
-                    {product.Images?.length ? (
+                    {product.mainImages?.obverse ? (
                       <img
                         // src={product.Images[0].ImageUrl || ''}
-                        src="/uploads/64b7f086ffe22650abb77fc5/1-oz-American-Revolution-Round-Antique-Obverse-Max.png"
+                        src={product.mainImages.obverse}
                         alt="Product"
                         width={100}
                         height={100}

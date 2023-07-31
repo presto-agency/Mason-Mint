@@ -3,19 +3,20 @@ import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import axios from 'axios'
+import { motion } from 'framer-motion'
+
+import routes from '@/utils/routes'
+import { ProductTestProps } from '@/utils/types'
+
 import { Store } from '@/utils/Store'
-import { ProductProps } from '@/utils/types'
 import Container from '@/app/layouts/Container'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
-import routes from '@/utils/routes'
-import DesignsDetailDescription from '@/modules/DesignsDetail/ui/DesignsDetailDescription/DesignsDetailDescription'
-import DesignsDetailThumbnail from '@/modules/DesignsDetail/ui/DesignsDetailThumbnail/DesignsDetailThumbnail'
-import { motion } from 'framer-motion'
+
+import DesignsDetailDescription from './DesignsDetailDescription/DesignsDetailDescription'
+import DesignsDetailThumbnail from './DesignsDetailThumbnail/DesignsDetailThumbnail'
+
 const DesignsDetailGallery = dynamic(
-  () =>
-    import(
-      '@/modules/DesignsDetail/ui/DesignsDetailGallery/DesignsDetailGallery'
-    ),
+  () => import('./DesignsDetailGallery/DesignsDetailGallery'),
   { ssr: false }
 )
 const BecomeDistributorSection = dynamic(
@@ -35,13 +36,13 @@ const DesignsDetailContent = () => {
     query: { productId },
   } = useRouter()
   const store = useContext(Store)
-  const [product, setProduct] = useState<ProductProps | null>(null)
-  const [sameProducts, setSameProducts] = useState<ProductProps[]>([])
+  const [product, setProduct] = useState<ProductTestProps | null>(null)
+  const [sameProducts, setSameProducts] = useState<ProductTestProps[]>([])
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`/api/products/${productId}`)
+        const res = await axios.get(`/api/producttest/${productId}`)
         setProduct(res.data.data)
       } catch (error) {
         console.log(error)
@@ -62,10 +63,10 @@ const DesignsDetailContent = () => {
       if (product) {
         try {
           const res = await axios.get(
-            `/api/products?category=${product?.category?.id}`
+            `/api/producttest?category=${product?.category?.id}`
           )
           setSameProducts(
-            res.data.data.filter((p: ProductProps) => p.id !== productId)
+            res.data.data.filter((p: ProductTestProps) => p.id !== productId)
           )
         } catch (error) {
           console.log(error)

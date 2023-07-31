@@ -1,3 +1,3 @@
-import DesignsContent from '@/modules/Designs/ui/DesignsContent'
+import DesignsContent from './ui/DesignsContent'
 
 export { DesignsContent }
