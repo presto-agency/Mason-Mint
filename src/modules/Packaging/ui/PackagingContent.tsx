@@ -7,6 +7,7 @@ const HeroDetail = dynamic(() => import('@/ui/HeroDetail/HeroDetail'), {
 })
 import dynamic from 'next/dynamic'
 import NaturalVehicle from '@/modules/Packaging/ui/NaturalVehicle/NaturalVehicle'
+import NumismaticPackaging from '@/modules/Packaging/ui/NumismaticPackaging/NumismaticPackaging'
 
 import styles from './PackagingContent.module.scss'
 
@@ -31,8 +32,10 @@ export const PackagingContent: FC = () => {
       <HeroDetail
         sliderImages={sliderImages}
         image="/images/packaging/hero.jpg"
+        className={styles['HeroInner']}
       />
       <NaturalVehicle />
+      <NumismaticPackaging />
       <WhatWeDo />
       <BecomeDistributorSection />
     </main>

@@ -5,7 +5,8 @@
   padding: 164rem 0;
 
   @media (width<=$breakpoint-mob) {
-    padding: 80rem 0 75rem;
+    margin: 80rem 0 75rem;
+    padding: 0;
   }
 
   &::before{
