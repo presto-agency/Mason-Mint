@@ -7,7 +7,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     await db.connect()
     const categories = await CategoryModel.find()
-    await db.disconnect()
+    // await db.disconnect()
     res.status(200).json({
       success: true,
       data: categories,

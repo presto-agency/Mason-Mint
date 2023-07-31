@@ -1,7 +1,7 @@
 import { NextApiResponse, NextApiRequest } from 'next'
 import db from '@/utils/db'
-import Product from '../../../models/Product'
 import { getError } from '@/utils/error'
+import Product from '../../../models/Product'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const {

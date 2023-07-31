@@ -2,7 +2,7 @@
 // import { ObjectId } from 'mongodb'
 // import db from '@/utils/db'
 // import dataJson from '../../../../products.json'
-// import ProductModel from '../../../../models/Product'
+// import ProductModel from '../../../../models/ProductOld'
 // import { getError } from '@/utils/error'
 // import { generateSlug } from '@/utils/string/generateSlug'
 //

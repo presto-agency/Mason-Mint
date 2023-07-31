@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import Container from '@/app/layouts/Container'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import routes from '@/utils/routes'
 
 import styles from '@/modules/Admin/Admin.module.scss'
 
-const AdminProducts: FC<{ products: ProductTestProps[] }> = ({ products }) => {
+const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
   return (
     <main className={styles['admin']}>
       <Container>
@@ -36,7 +36,7 @@ const AdminProducts: FC<{ products: ProductTestProps[] }> = ({ products }) => {
                       <img
                         // src={product.Images[0].ImageUrl || ''}
                         src={product.mainImages.obverse}
-                        alt="Product"
+                        alt="ProductOld"
                         width={100}
                         height={100}
                         style={{ marginRight: '10rem' }}

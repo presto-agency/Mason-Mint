@@ -1,5 +1,5 @@
 import React, { FC, Fragment, useMemo } from 'react'
-import { CategoryProps, ProductTestProps } from '@/utils/types'
+import { CategoryProps, ProductProps } from '@/utils/types'
 
 import ProductCarousel from '@/ui/ProductCarousel/ProductCarousel'
 import styles from './ProductList.module.scss'
@@ -7,7 +7,7 @@ import styles from './ProductList.module.scss'
 type ProductListProps = {
   initialCategories: CategoryProps[]
   categories: CategoryProps[]
-  products: ProductTestProps[]
+  products: ProductProps[]
 }
 
 const ProductList: FC<ProductListProps> = ({

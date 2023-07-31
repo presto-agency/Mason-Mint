@@ -4,8 +4,14 @@ import HeroInner from '@/ui/HeroInner/HeroInner'
 import CustomMintingBanner from '@/modules/CustomMinting/ui/CustomMintingBanner/CustomMintingBanner'
 import CustomMintingMoment from '@/modules/CustomMinting/ui/CustomMintingMoment/CustomMintingMoment'
 import Container from '@/app/layouts/Container'
-import CustomMintingProcess from '@/modules/CustomMinting/ui/CustomMintingProcess/CustomMintingProcess'
 import CustomMintingMarketing from '@/modules/CustomMinting/ui/CustomMintingMarketing/CustomMintingMarketing'
+const CustomMintingProcess = dynamic(
+  () =>
+    import(
+      '@/modules/CustomMinting/ui/CustomMintingProcess/CustomMintingProcess'
+    ),
+  { ssr: false }
+)
 const BecomeDistributorSection = dynamic(
   () => import('@/components/BecomeDistributorSection/BecomeDistributorSection')
 )
@@ -31,7 +37,9 @@ export const CustomMintingContent: FC = () => {
           className={styles['CustomMintingContent__marketing']}
         />
       </Container>
-      <BecomeDistributorSection />
+      <BecomeDistributorSection
+        className={styles['CustomMintingContent__becomeADistributor']}
+      />
     </main>
   )
 }

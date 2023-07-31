@@ -2,7 +2,7 @@
 // import { GetStaticPaths, GetStaticProps } from 'next'
 // import { ProductProps } from '@/utils/types'
 // import db from '@/utils/db'
-// import ProductModel from '../../../models/Product'
+// import ProductModel from '../../../models/ProductOld'
 import { PageLayout } from '@/app/layouts/PageLayout'
 import { DesignsDetailContent } from '@/modules/DesignsDetail'
 // import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'

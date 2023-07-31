@@ -5,7 +5,7 @@ import {
   CategoryProps,
   ImagesProps,
   MainImagesProps,
-  ProductTestProps,
+  ProductProps,
   SpecificationProps,
 } from '@/utils/types'
 import { Controller, useForm } from 'react-hook-form'
@@ -89,9 +89,9 @@ const transformAdditionalImages = (images: ImagesProps[]) => {
 }
 
 const ProductForm: FC<{
-  product: ProductTestProps
+  product: ProductProps
   categories: CategoryProps[]
-  onValues: (formData: ProductTestProps) => void
+  onValues: (formData: ProductProps) => void
   loading: boolean
 }> = ({ product, categories, onValues, loading = false }) => {
   const [selectedCategory, setSelectedCategory] = useState<OptionInterface>({
@@ -312,7 +312,7 @@ const ProductForm: FC<{
     })
 
     formData.additionalImages = [...result]
-    ;(await onValues) && onValues(formData as ProductTestProps)
+    ;(await onValues) && onValues(formData as ProductProps)
   }
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
@@ -326,8 +326,8 @@ const ProductForm: FC<{
                 <TextField
                   {...field}
                   value={getValues().ProductName}
-                  placeholder="Product name"
-                  label="Product should have a name*"
+                  placeholder="ProductOld name"
+                  label="ProductOld should have a name*"
                   error={errors['ProductName']?.message}
                 />
               )
@@ -342,7 +342,7 @@ const ProductForm: FC<{
                   {...field}
                   value={getValues().slug}
                   placeholder="Slug"
-                  label="Product should have a name*"
+                  label="ProductOld should have a name*"
                   error={errors['slug']?.message}
                   readOnly
                 />
@@ -358,7 +358,7 @@ const ProductForm: FC<{
                   {...field}
                   value={getValues().description}
                   placeholder="Description"
-                  label="Product can have a some description*"
+                  label="ProductOld can have a some description*"
                   error={errors['description']?.message}
                 />
               )

@@ -21,23 +21,18 @@ const specificationSchema = new mongoose.Schema(
   { _id: false }
 )
 
-const productTestSchema = new mongoose.Schema({
+const productSchema = new mongoose.Schema({
   id: { type: String, unique: true, required: true },
   ProductName: String,
   Metal: String,
-  mainImages: {
-    obverse: { type: String, default: null },
-    reverse: { type: String, default: null },
-  },
-  additionalImages: [imageSchema],
+  Images: [imageSchema],
   specification: [specificationSchema],
   slug: { type: String, required: true, unique: true },
   category: { id: String, name: String },
   description: String,
 })
 
-const ProductTest =
-  mongoose.models.ProductTest ||
-  mongoose.model('ProductTest', productTestSchema)
+const ProductOld =
+  mongoose.models.Product || mongoose.model('ProductOld', productSchema)
 
-export default ProductTest
+export default ProductOld

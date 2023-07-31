@@ -1,9 +1,9 @@
 import { NextApiResponse, NextApiRequest } from 'next'
 import db from '@/utils/db'
-import ProductModel from '../../../../models/Product'
 import CategoryModel from '../../../../models/Category'
 import { getError } from '@/utils/error'
 import { ProductProps } from '@/utils/types'
+import ProductTestModel from '../../../../models/Product'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'PUT') {
@@ -32,9 +32,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     await db.connect()
-    let product = await ProductModel.findOneAndUpdate({ id: productId }, body)
-    product = await ProductModel.findOne({ id: productId })
-    await db.disconnect()
+    let product = await ProductTestModel.findOneAndUpdate(
+      { id: productId },
+      body
+    )
+    product = await ProductTestModel.findOne({ id: productId })
+    // await db.disconnect()
     res.status(200).json({ success: true, data: product })
   } catch (error) {
     res.status(500).json({ success: false, message: getError(error as Error) })

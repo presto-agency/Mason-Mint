@@ -1,8 +1,15 @@
+@import "@/app/styles/variables/breackpoints";
+
 .banner{
 	position: relative;
 	height: 660rem;
 	margin-top: -25rem;
 	overflow: hidden;
+	
+		@media (width <= $breakpoint-mob) {
+			height: 530rem;
+			margin-top: -20rem;
+		}
 	
 		&__overflow{
 			position: relative;

@@ -1,13 +1,13 @@
 import { FC, useState, useRef, useCallback } from 'react'
 import classNames from 'classnames'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
 import { motion } from 'framer-motion'
 
 import styles from './DesignsDetailThumbnail.module.scss'
 
 type DesignsDetailThumbnailProps = {
-  product: ProductTestProps | null
+  product: ProductProps | null
   className?: string
 }
 const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
@@ -41,9 +41,13 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
           styles['image'],
           styles[`active-side-${activeSide}`]
         )}
-        style={{
-          backgroundImage: `url(/images/category-shadows/${categorySlug}.svg)`,
-        }}
+        style={
+          categorySlug
+            ? {
+                backgroundImage: `url(/images/category-shadows/${categorySlug}.svg)`,
+              }
+            : {}
+        }
       >
         {product && (
           <motion.div

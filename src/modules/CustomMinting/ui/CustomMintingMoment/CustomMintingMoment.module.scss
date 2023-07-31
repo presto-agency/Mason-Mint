@@ -1,8 +1,14 @@
+@import "@/app/styles/variables/breackpoints";
+
 .moment{
 	position: relative;
 	
 		&__title{
 			margin-bottom: 4rem;
+			
+				@media (width <= $breakpoint-mob) {
+					margin-bottom: 0;
+				}
 		}
 	
 		&__description{
@@ -17,12 +23,28 @@
 	
 		&__action{
 			margin: 40rem 0;
+			
+				@media (width <= $breakpoint-mob) {
+					margin: 23rem 0 40rem;
+				}
+			
+				button, a,
+				& > div{
+						@media (width <= $breakpoint-mob) {
+							width: 100%;
+						}
+				}
 		}
 	
 		&__banner{
 			position: relative;
 			height: 840rem;
 			max-height: 100vh;
+			
+				@media (width <= $breakpoint-mob) {
+					height: 394rem;
+					padding-right: 38rem;
+				}
 			
 				&_item{
 					width: 100%;
@@ -45,6 +67,10 @@
 					white-space: nowrap;
 					transform: rotate(90deg) translateY(calc(-100% - 18rem));
 					transform-origin: 0 0;
+					
+						@media (width <= $breakpoint-mob) {
+							transform: rotate(90deg) translateY(calc(-100% + 18rem));
+						}
 				}
 		}
 }

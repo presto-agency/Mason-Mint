@@ -1,13 +1,24 @@
-import styles from './BecomeDistributorSection.module.scss'
+import { FC } from 'react'
+import classNames from 'classnames'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import Container from '@/app/layouts/Container'
 import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 
-const BecomeDistributorSection = () => {
+import styles from './BecomeDistributorSection.module.scss'
+
+type BecomeDistributorSectionProps = {
+  className?: string
+}
+
+const BecomeDistributorSection: FC<BecomeDistributorSectionProps> = ({
+  className,
+}) => {
   return (
-    <section className={styles['BecomeDistributorSection']}>
+    <section
+      className={classNames(styles['BecomeDistributorSection'], className)}
+    >
       <Container size={'xl'}>
         <div className={styles['BecomeDistributorSection__content']}>
           <VideoComponent src="/video/CTA.mp4" />

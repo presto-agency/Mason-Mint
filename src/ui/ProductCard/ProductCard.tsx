@@ -1,14 +1,14 @@
 import { FC } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 import { toLoverCaseAndSpacesToHyphen } from '@/utils/string/toLoverCaseAndSpacesToHyphen'
 import routes from '@/utils/routes'
 
 import styles from './ProductCard.module.scss'
 
 type ProductCardProps = {
-  data: ProductTestProps
+  data: ProductProps
   className?: string
   flip?: boolean
 }

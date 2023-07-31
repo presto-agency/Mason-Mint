@@ -6,20 +6,20 @@ import ProductCarousel from '@/ui/ProductCarousel/ProductCarousel'
 import Container from '@/app/layouts/Container'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import routes from '@/utils/routes'
 
 import styles from './FeaturedDesignsSection.module.scss'
 
 const FeaturedDesignsSection: FC<{ className?: string }> = ({ className }) => {
-  const [products, setProducts] = useState<ProductTestProps[]>([])
+  const [products, setProducts] = useState<ProductProps[]>([])
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const res = await axios.get(
-          `/api/producttest?category=64b7f098ffe22650abb78018`
+          `/api/products?category=64b7f098ffe22650abb78018`
         )
         setProducts(res.data.data)
       } catch (error) {

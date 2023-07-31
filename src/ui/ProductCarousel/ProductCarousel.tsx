@@ -2,7 +2,7 @@ import { FC, Fragment, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 
 import ProductCard from '@/ui/ProductCard/ProductCard'
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
@@ -10,7 +10,7 @@ const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
 import styles from './ProductCarousel.module.scss'
 
 type ProductCarouselProps = {
-  data?: ProductTestProps[]
+  data?: ProductProps[]
   className?: string
   title?: string
   titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'

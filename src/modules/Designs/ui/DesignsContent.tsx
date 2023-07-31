@@ -1,4 +1,4 @@
-import { CategoryProps, ProductTestProps } from '@/utils/types'
+import { CategoryProps, ProductProps } from '@/utils/types'
 
 import { FC, useCallback, useContext, useEffect, useState } from 'react'
 import Container from '@/app/layouts/Container'
@@ -14,7 +14,7 @@ import styles from './DesignsContent.module.scss'
 
 type DesignsContentProps = {
   categories: CategoryProps[]
-  products: ProductTestProps[]
+  products: ProductProps[]
 }
 
 const DesignsContent: FC<DesignsContentProps> = ({ categories, products }) => {
@@ -38,11 +38,8 @@ const DesignsContent: FC<DesignsContentProps> = ({ categories, products }) => {
     setSearchQuery(query)
   }, [])
 
-  const filterProductsBySearch = (
-    products: ProductTestProps[],
-    query: string
-  ) => {
-    return products.filter((product: ProductTestProps) =>
+  const filterProductsBySearch = (products: ProductProps[], query: string) => {
+    return products.filter((product: ProductProps) =>
       product.ProductName.toLowerCase().includes(query.toLowerCase())
     )
   }

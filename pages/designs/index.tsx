@@ -5,15 +5,15 @@ import { PageLayout } from '@/app/layouts/PageLayout'
 import { DesignsContent } from '@/modules/Designs'
 
 import db from '@/utils/db'
-import { CategoryProps, ProductProps, ProductTestProps } from '@/utils/types'
+import { CategoryProps, ProductProps } from '@/utils/types'
 import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 import CategoryModel from '../../models/Category'
-import ProductTestModel from '../../models/ProductTest'
+import ProductTestModel from '../../models/Product'
 
 type DesignsProps = {
   categories: CategoryProps[]
-  products: ProductTestProps[]
+  products: ProductProps[]
 }
 
 const Index: FC<DesignsProps> = ({ categories, products }) => {

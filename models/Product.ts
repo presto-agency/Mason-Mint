@@ -25,7 +25,11 @@ const productSchema = new mongoose.Schema({
   id: { type: String, unique: true, required: true },
   ProductName: String,
   Metal: String,
-  Images: [imageSchema],
+  mainImages: {
+    obverse: { type: String, default: null },
+    reverse: { type: String, default: null },
+  },
+  additionalImages: [imageSchema],
   specification: [specificationSchema],
   slug: { type: String, required: true, unique: true },
   category: { id: String, name: String },
@@ -33,6 +37,6 @@ const productSchema = new mongoose.Schema({
 })
 
 const Product =
-  mongoose.models.Product || mongoose.model('Product', productSchema)
+  mongoose.models.ProductTest || mongoose.model('Product', productSchema)
 
 export default Product

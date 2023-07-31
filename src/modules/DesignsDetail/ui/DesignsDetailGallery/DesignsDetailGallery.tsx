@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import classNames from 'classnames'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import styles from './DesignsDetailGalley.module.scss'
 
 type DesignsDetailGalleryProps = {
-  product: ProductTestProps | null
+  product: ProductProps | null
   className?: string
 }
 
@@ -20,7 +20,7 @@ const DesignsDetailGallery: FC<DesignsDetailGalleryProps> = ({
           <BackgroundImage
             className={styles['gallery__item']}
             src="/images/detail/placeholder-1.jpg"
-            alt="Product galley image"
+            alt="ProductOld galley image"
             quality={100}
           />
         </div>
@@ -28,7 +28,7 @@ const DesignsDetailGallery: FC<DesignsDetailGalleryProps> = ({
           <BackgroundImage
             className={styles['gallery__item']}
             src="/images/detail/placeholder-2.jpg"
-            alt="Product galley image"
+            alt="ProductOld galley image"
             quality={100}
           />
         </div>

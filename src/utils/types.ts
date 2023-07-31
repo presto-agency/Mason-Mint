@@ -1,15 +1,15 @@
-export type ProductProps = {
-  id: string
-  ProductName: string
-  Metal?: string
-  Images?: ImagesProps[]
-  specification: SpecificationProps[]
-  slug: string
-  category?: CategoryProps
-  description?: string
-}
+// export type ProductProps = {
+//   id: string
+//   ProductName: string
+//   Metal?: string
+//   Images?: ImagesProps[]
+//   specification: SpecificationProps[]
+//   slug: string
+//   category?: CategoryProps
+//   description?: string
+// }
 
-export type ProductTestProps = {
+export type ProductProps = {
   id: string
   ProductName: string
   Metal?: string

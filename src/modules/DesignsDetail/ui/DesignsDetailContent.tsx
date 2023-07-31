@@ -6,7 +6,7 @@ import axios from 'axios'
 import { motion } from 'framer-motion'
 
 import routes from '@/utils/routes'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 
 import { Store } from '@/utils/Store'
 import Container from '@/app/layouts/Container'
@@ -36,13 +36,13 @@ const DesignsDetailContent = () => {
     query: { productId },
   } = useRouter()
   const store = useContext(Store)
-  const [product, setProduct] = useState<ProductTestProps | null>(null)
-  const [sameProducts, setSameProducts] = useState<ProductTestProps[]>([])
+  const [product, setProduct] = useState<ProductProps | null>(null)
+  const [sameProducts, setSameProducts] = useState<ProductProps[]>([])
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`/api/producttest/${productId}`)
+        const res = await axios.get(`/api/products/${productId}`)
         setProduct(res.data.data)
       } catch (error) {
         console.log(error)
@@ -63,10 +63,10 @@ const DesignsDetailContent = () => {
       if (product) {
         try {
           const res = await axios.get(
-            `/api/producttest?category=${product?.category?.id}`
+            `/api/products?category=${product?.category?.id}`
           )
           setSameProducts(
-            res.data.data.filter((p: ProductTestProps) => p.id !== productId)
+            res.data.data.filter((p: ProductProps) => p.id !== productId)
           )
         } catch (error) {
           console.log(error)

@@ -1,11 +1,11 @@
 import { createContext, ReactNode, useReducer, Dispatch, Reducer } from 'react'
-import { ProductTestProps } from '@/utils/types'
+import { ProductProps } from '@/utils/types'
 
 export interface IInitialStateProps {
   modal: {
     isOpenModal: boolean
   }
-  products: ProductTestProps[]
+  products: ProductProps[]
 }
 
 export interface IActionProps {
@@ -49,7 +49,7 @@ const reducer = (state: IInitialStateProps, action: IActionProps) => {
     case 'ADD_PRODUCTS': {
       return {
         ...state,
-        products: action.payload as ProductTestProps[],
+        products: action.payload as ProductProps[],
       }
     }
     case 'RESET_PRODUCTS': {
