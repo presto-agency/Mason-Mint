@@ -314,7 +314,6 @@ const ProductForm: FC<{
     formData.additionalImages = [...result]
     ;(await onValues) && onValues(formData as ProductTestProps)
   }
-  console.log('uploadedImages ')
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles['form']}>
       <div className="row">
