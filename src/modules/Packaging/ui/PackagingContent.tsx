@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic'
 import NaturalVehicle from '@/modules/Packaging/ui/NaturalVehicle/NaturalVehicle'
 
 import styles from './PackagingContent.module.scss'
+import NumismaticPackaging from '@/modules/Packaging/ui/NumismaticPackaging/NumismaticPackaging'
 
 const sliderImages = [
   '/images/packaging/hero.jpg',
@@ -33,6 +34,7 @@ export const PackagingContent: FC = () => {
         image="/images/packaging/hero.jpg"
       />
       <NaturalVehicle />
+      <NumismaticPackaging />
       <WhatWeDo />
       <BecomeDistributorSection />
     </main>
