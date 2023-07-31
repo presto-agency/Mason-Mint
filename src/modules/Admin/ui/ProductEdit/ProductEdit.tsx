@@ -13,7 +13,7 @@ const ProductManipulatedSuccessModal = dynamic(
 )
 
 import styles from '../../Admin.module.scss'
-import ProductTestForm from '@/ui/ProductForm/ProductForm'
+import ProductForm from '@/ui/ProductForm/ProductForm'
 
 const ProductEdit: FC<{
   product: ProductTestProps
@@ -49,7 +49,7 @@ const ProductEdit: FC<{
         >
           Back to list
         </ButtonPrimary>
-        <ProductTestForm
+        <ProductForm
           product={productState}
           categories={categories}
           onValues={handleEdit}
