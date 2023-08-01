@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react'
+import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -30,7 +31,6 @@ const ProductCarousel = dynamic(
 )
 
 import styles from './DesignsDetailContent.module.scss'
-import Head from 'next/head'
 
 const DesignsDetailContent = () => {
   const {

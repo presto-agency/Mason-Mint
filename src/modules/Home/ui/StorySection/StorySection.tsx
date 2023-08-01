@@ -1,10 +1,12 @@
 import { FC } from 'react'
+import Link from 'next/link'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+import routes from '@/utils/routes'
 
 import styles from './StorySection.module.scss'
 
@@ -66,12 +68,14 @@ const StorySection: FC = () => {
               </p>
             </div>
             <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
-              <ButtonPrimary
-                className={styles['buttonContainer__button']}
-                variant="transparent"
-              >
-                Our story
-              </ButtonPrimary>
+              <Link href={routes.public.about}>
+                <ButtonPrimary
+                  className={styles['buttonContainer__button']}
+                  variant="transparent"
+                >
+                  Our story
+                </ButtonPrimary>
+              </Link>
             </AnimatedElement>
           </ParallaxSection>
         </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import Container from '@/app/layouts/Container'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import classNames from 'classnames'
@@ -6,9 +7,11 @@ import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { useScroll, motion, MotionValue, useTransform } from 'framer-motion'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
+import routes from '@/utils/routes'
 
 import styles from './SellSection.module.scss'
-import useWindowDimensions from '@/hooks/useWindowDimensions'
+
 const SellSection = () => {
   const ref = useRef(null)
   const useRotateY = (value: MotionValue<number>) => {
@@ -80,12 +83,14 @@ const SellSection = () => {
                   </AnimatedText>
                 </p>
                 <AnimatedElement delay={0.2}>
-                  <ButtonPrimary
-                    variant={'noStroked'}
-                    className={styles['button']}
-                  >
-                    Become a Distributor
-                  </ButtonPrimary>
+                  <Link href={routes.public.becomeDistributor}>
+                    <ButtonPrimary
+                      variant={'noStroked'}
+                      className={styles['button']}
+                    >
+                      Become a Distributor
+                    </ButtonPrimary>
+                  </Link>
                 </AnimatedElement>
               </div>
             </li>
