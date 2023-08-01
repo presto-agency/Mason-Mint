@@ -17,6 +17,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
 }) => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [activeSide, setActiveSide] = useState<'obverse' | 'reverse'>('obverse')
+  const [thumbLoaded, setThumbLoaded] = useState<boolean>(false)
   const categorySlug = product
     ? toLoverCaseAndSpacesToHyphen(product.category?.name as string)
     : ''
@@ -54,7 +55,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
           <motion.div
             className={styles['image__item']}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={thumbLoaded ? { opacity: 1 } : {}}
             transition={{ duration: 1 }}
           >
             <div
@@ -70,6 +71,7 @@ const DesignsDetailThumbnail: FC<DesignsDetailThumbnailProps> = ({
                 fill
                 quality={100}
                 alt={product.ProductName}
+                onLoadingComplete={() => setThumbLoaded(true)}
               />
             </div>
             <div
