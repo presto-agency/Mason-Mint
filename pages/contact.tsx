@@ -1,11 +1,18 @@
-import { PageLayout } from '@/app/layouts/PageLayout'
+import Head from 'next/head'
 import { ContactContent } from '@/modules/Contact'
 
 export default function Contact() {
   return (
-    <PageLayout>
+    <>
+      <Head>
+        <title>Contact Us | Mason Mint</title>
+        <meta
+          name="description"
+          content="Have a question? Send us and email and one of our knowledgeable customer service representatives will respond within 24 business hours."
+        />
+      </Head>
       <ContactContent />
-    </PageLayout>
+    </>
   )
 }
 

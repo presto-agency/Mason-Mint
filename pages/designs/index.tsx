@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
+import Head from 'next/head'
 import { GetStaticProps } from 'next'
 
-import { PageLayout } from '@/app/layouts/PageLayout'
 import { DesignsContent } from '@/modules/Designs'
 
 import db from '@/utils/db'
@@ -18,9 +18,16 @@ type DesignsProps = {
 
 const Index: FC<DesignsProps> = ({ categories, products }) => {
   return (
-    <PageLayout>
+    <>
+      <Head>
+        <title>Mason Mint Category | Mason Mint</title>
+        <meta
+          name="description"
+          content="Find Mason Mint silver rounds and silver bullion products from precious metal wholesalers. We live by our motto, Excellence in Minting!"
+        />
+      </Head>
       <DesignsContent products={products} categories={categories} />
-    </PageLayout>
+    </>
   )
 }
 

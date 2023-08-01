@@ -1,11 +1,14 @@
-import { PageLayout } from '@/app/layouts/PageLayout'
+import Head from 'next/head'
 import { HomeContent } from '@/modules/Home'
 
 export default function Home() {
   return (
-    <PageLayout headerTheme="dark">
+    <>
+      <Head>
+        <title>Mason Mint Silver Coins and Rounds</title>
+      </Head>
       <HomeContent />
-    </PageLayout>
+    </>
   )
 }
 

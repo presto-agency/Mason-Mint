@@ -1,11 +1,14 @@
-import { PageLayout } from '@/app/layouts/PageLayout'
+import Head from 'next/head'
 import { AboutContent } from '@/modules/About'
 
 export default function About() {
   return (
-    <PageLayout>
+    <>
+      <Head>
+        <title>About Us | Mason Mint</title>
+      </Head>
       <AboutContent />
-    </PageLayout>
+    </>
   )
 }
 

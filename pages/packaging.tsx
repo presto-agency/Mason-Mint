@@ -1,11 +1,14 @@
-import { PageLayout } from '@/app/layouts/PageLayout'
+import Head from 'next/head'
 import { PackagingContent } from '@/modules/Packaging'
 
 const CustomMintingPage = () => {
   return (
-    <PageLayout>
+    <>
+      <Head>
+        <title>Packaging | Mason Mint</title>
+      </Head>
       <PackagingContent />
-    </PageLayout>
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
@@ -10,6 +11,7 @@ const VideoComponent = dynamic(
 )
 
 import styles from './IntroSection.module.scss'
+import routes from '@/utils/routes'
 
 const IntroSection = () => {
   return (
@@ -31,12 +33,16 @@ const IntroSection = () => {
           </div>
           <div className={styles['intro__content_bottom']}>
             <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
-              <ButtonPrimary
-                className={styles['buttonContainer__button']}
-                variant="white"
+              <Link
+                href={`${routes.public.designs}/64b7f086ffe22650abb77f96/noah-s-ark-1-oz-silver-round-999-pure`}
               >
-                Learn more
-              </ButtonPrimary>
+                <ButtonPrimary
+                  className={styles['buttonContainer__button']}
+                  variant="white"
+                >
+                  Learn more
+                </ButtonPrimary>
+              </Link>
             </AnimatedElement>
             <div className={styles['subtitle']}>
               <AnimatedElement delay={0.2}>

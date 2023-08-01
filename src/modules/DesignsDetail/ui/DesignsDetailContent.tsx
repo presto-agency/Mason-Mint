@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
@@ -30,6 +30,7 @@ const ProductCarousel = dynamic(
 )
 
 import styles from './DesignsDetailContent.module.scss'
+import Head from 'next/head'
 
 const DesignsDetailContent = () => {
   const {
@@ -89,55 +90,60 @@ const DesignsDetailContent = () => {
   }, [product, productId, store?.state.products])
 
   return (
-    <main className={styles['detail']}>
-      <Container>
-        <div className="row">
-          <div className="col-md-5">
-            <motion.div
-              className={styles['detail__nav']}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ type: 'spring', duration: 1, bounce: 0 }}
-            >
-              <Link href={routes.public.designs}>
-                <ButtonPrimary backwardArrows variant="noStroked">
-                  Go to back
-                </ButtonPrimary>
-              </Link>
-            </motion.div>
-            <DesignsDetailThumbnail
-              className={styles['detail__thumbnail']}
-              product={product}
-            />
-          </div>
-          <div className="col-md-5 offset-md-1">
-            {product && (
-              <DesignsDetailDescription
-                className={styles['detail__description']}
+    <>
+      <Head>
+        <title>{product?.ProductName} | Mason Mint</title>
+      </Head>
+      <main className={styles['detail']}>
+        <Container>
+          <div className="row">
+            <div className="col-md-5">
+              <motion.div
+                className={styles['detail__nav']}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ type: 'spring', duration: 1, bounce: 0 }}
+              >
+                <Link href={routes.public.designs}>
+                  <ButtonPrimary backwardArrows variant="noStroked">
+                    Go to back
+                  </ButtonPrimary>
+                </Link>
+              </motion.div>
+              <DesignsDetailThumbnail
+                className={styles['detail__thumbnail']}
                 product={product}
               />
-            )}
+            </div>
+            <div className="col-md-5 offset-md-1">
+              {product && (
+                <DesignsDetailDescription
+                  className={styles['detail__description']}
+                  product={product}
+                />
+              )}
+            </div>
           </div>
-        </div>
-        {product?.additionalImages && product.additionalImages.length > 0 ? (
-          <DesignsDetailGallery
-            className={styles['detail__gallery']}
-            product={product}
+          {product?.additionalImages && product.additionalImages.length > 0 ? (
+            <DesignsDetailGallery
+              className={styles['detail__gallery']}
+              product={product}
+            />
+          ) : null}
+        </Container>
+        {sameProducts.length > 0 && (
+          <ProductCarousel
+            className={styles['detail__carousel']}
+            title="Сoins from this category."
+            titleWithBlueDot={false}
+            subtitle="Patriot series"
+            data={sameProducts}
+            showResults={false}
           />
-        ) : null}
-      </Container>
-      {sameProducts.length > 0 && (
-        <ProductCarousel
-          className={styles['detail__carousel']}
-          title="Сoins from this category."
-          titleWithBlueDot={false}
-          subtitle="Patriot series"
-          data={sameProducts}
-          showResults={false}
-        />
-      )}
-      <BecomeDistributorSection />
-    </main>
+        )}
+        <BecomeDistributorSection />
+      </main>
+    </>
   )
 }
 

@@ -1,10 +1,12 @@
 import { FC } from 'react'
 import classNames from 'classnames'
+import Link from 'next/link'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import Container from '@/app/layouts/Container'
 import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+import routes from '@/utils/routes'
 
 import styles from './BecomeDistributorSection.module.scss'
 
@@ -34,12 +36,14 @@ const BecomeDistributorSection: FC<BecomeDistributorSectionProps> = ({
             </AnimatedText>
           </p>
           <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
-            <ButtonPrimary
-              className={styles['buttonContainer__button']}
-              variant="blue"
-            >
-              JOIN NOW
-            </ButtonPrimary>
+            <Link href={routes.public.becomeDistributor}>
+              <ButtonPrimary
+                className={styles['buttonContainer__button']}
+                variant="blue"
+              >
+                Join now
+              </ButtonPrimary>
+            </Link>
           </AnimatedElement>
         </div>
       </Container>
