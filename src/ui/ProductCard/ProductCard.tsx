@@ -12,19 +12,23 @@ type ProductCardProps = {
   data: ProductProps
   className?: string
   flip?: boolean
+  reloadPageOnClick?: boolean
 }
 
 const ProductCard: FC<ProductCardProps> = ({
   data,
   className,
   flip = true,
+  reloadPageOnClick = false,
 }) => {
   const categorySlug = toLoverCaseAndSpacesToHyphen(
     data.category?.name as string
   )
 
+  const LinkOrAnchor = reloadPageOnClick ? 'a' : Link
+
   return (
-    <Link
+    <LinkOrAnchor
       href={`${routes.public.designs}/${data.id}/${data.slug}`}
       className={classNames(
         styles['product'],
@@ -78,7 +82,7 @@ const ProductCard: FC<ProductCardProps> = ({
       <div className={styles['product__content']}>
         <p className={styles['product__content_title']}>{data.ProductName}</p>
       </div>
-    </Link>
+    </LinkOrAnchor>
   )
 }
 

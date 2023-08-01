@@ -136,9 +136,10 @@ const DesignsDetailContent = () => {
             className={styles['detail__carousel']}
             title="Сoins from this category."
             titleWithBlueDot={false}
-            subtitle="Patriot series"
+            subtitle={product?.category?.name}
             data={sameProducts}
             showResults={false}
+            reloadPageOnCardClick={true}
           />
         )}
         <BecomeDistributorSection />

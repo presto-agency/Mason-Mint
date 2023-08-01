@@ -17,6 +17,7 @@ type ProductCarouselProps = {
   titleWithBlueDot?: boolean
   subtitle?: string
   showResults?: boolean
+  reloadPageOnCardClick?: boolean
 }
 
 const ProductCarousel: FC<ProductCarouselProps> = ({
@@ -27,6 +28,7 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
   titleWithBlueDot = true,
   subtitle,
   showResults = true,
+  reloadPageOnCardClick = false,
 }) => {
   const [countOfActiveSlides, setCountOfActiveSlides] = useState<number>(4)
   const [gap, setGap] = useState<number>(32)
@@ -100,7 +102,10 @@ const ProductCarousel: FC<ProductCarouselProps> = ({
               {data?.map((product, index) => (
                 <Fragment key={index}>
                   <SplideSlide className={styles['carousel__slide']}>
-                    <ProductCard data={product} />
+                    <ProductCard
+                      data={product}
+                      reloadPageOnClick={reloadPageOnCardClick}
+                    />
                   </SplideSlide>
                 </Fragment>
               ))}

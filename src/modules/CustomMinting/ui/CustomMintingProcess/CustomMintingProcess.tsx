@@ -8,6 +8,7 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import AbstractLogo from '@/ui/AbstractLogo/AbstractLogo'
+import { numberWithZero } from '@/utils/number/numberWithZero'
 import { data } from './data'
 
 import styles from './CustomMintingProcess.module.scss'
@@ -146,13 +147,13 @@ const CustomMintingProcess: FC<{ className?: string }> = ({ className }) => {
                         <Fragment key={index}>
                           {activeSlide === index + 1 ? (
                             <motion.span {...motionPropsText}>
-                              {index + 1}
+                              {numberWithZero(index + 1)}
                             </motion.span>
                           ) : null}
                         </Fragment>
                       ))}
                     </span>
-                    /<span>{data.length}</span>
+                    /<span>{numberWithZero(data.length)}</span>
                   </div>
                   <div className={styles['process__description']}>
                     {data.map((item, index) => (
@@ -196,9 +197,9 @@ const CustomMintingProcess: FC<{ className?: string }> = ({ className }) => {
                     className={classNames(styles['process__navigation'], 'h4')}
                   >
                     <span className={styles['process__navigation_current']}>
-                      {index + 1}
+                      {numberWithZero(index + 1)}
                     </span>
-                    /<span>{data.length}</span>
+                    /<span>{numberWithZero(data.length)}</span>
                   </div>
                 </AnimatedElement>
                 <AnimatedElement delay={0}>

@@ -156,9 +156,13 @@
 			
 				&_current{
 					position: relative;
-					width: 13rem;
+					width: 28rem;
 					height: 1.15em;
 					color: var(--primary-color);
+					
+						@media (width<=$breakpoint-mob) {
+							width: 25rem;
+						}
 					
 						span{
 							position: absolute;
