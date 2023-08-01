@@ -9,14 +9,7 @@ const HeroDetail = dynamic(() => import('@/ui/HeroDetail/HeroDetail'), {
   ssr: false,
 })
 
-const sliderImages = [
-  '/images/about/innerAbout.jpg',
-  '/images/home/customDesign/slide_1.jpg',
-  '/images/home/customDesign/slide_2.jpg',
-  '/images/home/customDesign/slide_3.jpg',
-  '/images/home/customDesign/slide_4.jpg',
-  '/images/home/customDesign/slide_5.jpg',
-]
+const sliderImages = ['/images/about/innerAbout.jpg']
 
 import styles from './AboutContent.module.scss'
 

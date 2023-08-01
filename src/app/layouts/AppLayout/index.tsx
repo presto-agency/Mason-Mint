@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { withModal } from '@/context/modal'
-// import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
+import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer/Footer'
@@ -21,10 +21,12 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const [existHeaderFooter, setExistHeaderFooter] = useState<boolean>(true)
   const { width } = useWindowDimensions()
   const { route } = useRouter()
-  // const options = {
-  //   duration: 1,
-  //   smoothWheel: true,
-  // }
+  const options = {
+    duration: 1,
+    smoothWheel: true,
+    smoothTouch: false,
+    easing: (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+  }
 
   useEffect(() => {
     setIsTablet(width <= 991)
@@ -33,13 +35,13 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   useEffect(() => {
     const forDarkHeader = ['/']
     const withoutHeaderFooter = ['/404']
-
+    // Change theme
     if (forDarkHeader.includes(route)) {
       setHeaderTheme('dark')
     } else if (headerTheme !== 'light') {
       setHeaderTheme('light')
     }
-
+    // Hide Header & Footer
     if (withoutHeaderFooter.includes(route)) {
       setExistHeaderFooter(false)
     } else if (!existHeaderFooter) {
@@ -60,11 +62,11 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
         />
       </Head>
       {!isTablet && <CustomCursor />}
-      {/*<ReactLenis root options={{ ...options }}>*/}
-      {existHeaderFooter && <Header theme={headerTheme} />}
-      {children}
-      {existHeaderFooter && <Footer />}
-      {/*</ReactLenis>*/}
+      <ReactLenis root options={{ ...options }}>
+        {existHeaderFooter && <Header theme={headerTheme} />}
+        {children}
+        {existHeaderFooter && <Footer />}
+      </ReactLenis>
     </>
   )
 }

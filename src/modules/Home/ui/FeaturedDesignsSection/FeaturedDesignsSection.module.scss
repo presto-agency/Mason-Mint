@@ -38,7 +38,8 @@
           padding-top: 3rem;
         }
       
-        a, button{
+        a, button,
+        & > div{
           @media (width <= $breakpoint-mob) {
             width: 100%;
           }

@@ -1,11 +1,13 @@
 import React, { FC } from 'react'
-import Container from '@/app/layouts/Container'
 import classNames from 'classnames'
+import Link from 'next/link'
+import Container from '@/app/layouts/Container'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
+import routes from '@/utils/routes'
 
 import styles from './NaturalVehicle.module.scss'
 
@@ -61,9 +63,14 @@ const NaturalVehicle: FC<{ className?: string }> = ({ className }) => {
               </AnimatedText>
             </p>
             <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
-              <ButtonPrimary className={styles['button']} variant="transparent">
-                Contact Us
-              </ButtonPrimary>
+              <Link href={routes.public.contactUs}>
+                <ButtonPrimary
+                  className={styles['button']}
+                  variant="transparent"
+                >
+                  Contact Us
+                </ButtonPrimary>
+              </Link>
             </AnimatedElement>
           </div>
         </div>

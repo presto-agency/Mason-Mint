@@ -11,14 +11,7 @@ const HeroDetail = dynamic(() => import('@/ui/HeroDetail/HeroDetail'), {
 
 import styles from './PackagingContent.module.scss'
 
-const sliderImages = [
-  '/images/packaging/hero.jpg',
-  '/images/home/customDesign/slide_1.jpg',
-  '/images/home/customDesign/slide_2.jpg',
-  '/images/home/customDesign/slide_3.jpg',
-  '/images/home/customDesign/slide_4.jpg',
-  '/images/home/customDesign/slide_5.jpg',
-]
+const sliderImages = ['/images/packaging/hero.jpg']
 
 export const PackagingContent: FC = () => {
   return (

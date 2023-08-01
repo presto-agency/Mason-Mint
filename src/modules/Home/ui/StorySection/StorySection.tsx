@@ -38,7 +38,7 @@ const StorySection: FC = () => {
           </div>
           <ParallaxSection
             className={styles['story__content_right']}
-            parallaxValues={[0, 300]}
+            parallaxValues={[-100, 200]}
           >
             <BackgroundImage
               src="/images/home/home_story_2.png"
@@ -46,7 +46,7 @@ const StorySection: FC = () => {
               quality={100}
               alt="Coin photo"
               parallax
-              parallaxValues={[-100, 100]}
+              parallaxValues={[-50, 50]}
             />
             <div className={styles['text']}>
               <h4 className="h4">
