@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import Image from 'next/image'
 import Container from '@/app/layouts/Container'
 import { ProductProps } from '@/utils/types'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
@@ -30,12 +31,12 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                   <td>{index + 1}.</td>
                   <td>
                     {product.mainImages?.obverse ? (
-                      <img
+                      <Image
                         src={product.mainImages.obverse}
                         alt={product.ProductName}
                         width={100}
                         height={100}
-                        style={{ marginRight: '10rem' }}
+                        style={{ marginRight: '10rem', objectFit: 'contain' }}
                       />
                     ) : null}
                   </td>

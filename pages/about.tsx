@@ -8,3 +8,9 @@ export default function About() {
     </PageLayout>
   )
 }
+
+export const getStaticProps = () => {
+  return {
+    props: {},
+  }
+}

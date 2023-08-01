@@ -10,3 +10,9 @@ const CustomMintingPage = () => {
 }
 
 export default CustomMintingPage
+
+export const getStaticProps = () => {
+  return {
+    props: {},
+  }
+}
