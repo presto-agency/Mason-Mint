@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { PackagingContent } from '@/modules/Packaging'
+import RouterTransitionLayout from '@/app/layouts/RouterTransitionLayout'
 
 const CustomMintingPage = () => {
   return (
@@ -7,7 +8,9 @@ const CustomMintingPage = () => {
       <Head>
         <title>Packaging | Mason Mint</title>
       </Head>
-      <PackagingContent />
+      <RouterTransitionLayout>
+        <PackagingContent />
+      </RouterTransitionLayout>
     </>
   )
 }

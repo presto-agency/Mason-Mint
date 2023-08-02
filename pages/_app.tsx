@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import AppLayout from '@/app/layouts/AppLayout'
 import { StoreProvider } from '@/utils/Store'
 import NextNProgress from 'nextjs-progressbar'
+
 import 'bootstrap/scss/bootstrap-grid.scss'
 import '@/app/styles/index.scss'
 
