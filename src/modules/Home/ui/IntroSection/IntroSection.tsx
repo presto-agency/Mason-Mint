@@ -12,11 +12,17 @@ const VideoComponent = dynamic(
 
 import styles from './IntroSection.module.scss'
 import routes from '@/utils/routes'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 
 const IntroSection = () => {
   return (
     <section className={styles['intro']}>
-      <VideoComponent src="/video/hero_video_bg-compress.mp4" />
+      <ParallaxSection
+        parallaxValues={[-300, 300]}
+        className={styles['intro__video']}
+      >
+        <VideoComponent src="/video/hero_video_bg-compress.mp4" />
+      </ParallaxSection>
       <Container>
         <div className={styles['intro__content']}>
           <div className={styles['intro__content_top']}>
