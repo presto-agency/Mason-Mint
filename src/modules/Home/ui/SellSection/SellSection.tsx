@@ -18,6 +18,8 @@ const SellSection = () => {
   const refLottie = useRef<LottieRefCurrentProps | null>(null)
   const ref = useRef(null)
   const [isClient, setIsClient] = useState(false)
+  const [prevProgress, setPrevProgress] = useState(0)
+
   const { width } = useWindowDimensions()
   useEffect(() => {
     setIsClient(true)
@@ -25,7 +27,12 @@ const SellSection = () => {
   const { scrollYProgress } = useScroll({ target: ref })
   const progress = useTransform(scrollYProgress, [0, 1], [0, 61])
   useMotionValueEvent(progress, 'change', (latest) => {
-    refLottie.current?.goToAndStop(Math.round(latest), true)
+    const roundedLatest = Math.round(latest)
+    if (roundedLatest !== prevProgress) {
+      console.log(roundedLatest)
+      refLottie.current?.goToAndStop(roundedLatest, true)
+      setPrevProgress(roundedLatest)
+    }
   })
 
   return (
