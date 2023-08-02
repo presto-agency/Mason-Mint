@@ -14,7 +14,8 @@ const transporter = nodemailer.createTransport({
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
   },
-  connectionTimeout: 5000,
+  // connectionTimeout: 5000,
+  secure: true,
 } as TransportOptions)
 
 export const sendEmail = async ({
