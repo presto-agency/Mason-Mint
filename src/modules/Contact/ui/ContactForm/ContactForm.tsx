@@ -85,6 +85,10 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
           openThanksModal()
           setSending(false)
           reset()
+        } else {
+          openErrorModal()
+          reset()
+          setSending(false)
         }
       })
       .catch((error) => {
