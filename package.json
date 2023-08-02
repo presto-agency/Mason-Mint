@@ -52,6 +52,7 @@
     "axios": "^1.4.0",
     "formidable": "^3.5.0",
     "fs": "^0.0.1-security",
+    "lottie-react": "^2.4.0",
     "mongodb": "^5.6.0",
     "mongoose": "^7.3.1",
     "next": "13.4.2",
