@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/about/innerAbout.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/about/innerAbout.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/become_distributor_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/become_distributor_pict.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/custom-minting/mark-banner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/custom-minting/mark-banner.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/custom-minting/marketing-promotional-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/custom-minting/marketing-promotional-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/custom-minting/marketing-promotional-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/custom-minting/marketing-promotional-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/home_custom_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/home/home_story_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/home/home_story_1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +106,6 @@
       <workItem from="1690354317927" duration="23000" />
       <workItem from="1690354345499" duration="34680000" />
       <workItem from="1690785883856" duration="16811000" />
-    </task>
-    <task id="LOCAL-00024" summary="fix: some footer fixes">
-      <created>1688538935111</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1688538935111</updated>
     </task>
     <task id="LOCAL-00025" summary="fix: some footer fixes">
       <created>1688555328270</created>
@@ -443,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691011285526</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="fix: add some refactor#2">
+      <created>1691054429466</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1691054429466</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +469,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add variants of slider animation" />
     <MESSAGE value="fix: type error swiper" />
     <MESSAGE value="fix: type error swiper #2" />
     <MESSAGE value="fix: type error swiper #3" />
@@ -487,7 +493,8 @@
     <MESSAGE value="fix: some fixes" />
     <MESSAGE value="fix: add 3d coin animation" />
     <MESSAGE value="fix: add some refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: add some refactor" />
+    <MESSAGE value="fix: add some refactor#2" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: add some refactor#2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
