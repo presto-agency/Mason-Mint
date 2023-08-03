@@ -29,7 +29,6 @@ const SellSection = () => {
   useMotionValueEvent(progress, 'change', (latest) => {
     const roundedLatest = Math.round(latest)
     if (roundedLatest !== prevProgress) {
-      console.log(roundedLatest)
       refLottie.current?.goToAndStop(roundedLatest, true)
       setPrevProgress(roundedLatest)
     }
