@@ -19,10 +19,11 @@ const CustomDesignsSection = dynamic(
 const FeaturedDesignsSection = dynamic(
   () =>
     import('@/modules/Home/ui/FeaturedDesignsSection/FeaturedDesignsSection'),
-  { ssr: false }
+  { ssr: false, loading: () => <MainPreloader /> }
 )
 
 import styles from './HomeContent.module.scss'
+import MainPreloader from '@/components/MainPreloader/MainPreloader'
 
 const HomeContent = () => {
   return (

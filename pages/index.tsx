@@ -1,4 +1,5 @@
 import Head from 'next/head'
+// import MainPreloader from '@/components/MainPreloader/MainPreloader'
 import { HomeContent } from '@/modules/Home'
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <Head>
         <title>Mason Mint Silver Coins and Rounds</title>
       </Head>
+      {/*<MainPreloader />*/}
       <HomeContent />
     </>
   )
