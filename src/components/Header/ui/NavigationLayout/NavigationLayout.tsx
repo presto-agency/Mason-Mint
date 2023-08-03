@@ -103,10 +103,6 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
   return isAnimated ? (
     <motion.div
       className={classNames(styles['header__content_desktop'], [className])}
-      animate={{ height: height }}
-      initial={headerVariant.initial}
-      exit={headerVariant.exit}
-      transition={headerVariant.transition}
       data-lenis-prevent
     >
       <div className={styles['navigation']} ref={divRef}>

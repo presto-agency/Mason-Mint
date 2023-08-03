@@ -99,14 +99,14 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
               <Logo className={styles['logo']} />
             </Link>
             <NavigationLayout />
-            <MobileLayout
-              scrolled={scrolled}
-              theme={headerTheme}
-              menuOpened={menuOpened}
-              toggleMenu={toggleMenu}
-            />
           </div>
         </Container>
+        <MobileLayout
+          scrolled={scrolled}
+          theme={headerTheme}
+          menuOpened={menuOpened}
+          toggleMenu={toggleMenu}
+        />
       </header>
     </>
   )

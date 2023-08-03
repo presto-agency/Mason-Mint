@@ -1,7 +1,8 @@
 import { FC } from 'react'
 import classNames from 'classnames'
-import styles from './Burger.module.scss'
 import { motion } from 'framer-motion'
+
+import styles from './Burger.module.scss'
 
 type BurgerProps = {
   opened: boolean
@@ -83,6 +84,7 @@ export const Burger: FC<BurgerProps> = ({
     [styles.scrolled]: scrolled,
     [styles[theme]]: true,
   }
+
   return (
     <motion.div
       className={classNames(styles['burger'], mods)}
