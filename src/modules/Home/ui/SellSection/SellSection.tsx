@@ -6,26 +6,33 @@ import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
-import { useScroll, motion, MotionValue, useTransform } from 'framer-motion'
+import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import routes from '@/utils/routes'
+import Lottie, { LottieRefCurrentProps } from 'lottie-react'
+import flipCoin from './flipCoin.json'
 
 import styles from './SellSection.module.scss'
 
 const SellSection = () => {
+  const refLottie = useRef<LottieRefCurrentProps | null>(null)
   const ref = useRef(null)
-  const useRotateY = (value: MotionValue<number>) => {
-    const rotate = useTransform(value, [1, 0], [0, 180])
-    const rotateMirror = useTransform(value, [0, 1], [0, 180])
-    return { rotate, rotateMirror }
-  }
   const [isClient, setIsClient] = useState(false)
-  const { scrollYProgress } = useScroll({ target: ref })
-  const { rotate, rotateMirror } = useRotateY(scrollYProgress)
+  const [prevProgress, setPrevProgress] = useState(0)
+
   const { width } = useWindowDimensions()
   useEffect(() => {
     setIsClient(true)
   }, [])
+  const { scrollYProgress } = useScroll({ target: ref })
+  const progress = useTransform(scrollYProgress, [0, 1], [0, 61])
+  useMotionValueEvent(progress, 'change', (latest) => {
+    const roundedLatest = Math.round(latest)
+    if (roundedLatest !== prevProgress) {
+      refLottie.current?.goToAndStop(roundedLatest, true)
+      setPrevProgress(roundedLatest)
+    }
+  })
 
   return (
     <section ref={ref} className={styles['sellSection']}>
@@ -34,28 +41,12 @@ const SellSection = () => {
           {isClient && width > 767 ? (
             <div className={styles['sellSection__content_left']}>
               <div className={styles['imageWrapper']}>
-                <motion.div
+                <Lottie
                   className={styles['imageContainer']}
-                  style={{ rotateY: rotate, translateY: '-50%' }}
-                >
-                  <BackgroundImage
-                    src="/images/home/front_coin_1.png"
-                    className={styles['image']}
-                    quality={100}
-                    alt="Coin photo"
-                  />
-                </motion.div>
-                <motion.div
-                  className={styles['imageContainer']}
-                  style={{ rotateY: rotateMirror, translateY: '-50%' }}
-                >
-                  <BackgroundImage
-                    src="/images/home/back_coin_1.png"
-                    className={styles['image']}
-                    quality={100}
-                    alt="Coin photo"
-                  />
-                </motion.div>
+                  animationData={flipCoin}
+                  lottieRef={refLottie}
+                  autoplay={false}
+                />
               </div>
             </div>
           ) : null}

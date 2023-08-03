@@ -44,7 +44,7 @@ const NaturalVehicle: FC<{ className?: string }> = ({ className }) => {
             <BackgroundImage
               className={styles['image']}
               cover
-              src="/images/packaging/pack_1.png"
+              src="/images/packaging/pack.png"
               alt="image"
             />
             <h4 className={classNames(styles['title'], 'h4')}>
