@@ -23,7 +23,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const { route } = useRouter()
   const lenis = useLenis()
   const options = {
-    duration: 1,
+    duration: 1.2,
     smoothWheel: true,
     smoothTouch: false,
     easing: (t: number) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),

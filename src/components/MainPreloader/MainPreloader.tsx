@@ -1,8 +1,14 @@
+import { motion } from 'framer-motion'
+
 import styles from './MainPreloader.module.scss'
 
 const MainPreloader = () => {
   return (
-    <div className={styles['preloader']}>
+    <motion.div
+      className={styles['preloader']}
+      exit={{ opacity: 0 }}
+      transition={{ type: 'linear', duration: 1 }}
+    >
       <div className={styles['preloader__label']}>
         <span>Please wait</span>
         <span>we make money</span>
@@ -12,7 +18,7 @@ const MainPreloader = () => {
       </div>
       <p className={styles['preloader__title']}>Page is rolling...</p>
       <div className={styles['preloader__percent']}>00%</div>
-    </div>
+    </motion.div>
   )
 }
 

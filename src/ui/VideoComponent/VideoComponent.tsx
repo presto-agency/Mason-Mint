@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { motion, useInView } from 'framer-motion'
 
 import styles from './VideoComponent.module.scss'
-import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 
 type VideoComponent = {
   className?: string
