@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { withModal } from '@/context/modal'
-import { Lenis as ReactLenis } from '@studio-freight/react-lenis'
+import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer/Footer'
@@ -21,6 +21,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const [existHeaderFooter, setExistHeaderFooter] = useState<boolean>(true)
   const { width } = useWindowDimensions()
   const { route } = useRouter()
+  const lenis = useLenis()
 
   const options = {
     duration: 1.2,
@@ -34,6 +35,15 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   }, [width])
 
   useEffect(() => {
+    // Back to top
+    if (lenis) {
+      lenis.scrollTo(0, {
+        lerp: 0,
+        duration: 0,
+        force: true,
+      })
+    }
+
     const forDarkHeader = ['/']
     const withoutHeaderFooter = ['/404']
     // Change theme
