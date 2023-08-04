@@ -63,7 +63,7 @@ const CustomDesignsSection: FC<{ className?: string }> = ({ className }) => {
             </AnimatedText>
           </p>
           <AnimatedElement delay={0.2}>
-            <Link href={routes.public.customMinting}>
+            <Link scroll={false} href={routes.public.customMinting}>
               <ButtonPrimary
                 className={styles['CustomDesignsSection__content_button']}
               >

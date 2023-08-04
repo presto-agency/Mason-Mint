@@ -117,7 +117,7 @@ const PageNotFound = () => {
           </AnimatedText>
         </p>
         <AnimatedElement>
-          <Link href={routes.public.index}>
+          <Link scroll={false} href={routes.public.index}>
             <ButtonPrimary variant="blue" className={styles['empty__action']}>
               Go back
             </ButtonPrimary>

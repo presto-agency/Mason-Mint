@@ -99,7 +99,7 @@ const SlideInner: FC<SlideInner> = ({ title, subtitle }) => {
         <AnimatedText>{subtitle}</AnimatedText>
       </p>
       <AnimatedElement delay={0}>
-        <Link href={routes.public.designs}>
+        <Link scroll={false} href={routes.public.designs}>
           <ButtonPrimary variant="noStroked">View catalog</ButtonPrimary>
         </Link>
       </AnimatedElement>

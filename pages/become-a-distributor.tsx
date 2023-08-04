@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { BecomeADistributorContent } from '@/modules/BecomeADistributor'
+import PageTransitionLayout from '../src/app/layouts/PageTransitionLayout'
 
 export default function BecomeADistributor() {
   return (
@@ -11,7 +12,9 @@ export default function BecomeADistributor() {
           content="Complete the application below and one of our customer service representatives will contact you with more information regarding our products."
         />
       </Head>
-      <BecomeADistributorContent />
+      <PageTransitionLayout>
+        <BecomeADistributorContent />
+      </PageTransitionLayout>
     </>
   )
 }

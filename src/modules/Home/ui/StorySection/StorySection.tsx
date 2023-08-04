@@ -68,7 +68,7 @@ const StorySection: FC = () => {
               </p>
             </div>
             <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
-              <Link href={routes.public.about}>
+              <Link scroll={false} href={routes.public.about}>
                 <ButtonPrimary
                   className={styles['buttonContainer__button']}
                   variant="transparent"

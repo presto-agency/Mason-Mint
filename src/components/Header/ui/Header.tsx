@@ -95,7 +95,11 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
       <header className={classNames(styles['header'], mods)}>
         <Container>
           <div className={styles['header__content']}>
-            <Link className={styles['header__content_link']} href={'/'}>
+            <Link
+              scroll={false}
+              className={styles['header__content_link']}
+              href={'/'}
+            >
               <Logo className={styles['logo']} />
             </Link>
             <NavigationLayout />

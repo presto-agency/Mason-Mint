@@ -23,6 +23,7 @@ const FeaturedDesignsSection = dynamic(
 )
 
 import styles from './HomeContent.module.scss'
+import PageTransitionLayout from '../../../app/layouts/PageTransitionLayout'
 
 const HomeContent = () => {
   return (

@@ -101,6 +101,7 @@ export const ButtonPrimary: FC<ButtonPrimaryProps> = ({
         </button>
       ) : (
         <Link
+          scroll={false}
           href={href}
           className={classNames(
             styles['buttonPrimary'],

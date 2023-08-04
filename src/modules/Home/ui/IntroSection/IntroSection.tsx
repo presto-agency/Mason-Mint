@@ -40,6 +40,7 @@ const IntroSection = () => {
           <div className={styles['intro__content_bottom']}>
             <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
               <Link
+                scroll={false}
                 href={`${routes.public.designs}/64b7f086ffe22650abb77f96/noah-s-ark-1-oz-silver-round-999-pure`}
               >
                 <ButtonPrimary

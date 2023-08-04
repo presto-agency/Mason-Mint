@@ -109,6 +109,7 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
         <nav className={styles['navigation__content']}>
           {navigationHeaderLinks.map((item) => (
             <Link
+              scroll={false}
               className={classNames(styles['navigation__content_link'], {
                 [styles['active']]: item.href === activeLink,
               })}
@@ -135,6 +136,7 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
         <nav className={styles['navigation__content']}>
           {navigationHeaderLinks.map((item) => (
             <Link
+              scroll={false}
               className={classNames(styles['navigation__content_link'], {
                 [styles['active']]: item.href === activeLink,
               })}

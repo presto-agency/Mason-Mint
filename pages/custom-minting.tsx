@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { CustomMintingContent } from '@/modules/CustomMinting'
+import PageTransitionLayout from '../src/app/layouts/PageTransitionLayout'
 
 const CustomMintingPage = () => {
   return (
@@ -7,7 +8,9 @@ const CustomMintingPage = () => {
       <Head>
         <title>Custom Minting | Mason Mint</title>
       </Head>
-      <CustomMintingContent />
+      <PageTransitionLayout>
+        <CustomMintingContent />
+      </PageTransitionLayout>
     </>
   )
 }

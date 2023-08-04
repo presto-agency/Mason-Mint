@@ -63,7 +63,7 @@ const NaturalVehicle: FC<{ className?: string }> = ({ className }) => {
               </AnimatedText>
             </p>
             <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
-              <Link href={routes.public.contactUs}>
+              <Link scroll={false} href={routes.public.contactUs}>
                 <ButtonPrimary
                   className={styles['button']}
                   variant="transparent"
