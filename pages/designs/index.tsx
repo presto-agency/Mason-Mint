@@ -10,6 +10,7 @@ import { transformObjectsToJson } from '@/utils/json/transformObjectsToJson'
 
 import CategoryModel from '../../models/Category'
 import ProductTestModel from '../../models/Product'
+import PageTransitionLayout from '@/app/layouts/PageTransitionLayout'
 
 type DesignsProps = {
   categories: CategoryProps[]
@@ -26,7 +27,9 @@ const Index: FC<DesignsProps> = ({ categories, products }) => {
           content="Find Mason Mint silver rounds and silver bullion products from precious metal wholesalers. We live by our motto, Excellence in Minting!"
         />
       </Head>
-      <DesignsContent products={products} categories={categories} />
+      <PageTransitionLayout>
+        <DesignsContent products={products} categories={categories} />
+      </PageTransitionLayout>
     </>
   )
 }

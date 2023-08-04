@@ -43,7 +43,7 @@ const CustomMintingMoment: FC<{ className?: string }> = ({ className }) => {
             </div>
             <div className={styles['moment__action']}>
               <AnimatedElement>
-                <Link href={routes.public.contactUs}>
+                <Link scroll={false} href={routes.public.contactUs}>
                   <ButtonPrimary variant="transparent">
                     Contact us
                   </ButtonPrimary>

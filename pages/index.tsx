@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import { HomeContent } from '@/modules/Home'
+import PageTransitionLayout from '../src/app/layouts/PageTransitionLayout'
+import { AnimatePresence } from 'framer-motion'
 
 export default function Home() {
   return (
@@ -7,7 +9,9 @@ export default function Home() {
       <Head>
         <title>Mason Mint Silver Coins and Rounds</title>
       </Head>
-      <HomeContent />
+      <PageTransitionLayout>
+        <HomeContent />
+      </PageTransitionLayout>
     </>
   )
 }

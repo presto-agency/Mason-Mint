@@ -36,7 +36,7 @@ const BecomeDistributorSection: FC<BecomeDistributorSectionProps> = ({
             </AnimatedText>
           </p>
           <AnimatedElement className={styles['buttonContainer']} delay={0.2}>
-            <Link href={routes.public.becomeDistributor}>
+            <Link scroll={false} href={routes.public.becomeDistributor}>
               <ButtonPrimary
                 className={styles['buttonContainer__button']}
                 variant="blue"

@@ -35,7 +35,7 @@ const DesignsDetailDescription: FC<DesignsDetailDescriptionProps> = ({
       </div>
       <div className={styles['product__follow']}>
         <AnimatedElement delay={0}>
-          <Link href={routes.public.becomeDistributor}>
+          <Link scroll={false} href={routes.public.becomeDistributor}>
             <ButtonPrimary variant="transparent">Inquire Now</ButtonPrimary>
           </Link>
         </AnimatedElement>

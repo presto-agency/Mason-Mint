@@ -74,7 +74,7 @@ const SellSection = () => {
                   </AnimatedText>
                 </p>
                 <AnimatedElement delay={0.2}>
-                  <Link href={routes.public.becomeDistributor}>
+                  <Link scroll={false} href={routes.public.becomeDistributor}>
                     <ButtonPrimary
                       variant={'noStroked'}
                       className={styles['button']}

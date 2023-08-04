@@ -35,13 +35,13 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
 
   useEffect(() => {
     // Back to top
-    if (lenis) {
-      lenis.scrollTo(0, {
-        lerp: 0,
-        duration: 0,
-        force: true,
-      })
-    }
+    // if (lenis) {
+    //   lenis.scrollTo(0, {
+    //     lerp: 0,
+    //     duration: 0,
+    //     force: true,
+    //   })
+    // }
 
     const forDarkHeader = ['/']
     const withoutHeaderFooter = ['/404']

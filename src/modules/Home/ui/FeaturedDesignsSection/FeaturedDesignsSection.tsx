@@ -47,7 +47,7 @@ const FeaturedDesignsSection: FC<{ className?: string }> = ({ className }) => {
           <div className="col-md-6">
             <div className={styles['featureDesigns__actions']}>
               <AnimatedElement delay={0}>
-                <Link href={routes.public.designs}>
+                <Link scroll={false} href={routes.public.designs}>
                   <ButtonPrimary variant="transparent">View all</ButtonPrimary>
                 </Link>
               </AnimatedElement>

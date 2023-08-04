@@ -55,6 +55,7 @@ const NavigationBlock = () => {
           <nav className={styles['links']}>
             {item.links.map((link) => (
               <Link
+                scroll={false}
                 className={styles['links__link']}
                 href={link.href}
                 key={link.title}
@@ -81,6 +82,7 @@ export const Footer: FC = () => {
           </div>
           <div className={styles['footer__content_bottom']}>
             <Link
+              scroll={false}
               href={'https://www.studiopresto.com/'}
               className={styles['creators']}
             >

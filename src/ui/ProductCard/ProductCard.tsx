@@ -29,6 +29,7 @@ const ProductCard: FC<ProductCardProps> = ({
 
   return (
     <LinkOrAnchor
+      scroll={false}
       href={`${routes.public.designs}/${data.id}/${data.slug}`}
       className={classNames(
         styles['product'],

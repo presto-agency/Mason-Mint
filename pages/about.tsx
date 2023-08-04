@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { AboutContent } from '@/modules/About'
+import PageTransitionLayout from '../src/app/layouts/PageTransitionLayout'
 
 export default function About() {
   return (
@@ -7,7 +8,9 @@ export default function About() {
       <Head>
         <title>About Us | Mason Mint</title>
       </Head>
-      <AboutContent />
+      <PageTransitionLayout>
+        <AboutContent key="about" />
+      </PageTransitionLayout>
     </>
   )
 }

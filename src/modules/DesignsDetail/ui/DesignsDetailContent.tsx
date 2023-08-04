@@ -98,18 +98,13 @@ const DesignsDetailContent = () => {
         <Container>
           <div className="row">
             <div className="col-md-5">
-              <motion.div
-                className={styles['detail__nav']}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ type: 'spring', duration: 1, bounce: 0 }}
-              >
-                <Link href={routes.public.designs}>
+              <div className={styles['detail__nav']}>
+                <Link scroll={false} href={routes.public.designs}>
                   <ButtonPrimary backwardArrows variant="noStroked">
                     Go to back
                   </ButtonPrimary>
                 </Link>
-              </motion.div>
+              </div>
               <DesignsDetailThumbnail
                 className={styles['detail__thumbnail']}
                 product={product}
