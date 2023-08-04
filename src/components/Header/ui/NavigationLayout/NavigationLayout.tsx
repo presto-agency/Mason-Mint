@@ -36,16 +36,16 @@ const buttonVariant = {
   },
 }
 
-const headerVariant = {
-  animate: { height: '100%' },
-  initial: { height: '0%' },
-  exit: { height: '0%' },
-  transition: {
-    ease: 'easeInOut',
-    duration: 0.5,
-    delay: 0.5,
-  },
-}
+// const headerVariant = {
+//   animate: { height: '100%' },
+//   initial: { height: '0%' },
+//   exit: { height: '0%' },
+//   transition: {
+//     ease: 'easeInOut',
+//     duration: 0.5,
+//     delay: 0.5,
+//   },
+// }
 
 const navigationHeaderLinks = [
   {
@@ -145,7 +145,14 @@ export const NavigationLayout: FC<MobileMenuProps> = ({
             </Link>
           ))}
         </nav>
-        {button}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {button}
+        </motion.div>
       </div>
     </div>
   )

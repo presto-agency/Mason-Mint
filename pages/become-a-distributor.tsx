@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { BecomeADistributorContent } from '@/modules/BecomeADistributor'
-import RouterTransitionLayout from '@/app/layouts/RouterTransitionLayout'
 
 export default function BecomeADistributor() {
   return (
@@ -12,9 +11,7 @@ export default function BecomeADistributor() {
           content="Complete the application below and one of our customer service representatives will contact you with more information regarding our products."
         />
       </Head>
-      <RouterTransitionLayout>
-        <BecomeADistributorContent />
-      </RouterTransitionLayout>
+      <BecomeADistributorContent />
     </>
   )
 }

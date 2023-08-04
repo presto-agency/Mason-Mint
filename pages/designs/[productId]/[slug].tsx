@@ -1,12 +1,7 @@
 import { DesignsDetailContent } from '@/modules/DesignsDetail'
-import RouterTransitionLayout from '@/app/layouts/RouterTransitionLayout'
 
 const Index = () => {
-  return (
-    <RouterTransitionLayout>
-      <DesignsDetailContent />
-    </RouterTransitionLayout>
-  )
+  return <DesignsDetailContent />
 }
 
 export default Index

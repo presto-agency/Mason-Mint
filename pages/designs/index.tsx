@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { GetStaticProps } from 'next'
 
 import { DesignsContent } from '@/modules/Designs'
-import RouterTransitionLayout from '@/app/layouts/RouterTransitionLayout'
 
 import db from '@/utils/db'
 import { CategoryProps, ProductProps } from '@/utils/types'
@@ -27,9 +26,7 @@ const Index: FC<DesignsProps> = ({ categories, products }) => {
           content="Find Mason Mint silver rounds and silver bullion products from precious metal wholesalers. We live by our motto, Excellence in Minting!"
         />
       </Head>
-      <RouterTransitionLayout>
-        <DesignsContent products={products} categories={categories} />
-      </RouterTransitionLayout>
+      <DesignsContent products={products} categories={categories} />
     </>
   )
 }
