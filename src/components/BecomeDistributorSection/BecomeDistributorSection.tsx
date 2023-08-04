@@ -1,12 +1,16 @@
 import { FC } from 'react'
+import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import Link from 'next/link'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import Container from '@/app/layouts/Container'
-import VideoComponent from '@/ui/VideoComponent/VideoComponent'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import routes from '@/utils/routes'
+
+const VideoComponent = dynamic(
+  () => import('@/ui/VideoComponent/VideoComponent')
+)
 
 import styles from './BecomeDistributorSection.module.scss'
 

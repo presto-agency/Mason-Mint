@@ -22,6 +22,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const { width } = useWindowDimensions()
   const { route } = useRouter()
   const lenis = useLenis()
+
   const options = {
     duration: 1.2,
     smoothWheel: true,
@@ -35,13 +36,13 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
 
   useEffect(() => {
     // Back to top
-    // if (lenis) {
-    //   lenis.scrollTo(0, {
-    //     lerp: 0,
-    //     duration: 0,
-    //     force: true,
-    //   })
-    // }
+    if (lenis) {
+      lenis.scrollTo(0, {
+        lerp: 0,
+        duration: 0,
+        force: true,
+      })
+    }
 
     const forDarkHeader = ['/']
     const withoutHeaderFooter = ['/404']
