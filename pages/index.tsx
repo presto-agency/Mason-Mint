@@ -1,7 +1,7 @@
 import Head from 'next/head'
+// import MainPreloader from '@/components/MainPreloader/MainPreloader'
 import { HomeContent } from '@/modules/Home'
 import PageTransitionLayout from '../src/app/layouts/PageTransitionLayout'
-import { AnimatePresence } from 'framer-motion'
 
 export default function Home() {
   return (
@@ -12,6 +12,8 @@ export default function Home() {
       <PageTransitionLayout>
         <HomeContent />
       </PageTransitionLayout>
+      {/*<MainPreloader />*/}
+      <HomeContent />
     </>
   )
 }

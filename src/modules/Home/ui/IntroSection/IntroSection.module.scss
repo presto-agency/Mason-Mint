@@ -74,6 +74,11 @@
             }
         }
     }
+  
+    &__video{
+      position: absolute;
+      inset: 0;
+    }
 }
 
 @media (width <= $breakpoint-mob) {

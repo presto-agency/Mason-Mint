@@ -134,6 +134,10 @@ const BecomeADistributorForm: FC<{
           openThanksModal()
           setSending(false)
           reset()
+        } else {
+          openErrorModal()
+          reset()
+          setSending(false)
         }
       })
       .catch((error) => {
