@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import classNames from 'classnames'
@@ -26,10 +26,11 @@ const ProductCard: FC<ProductCardProps> = ({
   )
 
   const LinkOrAnchor = reloadPageOnClick ? 'a' : Link
+  const linkProps = reloadPageOnClick ? {} : { scroll: false }
 
   return (
     <LinkOrAnchor
-      scroll={false}
+      {...linkProps}
       href={`${routes.public.designs}/${data.id}/${data.slug}`}
       className={classNames(
         styles['product'],

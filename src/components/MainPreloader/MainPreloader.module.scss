@@ -52,6 +52,8 @@
 		&__percent{
 			position: absolute;
 			right: 64rem;
+			display: flex;
+			align-items: center;
 			text-align: right;
 		}
 	
@@ -70,5 +72,18 @@
 					object-fit: contain;
 					object-position: center;
 				}
+		}
+	
+		&__counter{
+			display: flex;
+			
+				&_item{
+					position: relative;
+					width: 60rem;
+				}
+		}
+	
+		&__number{
+			position: absolute;
 		}
 }

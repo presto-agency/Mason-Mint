@@ -12,18 +12,18 @@ import styles from './MainPreloader.module.scss'
 //   }, [animatedValue, value])
 //
 //   return (
-//     <div className="flex h-6 ring-2 ring-red-500">
-//       <div className="relative">
+//     <div className={styles['preloader__counter']}>
+//       <div className={styles['preloader__counter_item']}>
 //         {[...Array(10).keys()].map((i) => (
 //           <Number place={100} mv={animatedValue} number={i} key={i} />
 //         ))}
 //       </div>
-//       <div className="relative w-6">
+//       <div className={styles['preloader__counter_item']}>
 //         {[...Array(10).keys()].map((i) => (
 //           <Number place={10} mv={animatedValue} number={i} key={i} />
 //         ))}
 //       </div>
-//       <div className="relative w-6">
+//       <div className={styles['preloader__counter_item']}>
 //         {[...Array(10).keys()].map((i) => (
 //           <Number place={1} mv={animatedValue} number={i} key={i} />
 //         ))}
@@ -56,7 +56,7 @@ import styles from './MainPreloader.module.scss'
 //   })
 //
 //   return (
-//     <motion.span style={{ y }} className="absolute inset-0 flex justify-center">
+//     <motion.span style={{ y }} className={styles['preloader__number']}>
 //       {number}
 //     </motion.span>
 //   )
