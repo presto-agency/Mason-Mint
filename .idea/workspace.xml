@@ -100,13 +100,6 @@
       <workItem from="1690354345499" duration="34680000" />
       <workItem from="1690785883856" duration="16811000" />
     </task>
-    <task id="LOCAL-00027" summary="feat: add storySection">
-      <created>1688568397519</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1688568397519</updated>
-    </task>
     <task id="LOCAL-00028" summary="feat: add storySection img">
       <created>1688626913616</created>
       <option name="number" value="00028" />
@@ -443,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691139994003</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="feat: add transition to header">
+      <created>1691158469505</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1691158469506</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: type error swiper #3" />
     <MESSAGE value="fix: swiper #4" />
     <MESSAGE value="feat: add sliderArrow component" />
     <MESSAGE value="fix: animation mobile fix" />
@@ -487,7 +486,8 @@
     <MESSAGE value="fix: add some refactor#2" />
     <MESSAGE value="fix: some picture optimization" />
     <MESSAGE value="feat: add some page transition" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add some page transition" />
+    <MESSAGE value="feat: add transition to header" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add transition to header" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -18,14 +18,15 @@ type HeaderProps = {
 const variants = {
   initial: {
     opacity: 0,
-    y: '-100%',
+    y: '-20%',
   },
   animate: {
     opacity: 1,
     y: 0,
     transition: {
       type: 'spring',
-      duration: 0.8,
+      duration: 1.2,
+      bounce: 0,
     },
   },
 }
