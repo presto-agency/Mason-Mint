@@ -53,8 +53,30 @@
 			position: absolute;
 			right: 64rem;
 			display: flex;
-			align-items: center;
+			align-items: flex-end;
+			justify-content: flex-end;
+			height: 96rem;
 			text-align: right;
+			
+				&_item{
+					position: relative;
+					
+						&:nth-child(1){
+							transform: translateY(-96rem);
+						}
+
+						&:nth-child(2){
+							transform: translateY(-96rem);
+						}
+
+						&:nth-child(3){
+							transform: translateY(0);
+						}
+				}
+		}
+	
+		&__number{
+		
 		}
 	
 		&__thumb{
@@ -72,18 +94,5 @@
 					object-fit: contain;
 					object-position: center;
 				}
-		}
-	
-		&__counter{
-			display: flex;
-			
-				&_item{
-					position: relative;
-					width: 60rem;
-				}
-		}
-	
-		&__number{
-			position: absolute;
 		}
 }

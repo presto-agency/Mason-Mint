@@ -3,11 +3,8 @@ import IntroSection from './IntroSection/IntroSection'
 import StorySection from './StorySection/StorySection'
 import FAQSection from './FAQSection/FAQSection'
 import SellSection from './SellSection/SellSection'
-const BecomeDistributorSection = dynamic(
-  () =>
-    import('@/components/BecomeDistributorSection/BecomeDistributorSection'),
-  { ssr: false }
-)
+import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
+
 const ExploreDesignsSection = dynamic(
   () => import('@/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection'),
   { ssr: false }
@@ -23,7 +20,6 @@ const FeaturedDesignsSection = dynamic(
 )
 
 import styles from './HomeContent.module.scss'
-import PageTransitionLayout from '../../../app/layouts/PageTransitionLayout'
 
 const HomeContent = () => {
   return (
