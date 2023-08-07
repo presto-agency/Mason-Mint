@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/designs/[productId]/[slug].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/designs/[productId]/[slug].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layouts/AppLayout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/AppLayout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,13 +99,7 @@
       <workItem from="1690354317927" duration="23000" />
       <workItem from="1690354345499" duration="34680000" />
       <workItem from="1690785883856" duration="16811000" />
-    </task>
-    <task id="LOCAL-00029" summary="feat: add filter">
-      <created>1688741626217</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1688741626217</updated>
+      <workItem from="1691389436432" duration="1323000" />
     </task>
     <task id="LOCAL-00030" summary="fix: refactor filter">
       <created>1688992755619</created>
@@ -448,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691158913844</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="fix: page transition#3">
+      <created>1691163293968</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1691163293968</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +463,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add sliderArrow component" />
     <MESSAGE value="fix: animation mobile fix" />
     <MESSAGE value="fix: animation slider" />
     <MESSAGE value="feat: add animateScaleBG" />
@@ -492,7 +487,8 @@
     <MESSAGE value="feat: add some page transition" />
     <MESSAGE value="feat: add transition to header" />
     <MESSAGE value="fix: header transition" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: header transition" />
+    <MESSAGE value="fix: page transition#3" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: page transition#3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
