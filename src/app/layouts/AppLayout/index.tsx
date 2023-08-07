@@ -76,7 +76,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
       <ReactLenis root options={{ ...options }}>
         {existHeaderFooter && <Header theme={headerTheme} />}
         {children}
-        {existHeaderFooter && <Footer />}
+        {/*{existHeaderFooter && <Footer />}*/}
       </ReactLenis>
     </>
   )

@@ -13,7 +13,6 @@ export default function Home() {
         <HomeContent />
       </PageTransitionLayout>
       {/*<MainPreloader />*/}
-      <HomeContent />
     </>
   )
 }

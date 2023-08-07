@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layouts/AppLayout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/AppLayout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layouts/PageTransitionLayout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/PageTransitionLayout/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,14 +101,7 @@
       <workItem from="1690354317927" duration="23000" />
       <workItem from="1690354345499" duration="34680000" />
       <workItem from="1690785883856" duration="16811000" />
-      <workItem from="1691389436432" duration="1323000" />
-    </task>
-    <task id="LOCAL-00030" summary="fix: refactor filter">
-      <created>1688992755619</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1688992755619</updated>
+      <workItem from="1691389436432" duration="3043000" />
     </task>
     <task id="LOCAL-00031" summary="fix: filter npm package">
       <created>1689146778623</created>
@@ -444,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691163293968</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="fix: sell section fixes">
+      <created>1691391279216</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1691391279216</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +465,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: animation mobile fix" />
     <MESSAGE value="fix: animation slider" />
     <MESSAGE value="feat: add animateScaleBG" />
     <MESSAGE value="fix: animateScaleBG styles" />
@@ -488,7 +489,8 @@
     <MESSAGE value="feat: add transition to header" />
     <MESSAGE value="fix: header transition" />
     <MESSAGE value="fix: page transition#3" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: page transition#3" />
+    <MESSAGE value="fix: sell section fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: sell section fixes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
