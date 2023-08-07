@@ -7,11 +7,28 @@ import { MobileLayout } from './MobileLayout/MobileLayout'
 import Container from '@/app/layouts/Container'
 import { useRouter } from 'next/router'
 import { NavigationLayout } from '@/components/Header/ui/NavigationLayout/NavigationLayout'
+import { motion } from 'framer-motion'
 
 import styles from './Header.module.scss'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
+}
+
+const variants = {
+  initial: {
+    opacity: 0,
+    y: '-20%',
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      duration: 1.2,
+      bounce: 0,
+    },
+  },
 }
 
 const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
@@ -92,7 +109,12 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <header className={classNames(styles['header'], mods)}>
+      <motion.header
+        className={classNames(styles['header'], mods)}
+        variants={variants}
+        initial="initial"
+        animate="animate"
+      >
         <Container>
           <div className={styles['header__content']}>
             <Link
@@ -111,7 +133,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
           menuOpened={menuOpened}
           toggleMenu={toggleMenu}
         />
-      </header>
+      </motion.header>
     </>
   )
 }

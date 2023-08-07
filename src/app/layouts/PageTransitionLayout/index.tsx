@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { FC, ReactNode } from 'react'
+import { Footer } from '@/components/Footer/Footer'
 
 const variants = {
   initial: {
@@ -25,7 +26,10 @@ const variants = {
   },
 }
 
-const PageTransitionLayout: FC<{ children: ReactNode }> = ({ children }) => (
+const PageTransitionLayout: FC<{ children: ReactNode; isFooter?: boolean }> = ({
+  children,
+  isFooter = true,
+}) => (
   <motion.div
     initial="initial"
     animate="animate"
@@ -33,6 +37,7 @@ const PageTransitionLayout: FC<{ children: ReactNode }> = ({ children }) => (
     variants={variants}
   >
     {children}
+    {isFooter && <Footer />}
   </motion.div>
 )
 export default PageTransitionLayout

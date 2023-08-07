@@ -9,7 +9,7 @@ export default function About() {
         <title>About Us | Mason Mint</title>
       </Head>
       <PageTransitionLayout>
-        <AboutContent key="about" />
+        <AboutContent />
       </PageTransitionLayout>
     </>
   )

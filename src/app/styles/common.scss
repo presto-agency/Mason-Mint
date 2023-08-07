@@ -10,6 +10,17 @@ html {
   @media (width <= $breakpoint-mob) {
     font-size: calc(100vw / 360);
   }
+
+  // hide scroll
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  // hide scroll
 }
 
 body {
