@@ -30,7 +30,7 @@ const variants = {
 
 const innerVariant = {
   initial: {
-    y: '100vh',
+    y: '100svh',
     transition: {
       duration: 0.5,
       ease: 'easeInOut',
