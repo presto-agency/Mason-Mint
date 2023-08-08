@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/Accordion/Accordion.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/Accordion/Accordion.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/Accordion/Accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/Accordion/Accordion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/FAQSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,13 +99,6 @@
       <workItem from="1690354345499" duration="34680000" />
       <workItem from="1690785883856" duration="16811000" />
       <workItem from="1691389436432" duration="40169000" />
-    </task>
-    <task id="LOCAL-00035" summary="feat: add sellSection">
-      <created>1689260703280</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1689260703280</updated>
     </task>
     <task id="LOCAL-00036" summary="fix: some fixes">
       <created>1689323577053</created>
@@ -446,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691492712047</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="fix: MASON-016">
+      <created>1691501759665</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1691501759665</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -465,7 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add section FindPartner" />
     <MESSAGE value="feat: add wasBorn section" />
     <MESSAGE value="fix: some about page fixes" />
     <MESSAGE value="feat: add AllProduct" />
@@ -490,7 +486,8 @@
     <MESSAGE value="fix: horizontal scroll" />
     <MESSAGE value="fix: key framer motion" />
     <MESSAGE value="feat: add preloader animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add preloader animation" />
+    <MESSAGE value="fix: MASON-016" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: MASON-016" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
