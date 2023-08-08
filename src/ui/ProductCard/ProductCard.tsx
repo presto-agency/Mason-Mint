@@ -25,13 +25,15 @@ const ProductCard: FC<ProductCardProps> = ({
     data.category?.name as string
   )
 
-  const LinkOrAnchor = reloadPageOnClick ? 'a' : Link
-  const linkProps = reloadPageOnClick ? {} : { scroll: false }
+  // const LinkOrAnchor = reloadPageOnClick ? 'a' : Link
+  // const linkProps = reloadPageOnClick ? { scroll: true } : { scroll: false }
 
   return (
-    <LinkOrAnchor
-      {...linkProps}
-      href={`${routes.public.designs}/${data.id}/${data.slug}`}
+    <Link
+      scroll={false}
+      href={{
+        pathname: `${routes.public.designs}/${data.id}/${data.slug}`,
+      }}
       className={classNames(
         styles['product'],
         flip ? styles['enable-flip'] : '',
@@ -84,7 +86,7 @@ const ProductCard: FC<ProductCardProps> = ({
       <div className={styles['product__content']}>
         <p className={styles['product__content_title']}>{data.ProductName}</p>
       </div>
-    </LinkOrAnchor>
+    </Link>
   )
 }
 

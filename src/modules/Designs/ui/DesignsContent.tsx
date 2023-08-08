@@ -55,6 +55,7 @@ const DesignsContent: FC<DesignsContentProps> = ({ categories, products }) => {
         subtitle="Browse by categories"
         description="We look forward to supplying both the investor and collector silver market with superior products that are sure to impress."
         theme="gray"
+        columns={10}
       />
       <div className={styles['designsContent__body']}>
         <Container>

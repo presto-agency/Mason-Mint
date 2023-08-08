@@ -34,7 +34,11 @@ const ProductList: FC<ProductListProps> = ({
         return (
           <Fragment key={index}>
             {category.products.length ? (
-              <ProductCarousel title={category.name} data={category.products} />
+              <ProductCarousel
+                title={category.name}
+                data={category.products}
+                className={styles['list__carousel']}
+              />
             ) : null}
           </Fragment>
         )

@@ -57,6 +57,7 @@ const reducer = (state: IInitialStateProps, action: IActionProps) => {
       }
     }
     case 'RESET_PRODUCTS': {
+      console.log('store, reset products')
       return {
         ...state,
         products: [],
