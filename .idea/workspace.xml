@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/styles/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/styles/common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layouts/PageTransitionLayout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/PageTransitionLayout/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,28 +99,7 @@
       <workItem from="1690354317927" duration="23000" />
       <workItem from="1690354345499" duration="34680000" />
       <workItem from="1690785883856" duration="16811000" />
-      <workItem from="1691389436432" duration="4485000" />
-    </task>
-    <task id="LOCAL-00032" summary="feat: add section CTA">
-      <created>1689152141131</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1689152141131</updated>
-    </task>
-    <task id="LOCAL-00033" summary="feat: add section customDesigns">
-      <created>1689176017360</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1689176017361</updated>
-    </task>
-    <task id="LOCAL-00034" summary="feat: add pixel perfect">
-      <created>1689243578881</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1689243578881</updated>
+      <workItem from="1691389436432" duration="40169000" />
     </task>
     <task id="LOCAL-00035" summary="feat: add sellSection">
       <created>1689260703280</created>
@@ -445,7 +423,28 @@
       <option name="project" value="LOCAL" />
       <updated>1691393215376</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="fix: horizontal scroll">
+      <created>1691394457682</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1691394457682</updated>
+    </task>
+    <task id="LOCAL-00082" summary="fix: key framer motion">
+      <created>1691400502436</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1691400502436</updated>
+    </task>
+    <task id="LOCAL-00083" summary="feat: add preloader animation">
+      <created>1691492712046</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1691492712047</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -464,9 +463,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="feat: add animateScaleBG" />
-    <MESSAGE value="fix: animateScaleBG styles" />
-    <MESSAGE value="feat: start sell section animation" />
     <MESSAGE value="feat: add section FindPartner" />
     <MESSAGE value="feat: add wasBorn section" />
     <MESSAGE value="fix: some about page fixes" />
@@ -489,7 +485,10 @@
     <MESSAGE value="fix: page transition#3" />
     <MESSAGE value="fix: sell section fixes" />
     <MESSAGE value="fix: footer location" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: footer location" />
+    <MESSAGE value="fix: horizontal scroll" />
+    <MESSAGE value="fix: key framer motion" />
+    <MESSAGE value="feat: add preloader animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add preloader animation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

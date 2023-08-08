@@ -1,4 +1,11 @@
-import { Dispatch, FC, ReactNode, SetStateAction, useState } from 'react'
+import {
+  Dispatch,
+  FC,
+  Fragment,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
 import type SwiperCore from 'swiper'
@@ -235,7 +242,7 @@ const ExploreDesignsSection = () => {
                   {({ isActive }) => (
                     <AnimatePresence>
                       {isActive && (
-                        <>
+                        <Fragment key={slide.id}>
                           <div className={styles['coinsContainer']}>
                             <motion.div
                               className={
@@ -272,7 +279,7 @@ const ExploreDesignsSection = () => {
                               />
                             </motion.div>
                           ) : null}
-                        </>
+                        </Fragment>
                       )}
                     </AnimatePresence>
                   )}

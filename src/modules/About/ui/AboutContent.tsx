@@ -23,7 +23,7 @@ export const AboutContent: FC = () => {
       />
       <HeroDetail
         sliderImages={sliderImages}
-        image="/images/about/innerAbout.jpg"
+        image="/images/about/innerAbout_1.jpg"
         topDescription="We’ve built our business on long-term relationship with the
                   world’s largest mining companies"
         bottomDescription="Providing our partners with reliable and efficient results

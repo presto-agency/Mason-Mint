@@ -7,6 +7,9 @@ import { Lenis as ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer/Footer'
+import { AnimatePresence } from 'framer-motion'
+import MainPreloader from '@/components/MainPreloader/MainPreloader'
+import MainPreloaderWrapper from '@/components/MainPreloader/MainPreloaderWrapper'
 const CustomCursor = dynamic(() => import('@/ui/CustomCursor/CustomCursor'), {
   ssr: false,
 })
