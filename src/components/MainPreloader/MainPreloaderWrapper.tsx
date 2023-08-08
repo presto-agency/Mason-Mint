@@ -10,7 +10,7 @@ const MainPreloaderWrapper: FC = () => {
   const store = useContext(Store)
   const isFirstLoading = store?.state.isFirstLoading
   const lenis = useLenis()
-  console.log('isFirstLoading ', isFirstLoading)
+
   // Disable scroll
   if (lenis && isFirstLoading) {
     lenis.stop()
