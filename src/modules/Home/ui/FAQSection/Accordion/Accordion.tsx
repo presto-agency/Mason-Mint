@@ -36,7 +36,10 @@ const Accordion: FC<AccordionType> = ({
         className={classNames('h5', styles['item__title'])}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
-        <AnimatedText title>{`${title}`}</AnimatedText>
+        <AnimatedText
+          className={styles['item__title_inner']}
+          title
+        >{`${title}`}</AnimatedText>
         <ArrowSelect
           className={classNames(styles['item__title_arrow'], {
             [styles['active']]: isOpen,
@@ -46,7 +49,7 @@ const Accordion: FC<AccordionType> = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            key="content"
+            key={i}
             initial="collapsed"
             animate="open"
             exit="collapsed"
