@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
 import { FC, ReactNode, useContext } from 'react'
+import { motion } from 'framer-motion'
 import { Footer } from '@/components/Footer/Footer'
 import { Store } from '@/utils/Store'
 import { useLenis } from '@studio-freight/react-lenis'
@@ -57,6 +57,7 @@ const PageTransitionLayout: FC<{ children: ReactNode; isFooter?: boolean }> = ({
     if (store?.state.isFirstLoading) {
       store?.dispatch({ type: 'TOGGLE_FIRST_LOADING' })
     }
+    // Enable scroll
     if (lenis) {
       lenis.start()
     }

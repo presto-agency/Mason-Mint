@@ -1,13 +1,14 @@
-import React, { FC, ReactNode, useContext, useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import MainPreloader from '@/components/MainPreloader/MainPreloader'
 import { useLenis } from '@studio-freight/react-lenis'
 
 const MainPreloaderWrapper: FC = () => {
   const [progress, setProgress] = useState<number>(0)
-  const [isDestroy, setIsDestroy] = useState(true)
+  const [isVisible, setIsVisible] = useState(true)
   const lenis = useLenis()
 
+  // Disable scroll
   if (lenis) {
     lenis.stop()
   }
@@ -17,9 +18,11 @@ const MainPreloaderWrapper: FC = () => {
       setProgress((prevState) => {
         if (prevState === 3) {
           clearInterval(progressInterval)
-          setIsDestroy(false)
+          setIsVisible(false)
           return prevState
         }
+        // Back to top
+        window.scrollTo(0, 0)
         return prevState + 1
       })
     }, 800)
@@ -30,7 +33,7 @@ const MainPreloaderWrapper: FC = () => {
 
   return (
     <AnimatePresence>
-      {isDestroy && <MainPreloader progress={progress} />}
+      {isVisible && <MainPreloader progress={progress} />}
     </AnimatePresence>
   )
 }

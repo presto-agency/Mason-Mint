@@ -1,18 +1,18 @@
-import { FC, useContext, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
+import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import Lottie from 'lottie-react'
 import loaderJson from './assets/Loader.json'
 
 import styles from './MainPreloader.module.scss'
-import classNames from 'classnames'
-// import { Store } from '@/utils/Store'
 
 const variant = {
   initial: {
-    opacity: 0,
+    opacity: 1,
     scale: 1,
-    y: 0,
-    x: 0,
+    transition: {
+      duration: 0,
+    },
   },
   animate: {
     opacity: 1,
@@ -22,9 +22,8 @@ const variant = {
     },
   },
   exit: {
-    scale: 0.9,
-    y: '5%',
-    x: '5%',
+    scale: 0.8,
+    zIndex: 0,
     transition: {
       duration: 2,
     },
@@ -37,12 +36,6 @@ interface MainPreloaderProps {
 
 const MainPreloader: FC<MainPreloaderProps> = ({ progress }) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true)
-  // const store = useContext(Store)
-
-  // const isPreloadFinished = () => {
-  //   store?.dispatch({ type: 'IS_PRELOAD_FINISHED' })
-  //   console.log('finished', store?.state.isPreloadFinished)
-  // }
 
   return (
     <motion.div
@@ -51,7 +44,6 @@ const MainPreloader: FC<MainPreloaderProps> = ({ progress }) => {
       exit="exit"
       animate="animate"
       variants={variant}
-      // onAnimationComplete={isPreloadFinished}
     >
       <div className={styles['preloader__label']}>
         <span>Please wait</span>
