@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState, memo } from 'react'
+import { FC, useCallback, useEffect, useState, memo, useContext } from 'react'
 import Link from 'next/link'
 import classNames from 'classnames'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
@@ -10,6 +10,7 @@ import { NavigationLayout } from '@/components/Header/ui/NavigationLayout/Naviga
 import { motion } from 'framer-motion'
 
 import styles from './Header.module.scss'
+import { Store } from '@/utils/Store'
 
 type HeaderProps = {
   theme: 'dark' | 'light'
@@ -37,6 +38,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
   const { width } = useWindowDimensions()
   const router = useRouter()
+  const store = useContext(Store)
 
   const mods = {
     [styles[headerTheme]]: true,
@@ -113,7 +115,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
         className={classNames(styles['header'], mods)}
         variants={variants}
         initial="initial"
-        animate="animate"
+        animate={!store?.state.isFirstLoading && 'animate'}
       >
         <Container>
           <div className={styles['header__content']}>

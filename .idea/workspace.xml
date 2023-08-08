@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/about/innerAbout_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MainPreloader/MainPreloaderWrapper.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/ExploreDesignsSection/ExploreDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layouts/AppLayout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/AppLayout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layouts/PageTransitionLayout/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layouts/PageTransitionLayout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/ui/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainPreloader/MainPreloader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPreloader/MainPreloader.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MainPreloader/MainPreloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPreloader/MainPreloader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Store.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Store.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,14 +109,7 @@
       <workItem from="1690354317927" duration="23000" />
       <workItem from="1690354345499" duration="34680000" />
       <workItem from="1690785883856" duration="16811000" />
-      <workItem from="1691389436432" duration="9113000" />
-    </task>
-    <task id="LOCAL-00033" summary="feat: add section customDesigns">
-      <created>1689176017360</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1689176017361</updated>
+      <workItem from="1691389436432" duration="39614000" />
     </task>
     <task id="LOCAL-00034" summary="feat: add pixel perfect">
       <created>1689243578881</created>
@@ -444,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691394457682</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="fix: key framer motion">
+      <created>1691400502436</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1691400502436</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,7 +473,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: animateScaleBG styles" />
     <MESSAGE value="feat: start sell section animation" />
     <MESSAGE value="feat: add section FindPartner" />
     <MESSAGE value="feat: add wasBorn section" />
@@ -488,7 +497,8 @@
     <MESSAGE value="fix: sell section fixes" />
     <MESSAGE value="fix: footer location" />
     <MESSAGE value="fix: horizontal scroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: horizontal scroll" />
+    <MESSAGE value="fix: key framer motion" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: key framer motion" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -6,6 +6,8 @@ export interface IInitialStateProps {
     isOpenModal: boolean
   }
   products: ProductProps[]
+  isFirstLoading: boolean
+  isPreloadFinished: boolean
 }
 
 export interface IActionProps {
@@ -18,6 +20,8 @@ const initialState: IInitialStateProps = {
     isOpenModal: false,
   },
   products: [],
+  isFirstLoading: true,
+  isPreloadFinished: false,
 }
 
 export const Store = createContext<{
@@ -56,6 +60,18 @@ const reducer = (state: IInitialStateProps, action: IActionProps) => {
       return {
         ...state,
         products: [],
+      }
+    }
+    case 'TOGGLE_FIRST_LOADING': {
+      return {
+        ...state,
+        isFirstLoading: false,
+      }
+    }
+    case 'IS_PRELOAD_FINISHED': {
+      return {
+        ...state,
+        isPreloadFinished: true,
       }
     }
     default:
