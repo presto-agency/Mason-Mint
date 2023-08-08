@@ -9,6 +9,10 @@
     padding: 33rem 35rem 33rem 0;
     cursor: pointer;
 
+    &_inner{
+      padding: 0;
+    }
+
     &_arrow {
       position: absolute;
       top: 50%;
