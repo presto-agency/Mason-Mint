@@ -29,7 +29,7 @@
       }
 
       &.active{
-        rotate: 180deg;
+        transform: translateY(-50%) rotateX(180deg);
       }
     }
 
