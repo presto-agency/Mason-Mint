@@ -22,7 +22,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
   const { route } = useRouter()
 
   const options = {
-    duration: 1.2,
+    duration: 1.5,
     smoothWheel: true,
     smoothTouch: false,
   }

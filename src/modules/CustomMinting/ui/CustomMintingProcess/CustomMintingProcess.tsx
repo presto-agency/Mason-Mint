@@ -9,6 +9,7 @@ import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import AbstractLogo from '@/ui/AbstractLogo/AbstractLogo'
 import { numberWithZero } from '@/utils/number/numberWithZero'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 import { data } from './data'
 
 import styles from './CustomMintingProcess.module.scss'
@@ -84,7 +85,9 @@ const CustomMintingProcess: FC<{ className?: string }> = ({ className }) => {
   return (
     <div ref={targetRef} className={classNames(styles['process'], className)}>
       <div className={styles['process__mask']}>
-        <AbstractLogo className={styles['process__abstract']} />
+        <ParallaxSection>
+          <AbstractLogo className={styles['process__abstract']} />
+        </ParallaxSection>
       </div>
       <div className={styles['process__body']}>
         <Container>

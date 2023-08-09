@@ -14,6 +14,10 @@ import classNames from 'classnames'
 const StorySection: FC = () => {
   return (
     <section className={styles['story']}>
+      <ParallaxSection
+        className={styles['story__abstract']}
+        parallaxValues={[-200, 200]}
+      />
       <Container>
         <div className={styles['story__content']}>
           <div className={styles['story__content_left']}>

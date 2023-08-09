@@ -19,15 +19,16 @@
 
       &::before{
         position: absolute;
-        top: 0;
+        top: -33rem;
         right: -735rem;
         width: 1395rem;
         height: 1551rem;
-        background-image: url("/images/home/circled_arrow_bg.svg");
+        background-image: url("/images/home/circled_arrow_bg_sell.svg");
         background-repeat: no-repeat;
         background-position: top 10rem right -49rem;
         background-size: 1395rem 1551rem;
         content: '';
+        pointer-events: none;
       }
     }
 

@@ -31,7 +31,7 @@ const HeroInner: FC<HeroInnerProps> = ({
   const colClassName = `col-md-${columns}`
   return (
     <div className={classNames(styles['hero'], styles[theme], className)}>
-      <AbstractLogo className={styles['hero__abstract']} />
+      <AbstractLogo className={styles['hero__abstract']} parallax />
       <Container>
         <div className="row">
           <div className={colClassName}>

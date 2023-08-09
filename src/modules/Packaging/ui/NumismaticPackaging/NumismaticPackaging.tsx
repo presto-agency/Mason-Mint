@@ -4,6 +4,7 @@ import Container from '@/app/layouts/Container'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 
 import styles from './NumismaticPackaging.module.scss'
 import stylesSlider from '@/ui/ProductCarousel/ProductCarousel.module.scss'
@@ -72,6 +73,7 @@ const NumismaticPackaging: FC<{ className?: string }> = ({ className }) => {
   }
   return (
     <section className={classNames(styles['NumismaticPackaging'], className)}>
+      <ParallaxSection className={styles['NumismaticPackaging__abstract']} />
       <Container>
         <div className={styles['NumismaticPackaging__content']}>
           <div className={styles['NumismaticPackaging__content_left']}>

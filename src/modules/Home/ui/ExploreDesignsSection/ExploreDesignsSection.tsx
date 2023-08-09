@@ -20,6 +20,7 @@ import useWindowDimensions from '@/hooks/useWindowDimensions'
 import SliderArrow from '@/ui/SliderArrow/SliderArrow'
 import { data } from '@/modules/Home/ui/ExploreDesignsSection/data'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 import routes from '@/utils/routes'
 
 import 'swiper/css'
@@ -166,6 +167,7 @@ const ExploreDesignsSection = () => {
 
   return (
     <section className={styles['ExploreDesignsSection']}>
+      <ParallaxSection className={styles['ExploreDesignsSection__abstract']} />
       <Container>
         <div className={styles['ExploreDesignsSection__content']}>
           <div className={styles['ExploreDesignsSection__content_description']}>

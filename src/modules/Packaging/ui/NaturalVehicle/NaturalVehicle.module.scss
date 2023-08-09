@@ -5,22 +5,28 @@
   margin: 164rem 0;
 
   @media (width <=$breakpoint-mob) {
-    margin: 80rem 0;
+    margin: 80rem 0 77rem;
   }
-
-  &::before{
+  
+  &__abstract{
     position: absolute;
-    top: -277rem;
-    right: 152rem;
-    width: 1395rem;
-    height: 1550rem;
-    background-image: url("/images/home/circled_arrow_bg.svg");
-    background-size: 1395rem 1550rem;
-    content: '';
-
-    @media (width<=$breakpoint-mob) {
-      display: none;
-    }
+    inset: 0;
+    pointer-events: none;
+    
+      &::before{
+        position: absolute;
+        top: -277rem;
+        right: 152rem;
+        width: 1395rem;
+        height: 1550rem;
+        background-image: url("/images/home/circled_arrow_bg.svg");
+        background-size: 1395rem 1550rem;
+        content: '';
+        
+          @media (width<=$breakpoint-mob) {
+            display: none;
+          }
+      }
   }
 
   &__content{

@@ -24,6 +24,7 @@ const variant = {
   exit: {
     scale: 0.8,
     zIndex: 0,
+    boxShadow: ' 0px 0px 100px -5px rgba(0,0,0,0.1)',
     transition: {
       duration: 2,
     },

@@ -13,7 +13,9 @@ import styles from './CustomMintingMarketing.module.scss'
 const CustomMintingMarketing: FC<{ className?: string }> = ({ className }) => {
   return (
     <div className={classNames(styles['marketing'], className)}>
-      <AbstractLogo className={styles['marketing__abstract']} />
+      <ParallaxSection>
+        <AbstractLogo className={styles['marketing__abstract']} />
+      </ParallaxSection>
       {data && data.length > 0
         ? data.map((item, index) => {
             return (

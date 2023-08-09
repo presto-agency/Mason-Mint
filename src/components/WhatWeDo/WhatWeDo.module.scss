@@ -8,21 +8,26 @@
     margin: 80rem 0 75rem;
     padding: 0;
   }
-
-  &::before{
-    position: absolute;
-    top: 102rem;
-    left: 119rem;
-    width: 1227rem;
-    height: 1363rem;
-    background-image: url("/images/home/circled_arrow_bg.svg");
-    background-size: 1227rem 1363rem;
-    transform: scaleX(-1);
-    content: '';
-
-    @media (width<=$breakpoint-mob) {
-      display: none;
-    }
+  
+  &__abstract{
+   position: absolute;
+    inset: 0;
+    
+      &::before{
+        position: absolute;
+        top: 102rem;
+        left: 119rem;
+        width: 1227rem;
+        height: 1363rem;
+        background-image: url("/images/home/circled_arrow_bg.svg");
+        background-size: 1227rem 1363rem;
+        transform: scaleX(-1);
+        content: '';
+          
+          @media (width<=$breakpoint-mob) {
+            display: none;
+          }
+      }
   }
 
   &__content{
@@ -74,6 +79,10 @@
 
         .title{
           margin: 0 0 17rem;
+          
+            @media (width <=$breakpoint-mob) {
+              margin: 0 0 4rem;
+            }
         }
 
         .subtitle{

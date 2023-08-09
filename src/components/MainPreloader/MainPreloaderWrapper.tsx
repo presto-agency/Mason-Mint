@@ -1,15 +1,18 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useContext, useEffect, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import MainPreloader from '@/components/MainPreloader/MainPreloader'
 import { useLenis } from '@studio-freight/react-lenis'
+import { Store } from '@/utils/Store'
 
 const MainPreloaderWrapper: FC = () => {
   const [progress, setProgress] = useState<number>(0)
   const [isVisible, setIsVisible] = useState(true)
+  const store = useContext(Store)
+  const isFirstLoading = store?.state.isFirstLoading
   const lenis = useLenis()
 
   // Disable scroll
-  if (lenis) {
+  if (lenis && isFirstLoading) {
     lenis.stop()
   }
 
