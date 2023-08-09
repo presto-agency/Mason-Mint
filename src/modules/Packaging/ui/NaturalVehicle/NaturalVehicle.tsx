@@ -14,6 +14,7 @@ import styles from './NaturalVehicle.module.scss'
 const NaturalVehicle: FC<{ className?: string }> = ({ className }) => {
   return (
     <section className={classNames(styles['NaturalVehicle'], className)}>
+      <ParallaxSection className={styles['NaturalVehicle__abstract']} />
       <Container>
         <div className={styles['NaturalVehicle__content']}>
           <ParallaxSection className={styles['NaturalVehicle__content_left']}>

@@ -1,14 +1,19 @@
 import React, { FC } from 'react'
 import Container from '@/app/layouts/Container'
-import styles from './WhatWeDo.module.scss'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import classNames from 'classnames'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 
+import styles from './WhatWeDo.module.scss'
+
 const WhatWeDo: FC<{ className?: string }> = ({ className }) => {
   return (
     <section className={classNames(styles['WhatWeDo'], className)}>
+      <ParallaxSection
+        className={styles['WhatWeDo__abstract']}
+        parallaxValues={[-200, 200]}
+      />
       <Container>
         <div className={styles['WhatWeDo__content']}>
           <div className={styles['WhatWeDo__content_left']}>
@@ -22,7 +27,7 @@ const WhatWeDo: FC<{ className?: string }> = ({ className }) => {
             />
           </div>
           <div className={styles['WhatWeDo__content_right']}>
-            <ParallaxSection parallaxValues={[-170, 170]}>
+            <ParallaxSection parallaxValues={[-150, 150]}>
               <div className={styles['descriptionContainer']}>
                 <h2 className={classNames('h2', styles['title'])}>
                   <AnimatedText title withBlueDot>

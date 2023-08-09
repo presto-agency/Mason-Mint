@@ -5,16 +5,22 @@
   padding: 164rem 0 140rem;
   overflow: hidden;
   
-  &::before{
-    position: absolute;
-    top: -84rem;
-    right: 153rem;
-    width: 1395rem;
-    height: 1550rem;
-    background-image: url("/images/home/circled_arrow_bg.svg");
-    background-size: 1395rem 1550rem;
-    content: '';
-  }
+    &__abstract{
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      
+        &::before{
+          position: absolute;
+          top: -84rem;
+          right: 153rem;
+          width: 1395rem;
+          height: 1550rem;
+          background-image: url("/images/home/circled_arrow_bg.svg");
+          background-size: 1395rem 1550rem;
+          content: '';
+        }
+    }
 
   &__content{
     display: flex;

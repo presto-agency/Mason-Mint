@@ -10,6 +10,7 @@
     color: var(--gray-700);
     font: var(--font-h6);
     writing-mode: vertical-rl;
+    text-transform: lowercase;
 
     &.right{
       right: -34rem;

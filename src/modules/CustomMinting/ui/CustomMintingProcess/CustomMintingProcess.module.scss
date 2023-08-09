@@ -15,14 +15,15 @@
 			top: 0;
 			left: 0;
 			width: 100vw;
-			height: 100vh;
+			height: 100%;
 			overflow: hidden;
+			opacity: .8;
 			pointer-events: none;
 		}
 	
 		& &__abstract{
-			top: 0;
-			left: 60%;
+			top: -4.25%;
+			left: 72%;
 			width: 1515rem;
 			height: auto;
 			color: var(--white);
@@ -202,6 +203,9 @@
 			
 				&_item{
 					color: var(--gray-800);
+					font-weight: 400;
+					font-family: var(--font-family-secondary);
+					line-height: 1.6em;
 						
 						p{
 								&:not(:last-child){

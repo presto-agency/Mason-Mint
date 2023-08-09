@@ -26,7 +26,7 @@ const BecomeADistributorBody: FC<{ className?: string }> = ({ className }) => {
           src={Banner.src}
           alt="Banner"
           parallax
-          parallaxValues={[-20, 20]}
+          parallaxValues={[-50, 50]}
           className={styles['distributorBody__image_item']}
         />
       </div>

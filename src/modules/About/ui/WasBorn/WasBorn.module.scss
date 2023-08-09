@@ -13,6 +13,7 @@
     background-image: url("/images/home/circled_arrow_bg.svg");
     background-size: 1343rem 1494rem;
     content: '';
+    pointer-events: none;
 
     @media (width<=$breakpoint-mob) {
       display: none;

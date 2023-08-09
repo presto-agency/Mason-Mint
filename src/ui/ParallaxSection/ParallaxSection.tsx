@@ -3,7 +3,7 @@ import { motion, MotionValue, useScroll, useTransform } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 type ParallaxSection = {
-  children: ReactNode
+  children?: ReactNode
   parallaxValues?: [number, number]
   className?: string
 }

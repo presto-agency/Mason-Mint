@@ -12,19 +12,25 @@
     background-color: initial;
   }
 
-  &::before{
+  &__abstract{
     position: absolute;
-    top: -192rem;
-    right: -543rem;
-    width: 1223rem;
-    height: 1318rem;
-    background-image: url("/images/home/circled_arrow_bg_w.svg");
-    background-size: 1223rem 1318rem;
-    content: '';
-
-    @media (width <=$breakpoint-mob) {
-      display: none;
-    }
+    inset: 0;
+    pointer-events: none;
+    
+      &::before{
+        position: absolute;
+        top: -192rem;
+        right: -543rem;
+        width: 1223rem;
+        height: 1318rem;
+        background-image: url("/images/home/circled_arrow_bg_w.svg");
+        background-size: 1223rem 1318rem;
+        content: '';
+        
+          @media (width <=$breakpoint-mob) {
+            display: none;
+          }
+      }
   }
 
   .arrows{

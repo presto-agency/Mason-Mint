@@ -1,11 +1,12 @@
 import React, { FC } from 'react'
-import styles from './AllProducts.module.scss'
 import classNames from 'classnames'
+import Image from 'next/image'
 import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
-import Image, { ImageProps } from 'next/image'
-import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
+
+import styles from './AllProducts.module.scss'
 
 const sectionContent = [
   {
@@ -31,6 +32,10 @@ const sectionContent = [
 const AllProducts: FC<{ className?: string }> = ({ className }) => {
   return (
     <section className={classNames(styles['AllProducts'], className)}>
+      <ParallaxSection
+        className={styles['AllProducts__abstract']}
+        parallaxValues={[-200, 200]}
+      />
       <Container>
         <h3 className={classNames('h3', styles['title'])}>
           <AnimatedElement>

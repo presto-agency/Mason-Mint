@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import classNames from 'classnames'
@@ -19,14 +19,10 @@ const ProductCard: FC<ProductCardProps> = ({
   data,
   className,
   flip = true,
-  reloadPageOnClick = false,
 }) => {
   const categorySlug = toLoverCaseAndSpacesToHyphen(
     data.category?.name as string
   )
-
-  // const LinkOrAnchor = reloadPageOnClick ? 'a' : Link
-  // const linkProps = reloadPageOnClick ? { scroll: true } : { scroll: false }
 
   return (
     <Link
