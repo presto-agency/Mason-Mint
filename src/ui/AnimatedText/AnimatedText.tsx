@@ -1,7 +1,6 @@
 import { FC, Fragment, useMemo, useRef } from 'react'
 import classNames from 'classnames'
 import { useInView, motion } from 'framer-motion'
-import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 import styles from './AnimatedText.module.scss'
 
