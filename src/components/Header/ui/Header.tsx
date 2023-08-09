@@ -16,22 +16,6 @@ type HeaderProps = {
   theme: 'dark' | 'light'
 }
 
-const variants = {
-  initial: {
-    opacity: 0,
-    y: '-20%',
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: 'spring',
-      duration: 1.2,
-      bounce: 0,
-    },
-  },
-}
-
 const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpened, setMenuOpened] = useState(false)
@@ -44,6 +28,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     [styles[headerTheme]]: true,
     [styles.scrolled]: scrolled,
     [styles.opened]: menuOpened,
+    [styles.firstLoading]: !store?.state.isFirstLoading,
   }
 
   const toggleMenu = () => {
@@ -111,12 +96,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <motion.header
-        className={classNames(styles['header'], mods)}
-        variants={variants}
-        initial="initial"
-        animate={!store?.state.isFirstLoading && 'animate'}
-      >
+      <header className={classNames(styles['header'], mods)}>
         <Container>
           <div className={styles['header__content']}>
             <Link
@@ -135,7 +115,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
           menuOpened={menuOpened}
           toggleMenu={toggleMenu}
         />
-      </motion.header>
+      </header>
     </>
   )
 }

@@ -24,11 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <AppLayout>
         <NextNProgress color="#266ef9" />
         <MainPreloaderWrapper />
-        <AnimatePresence
-          onExitComplete={onExitComplete}
-          mode="wait"
-          // initial={false}
-        >
+        <AnimatePresence onExitComplete={onExitComplete} mode="wait">
           <Component {...pageProps} key={pageKey} />
         </AnimatePresence>
       </AppLayout>

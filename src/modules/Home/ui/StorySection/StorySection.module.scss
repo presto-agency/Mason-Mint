@@ -2,7 +2,7 @@
 
 .story {
   position: relative;
-  padding: 164rem 0 140rem;
+  padding: 164rem 0 153rem;
   overflow: hidden;
   
     &__abstract{
@@ -31,14 +31,21 @@
     &_left {
       display: flex;
       flex-direction: column;
-      gap: 18rem;
       max-width: 640rem;
 
       .photoContainer {
         align-self: flex-end;
         width: 83%;
-        margin-top: 145rem;
+        margin-top: 162rem;
         aspect-ratio: 18/23;
+      }
+
+      .title{
+        margin: 0 0 6rem;
+      }
+
+      .description{
+        color: var(--gray-800);
       }
     }
 
@@ -48,12 +55,12 @@
       .text {
         display: flex;
         flex-direction: column;
-        gap: 16rem;
-        padding: 32rem 0 40rem;
+        padding: 45rem 0 40rem;
       }
 
       .photoContainer {
-        aspect-ratio: 16/19;
+        width: 304rem;
+        height: 361rem;
       }
     }
   }
@@ -63,18 +70,26 @@
   .story {
     padding: 80rem 0;
 
+    &::before{
+      display: none;
+    }
+
     &__content{
       flex-direction: column;
       gap: 32rem;
       padding: 0;
 
       &_left {
-        gap: 16rem;
+        gap: 4rem;
         width: 100%;
 
         .photoContainer {
           display: none;
           width: 100%;
+        }
+
+        .title{
+          margin: 0;
         }
       }
 
@@ -83,8 +98,7 @@
         margin: 0 80rem;
 
         .text {
-          gap: 16rem;
-          padding: 16rem 0 32rem;
+          padding: 11rem 0 26rem;
         }
 
         .buttonContainer{
