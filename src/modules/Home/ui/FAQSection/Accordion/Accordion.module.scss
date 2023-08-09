@@ -22,8 +22,14 @@
       transform: translateY(-50%);
       transition: var(--move-duration) var(--ease);
 
+      @media (max-width: $breakpoint-mob) {
+        top: 30rem;
+        transform: initial;
+        transition: initial;
+      }
+
       &.active{
-        transform: translateY(-50%) rotateX(180deg);
+        rotate: 180deg;
       }
     }
 

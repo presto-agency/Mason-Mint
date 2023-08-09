@@ -9,6 +9,7 @@ import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import routes from '@/utils/routes'
 
 import styles from './StorySection.module.scss'
+import classNames from 'classnames'
 
 const StorySection: FC = () => {
   return (
@@ -16,13 +17,13 @@ const StorySection: FC = () => {
       <Container>
         <div className={styles['story__content']}>
           <div className={styles['story__content_left']}>
-            <h3 className="h3">
+            <h3 className={classNames('h3', styles['title'])}>
               <AnimatedText title>
                 Mason Mint was born from the idea of producing world-class
-                custom minted sulver products
+                custom minted silver products
               </AnimatedText>
             </h3>
-            <p style={{ color: 'var(--gray-800)' }}>
+            <p className={styles['description']}>
               <AnimatedText>
                 Mason Mint was born from the idea of producing world-class
                 custom minted silver products. Our motto &quot;Excellence In
@@ -53,8 +54,8 @@ const StorySection: FC = () => {
             <div className={styles['text']}>
               <h4 className="h4">
                 <AnimatedText title>
-                  Mason Mint was born from the idea of producing world-class
-                  custom minted sulver products
+                  Mason Mint was born from the idea of producing world- class
+                  custom minted silver products
                 </AnimatedText>
               </h4>
               <p style={{ color: 'var(--gray-800)' }}>
