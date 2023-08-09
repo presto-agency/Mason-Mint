@@ -5,14 +5,14 @@ import Container from '@/app/layouts/Container'
 import AnimatedText from '@/ui/AnimatedText/AnimatedText'
 import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
+import routes from '@/utils/routes'
 const VideoComponent = dynamic(
   () => import('@/ui/VideoComponent/VideoComponent'),
   { ssr: false }
 )
 
 import styles from './IntroSection.module.scss'
-import routes from '@/utils/routes'
-import ParallaxSection from '@/ui/ParallaxSection/ParallaxSection'
 
 const IntroSection = () => {
   return (

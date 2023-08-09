@@ -79,6 +79,10 @@
 
         .title{
           margin: 0 0 17rem;
+          
+            @media (width <=$breakpoint-mob) {
+              margin: 0 0 4rem;
+            }
         }
 
         .subtitle{
