@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import classNames from 'classnames'
 import Link from 'next/link'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
@@ -9,7 +10,6 @@ import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import routes from '@/utils/routes'
 
 import styles from './StorySection.module.scss'
-import classNames from 'classnames'
 
 const StorySection: FC = () => {
   return (

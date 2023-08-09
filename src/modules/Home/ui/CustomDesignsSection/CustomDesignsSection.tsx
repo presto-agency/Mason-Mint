@@ -8,9 +8,9 @@ import AnimatedElement from '@/ui/AnimatedElement/AnimatedElement'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import routes from '@/utils/routes'
+import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
 
 import styles from './CustomDesignsSection.module.scss'
-import AnimateScaleBg from '@/ui/AnimateScaleBG/AnimateScaleBG'
 
 const images = [
   '/images/home/customDesign/slide_1.jpg',
