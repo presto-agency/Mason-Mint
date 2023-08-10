@@ -20,6 +20,7 @@ import styles from './ContactForm.module.scss'
 
 type FormValues = {
   fullName: string
+  companyName: string
   email: string
   phone: string
   location: string
@@ -28,6 +29,7 @@ type FormValues = {
 
 const defaultValues = {
   fullName: '',
+  companyName: '',
   email: '',
   phone: '',
   location: '',
@@ -128,8 +130,25 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
                 <TextField
                   {...field}
                   placeholder="your Full name"
-                  label="You should have a name end last name*"
+                  label="Please include your first and last
+name*"
                   error={errors['fullName']?.message}
+                />
+              )
+            }}
+          />
+        </motion.div>
+        <motion.div variants={boxFrame}>
+          <Controller
+            control={control}
+            name="companyName"
+            render={({ field }) => {
+              return (
+                <TextField
+                  {...field}
+                  placeholder="Company name"
+                  label="Are you contacting on behalf of a company? "
+                  error={errors['companyName']?.message}
                 />
               )
             }}

@@ -93,7 +93,7 @@ const CustomMintingProcess: FC<{ className?: string }> = ({ className }) => {
         <Container>
           <h2 className={classNames(styles['process__title'], 'h2')}>
             <AnimatedText title withBlueDot>
-              Our minting process
+              Our Minting Process
             </AnimatedText>
           </h2>
           {width > 767 ? (

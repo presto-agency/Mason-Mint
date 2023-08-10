@@ -58,17 +58,16 @@ const StorySection: FC = () => {
             <div className={styles['text']}>
               <h4 className="h4">
                 <AnimatedText title>
-                  Mason Mint was born from the idea of producing world- class
-                  custom minted silver products
+                  Mason Mint is renowned for its standard of excellence in
+                  executing custom designs.
                 </AnimatedText>
               </h4>
               <p style={{ color: 'var(--gray-800)' }}>
                 <AnimatedText>
-                  Our motto &quot;Excellence In Minting&quot; are words that we
-                  live by. Our high standards for quality and design is what
-                  separates us from everyone else. We look forward to supplying
-                  both the investor and collector silver market with superior
-                  products that are sure to impress.
+                  Our high standards for quality and design is what separates us
+                  from everyone else. We look forward to supplying both the
+                  investor and collector silver market with superior products
+                  that are sure to impress.
                 </AnimatedText>
               </p>
             </div>

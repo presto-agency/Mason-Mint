@@ -192,7 +192,8 @@ const BecomeADistributorForm: FC<{
                   <TextField
                     {...field}
                     placeholder="your Full name"
-                    label="You should have a name end last name*"
+                    label="Please include your first and last
+name*"
                     error={errors['fullName']?.message}
                   />
                 )

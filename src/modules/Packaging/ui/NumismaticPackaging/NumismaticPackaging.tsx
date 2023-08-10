@@ -79,17 +79,17 @@ const NumismaticPackaging: FC<{ className?: string }> = ({ className }) => {
           <div className={styles['NumismaticPackaging__content_left']}>
             <h2 className={classNames('h2', styles['title'])}>
               <AnimatedText title>
-                To find out more about our numismatic packaging offer or to
-                discuss the possibility of creating innovative projects.
+                Contact us to find out more about our bespoke packaging and
+                custom minting offers. We&apos;re ready to discuss innovative
+                new projects with you!
               </AnimatedText>
             </h2>
           </div>
           <div className={styles['NumismaticPackaging__content_right']}>
             <p className={styles['description']}>
               <AnimatedText>
-                The starting point for the creation of any packaging is always
-                the coin – it inspires the creative concepts for the narrative,
-                and then the selection of the appropriate form and design.
+                No matter what your idea is, we&apos;re here to help. Put your
+                design and your organization on the map with custom packaging.
               </AnimatedText>
             </p>
             <p className={styles['description']}>

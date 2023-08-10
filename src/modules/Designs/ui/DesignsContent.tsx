@@ -51,9 +51,9 @@ const DesignsContent: FC<DesignsContentProps> = ({ categories, products }) => {
   return (
     <main className={styles['designsContent']}>
       <HeroInner
-        title="Bring the stories of our world into your home"
+        title="Anything you can imagine, we can bring to life with the beauty of silver"
         subtitle="Browse by categories"
-        description="We look forward to supplying both the investor and collector silver market with superior products that are sure to impress."
+        description="We are thrilled to provide both investors and collectors with the best designs in the silver bullion industry."
         theme="gray"
         columns={10}
       />

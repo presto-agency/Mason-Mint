@@ -51,16 +51,17 @@ const NaturalVehicle: FC<{ className?: string }> = ({ className }) => {
             <h4 className={classNames(styles['title'], 'h4')}>
               <AnimatedText title>
                 While creating its packaging, Mason Mint applies the knowledge
-                and know-how from over a decade of product-development work on
-                hundreds of projects for the world’s largest banks and mints.
+                and know-how from over a decade of product-development work.
+                Your options are limitless for creating the perfect packaging to
+                match your minted silver products.
               </AnimatedText>
             </h4>
             <p className={styles['description']}>
               <AnimatedText>
-                The company’s innovative and uncompromising approach to both
-                design and quality has made packaging for Germania Mint coins
-                and bars an integral part of its premium limited edition
-                products, creating a new quality on the collector’s market.
+                Our company&apos;s innovative and uncompromising approach to
+                both design and quality has made packaging for Mason Mint coins
+                and bars an integral part of its premium products, creating a
+                new benchmark for quality.
               </AnimatedText>
             </p>
             <AnimatedElement className={styles['buttonContainer']} delay={0.2}>

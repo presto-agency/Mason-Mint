@@ -6,7 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/About/ui/AboutContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/BecomeADistributor/ui/BecomeADistributorForm/BecomeADistributorForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/BecomeADistributor/ui/BecomeADistributorForm/BecomeADistributorForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Contact/ui/ContactForm/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Contact/ui/ContactForm/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Contact/ui/ContactForm/validationSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Contact/ui/ContactForm/validationSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingMarketing/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingMarketing/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingMoment/CustomMintingMoment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingMoment/CustomMintingMoment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingProcess/CustomMintingProcess.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingProcess/CustomMintingProcess.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingProcess/data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/CustomMinting/ui/CustomMintingProcess/data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Designs/ui/DesignsContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Designs/ui/DesignsContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/CustomDesignsSection/CustomDesignsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/IntroSection/IntroSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/StorySection/StorySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Packaging/ui/NaturalVehicle/NaturalVehicle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/NaturalVehicle/NaturalVehicle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Packaging/ui/NumismaticPackaging/NumismaticPackaging.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/NumismaticPackaging/NumismaticPackaging.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Packaging/ui/PackagingContent.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +116,7 @@
       <workItem from="1691389436432" duration="40169000" />
       <workItem from="1691563168185" duration="16030000" />
       <workItem from="1691593715780" duration="596000" />
-      <workItem from="1691665918870" duration="1832000" />
-    </task>
-    <task id="LOCAL-00038" summary="fix: faq section">
-      <created>1689342448861</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1689342448861</updated>
+      <workItem from="1691665918870" duration="9236000" />
     </task>
     <task id="LOCAL-00039" summary="fix: add swiper desktop">
       <created>1689668294559</created>
@@ -447,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691583945865</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="feat: add readme.md">
+      <created>1691668140133</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1691668140133</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +480,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: some about page fixes" />
     <MESSAGE value="feat: add AllProduct" />
     <MESSAGE value="feat: add whatWeDo" />
     <MESSAGE value="fix: about page animation, animationScaleBg" />
@@ -491,7 +504,8 @@
     <MESSAGE value="fix: MASON-016" />
     <MESSAGE value="fix: image about" />
     <MESSAGE value="fix: some fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: some fixes" />
+    <MESSAGE value="feat: add readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add readme.md" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

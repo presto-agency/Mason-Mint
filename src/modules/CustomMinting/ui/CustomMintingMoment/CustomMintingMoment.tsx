@@ -22,22 +22,20 @@ const CustomMintingMoment: FC<{ className?: string }> = ({ className }) => {
           <ParallaxSection parallaxValues={[0, 300]}>
             <h3 className={classNames(styles['moment__title'], 'h3')}>
               <AnimatedText title withBlueDot>
-                Mark the Moment with Exceptional Pieces
+                Make Your Brand Stand Out
               </AnimatedText>
             </h3>
             <div className={styles['moment__description']}>
               <p>
                 <AnimatedText>
-                  From milestone occasions (birth, retirement, award) to
-                  promotional items, our team of minting professionals can help
-                  guide your project from start to finish.
+                  Highlight your corporate brand, organization, or promote your
+                  one-of-a-kind idea for a custom coin series!
                 </AnimatedText>
               </p>
               <p>
                 <AnimatedText>
-                  With all of our design, production, and finish work under one
-                  roof, your project will receive the attention it deserves. Let
-                  us make your vision a reality.
+                  Our team of professionals will guide you through the project
+                  from start to finish.
                 </AnimatedText>
               </p>
             </div>
