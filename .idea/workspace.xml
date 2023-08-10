@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/Accordion/Accordion.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/FAQSection/Accordion/Accordion.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +101,8 @@
       <workItem from="1690785883856" duration="16811000" />
       <workItem from="1691389436432" duration="40169000" />
       <workItem from="1691563168185" duration="16030000" />
+      <workItem from="1691593715780" duration="596000" />
+      <workItem from="1691665918870" duration="1832000" />
     </task>
     <task id="LOCAL-00038" summary="fix: faq section">
       <created>1689342448861</created>
