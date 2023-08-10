@@ -1,7 +1,6 @@
 import { FC, ReactNode, useRef } from 'react'
 import classNames from 'classnames'
 import { useInView, motion } from 'framer-motion'
-import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 import styles from './AnimatedElement.module.scss'
 
@@ -27,13 +26,13 @@ const AnimatedElement: FC<AnimatedElementProps> = ({
       y: 0,
       transition: {
         ease: 'anticipate',
-        duration: 1,
+        duration: 1.2,
         delay,
       },
     },
     hidden: {
       opacity: 0,
-      y: reverse ? -20 : 20,
+      y: reverse ? -15 : 15,
     },
   }
 

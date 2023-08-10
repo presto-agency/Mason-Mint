@@ -19,7 +19,7 @@
 			content: '';
 			
 				@media (width <= $breakpoint-mob) {
-					height: 1px;
+					display: none;
 				}
 		}
 	

@@ -54,8 +54,21 @@ yarn start
 
 <h2 id="configuration">Configuration</h2>
 
-deploy to Vercel automatically after push to branch main
+Add Environment Variables to your .env.*:
+```bash
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+RECIPIENT_EMAIL=
+SENDER_EMAIL=
+MONGODB_URI=
+```
 
-deploy:
+
+
+Deploy to Vercel automatically after push to branch main
+
+Deploy branch:
 [main](https://mason-mint.vercel.app/),
 

@@ -42,10 +42,6 @@
         }
       }
     }
-
-    .logo {
-      fill: var(--white);
-    }
   }
 
   &.light {
@@ -58,22 +54,18 @@
         }
       }
     }
-
-    .logo {
-      fill: var(--black);
-    }
   }
 
   &.scrolled{
-    padding: 12rem 0;
+    padding: 9rem 0;
     background-color: var(--white);
     
       @media (width <= $breakpoint-tablet) {
-        height: 90rem;
+        height: 84rem;
       }
     
       @media (width <= $breakpoint-mob) {
-        height: 70rem;
+        height: 56rem;
       }
   }
 
@@ -180,12 +172,6 @@
         @media (width <= $breakpoint-mob) {
           padding: 0 24rem;
         }
-    }
-
-    &_link {
-      .logo {
-        fill: var(--white);
-      }
     }
   }
 }

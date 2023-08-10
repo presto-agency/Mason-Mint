@@ -32,7 +32,7 @@ const ParallaxSection: FC<ParallaxSection> = ({
   }, [])
   return (
     <>
-      {isMounted && width <= 767 ? (
+      {isMounted && width <= 991 ? (
         <div className={className}>{children}</div>
       ) : (
         <motion.div

@@ -1,12 +1,14 @@
 import { FC, useState } from 'react'
 import classNames from 'classnames'
-import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import { motion } from 'framer-motion'
+import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
+import useWindowDimensions from '@/hooks/useWindowDimensions'
 
 import styles from './CustomMintingBanner.module.scss'
 
 const CustomMintingBanner: FC<{ className?: string }> = ({ className }) => {
   const [loaded, setLoaded] = useState<boolean>(false)
+  const { width } = useWindowDimensions()
 
   return (
     <div className={classNames(styles['banner'], className)}>
@@ -21,7 +23,7 @@ const CustomMintingBanner: FC<{ className?: string }> = ({ className }) => {
           alt="Let Us Make Your Vision a Reality."
           className={styles['banner__item']}
           parallax
-          parallaxValues={[-150, 150]}
+          parallaxValues={width > 767 ? [-150, 150] : [0, 0]}
           onLoadingComplete={() => setLoaded(true)}
         />
       </motion.div>
