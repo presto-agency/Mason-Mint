@@ -2,7 +2,6 @@ import dynamic from 'next/dynamic'
 import IntroSection from './IntroSection/IntroSection'
 import StorySection from './StorySection/StorySection'
 import FAQSection from './FAQSection/FAQSection'
-import SellSection from './SellSection/SellSection'
 import BecomeDistributorSection from '@/components/BecomeDistributorSection/BecomeDistributorSection'
 
 const ExploreDesignsSection = dynamic(
@@ -16,6 +15,10 @@ const CustomDesignsSection = dynamic(
 const FeaturedDesignsSection = dynamic(
   () =>
     import('@/modules/Home/ui/FeaturedDesignsSection/FeaturedDesignsSection'),
+  { ssr: false }
+)
+const SellSection = dynamic(
+  () => import('@/modules/Home/ui/SellSection/SellSection'),
   { ssr: false }
 )
 

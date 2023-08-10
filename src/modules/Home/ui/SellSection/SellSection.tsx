@@ -9,13 +9,13 @@ import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import routes from '@/utils/routes'
-// import Lottie, { LottieRefCurrentProps } from 'lottie-react'
-// import flipCoin from './flipCoin.json'
+import Lottie, { LottieRefCurrentProps } from 'lottie-react'
+import flipCoin from './flipCoin.json'
 
 import styles from './SellSection.module.scss'
 
 const SellSection = () => {
-  // const refLottie = useRef<LottieRefCurrentProps | null>(null)
+  const refLottie = useRef<LottieRefCurrentProps | null>(null)
   const ref = useRef(null)
   const [isClient, setIsClient] = useState(false)
   const [prevProgress, setPrevProgress] = useState(0)
@@ -29,7 +29,7 @@ const SellSection = () => {
   useMotionValueEvent(progress, 'change', (latest) => {
     const roundedLatest = Math.round(latest)
     if (roundedLatest !== prevProgress) {
-      // refLottie.current?.goToAndStop(roundedLatest, true)
+      refLottie.current?.goToAndStop(roundedLatest, true)
       setPrevProgress(roundedLatest)
     }
   })
@@ -41,12 +41,12 @@ const SellSection = () => {
           {isClient && width > 767 ? (
             <div className={styles['sellSection__content_left']}>
               <div className={styles['imageWrapper']}>
-                {/*<Lottie*/}
-                {/*  className={styles['imageContainer']}*/}
-                {/*  animationData={flipCoin}*/}
-                {/*  lottieRef={refLottie}*/}
-                {/*  autoplay={false}*/}
-                {/*/>*/}
+                <Lottie
+                  className={styles['imageContainer']}
+                  animationData={flipCoin}
+                  lottieRef={refLottie}
+                  autoplay={false}
+                />
               </div>
             </div>
           ) : null}
