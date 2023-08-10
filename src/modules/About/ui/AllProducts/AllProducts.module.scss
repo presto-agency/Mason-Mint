@@ -76,7 +76,7 @@
         position: relative;
         width: 226rem;
         height: 277rem;
-        margin: 16rem;
+        margin: 16rem auto;
 
         @media (width <= $breakpoint-mob) {
           width: 152rem;
@@ -94,6 +94,7 @@
 
       .descriptionItem{
         max-width: 224rem;
+        margin: 0 auto;
         text-align: center;
       }
     }
