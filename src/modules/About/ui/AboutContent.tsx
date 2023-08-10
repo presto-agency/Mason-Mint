@@ -24,11 +24,8 @@ export const AboutContent: FC = () => {
       <HeroDetail
         sliderImages={sliderImages}
         image="/images/about/innerAbout_1.jpg"
-        topDescription="We’ve built our business on long-term relationship with the
-                  world’s largest mining companies"
-        bottomDescription="Providing our partners with reliable and efficient results
-                  supported by the resources of a publicly listed, global
-                  company."
+        topDescription="We've built our business on our high standard for excellency with industry leading pricing."
+        bottomDescription="Providing our distribution partners with some of the highest quality silver bullion coins and bars at a price point that is second to none."
       />
       <WasBorn />
       <AllProducts />

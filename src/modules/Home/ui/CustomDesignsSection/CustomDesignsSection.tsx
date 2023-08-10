@@ -58,8 +58,9 @@ const CustomDesignsSection: FC<{ className?: string }> = ({ className }) => {
           </h2>
           <p className={styles['CustomDesignsSection__content_description']}>
             <AnimatedText>
-              Minted to the same standard of excellence for which The Mason Mint
-              is renowned, custom orders make a lasting memory for any occasion.
+              Minted to the same standard of excellence for which Mason Mint is
+              known for, stand out from your competition with your own custom
+              minted silver coin or bar.
             </AnimatedText>
           </p>
           <AnimatedElement delay={0.2}>

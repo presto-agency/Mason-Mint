@@ -53,8 +53,8 @@ const IntroSection = () => {
             </AnimatedElement>
             <div className={styles['subtitle']}>
               <AnimatedElement delay={0.2}>
-                Mason Mint&apos;s fantastic design for the 1 oz Noahs Ark Silver
-                Round celebrates the Biblical patriarch and his work
+                Mason Mint is proud to present our fresh design take on the
+                iconic Silver Buffalo Round
               </AnimatedElement>
             </div>
           </div>

@@ -1,26 +1,26 @@
 export const data = [
   {
-    title: 'Marketing & Promotional',
+    title: 'Custom Branded Pieces',
     description:
-      'Make your business instantly unforgettable with a custom minted promotional item or marketing piece. Turn your logo into a keepsake with the help of our custom minting, screen printing, and engraving capabilities.',
+      'Elevate your brand or idea with gorgeous silver bullion. Turn your logo or idea into an instant marketing item with help from Mason Mint.',
     thumb: '/images/custom-minting/marketing-promotional-1.jpg',
   },
   {
-    title: 'Awards & Recognition',
+    title: 'Awards & Certifications',
     description:
-      'Elevate their achievement by awarding your employee or client with an award that is worthy of their accomplishment. Our in-house custom minting specialists can work with you to craft the perfect piece that fits your budget and timeline.',
+      'Mason Mint maintains the latest ISO 9001:2015 certification, meaning that our company s facilities uphold rigorous standards of quality control.',
     thumb: '/images/custom-minting/marketing-promotional-2.jpg',
   },
   {
-    title: 'Military & Public Service',
+    title: 'Custom Packaging Solutions',
     description:
-      'Pride, tradition, loyalty. Honor an American hero with heirloom-quality pieces, crafted in the U.S.A. Whether it is the armed forces or a public servant, our custom capabilities allow for the most intricate designs and artistic quality fitting our nation’s protectors.',
+      'Create your own custom-designed packaging for your minted products. Show off and let your brand stand out against the competition.',
     thumb: '/images/custom-minting/marketing-promotional-3.jpg',
   },
   {
-    title: 'Gifts & Memorials',
+    title: 'Highest Purity  Silver',
     description:
-      'Milestone occasions deserve forever pieces. From birth to anniversaries, to memorials, our custom products will mark special occasions for generations to come. Speak to a custom minting professional today with help crafting your unique gift.',
+      'We mint all of our silver bullion products to .999 fineness (99.9% pure silver). Upon request, we can even create your products from .9999 fine silver! (99.99% pure)',
     thumb: '/images/custom-minting/marketing-promotional-4.jpg',
   },
 ]

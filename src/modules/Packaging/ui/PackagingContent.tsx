@@ -17,9 +17,9 @@ export const PackagingContent: FC = () => {
   return (
     <main className={styles['PackagingContent']}>
       <HeroInner
-        title="Creation of any packaging is always the coin"
+        title="Creation of custom packaging always starts with the coin"
         subtitle="Packaging"
-        description="It inspires the creative concepts for the narrative, and then the selection of the appropriate form and design. "
+        description="Your options are limitless for creating the perfect packaging to match your minted silver products."
         columns={9}
       />
       <HeroDetail

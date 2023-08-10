@@ -20,7 +20,7 @@ export const data = [
   {
     title: 'Example of completed 3D Model',
     description:
-      'Next the finalized artwork is turned into a 3D Model.  Once the model has been completed it is again sent to the client for feedback and approval.Once approved the 3D model is used to create the coining dies.',
+      'Next the finalized artwork is turned into a 3D Model.  Once the model has been completed it is again sent to the client for feedback and approval. Once approved the 3D model is used to create the coining dies.',
     thumbs: [
       '/images/custom-minting/process/4.png',
       '/images/custom-minting/process/3.png',
