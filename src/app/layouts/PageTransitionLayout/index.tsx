@@ -39,7 +39,7 @@ const innerVariant = {
   animate: {
     y: 0,
     transition: {
-      delay: 4,
+      delay: 3.7,
       duration: 0.5,
       ease: 'easeInOut',
     },

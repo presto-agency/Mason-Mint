@@ -104,7 +104,10 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
               className={styles['header__content_link']}
               href={'/'}
             >
-              <Logo className={styles['logo']} />
+              <Logo
+                className={styles['logo']}
+                isWhite={!scrolled && headerTheme !== 'light'}
+              />
             </Link>
             <NavigationLayout />
           </div>

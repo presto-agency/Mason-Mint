@@ -16,6 +16,20 @@
 			padding: 30rem 24rem;
 		}
 	
+		&::before{
+			position: absolute;
+			z-index: -1;
+			background-color: var(--black);
+			content: '';
+			inset: -50vh -50vw;
+		}
+	
+		&__bg{
+			position: absolute;
+			inset: 0;
+			background-color: var(--white);
+		}
+	
 		&__label{
 			position: absolute;
 			top: 64rem;

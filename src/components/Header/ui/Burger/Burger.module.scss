@@ -2,7 +2,7 @@
 
 .burger {
   position: absolute;
-  top: 55rem;
+  top: 46rem;
   right: 64rem;
   z-index: 10;
   box-sizing: content-box;
@@ -16,10 +16,10 @@
     }
     
     &.scrolled{
-      top: 40rem;
+      top: 35rem;
       
         @media (width <= $breakpoint-mob) {
-          top: 27rem;
+          top: 20rem;
         }
     }
 

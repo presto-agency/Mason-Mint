@@ -66,7 +66,7 @@ const DesignsContent: FC<DesignsContentProps> = ({ categories, products }) => {
                 onValues={handleSearchChange}
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-12">
               <ProductFilter
                 onChange={handleFilterChange}
                 categories={categories}

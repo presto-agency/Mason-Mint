@@ -37,6 +37,7 @@ const HeroDetail: FC<HeroDetail> = ({
             parallax
             cover
             src={image}
+            parallaxValues={[0, 0]}
             alt="image"
           />
         )}
