@@ -30,62 +30,6 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
         <meta property="og:image" content="/images/open-graph.jpg" />
-        <link
-          rel="preload"
-          href="/fonts/Gambetta-Light.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/Gambetta-Regular.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/Gambetta-Medium.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/SuisseIntl-Regular.woff"
-          as="font"
-          type="font/woff"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/Gambetta-Light.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/Gambetta-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/Gambetta-Medium.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="/fonts/SuisseIntl-Regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin=""
-        />
       </Head>
       <body>
         <div className="wrapper">

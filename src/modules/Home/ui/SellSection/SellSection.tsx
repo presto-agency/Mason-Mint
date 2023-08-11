@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import Lottie, { LottieRefCurrentProps } from 'lottie-react'
 import Container from '@/app/layouts/Container'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import classNames from 'classnames'
@@ -10,7 +9,9 @@ import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import useWindowDimensions from '@/hooks/useWindowDimensions'
 import routes from '@/utils/routes'
-import flipCoin from './flipCoin.json'
+import Lottie, { LottieRefCurrentProps } from 'lottie-react'
+const loaderJsonPromise = import('./assets/flipCoin.json')
+import { FlipCoinTypes } from '@/modules/Home/ui/SellSection/assets/FlipCoinTypes'
 
 import styles from './SellSection.module.scss'
 
@@ -19,11 +20,9 @@ const SellSection = () => {
   const ref = useRef(null)
   const [isClient, setIsClient] = useState(false)
   const [prevProgress, setPrevProgress] = useState(0)
+  const [loaderJson, setLoaderJson] = useState<FlipCoinTypes | null>(null)
 
   const { width } = useWindowDimensions()
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
   const { scrollYProgress } = useScroll({ target: ref })
   const progress = useTransform(scrollYProgress, [0, 1], [0, 61])
   useMotionValueEvent(progress, 'change', (latest) => {
@@ -33,6 +32,12 @@ const SellSection = () => {
       setPrevProgress(roundedLatest)
     }
   })
+  useEffect(() => {
+    loaderJsonPromise.then((data) => {
+      setIsClient(true)
+      setLoaderJson(data.default as FlipCoinTypes)
+    })
+  }, [])
 
   return (
     <section ref={ref} className={styles['sellSection']}>
@@ -43,7 +48,7 @@ const SellSection = () => {
               <div className={styles['imageWrapper']}>
                 <Lottie
                   className={styles['imageContainer']}
-                  animationData={flipCoin}
+                  animationData={loaderJson}
                   lottieRef={refLottie}
                   autoplay={false}
                 />

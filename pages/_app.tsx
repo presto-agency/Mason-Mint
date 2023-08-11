@@ -6,9 +6,52 @@ import AppLayout from '@/app/layouts/AppLayout'
 import { useNextCssRemovalPrevention } from '@madeinhaus/nextjs-page-transition'
 import MainPreloaderWrapper from '@/components/MainPreloader/MainPreloaderWrapper'
 import { useRouter } from 'next/router'
+import localFont from 'next/font/local'
 
 import 'bootstrap/scss/bootstrap-grid.scss'
 import '@/app/styles/index.scss'
+
+const gambetta = localFont({
+  src: [
+    {
+      path: '../public/fonts/Gambetta-Light.woff2',
+      weight: '300',
+    },
+    {
+      path: '../public/fonts/Gambetta-Regular.woff2',
+      weight: '400',
+    },
+    {
+      path: '../public/fonts/Gambetta-Medium.woff2',
+      weight: '500',
+    },
+    {
+      path: '../public/fonts/Gambetta-Light.woff',
+      weight: '300',
+    },
+    {
+      path: '../public/fonts/Gambetta-Regular.woff',
+      weight: '400',
+    },
+    {
+      path: '../public/fonts/Gambetta-Medium.woff',
+      weight: '500',
+    },
+  ],
+})
+
+const suisseIntl = localFont({
+  src: [
+    {
+      path: '../public/fonts/SuisseIntl-Regular.woff2',
+      weight: '400',
+    },
+    {
+      path: '../public/fonts/SuisseIntl-Regular.woff',
+      weight: '400',
+    },
+  ],
+})
 
 export default function App({ Component, pageProps }: AppProps) {
   const onExitComplete = () => {
@@ -20,14 +63,22 @@ export default function App({ Component, pageProps }: AppProps) {
   const pageKey = router.asPath
 
   return (
-    <StoreProvider>
-      <AppLayout>
-        <NextNProgress color="#266ef9" />
-        <MainPreloaderWrapper />
-        <AnimatePresence onExitComplete={onExitComplete} mode="wait">
-          <Component {...pageProps} key={pageKey} />
-        </AnimatePresence>
-      </AppLayout>
-    </StoreProvider>
+    <>
+      <style jsx global>{`
+        :root {
+          --font-family-primary: ${gambetta.style.fontFamily};
+          --font-family-secondary: ${suisseIntl.style.fontFamily};
+        }
+      `}</style>
+      <StoreProvider>
+        <AppLayout>
+          <NextNProgress color="#266ef9" />
+          <MainPreloaderWrapper />
+          <AnimatePresence onExitComplete={onExitComplete} mode="wait">
+            <Component {...pageProps} key={pageKey} />
+          </AnimatePresence>
+        </AppLayout>
+      </StoreProvider>
+    </>
   )
 }
