@@ -4,6 +4,8 @@ import MainPreloader from '@/components/MainPreloader/MainPreloader'
 import { useLenis } from '@studio-freight/react-lenis'
 import { Store } from '@/utils/Store'
 
+import styles from './MainPreloader.module.scss'
+
 const MainPreloaderWrapper: FC = () => {
   const [progress, setProgress] = useState<number>(0)
   const [isVisible, setIsVisible] = useState(true)
@@ -36,7 +38,12 @@ const MainPreloaderWrapper: FC = () => {
 
   return (
     <AnimatePresence>
-      {isVisible && <MainPreloader progress={progress} />}
+      {isVisible && (
+        <>
+          <div className={styles['preloader__bg']} />
+          <MainPreloader progress={progress} />
+        </>
+      )}
     </AnimatePresence>
   )
 }
