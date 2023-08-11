@@ -23,9 +23,6 @@ const SellSection = () => {
   const [loaderJson, setLoaderJson] = useState<FlipCoinTypes | null>(null)
 
   const { width } = useWindowDimensions()
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
   const { scrollYProgress } = useScroll({ target: ref })
   const progress = useTransform(scrollYProgress, [0, 1], [0, 61])
   useMotionValueEvent(progress, 'change', (latest) => {

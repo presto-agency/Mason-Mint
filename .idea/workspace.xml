@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="fix: optimize fonts#2">
-      <change afterPath="$PROJECT_DIR$/src/components/MainPreloader/assets/LoaderTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/assets/FlipCoinTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainPreloader/MainPreloader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPreloader/MainPreloader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/SellSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/flipCoin.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/Home/ui/SellSection/assets/flipCoin.json" afterDir="false" />
-    </list>
+    <list default="true" id="10ef804d-45c4-4faf-99f2-b64dc44c1bcb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,14 +100,7 @@
       <workItem from="1691563168185" duration="16030000" />
       <workItem from="1691593715780" duration="596000" />
       <workItem from="1691665918870" duration="9925000" />
-      <workItem from="1691738614372" duration="15124000" />
-    </task>
-    <task id="LOCAL-00042" summary="fet: add mobile slider version">
-      <created>1689675146479</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1689675146479</updated>
+      <workItem from="1691738614372" duration="15565000" />
     </task>
     <task id="LOCAL-00043" summary="fet: finish slider DesignSection">
       <created>1689685412299</created>
@@ -452,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691753421335</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="fix: optimize JSON files">
+      <created>1691760730667</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1691760730667</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -471,7 +464,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="fix: custom minting banner" />
     <MESSAGE value="fix: some transform fixes" />
     <MESSAGE value="feat: create heroDetail" />
     <MESSAGE value="feat: add NaturalVehicle section" />
@@ -496,7 +488,8 @@
     <MESSAGE value="fix: clients fixes" />
     <MESSAGE value="fix: optimize fonts" />
     <MESSAGE value="fix: optimize fonts#2" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: optimize fonts#2" />
+    <MESSAGE value="fix: optimize JSON files" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: optimize JSON files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
