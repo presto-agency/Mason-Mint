@@ -1,8 +1,9 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import { motion } from 'framer-motion'
 import Lottie from 'lottie-react'
-import loaderJson from './assets/Loader.json'
+import { MainLottieTypes } from '@/components/MainPreloader/assets/LoaderTypes'
+const loaderJsonPromise = import('./assets/Loader.json')
 
 import styles from './MainPreloader.module.scss'
 
@@ -37,6 +38,13 @@ interface MainPreloaderProps {
 
 const MainPreloader: FC<MainPreloaderProps> = ({ progress }) => {
   const [isLoaded, setIsLoaded] = useState<boolean>(true)
+  const [loaderJson, setLoaderJson] = useState<MainLottieTypes | null>(null)
+  useEffect(() => {
+    loaderJsonPromise.then((data) => {
+      setLoaderJson(data.default)
+      setIsLoaded(true)
+    })
+  }, [])
 
   return (
     <motion.div
