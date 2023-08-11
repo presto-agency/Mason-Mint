@@ -17,6 +17,8 @@ type HeaderProps = {
 }
 
 const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
+  const [y, setY] = useState<number>(0)
+  const [scrollDirection, setScrollDirection] = useState<'down' | 'up'>('up')
   const [scrolled, setScrolled] = useState(false)
   const [menuOpened, setMenuOpened] = useState(false)
   const [headerTheme, setHeaderTheme] = useState(initialTheme)
@@ -28,7 +30,6 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     [styles[headerTheme]]: true,
     [styles.scrolled]: scrolled,
     [styles.opened]: menuOpened,
-    [styles.firstLoading]: !store?.state.isFirstLoading,
   }
 
   const toggleMenu = () => {
@@ -40,6 +41,13 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
       return
     }
 
+    if (scrolled && y > window.scrollY) {
+      setScrollDirection('up')
+    } else if (scrolled && y < window.scrollY) {
+      setScrollDirection('down')
+    }
+    setY(window.scrollY)
+
     if (window.scrollY > 10) {
       setScrolled(true)
       setHeaderTheme('light')
@@ -47,7 +55,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
       setScrolled(false)
       setHeaderTheme(initialTheme)
     }
-  }, [menuOpened, initialTheme])
+  }, [menuOpened, y, initialTheme])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -96,7 +104,16 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
 
   return (
     <>
-      <header className={classNames(styles['header'], mods)}>
+      <motion.header
+        className={classNames(styles['header'], mods)}
+        animate={{
+          y:
+            scrollDirection === 'down' || store?.state.isFirstLoading
+              ? '-100%'
+              : 0,
+        }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
+      >
         <Container>
           <div className={styles['header__content']}>
             <Link
@@ -118,7 +135,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
           menuOpened={menuOpened}
           toggleMenu={toggleMenu}
         />
-      </header>
+      </motion.header>
     </>
   )
 }

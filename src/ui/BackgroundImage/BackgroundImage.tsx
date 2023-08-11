@@ -53,7 +53,7 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
       }
     })
 
-    return largestAbsoluteValue
+    return largestAbsoluteValue / 3
   }
 
   const ImageComponent = (
@@ -99,14 +99,14 @@ export const BackgroundImage: FC<BackgroundImageProps> = ({
             className={styles['BackgroundImage__container_animatedWrapper']}
             style={{
               y,
-              // width: parallaxPictureSize(
-              //   getLargestAbsoluteValue(parallaxValues)
-              // ),
-              // height: parallaxPictureSize(
-              //   getLargestAbsoluteValue(parallaxValues)
-              // ),
-              // top: landslide(getLargestAbsoluteValue(parallaxValues)),
-              // left: landslide(getLargestAbsoluteValue(parallaxValues)),
+              width: parallaxPictureSize(
+                getLargestAbsoluteValue(parallaxValues)
+              ),
+              height: parallaxPictureSize(
+                getLargestAbsoluteValue(parallaxValues)
+              ),
+              top: landslide(getLargestAbsoluteValue(parallaxValues)),
+              left: landslide(getLargestAbsoluteValue(parallaxValues)),
             }}
           >
             {ImageComponent}

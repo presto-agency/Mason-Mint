@@ -24,6 +24,7 @@ const variant = {
   exit: {
     scale: 0.8,
     zIndex: 0,
+    opacity: 0,
     transition: {
       ease: 'easeInOut',
       duration: 1,
@@ -47,7 +48,6 @@ const MainPreloader: FC<MainPreloaderProps> = ({ progress }) => {
         animate="animate"
         variants={variant}
       >
-        <div className={styles['preloader__bg']} />
         <div className={styles['preloader__label']}>
           <span>Please wait</span>
           <span>we make money</span>

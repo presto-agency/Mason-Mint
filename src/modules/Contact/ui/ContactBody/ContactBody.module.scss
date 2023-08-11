@@ -22,7 +22,10 @@
 			pointer-events: none;
 			
 				&_box{
-					display: block;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
 				}
 			
 				@media (width <= $breakpoint-mob) {

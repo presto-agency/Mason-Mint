@@ -23,7 +23,7 @@ const CustomMintingBanner: FC<{ className?: string }> = ({ className }) => {
           alt="Let Us Make Your Vision a Reality."
           className={styles['banner__item']}
           parallax
-          parallaxValues={width > 767 ? [-150, 150] : [0, 0]}
+          parallaxValues={width > 767 ? [-150, 150] : [-100, 100]}
           onLoadingComplete={() => setLoaded(true)}
         />
       </motion.div>
