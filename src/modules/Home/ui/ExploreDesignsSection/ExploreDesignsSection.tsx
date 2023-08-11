@@ -256,7 +256,6 @@ const ExploreDesignsSection = () => {
                                 className={styles['coinBack']}
                                 src={slide.url.back}
                                 alt="coin back"
-                                quality={100}
                               />
                             </motion.div>
                             <motion.div
@@ -269,7 +268,6 @@ const ExploreDesignsSection = () => {
                                 className={styles['coinFront']}
                                 src={slide.url.front}
                                 alt="coin front"
-                                quality={100}
                               />
                             </motion.div>
                           </div>
