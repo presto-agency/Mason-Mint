@@ -68,7 +68,7 @@ const PageTransitionLayout: FC<{ children: ReactNode; isFooter?: boolean }> = ({
       initial="initial"
       animate="animate"
       exit="exit"
-      variants={variants}
+      variants={store?.state.isFirstLoading ? innerVariant : variants}
       onAnimationComplete={isFirstLoading}
     >
       {children}
