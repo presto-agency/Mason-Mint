@@ -1,6 +1,6 @@
 import { FC, ReactNode, useRef } from 'react'
 import classNames from 'classnames'
-import { useInView, motion } from 'framer-motion'
+import { useInView, motion, LazyMotion, domAnimation } from 'framer-motion'
 
 import styles from './AnimatedElement.module.scss'
 
@@ -37,15 +37,17 @@ const AnimatedElement: FC<AnimatedElementProps> = ({
   }
 
   return (
-    <motion.div
-      className={classNames(styles['element'], className)}
-      variants={elementFrame}
-      initial="hidden"
-      animate={isInView ? 'visible' : ''}
-      ref={ref}
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={domAnimation}>
+      <motion.div
+        className={classNames(styles['element'], className)}
+        variants={elementFrame}
+        initial="hidden"
+        animate={isInView ? 'visible' : ''}
+        ref={ref}
+      >
+        {children}
+      </motion.div>
+    </LazyMotion>
   )
 }
 

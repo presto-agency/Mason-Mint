@@ -90,7 +90,6 @@ export default function Document() {
       <body>
         <div className="wrapper">
           <Main />
-          <div id="portal" />
           <NextScript />
         </div>
       </body>
