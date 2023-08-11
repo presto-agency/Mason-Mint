@@ -106,6 +106,7 @@ const Header: FC<HeaderProps> = ({ theme: initialTheme }) => {
     <>
       <motion.header
         className={classNames(styles['header'], mods)}
+        initial={{ y: '-100%' }}
         animate={{
           y:
             scrollDirection === 'down' || store?.state.isFirstLoading
