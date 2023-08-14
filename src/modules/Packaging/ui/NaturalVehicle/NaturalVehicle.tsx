@@ -26,10 +26,10 @@ const NaturalVehicle: FC<{ className?: string }> = ({ className }) => {
             </h3>
             <p className={styles['description']}>
               <AnimatedText>
-                Thanks to Mason Mint’s solutions for the storage, protection
-                and, most importantly, presentation of these precious rounds,
-                coin producers have the opportunity to enhance the Collector’s
-                experience while increasing the value of their products.
+                Thanks to Mason Mint's solutions for the storage, protection
+                and, most importantly, presentation of our silver rounds and
+                bars, authorized distibutors have the opportunity to enhance
+                their customers experience while increasing the products value.
               </AnimatedText>
             </p>
             <BackgroundImage
