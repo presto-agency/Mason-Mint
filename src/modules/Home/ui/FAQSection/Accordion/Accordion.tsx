@@ -72,9 +72,10 @@ const Accordion: FC<AccordionType> = ({
                 alt="coin"
                 quality={100}
               />
-              <p className={styles['item__dropdownMenu_description']}>
-                {description}
-              </p>
+              <div
+                className={styles['item__dropdownMenu_description']}
+                dangerouslySetInnerHTML={{ __html: description as string }}
+              />
             </motion.div>
           </motion.div>
         )}

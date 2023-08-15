@@ -45,7 +45,13 @@
 
     &_description {
       padding: 0 0 32rem;
-      text-align: justify;
+      color: var(--gray-800);
+      font-family: var(--font-family-secondary);
+      line-height: 1.563em;
+      
+        a{
+          color: var(--primary-color);
+        }
     }
   }
 }
