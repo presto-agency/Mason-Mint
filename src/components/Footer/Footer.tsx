@@ -11,9 +11,9 @@ import styles from './Footer.module.scss'
 
 const LogoBlock = () => {
   return (
-    <div className={styles['logo']}>
+    <Link scroll={false} href={routes.public.index} className={styles['logo']}>
       <Logo className={styles['logo__item']} />
-    </div>
+    </Link>
   )
 }
 
