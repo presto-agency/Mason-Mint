@@ -58,7 +58,7 @@ const MainPreloader: FC<MainPreloaderProps> = ({ progress }) => {
       >
         <div className={styles['preloader__label']}>
           <span>Please wait</span>
-          <span>we make money</span>
+          <span>Minting In Progress</span>
         </div>
         <motion.div
           className={styles['preloader__thumb']}
