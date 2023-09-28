@@ -24,6 +24,10 @@ const hashOnlyIdent = (context, _, exportName) =>
 
 const nextConfig = {
   reactStrictMode: true,
+  env: {
+    CLOUD_ACCESS_KEY: process.env.CLOUD_ACCESS_KEY,
+    CLOUD_SECRET_KEY: process.env.CLOUD_SECRET_KEY,
+  },
   webpack(config, { dev }) {
     config.module.rules.push({
       test: /\.svg$/i,

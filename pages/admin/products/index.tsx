@@ -19,21 +19,21 @@ export default function ProductsPage({ products }: ProductsPageProps) {
 }
 
 export const getServerSideProps = async () => {
-  if (process.env.NODE_ENV !== 'development') {
-    return {
-      redirect: {
-        destination: routes.public.designs,
-        permanent: false,
-      },
-    }
-  } else {
-    await db.connect()
-    const products = await ProductModel.find().lean()
-    // await db.disconnect()
-    return {
-      props: {
-        products: transformObjectsToJson(products),
-      },
-    }
+  // if (process.env.NODE_ENV !== 'development') {
+  //   return {
+  //     redirect: {
+  //       destination: routes.public.designs,
+  //       permanent: false,
+  //     },
+  //   }
+  // } else {
+  await db.connect()
+  const products = await ProductModel.find().lean()
+  // await db.disconnect()
+  return {
+    props: {
+      products: transformObjectsToJson(products),
+    },
   }
+  // }
 }

@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import Image from 'next/image'
 import Container from '@/app/layouts/Container'
 import { ProductProps } from '@/utils/types'
@@ -6,8 +6,26 @@ import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import routes from '@/utils/routes'
 
 import styles from '@/modules/Admin/Admin.module.scss'
+import { s3Client } from '@/utils/s3Client'
+import { ListObjectsCommand } from '@aws-sdk/client-s3'
 
 const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
+  // https://github.com/markngogc/MMDev.git
+  const bucketParams = { Bucket: 'mason-mint-products-dev' }
+
+  const fetch = async () => {
+    try {
+      const data = await s3Client.send(new ListObjectsCommand(bucketParams))
+      console.log('Success - ', data)
+    } catch (error) {
+      console.log('Error, s3Client - ', error)
+    }
+  }
+
+  useEffect(() => {
+    fetch()
+  }, [])
+
   return (
     <main className={styles['admin']}>
       <Container>
