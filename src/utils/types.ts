@@ -44,3 +44,8 @@ export interface OptionInterface {
     | { name: string; state_code: null }[]
   disabled?: boolean | undefined
 }
+
+export type ImageToUpload = {
+  file: File | null
+  ImageUrl: string | null
+}

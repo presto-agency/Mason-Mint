@@ -11,7 +11,7 @@ import { ListObjectsCommand } from '@aws-sdk/client-s3'
 
 const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
   // https://github.com/markngogc/MMDev.git
-  const bucketParams = { Bucket: 'mason-mint-products-dev' }
+  const bucketParams = { Bucket: process.env.CLOUD_BUCKET }
 
   const fetch = async () => {
     try {

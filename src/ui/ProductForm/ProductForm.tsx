@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 import {
   CategoryProps,
   ImagesProps,
+  ImageToUpload,
   MainImagesProps,
   ProductProps,
   SpecificationProps,
@@ -21,6 +22,7 @@ const SelectField = dynamic(() => import('@/ui/SelectField/SelectField'), {
 
 import styles from './ProductForm.module.scss'
 import classNames from 'classnames'
+import { uploadFile } from '@/utils/s3Client/uploadFile'
 
 type FormProps = {
   ProductName: string
@@ -39,11 +41,6 @@ type FormProps = {
   additionalImages: ImagesProps[]
   slug: string
   description?: string
-}
-
-type ImageToUpload = {
-  file: File | null
-  ImageUrl: string | null
 }
 
 type AdditionalImageToUpload =
@@ -94,6 +91,7 @@ const ProductForm: FC<{
   onValues: (formData: ProductProps) => void
   loading: boolean
 }> = ({ product, categories, onValues, loading = false }) => {
+  const [_loading, setLoading] = useState(loading)
   const [selectedCategory, setSelectedCategory] = useState<OptionInterface>({
     label: product.category?.name || '',
     value: product.category?.id || '',
@@ -216,6 +214,7 @@ const ProductForm: FC<{
   )
 
   const onSubmit = async (formData: FormProps) => {
+    setLoading(true)
     formData.specification = [
       {
         ActualMetalWeight: formData.ActualMetalWeight || '',
@@ -239,79 +238,83 @@ const ProductForm: FC<{
     delete formData.IraApproved
     formData.slug = generateSlug(formData.slug)
 
+    const uploadedObverseImageUrl = await uploadFile(obverseImage)
+    const uploadedReverseImageUrl = await uploadFile(reverseImage)
+
     formData.mainImages = {
-      obverse: obverseImage.ImageUrl,
-      reverse: reverseImage.ImageUrl,
+      obverse: `${process.env.CLOUD_ENDPOINT}/${uploadedObverseImageUrl}`,
+      reverse: `${process.env.CLOUD_ENDPOINT}/${uploadedReverseImageUrl}`,
     }
 
-    const additionalImagesHash = new Map<string, string>()
-    const fd = new FormData()
+    // const additionalImagesHash = new Map<string, string>()
+    // const fd = new FormData()
+    //
+    // if (obverseImage.file) {
+    //   fd.append('obverseImage', obverseImage.file)
+    // }
+    //
+    // if (reverseImage.file) {
+    //   fd.append('reverseImage', reverseImage.file)
+    // }
+    //
+    // for (const image of additionalImages) {
+    //   additionalImagesHash.set(
+    //     image.nameKeyToUpload ? image.nameKeyToUpload : image.id,
+    //     image.ImageUrl
+    //   )
+    //   if (image.file) {
+    //     fd.append(`additionalImages`, image.file)
+    //   }
+    // }
+    //
+    // if (
+    //   fd.has('obverseImage') ||
+    //   fd.has('reverseImage') ||
+    //   fd.has('additionalImages')
+    // ) {
+    //   await axios
+    //     .post(`/api/files/${product.id}/upload`, fd)
+    //     .then(({ data: { files = [], success = false, error = null } }) => {
+    //       if (error) {
+    //         console.log(error)
+    //       }
+    //
+    //       if (success) {
+    //         Object.values<UploadImageResponse>(files).forEach((file) => {
+    //           switch (file.type) {
+    //             case 'obverse':
+    //               formData.mainImages.obverse = file.url
+    //               break
+    //             case 'reverse':
+    //               formData.mainImages.reverse = file.url
+    //               break
+    //             case 'additional':
+    //               additionalImagesHash.set(file.name, file.url)
+    //               break
+    //             default:
+    //               break
+    //           }
+    //         })
+    //       }
+    //     })
+    //     .catch((error) => console.error(error))
+    // }
+    // const result: { ImageUrl: string }[] = []
+    // additionalImages.forEach((image) => {
+    //   if (image.nameKeyToUpload) {
+    //     if (additionalImagesHash.has(image.nameKeyToUpload)) {
+    //       result.push({
+    //         ImageUrl: additionalImagesHash.get(image.nameKeyToUpload)!,
+    //       })
+    //       return
+    //     }
+    //   }
+    //   result.push({ ImageUrl: image.ImageUrl })
+    //   return
+    // })
 
-    if (obverseImage.file) {
-      fd.append('obverseImage', obverseImage.file)
-    }
-
-    if (reverseImage.file) {
-      fd.append('reverseImage', reverseImage.file)
-    }
-
-    for (const image of additionalImages) {
-      additionalImagesHash.set(
-        image.nameKeyToUpload ? image.nameKeyToUpload : image.id,
-        image.ImageUrl
-      )
-      if (image.file) {
-        fd.append(`additionalImages`, image.file)
-      }
-    }
-
-    if (
-      fd.has('obverseImage') ||
-      fd.has('reverseImage') ||
-      fd.has('additionalImages')
-    ) {
-      await axios
-        .post(`/api/files/${product.id}/upload`, fd)
-        .then(({ data: { files = [], success = false, error = null } }) => {
-          if (error) {
-            console.log(error)
-          }
-
-          if (success) {
-            Object.values<UploadImageResponse>(files).forEach((file) => {
-              switch (file.type) {
-                case 'obverse':
-                  formData.mainImages.obverse = file.url
-                  break
-                case 'reverse':
-                  formData.mainImages.reverse = file.url
-                  break
-                case 'additional':
-                  additionalImagesHash.set(file.name, file.url)
-                  break
-                default:
-                  break
-              }
-            })
-          }
-        })
-        .catch((error) => console.error(error))
-    }
-    const result: { ImageUrl: string }[] = []
-    additionalImages.forEach((image) => {
-      if (image.nameKeyToUpload) {
-        if (additionalImagesHash.has(image.nameKeyToUpload)) {
-          result.push({
-            ImageUrl: additionalImagesHash.get(image.nameKeyToUpload)!,
-          })
-          return
-        }
-      }
-      result.push({ ImageUrl: image.ImageUrl })
-      return
-    })
-
-    formData.additionalImages = [...result]
+    // formData.additionalImages = [...result]
+    console.log('submit, formData ', formData)
     ;(await onValues) && onValues(formData as ProductProps)
   }
   return (
@@ -525,7 +528,7 @@ const ProductForm: FC<{
               )
             }}
           />
-          <ButtonPrimary type="submit" isLoading={loading}>
+          <ButtonPrimary type="submit" isLoading={_loading}>
             Save product
           </ButtonPrimary>
         </div>
