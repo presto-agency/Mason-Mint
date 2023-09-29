@@ -535,206 +535,192 @@ const ProductForm: FC<{
         <div
           className={classNames('col-md-6', styles['form__upload_container'])}
         >
-          {process.env.NODE_ENV === 'development' ? (
-            <>
-              <div
-                className={classNames(styles['grid_item'], styles['obverse'])}
-              >
-                <h5>Obverse:</h5>
-                {obverseImage.ImageUrl &&
-                !obverseImage.ImageUrl.includes('www.masonmint.com') ? (
-                  <BackgroundImage
-                    src={obverseImage.ImageUrl}
-                    alt="Alt"
-                    className={styles['form__thumbs_item']}
-                  />
-                ) : (
-                  <RCUploader
-                    {...uploadProps}
-                    beforeUpload={async (file: File) => {
-                      const imageToAdd = {
-                        file: file,
-                        ImageUrl: URL.createObjectURL(file),
-                      }
-                      setObverseImage(imageToAdd)
-                    }}
-                    className={styles['form__upload_item']}
-                  >
-                    Choose, or drag the file
-                  </RCUploader>
-                )}
-                <div className={styles['buttons']}>
-                  <button
-                    className={styles['reset_button']}
-                    type="button"
-                    onClick={resetObverseImage}
-                  >
-                    Reset
-                  </button>
-                  <button
-                    type="button"
-                    className={styles['delete_button']}
-                    onClick={deleteObverseImage}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-              <div
-                className={classNames(styles['grid_item'], styles['reverse'])}
-              >
-                <h5>Reverse:</h5>
-
-                {reverseImage.ImageUrl &&
-                !reverseImage.ImageUrl.includes('www.masonmint.com') ? (
-                  <BackgroundImage
-                    src={reverseImage.ImageUrl}
-                    alt="Alt"
-                    className={styles['form__thumbs_item']}
-                  />
-                ) : (
-                  <RCUploader
-                    {...uploadProps}
-                    beforeUpload={async (file: File) => {
-                      const imageToAdd = {
-                        file: file,
-                        ImageUrl: URL.createObjectURL(file),
-                      }
-                      setReverseImage(imageToAdd)
-                    }}
-                    className={styles['form__upload_item']}
-                  >
-                    Choose, or drag the file
-                  </RCUploader>
-                )}
-                <div className={styles['buttons']}>
-                  <button
-                    type="button"
-                    className={styles['reset_button']}
-                    onClick={resetReverseImage}
-                  >
-                    Reset
-                  </button>
-                  <button
-                    type="button"
-                    className={styles['delete_button']}
-                    onClick={deleteReverseImage}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </div>
-              <div
-                className={classNames(
-                  styles['grid_item'],
-                  styles['additional']
-                )}
-              >
-                <h5>Additional images:</h5>
-                {additionalImages.length ? (
-                  <div className={styles['images_list']}>
-                    {additionalImages.map((image) => {
-                      return (
-                        <div
-                          key={image.id}
-                          className={styles['images_list_item']}
-                        >
-                          <BackgroundImage
-                            src={image.ImageUrl}
-                            alt="Alt"
-                            className={styles['image']}
-                          />
-                          <div
-                            className={styles['delete']}
-                            onClick={() => deleteAdditionalImage(image.id)}
-                          >
-                            x
-                          </div>
-                        </div>
-                      )
-                    })}
-                  </div>
-                ) : null}
+          {/*{process.env.NODE_ENV === 'development' ? (*/}
+          <>
+            <div className={classNames(styles['grid_item'], styles['obverse'])}>
+              <h5>Obverse:</h5>
+              {obverseImage.ImageUrl &&
+              !obverseImage.ImageUrl.includes('www.masonmint.com') ? (
+                <BackgroundImage
+                  src={obverseImage.ImageUrl}
+                  alt="Alt"
+                  className={styles['form__thumbs_item']}
+                />
+              ) : (
                 <RCUploader
                   {...uploadProps}
-                  multiple={true}
-                  beforeUpload={async (file: File & { uid: string }) => {
+                  beforeUpload={async (file: File) => {
                     const imageToAdd = {
-                      id: file.uid,
                       file: file,
-                      nameKeyToUpload: file.name,
                       ImageUrl: URL.createObjectURL(file),
                     }
-                    setAdditionalImages((prevSate) => [...prevSate, imageToAdd])
+                    setObverseImage(imageToAdd)
                   }}
                   className={styles['form__upload_item']}
                 >
-                  Choose, or drag the files
+                  Choose, or drag the file
                 </RCUploader>
+              )}
+              <div className={styles['buttons']}>
+                <button
+                  className={styles['reset_button']}
+                  type="button"
+                  onClick={resetObverseImage}
+                >
+                  Reset
+                </button>
+                <button
+                  type="button"
+                  className={styles['delete_button']}
+                  onClick={deleteObverseImage}
+                >
+                  Delete
+                </button>
               </div>
-            </>
-          ) : (
-            <>
-              <div
-                className={classNames(styles['grid_item'], styles['obverse'])}
+            </div>
+            <div className={classNames(styles['grid_item'], styles['reverse'])}>
+              <h5>Reverse:</h5>
+
+              {reverseImage.ImageUrl &&
+              !reverseImage.ImageUrl.includes('www.masonmint.com') ? (
+                <BackgroundImage
+                  src={reverseImage.ImageUrl}
+                  alt="Alt"
+                  className={styles['form__thumbs_item']}
+                />
+              ) : (
+                <RCUploader
+                  {...uploadProps}
+                  beforeUpload={async (file: File) => {
+                    const imageToAdd = {
+                      file: file,
+                      ImageUrl: URL.createObjectURL(file),
+                    }
+                    setReverseImage(imageToAdd)
+                  }}
+                  className={styles['form__upload_item']}
+                >
+                  Choose, or drag the file
+                </RCUploader>
+              )}
+              <div className={styles['buttons']}>
+                <button
+                  type="button"
+                  className={styles['reset_button']}
+                  onClick={resetReverseImage}
+                >
+                  Reset
+                </button>
+                <button
+                  type="button"
+                  className={styles['delete_button']}
+                  onClick={deleteReverseImage}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+            <div
+              className={classNames(styles['grid_item'], styles['additional'])}
+            >
+              <h5>Additional images:</h5>
+              {additionalImages.length ? (
+                <div className={styles['images_list']}>
+                  {additionalImages.map((image) => {
+                    return (
+                      <div
+                        key={image.id}
+                        className={styles['images_list_item']}
+                      >
+                        <BackgroundImage
+                          src={image.ImageUrl}
+                          alt="Alt"
+                          className={styles['image']}
+                        />
+                        <div
+                          className={styles['delete']}
+                          onClick={() => deleteAdditionalImage(image.id)}
+                        >
+                          x
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              ) : null}
+              <RCUploader
+                {...uploadProps}
+                multiple={true}
+                beforeUpload={async (file: File & { uid: string }) => {
+                  const imageToAdd = {
+                    id: file.uid,
+                    file: file,
+                    nameKeyToUpload: file.name,
+                    ImageUrl: URL.createObjectURL(file),
+                  }
+                  setAdditionalImages((prevSate) => [...prevSate, imageToAdd])
+                }}
+                className={styles['form__upload_item']}
               >
-                {obverseImage.ImageUrl &&
-                  !obverseImage.ImageUrl.includes('www.masonmint.com') && (
-                    <>
-                      <h5>Obverse:</h5>
-                      <BackgroundImage
-                        src={obverseImage.ImageUrl}
-                        alt="Alt"
-                        className={styles['form__thumbs_item']}
-                      />
-                    </>
-                  )}
-              </div>
-              <div
-                className={classNames(styles['grid_item'], styles['reverse'])}
-              >
-                {reverseImage.ImageUrl &&
-                  !reverseImage.ImageUrl.includes('www.masonmint.com') && (
-                    <>
-                      <h5>Reverse:</h5>
-                      <BackgroundImage
-                        src={reverseImage.ImageUrl}
-                        alt="Alt"
-                        className={styles['form__thumbs_item']}
-                      />
-                    </>
-                  )}
-              </div>
-              <div
-                className={classNames(
-                  styles['grid_item'],
-                  styles['additional']
-                )}
-              >
-                {additionalImages.length ? (
-                  <>
-                    <h5>Additional images:</h5>
-                    <div className={styles['images_list']}>
-                      {additionalImages.map((image) => {
-                        return (
-                          <div
-                            key={image.id}
-                            className={styles['images_list_item']}
-                          >
-                            <BackgroundImage
-                              src={image.ImageUrl}
-                              alt="Alt"
-                              className={styles['image']}
-                            />
-                          </div>
-                        )
-                      })}
-                    </div>
-                  </>
-                ) : null}
-              </div>
-            </>
-          )}
+                Choose, or drag the files
+              </RCUploader>
+            </div>
+          </>
+          {/*) : (*/}
+          {/*<>*/}
+          {/*  <div className={classNames(styles['grid_item'], styles['obverse'])}>*/}
+          {/*    {obverseImage.ImageUrl &&*/}
+          {/*      !obverseImage.ImageUrl.includes('www.masonmint.com') && (*/}
+          {/*        <>*/}
+          {/*          <h5>Obverse:</h5>*/}
+          {/*          <BackgroundImage*/}
+          {/*            src={obverseImage.ImageUrl}*/}
+          {/*            alt="Alt"*/}
+          {/*            className={styles['form__thumbs_item']}*/}
+          {/*          />*/}
+          {/*        </>*/}
+          {/*      )}*/}
+          {/*  </div>*/}
+          {/*  <div className={classNames(styles['grid_item'], styles['reverse'])}>*/}
+          {/*    {reverseImage.ImageUrl &&*/}
+          {/*      !reverseImage.ImageUrl.includes('www.masonmint.com') && (*/}
+          {/*        <>*/}
+          {/*          <h5>Reverse:</h5>*/}
+          {/*          <BackgroundImage*/}
+          {/*            src={reverseImage.ImageUrl}*/}
+          {/*            alt="Alt"*/}
+          {/*            className={styles['form__thumbs_item']}*/}
+          {/*          />*/}
+          {/*        </>*/}
+          {/*      )}*/}
+          {/*  </div>*/}
+          {/*  <div*/}
+          {/*    className={classNames(styles['grid_item'], styles['additional'])}*/}
+          {/*  >*/}
+          {/*    {additionalImages.length ? (*/}
+          {/*      <>*/}
+          {/*        <h5>Additional images:</h5>*/}
+          {/*        <div className={styles['images_list']}>*/}
+          {/*          {additionalImages.map((image) => {*/}
+          {/*            return (*/}
+          {/*              <div*/}
+          {/*                key={image.id}*/}
+          {/*                className={styles['images_list_item']}*/}
+          {/*              >*/}
+          {/*                <BackgroundImage*/}
+          {/*                  src={image.ImageUrl}*/}
+          {/*                  alt="Alt"*/}
+          {/*                  className={styles['image']}*/}
+          {/*                />*/}
+          {/*              </div>*/}
+          {/*            )*/}
+          {/*          })}*/}
+          {/*        </div>*/}
+          {/*      </>*/}
+          {/*    ) : null}*/}
+          {/*  </div>*/}
+          {/*</>*/}
+          {/*)}*/}
         </div>
       </div>
     </form>
