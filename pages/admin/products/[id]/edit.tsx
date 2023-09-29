@@ -24,23 +24,23 @@ export default function ProductEditPage({
 
 export const getServerSideProps = async (req: NextApiRequest) => {
   const { query } = req
-  if (process.env.NODE_ENV !== 'development') {
-    return {
-      redirect: {
-        destination: routes.public.designs,
-        permanent: false,
-      },
-    }
-  } else {
-    await db.connect()
-    const product = await ProductModel.findOne({ id: query.id }).lean()
-    const categories = await CategoryModel.find().lean()
-    // await db.disconnect()
-    return {
-      props: {
-        product: transformObjectsToJson(product),
-        categories: transformObjectsToJson(categories),
-      },
-    }
+  // if (process.env.NODE_ENV !== 'development') {
+  //   return {
+  //     redirect: {
+  //       destination: routes.public.designs,
+  //       permanent: false,
+  //     },
+  //   }
+  // } else {
+  await db.connect()
+  const product = await ProductModel.findOne({ id: query.id }).lean()
+  const categories = await CategoryModel.find().lean()
+  // await db.disconnect()
+  return {
+    props: {
+      product: transformObjectsToJson(product),
+      categories: transformObjectsToJson(categories),
+    },
   }
+  // }
 }
