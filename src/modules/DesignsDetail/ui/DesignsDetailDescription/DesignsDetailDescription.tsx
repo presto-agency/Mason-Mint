@@ -44,6 +44,16 @@ const DesignsDetailDescription: FC<DesignsDetailDescriptionProps> = ({
         <AnimatedText>Specifications:</AnimatedText>
       </p>
       <ul className={styles['product__list']}>
+        {product?.Metal && (
+          <li className={styles['product__list_item']}>
+            <p className={styles['product__label']}>
+              <AnimatedText>Metal</AnimatedText>
+            </p>
+            <p className={styles['product__value']}>
+              <AnimatedText>{product.Metal}</AnimatedText>
+            </p>
+          </li>
+        )}
         {product?.specification[0] &&
           Object.entries(product.specification[0]).map(
             ([key, value], index) => {

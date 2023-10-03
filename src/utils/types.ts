@@ -11,8 +11,8 @@ export type ProductProps = {
 }
 
 export type MainImagesProps = {
-  obverse: string | null
-  reverse: string | null
+  obverse?: string | null
+  reverse?: string | null
 }
 
 export type SpecificationProps = {
@@ -48,4 +48,9 @@ export interface OptionInterface {
 export type ImageToUpload = {
   file: File | null
   ImageUrl: string | null
+}
+
+export type UserProps = {
+  email: string
+  password?: string
 }

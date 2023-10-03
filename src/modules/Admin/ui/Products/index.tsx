@@ -1,36 +1,74 @@
-import { FC, useEffect } from 'react'
+import { FC, useState } from 'react'
+import axios, { AxiosResponse } from 'axios'
+import { signOut } from 'next-auth/react'
+import Link from 'next/link'
 import Image from 'next/image'
 import Container from '@/app/layouts/Container'
 import { ProductProps } from '@/utils/types'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
+import { deleteFile } from '@/utils/s3Client/deleteFile'
+import { getFileNameFromCloudUrl } from '@/utils/string/getFileNameFromCloudUrl'
 import routes from '@/utils/routes'
 
 import styles from '@/modules/Admin/Admin.module.scss'
-import { s3Client } from '@/utils/s3Client'
-import { ListObjectsCommand } from '@aws-sdk/client-s3'
 
 const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
   // https://github.com/markngogc/MMDev.git
-  const bucketParams = { Bucket: process.env.CLOUD_BUCKET }
+  const [_products, setProducts] = useState(products || [])
 
-  const fetch = async () => {
-    try {
-      const data = await s3Client.send(new ListObjectsCommand(bucketParams))
-      console.log('Success - ', data)
-    } catch (error) {
-      console.log('Error, s3Client - ', error)
+  const handleRemove = async (product: ProductProps) => {
+    if (window.confirm('Do you really want to delete that product?')) {
+      /* remove main images on cloud */
+      if (product.mainImages.obverse) {
+        await deleteFile(
+          getFileNameFromCloudUrl(product.mainImages.obverse as string)
+        )
+      }
+      if (product.mainImages.reverse) {
+        await deleteFile(
+          getFileNameFromCloudUrl(product.mainImages.reverse as string)
+        )
+      }
+      /* remove additional images cloud */
+      if (product.additionalImages) {
+        for (const additionalImage of product.additionalImages) {
+          await deleteFile(getFileNameFromCloudUrl(additionalImage.ImageUrl))
+        }
+      }
+
+      await axios
+        .delete(`/api/products/${product.id}/delete`)
+        .then(({ data: { success, data } }: AxiosResponse) => {
+          if (success) {
+            const deletedProductId = data.id
+            setProducts(
+              products.filter((product) => product.id !== deletedProductId)
+            )
+          }
+        })
     }
   }
-
-  useEffect(() => {
-    fetch()
-  }, [])
 
   return (
     <main className={styles['admin']}>
       <Container>
         <div className={styles['admin__table_header']}>
           <h3 className="h3">Products</h3>
+          <div className={styles['admin__table_header_actions']}>
+            <Link href={routes.private.productCreate}>
+              <ButtonPrimary variant="white" size="small">
+                Create project
+              </ButtonPrimary>
+            </Link>
+            <ButtonPrimary
+              variant="white"
+              size="small"
+              arrows={false}
+              onClick={() => signOut()}
+            >
+              Logout
+            </ButtonPrimary>
+          </div>
         </div>
         <table className={styles['admin__table']}>
           <thead>
@@ -43,7 +81,7 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
             </tr>
           </thead>
           <tbody>
-            {products.map((product, index) => {
+            {_products.map((product, index) => {
               return (
                 <tr key={index}>
                   <td>{index + 1}.</td>
@@ -75,6 +113,7 @@ const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
                         className={styles['admin__button']}
                         arrows={false}
                         size="small"
+                        onClick={() => handleRemove(product)}
                       >
                         Remove
                       </ButtonPrimary>

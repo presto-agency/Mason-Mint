@@ -1,11 +1,12 @@
 import type { AppProps } from 'next/app'
+import { SessionProvider } from 'next-auth/react'
 import NextNProgress from 'nextjs-progressbar'
+import { useRouter } from 'next/router'
 import { AnimatePresence } from 'framer-motion'
 import { StoreProvider } from '@/utils/Store'
 import AppLayout from '@/app/layouts/AppLayout'
 import { useNextCssRemovalPrevention } from '@madeinhaus/nextjs-page-transition'
 import MainPreloaderWrapper from '@/components/MainPreloader/MainPreloaderWrapper'
-import { useRouter } from 'next/router'
 import localFont from 'next/font/local'
 
 import 'bootstrap/scss/bootstrap-grid.scss'
@@ -53,7 +54,7 @@ const suisseIntl = localFont({
   ],
 })
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   const onExitComplete = () => {
     window.scrollTo({ top: 0 })
   }
@@ -70,15 +71,19 @@ export default function App({ Component, pageProps }: AppProps) {
           --font-family-secondary: ${suisseIntl.style.fontFamily};
         }
       `}</style>
-      <StoreProvider>
-        <AppLayout>
-          <NextNProgress color="#266ef9" />
-          <MainPreloaderWrapper />
-          <AnimatePresence onExitComplete={onExitComplete} mode="wait">
-            <Component {...pageProps} key={pageKey} />
-          </AnimatePresence>
-        </AppLayout>
-      </StoreProvider>
+      <SessionProvider session={session}>
+        <StoreProvider>
+          <AppLayout>
+            <NextNProgress color="#266ef9" />
+            <MainPreloaderWrapper />
+            <AnimatePresence onExitComplete={onExitComplete} mode="wait">
+              <Component {...pageProps} key={pageKey} />
+            </AnimatePresence>
+          </AppLayout>
+        </StoreProvider>
+      </SessionProvider>
     </>
   )
 }
+
+export default App
