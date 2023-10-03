@@ -13,7 +13,6 @@ import routes from '@/utils/routes'
 import styles from '@/modules/Admin/Admin.module.scss'
 
 const AdminProducts: FC<{ products: ProductProps[] }> = ({ products }) => {
-  // https://github.com/markngogc/MMDev.git
   const [_products, setProducts] = useState(products || [])
 
   const handleRemove = async (product: ProductProps) => {

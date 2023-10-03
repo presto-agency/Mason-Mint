@@ -44,12 +44,11 @@ const AdminLogin = () => {
       data.password === 'tIKVO7DwhnWwTmF'
     ) {
       try {
-        const result = await signIn('credentials', {
+        await signIn('credentials', {
           redirect: false,
           email: data.email,
           password: data.password,
         })
-        console.log('result ', result)
       } catch (error) {
         console.log('Error on sign in ', error)
       }
