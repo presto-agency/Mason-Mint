@@ -48,33 +48,27 @@ const ProductCard: FC<ProductCardProps> = ({
               <div
                 className={classNames(styles['product__side'], styles['front'])}
               >
-                <Image
+                <img
                   src={
                     data.mainImages?.obverse || '/images/coin-placeholder.png'
                   }
-                  fill
                   alt={data.ProductName}
                 />
               </div>
               <div
                 className={classNames(styles['product__side'], styles['back'])}
               >
-                <Image
+                <img
                   src={
                     data.mainImages?.reverse || '/images/coin-placeholder.png'
                   }
-                  fill
                   alt={data.ProductName}
                 />
               </div>
             </>
           ) : (
             <div className={classNames(styles['product__side'])}>
-              <Image
-                src={data.mainImages.obverse || ''}
-                fill
-                alt={data.ProductName}
-              />
+              <img src={data.mainImages.obverse || ''} alt={data.ProductName} />
             </div>
           )}
         </div>
