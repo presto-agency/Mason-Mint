@@ -32,7 +32,7 @@ const ProductCard: FC<ProductCardProps> = ({
       }}
       className={classNames(
         styles['product'],
-        flip ? styles['enable-flip'] : '',
+        flip && data.mainImages?.reverse ? styles['enable-flip'] : '',
         className
       )}
     >
@@ -43,7 +43,7 @@ const ProductCard: FC<ProductCardProps> = ({
         }}
       >
         <div className={styles['product__thumb_item']}>
-          {flip ? (
+          {flip && data.mainImages?.reverse ? (
             <>
               <div
                 className={classNames(styles['product__side'], styles['front'])}
@@ -68,7 +68,10 @@ const ProductCard: FC<ProductCardProps> = ({
             </>
           ) : (
             <div className={classNames(styles['product__side'])}>
-              <img src={data.mainImages.obverse || ''} alt={data.ProductName} />
+              <img
+                src={data.mainImages?.obverse || '/images/coin-placeholder.png'}
+                alt={data.ProductName}
+              />
             </div>
           )}
         </div>
