@@ -37,10 +37,10 @@ const ProductFilters: FC<ProductFiltersProps> = ({
                 activeSection === category.id ? styles['active'] : ''
               )}
               onClick={() => {
-                if (index === 0) {
-                  scrollTop?.()
-                  return
-                }
+                // if (index === 0) {
+                //   scrollTop?.()
+                //   return
+                // }
 
                 const element = document.getElementById(
                   `category-${category.id}`
