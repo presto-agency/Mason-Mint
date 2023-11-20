@@ -34,10 +34,23 @@ const Index: FC<DesignsProps> = ({ categories, products }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<{
-  categories: CategoryProps[]
-  products: ProductProps[]
-}> = async () => {
+// export const getStaticProps: GetStaticProps<{
+//   categories: CategoryProps[]
+//   products: ProductProps[]
+// }> = async () => {
+//   await db.connect()
+//   const categories = await CategoryModel.find().lean()
+//   const products = await ProductTestModel.find().lean()
+//
+//   return {
+//     props: {
+//       categories: transformObjectsToJson(categories),
+//       products: transformObjectsToJson(products),
+//     },
+//   }
+// }
+
+export const getServerSideProps = async () => {
   await db.connect()
   const categories = await CategoryModel.find().lean()
   const products = await ProductTestModel.find().lean()
