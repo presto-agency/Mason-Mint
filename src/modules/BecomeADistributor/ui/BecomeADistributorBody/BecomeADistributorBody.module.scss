@@ -8,11 +8,13 @@
     &__image{
       position: relative;
       margin-top: 65rem;
-      padding-left: 40rem;
+
+      //padding-left: 40rem;
       
         @media (width <= $breakpoint-mob) {
           margin-top: 25rem;
-          padding-left: 37rem;
+
+          //padding-left: 37rem;
         }
       
         &_item{

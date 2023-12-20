@@ -1,13 +1,14 @@
 import React, { FC } from 'react'
+import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 import { BackgroundImage } from '@/ui/BackgroundImage/BackgroundImage'
 import Banner from './assets/images/WWI-Obverse-Hero-Max.jpg'
+
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'), {
   ssr: false,
 })
 
 import styles from './BecomeADistributorBody.module.scss'
-import dynamic from 'next/dynamic'
 
 const BecomeADistributorBody: FC<{ className?: string }> = ({ className }) => {
   return (
@@ -19,9 +20,9 @@ const BecomeADistributorBody: FC<{ className?: string }> = ({ className }) => {
         </AnimatedText>
       </p>
       <div className={styles['distributorBody__image']}>
-        <p className={styles['distributorBody__image_title']}>
-          Become A Distributor
-        </p>
+        {/*<p className={styles['distributorBody__image_title']}>*/}
+        {/*  Become A Distributor*/}
+        {/*</p>*/}
         <BackgroundImage
           src={Banner.src}
           alt="Banner"

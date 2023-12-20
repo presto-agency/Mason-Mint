@@ -26,17 +26,17 @@ const FAQSection = () => {
             className={styles['FAQSection__content_left']}
             parallaxValues={[100, -100]}
           >
-            <h2 className={classNames('h2', styles['title'])}>
-              <AnimatedText title withBlueDot>
-                You have question we have answers
-              </AnimatedText>
-            </h2>
-            <p className={styles['subtitle']}>
-              <AnimatedText title>
-                Read what our satisfied customers have to say about their
-                experiences shopping at Recozy.
-              </AnimatedText>
-            </p>
+            {/*<h2 className={classNames('h2', styles['title'])}>*/}
+            {/*  <AnimatedText title withBlueDot>*/}
+            {/*    You have question we have answers*/}
+            {/*  </AnimatedText>*/}
+            {/*</h2>*/}
+            {/*<p className={styles['subtitle']}>*/}
+            {/*  <AnimatedText title>*/}
+            {/*    Read what our satisfied customers have to say about their*/}
+            {/*    experiences shopping at Recozy.*/}
+            {/*  </AnimatedText>*/}
+            {/*</p>*/}
             <BackgroundImage
               src="/images/home/home_faq_1.png"
               className={styles['photoContainer']}
