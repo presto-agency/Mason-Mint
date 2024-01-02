@@ -209,7 +209,7 @@ name*"
                   <TextField
                     {...field}
                     placeholder="Your Email"
-                    label="And a-mail*"
+                    label="Add E-mail*"
                     error={errors['email']?.message}
                   />
                 )
