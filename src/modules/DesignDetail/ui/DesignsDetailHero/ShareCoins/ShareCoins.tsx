@@ -37,7 +37,7 @@ const ShareCoins: FC<ShareCoinsProps> = ({ className }) => {
 
   return (
     <div className={classNames(styles['ShareCoins'], className)}>
-      <AnimatedElement>
+      {/* <AnimatedElement>
         <h6>share coins</h6>
       </AnimatedElement>
       <AnimatedElement className={styles['linksList']}>
@@ -59,7 +59,7 @@ const ShareCoins: FC<ShareCoinsProps> = ({ className }) => {
         >
           <Linkedin className={styles['icon']} />
         </Link>
-      </AnimatedElement>
+      </AnimatedElement> */}
     </div>
   )
 }

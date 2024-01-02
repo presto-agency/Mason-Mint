@@ -15,10 +15,10 @@ import styles from './AllProducts.module.scss'
 
 const sectionContent = [
   {
-    title: 'High relief',
+    title: 'Buffalo Round',
     id: 1,
-    subtitle: '2 oz high relief silver round .999 fine',
-    url: '/images/about/all_1.png',
+    subtitle: '1 oz buffalo silver round .999 fine',
+    url: '/images/about/all_4.png',
   },
   {
     title: 'Silver bars',
@@ -30,7 +30,7 @@ const sectionContent = [
     title: 'Patriot series',
     id: 3,
     subtitle: '1 oz silver round .999 fine',
-    url: '/images/about/all_3.png',
+    url: '/images/about/all_5.png',
   },
 ]
 

@@ -28,7 +28,7 @@ const HeroSection = () => {
     <div ref={targetRef}>
       <HeroInner
         title="Finding a partner you can trust is not an easy decision"
-        subtitle="Welcome to masonmint"
+        subtitle="Welcome to Mason Mint"
         centeredOnDesktop
       />
       <HeroDetail
