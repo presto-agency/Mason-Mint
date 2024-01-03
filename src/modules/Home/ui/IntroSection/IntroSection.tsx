@@ -49,7 +49,6 @@ const IntroSection = () => {
               <Link
                 scroll={false}
                 href={`${routes.public.designs}/64b7f086ffe22650abb77fa2/1-oz-silver-buffalo-round-mason-mint-series-2`}
-                                               
               >
                 <ButtonPrimary
                   className={styles['buttonContainer__button']}

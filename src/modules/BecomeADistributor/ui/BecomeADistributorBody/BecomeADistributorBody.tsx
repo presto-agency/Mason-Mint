@@ -15,7 +15,8 @@ const BecomeADistributorBody: FC<{ className?: string }> = ({ className }) => {
     <div className={classNames(styles['distributorBody'], className)}>
       <p className={styles['distributorBody__description']}>
         <AnimatedText>
-          To become a dealer, please fill out the form.  Dealers will be required to produce a reseller certificate.
+          To become a dealer, please fill out the form. Dealers will be required
+          to produce a reseller certificate.
         </AnimatedText>
       </p>
       <div className={styles['distributorBody__image']}>
