@@ -130,8 +130,7 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
                 <TextField
                   {...field}
                   placeholder="your Full name"
-                  label="Please include your first and last
-name*"
+                  label="Please include your first and last name*"
                   error={errors['fullName']?.message}
                 />
               )

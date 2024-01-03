@@ -15,9 +15,9 @@ import styles from './AllProducts.module.scss'
 
 const sectionContent = [
   {
-    title: 'Buffalo Round',
+    title: 'Buffalo round',
     id: 1,
-    subtitle: '1 oz buffalo silver round .999 fine',
+    subtitle: '1 oz silver round .999 fine',
     url: '/images/about/all_4.png',
   },
   {

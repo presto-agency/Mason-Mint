@@ -78,8 +78,8 @@ const SellSection = () => {
                   <AnimatedText>
                     We work exclusively with precious metal dealers both
                     domestic and abroad to distribute our products. If you are
-                    interested in becoming an authorized distributor please fill
-                    the contact form.
+                    interested in becoming an authorized distributor please fill out
+                    the distributor form.
                   </AnimatedText>
                 </p>
                 <AnimatedElement delay={0.2}>

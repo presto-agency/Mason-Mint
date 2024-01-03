@@ -38,7 +38,7 @@ export default [
     id: 6,
     title: 'What purity are your silver products?',
     description:
-      'All of our products are 99.9% pure (,999 fine).  We are also able to produce 99.99% pure sure silver products (.9999 fine).  Contact your Mason Mint representative to find out more.',
+      'All of our products are 99.9% pure (.999 fine).  We are also able to produce 99.99% pure sure silver products (.9999 fine).  Contact your Mason Mint representative to find out more.',
     src: '/images/home/coin_example.png',
   },
 ]
