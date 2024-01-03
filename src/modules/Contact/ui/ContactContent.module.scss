@@ -18,6 +18,7 @@
 	}
 	
 	&__form{
+		position: relative;
 		padding-bottom: 64rem;
 			
 		@media (width <= $breakpoint-mob) {

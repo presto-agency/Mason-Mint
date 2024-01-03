@@ -5,16 +5,16 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import TextField from '@/ui/TextField/TextField'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { validationSchema } from '@/modules/BecomeADistributor/ui/BecomeADistributorForm/validationSchema'
-import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import { useModal } from '@/hooks/useModal'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { OptionInterface } from '@/utils/types'
 import { countryList } from '@/utils/countries/countryList'
 import { useInView, motion } from 'framer-motion'
+import { browserPostEmail } from '@/utils/email/browserPostEmail'
+
 const CustomSelect = dynamic(() => import('@/ui/SelectField/SelectField'), {
   ssr: false,
 })
-const ErrorModal = dynamic(() => import('@/modals/Error/Error'), { ssr: false })
 const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'), {
   ssr: false,
 })
@@ -63,7 +63,6 @@ const BecomeADistributorForm: FC<{
   })
 
   const openThanksModal = useModal(ThanksModal, { size: 'xs' })
-  const openErrorModal = useModal(ErrorModal, { size: 'xs' })
   const [selectedCountry, setSelectedCountry] =
     useState<OptionInterface | null>(null)
   const [selectedState, setSelectedState] = useState<OptionInterface | null>(
@@ -123,27 +122,23 @@ const BecomeADistributorForm: FC<{
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setSending(true)
-    await browserSendEmail({
+
+    await browserPostEmail({
       subject: `Become a distributor`,
       htmlMessage: 'Hello, I want to be a distributor',
       data,
     })
-      .then((response) => response.json())
-      .then(({ success = false, response = null }) => {
-        if (success && response && response.messageId) {
-          openThanksModal()
-          setSending(false)
-          reset()
-        } else {
-          openErrorModal()
-          reset()
-          setSending(false)
-        }
+      .then((response) => {
+        console.log('response ', response)
+        openThanksModal()
+        setSending(false)
+        reset()
       })
       .catch((error) => {
-        openErrorModal()
+        console.log('error ', error)
+        openThanksModal()
         setSending(false)
-        console.error(`Error on send email ${error}`)
+        reset()
       })
   }
 

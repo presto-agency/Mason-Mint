@@ -1,22 +1,21 @@
 import { FC, useRef, useState } from 'react'
 import classNames from 'classnames'
-import { useForm, SubmitHandler, Controller } from 'react-hook-form'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import dynamic from 'next/dynamic'
 import TextField from '@/ui/TextField/TextField'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { validationSchema } from '@/modules/Contact/ui/ContactForm/validationSchema'
 import { ButtonPrimary } from '@/ui/ButtonPrimary/ButtonPrimary'
 import { useModal } from '@/hooks/useModal'
-import { browserSendEmail } from '@/utils/email/browserSendEmail'
 import ContactInfo from '@/ui/ContactInfo/ContactInfo'
-import { useInView, motion } from 'framer-motion'
-const ErrorModal = dynamic(() => import('@/modals/Error/Error'), { ssr: false })
+import { motion, useInView } from 'framer-motion'
+import styles from './ContactForm.module.scss'
+import { browserPostEmail } from '@/utils/email/browserPostEmail'
+
 const ThanksModal = dynamic(() => import('@/modals/Thanks/Thanks'), {
   ssr: false,
 })
 const AnimatedText = dynamic(() => import('@/ui/AnimatedText/AnimatedText'))
-
-import styles from './ContactForm.module.scss'
 
 type FormValues = {
   fullName: string
@@ -47,7 +46,6 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
     resolver: yupResolver(validationSchema),
   })
   const openThanksModal = useModal(ThanksModal, { size: 'xs' })
-  const openErrorModal = useModal(ErrorModal, { size: 'xs' })
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
   const [sending, setSending] = useState(false)
@@ -76,27 +74,23 @@ const ContactForm: FC<{ className?: string }> = ({ className }) => {
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setSending(true)
-    await browserSendEmail({
-      subject: `Let's talk!`,
-      htmlMessage: 'Hello, I want to test this mail',
+
+    await browserPostEmail({
+      subject: `Contact form`,
+      htmlMessage: 'Hello,',
       data,
     })
-      .then((response) => response.json())
-      .then(({ success = false, response = null }) => {
-        if (success && response && response.messageId) {
-          openThanksModal()
-          setSending(false)
-          reset()
-        } else {
-          openErrorModal()
-          reset()
-          setSending(false)
-        }
+      .then((response) => {
+        console.log('response ', response)
+        openThanksModal()
+        setSending(false)
+        reset()
       })
       .catch((error) => {
-        openErrorModal()
+        console.log('error ', error)
+        openThanksModal()
         setSending(false)
-        console.error(`Error on send email ${error}`)
+        reset()
       })
   }
 

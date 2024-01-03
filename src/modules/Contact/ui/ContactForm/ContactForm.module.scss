@@ -31,4 +31,16 @@
 		&__box{
 			display: block;
 		}
+	
+		&__iframe{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 50rem;
+			border: none;
+			
+				@media (width <= $breakpoint-mob) {
+					height: 30rem;
+				}
+		}
 }
