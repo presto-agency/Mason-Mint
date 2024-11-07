@@ -8,6 +8,7 @@ import AppLayout from '@/app/layouts/AppLayout'
 import { useNextCssRemovalPrevention } from '@madeinhaus/nextjs-page-transition'
 import MainPreloaderWrapper from '@/components/MainPreloader/MainPreloaderWrapper'
 import localFont from 'next/font/local'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import 'bootstrap/scss/bootstrap-grid.scss'
 import '@/app/styles/index.scss'
@@ -82,6 +83,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
           </AppLayout>
         </StoreProvider>
       </SessionProvider>
+      <GoogleAnalytics gaId="G-VVX71SYYXG" />
     </>
   )
 }
